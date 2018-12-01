@@ -5,7 +5,10 @@
 
 class Property
 {
+public:
+	virtual int DistanceBetweenProperties(const Property& lhs, const Property& rhs);
+
 private:
-	std::list<TraitParent> traits;
+	std::list<TraitParent*> traits;
 };
 

@@ -154,6 +154,7 @@
     <ClInclude Include="Trait.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Property.cpp" />
     <ClCompile Include="SimilarityTable.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
