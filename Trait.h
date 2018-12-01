@@ -11,6 +11,7 @@ class TraitParent : public Trait
 {
 private:
 	std::list<Trait> subTraits;
+	std::string name;
 };
 
 class TraitChild : public Trait
