@@ -1,17 +1,22 @@
 #pragma once
 
 #include "Trait.h"
-#include <list>
+#include <vector>
 
 class Property
 {
 public:
-	virtual int DistanceBetweenProperties(Property& lhs, Property& rhs);
+	Property(const std::vector<TraitParent*>& inTraits)
+	{
+		traits = inTraits;
+	}
+
+	static int DistanceBetweenProperties(Property& lhs, Property& rhs);
 
 private:
-	virtual int DistLhsAffect(Trait* trait, Property& lhs, Property& rhs);
+	static int DistLhsAffect(Trait* trait, Property& lhs, Property& rhs);
 
 private:
-	std::list<TraitParent*> traits;
+	std::vector<TraitParent*> traits;
 };
 

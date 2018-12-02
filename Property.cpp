@@ -38,25 +38,26 @@ int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
 
 int Property::DistLhsAffect(Trait* trait, Property& lhs, Property& rhs)
 {
-	auto lhsFirstTraitIterator = trait->GetChildren().begin();
-	Trait* lhsAffectType = *lhsFirstTraitIterator++;
+	std::vector<Trait*> lhsTraitChildren = trait->GetChildren();
+	Trait* lhsAffectType = lhsTraitChildren[0];
 	Trait* lhsAffectTypeChild = lhsAffectType->GetChildren().front();
-	std::list<int> lhsAffectTypeIds = lhsAffectType->GetAllTraitIds();
+	std::vector<int> lhsAffectTypeIds = lhsAffectType->GetAllTraitIds();
 
-	Trait* lhsSecondTrait = *lhsFirstTraitIterator;
-	std::list<int> lhsSecondTraitIds = lhsSecondTrait->GetAllTraitIds();
+	Trait* lhsSecondTrait = lhsTraitChildren[1];
+	std::vector<int> lhsSecondTraitIds = lhsSecondTrait->GetAllTraitIds();
 
 	Trait* rhsFirstTrait = rhs.traits.front();
 	switch (rhsFirstTrait->id)
 	{
 		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_AFFECT:
 		{
-			auto rhsFirstTraitIterator = rhsFirstTrait->GetChildren().begin();
-			Trait* rhsAffectType = *rhsFirstTraitIterator++;
+			std::vector<Trait*> rhsTraitChildren = rhsFirstTrait->GetChildren();
+			Trait* rhsAffectType = rhsTraitChildren[0];
 			Trait* rhsAffectTypeChild = rhsAffectType->GetChildren().front();
-			std::list<int> rhsAffectTypeIds = rhsAffectType->GetAllTraitIds();
-			Trait* rhsSecondTrait = *rhsFirstTraitIterator;
-			std::list<int> rhsSecondTraitIds = rhsSecondTrait->GetAllTraitIds();
+			std::vector<int> rhsAffectTypeIds = rhsAffectType->GetAllTraitIds();
+
+			Trait* rhsSecondTrait = rhsTraitChildren[1];
+			std::vector<int> rhsSecondTraitIds = rhsSecondTrait->GetAllTraitIds();
 
 			auto pairResult = std::mismatch(lhsSecondTraitIds.begin(), lhsSecondTraitIds.end(), rhsSecondTraitIds.begin());
 			if (pairResult.first != lhsSecondTraitIds.end() && pairResult.second != rhsSecondTraitIds.end())
