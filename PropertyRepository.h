@@ -24,8 +24,6 @@ public:
 	PropertyRepository();
 
 private:
-	void GenerateAllProperties();
-
 	std::vector<Trait*> GenerateTraitFromPropertyNode(PropertyNode* propertyNode);
 
 	template<class T>
@@ -35,6 +33,8 @@ private:
 	std::vector<std::vector<T>> PermuteLists(const std::vector<std::vector<T>>& listOfLists);
 
 	PropertyNode masterNode;
-	std::vector<Property> possibleProperties;
+
+public:
+	std::vector<TraitParent*> possibleTraits;
 };
 

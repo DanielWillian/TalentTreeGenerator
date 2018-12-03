@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PropertyRepository.h"
 #include "TraitConstants.h"
+#include <iostream>
 
 PropertyRepository::PropertyRepository()
 {
@@ -60,29 +61,18 @@ PropertyRepository::PropertyRepository()
 	PropertyNode affect = PropertyNode(TraitConstants::FIRST_LAYER_FIRST_TRAIT_AFFECT,
 			std::vector<std::vector<PropertyNode*>>({ { &affectType }, { &damage, &healing } }));
 
-	masterNode = PropertyNode(-1,
+	masterNode = PropertyNode(TraitConstants::MASTER_LAYER,
 			std::vector<std::vector<PropertyNode*>>({ { &affect } }));
 
-	GenerateTraitFromPropertyNode(&affectType);
-	GenerateTraitFromPropertyNode(&damage);
-	GenerateTraitFromPropertyNode(&healing);
-	GenerateTraitFromPropertyNode(&affect);
-}
+	auto aux1 = GenerateTraitFromPropertyNode(&affectType);
+	auto aux2 = GenerateTraitFromPropertyNode(&damage);
+	auto aux3 = GenerateTraitFromPropertyNode(&healing);
+	auto aux4 = GenerateTraitFromPropertyNode(&affect);
 
-void PropertyRepository::GenerateAllProperties()
-{
-	for (auto propertyNodeList : masterNode.propertySubOptions)
+	auto allPossibleTraits = GenerateTraitFromPropertyNode(&masterNode);
+	for (auto trait : allPossibleTraits)
 	{
-		for (PropertyNode* propertyNode : propertyNodeList)
-		{
-			std::vector<Trait*> possibleTraitsForNode = GenerateTraitFromPropertyNode(propertyNode);
-			std::vector<TraitParent*> parentTraits;
-			for (Trait* trait : possibleTraitsForNode)
-			{
-				parentTraits.push_back(static_cast<TraitParent*>(trait));
-			}
-			possibleProperties.push_back(Property(parentTraits));
-		}
+		possibleTraits.push_back(static_cast<TraitParent*>(trait));
 	}
 }
 

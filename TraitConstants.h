@@ -3,6 +3,8 @@
 class TraitConstants
 {
 public:
+	static const int MASTER_LAYER = -1;
+
 	/** AFFECT */
 	static const int FIRST_LAYER_FIRST_TRAIT_AFFECT = 0;
 	static const int SECOND_LAYER_FIRST_TRAIT_AFFECT_TYPE = 1;

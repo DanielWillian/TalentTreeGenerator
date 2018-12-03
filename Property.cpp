@@ -6,14 +6,14 @@
 
 int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
 {
-	auto lhsIterator = lhs.traits.begin();
-	auto rhsIterator = rhs.traits.begin();
+	Trait* lhsMasterNode = lhs.traits.front();
+	auto lhsMasterNodeChild = lhsMasterNode->GetChildren().front();
 
-	switch ((*lhsIterator)->id)
+	switch (lhsMasterNodeChild->id)
 	{
 		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_AFFECT:
 		{
-			return DistLhsAffect(*lhsIterator, lhs, rhs);
+			return DistLhsAffect(lhsMasterNodeChild, lhs, rhs);
 			break;
 		}
 		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_STATS:
@@ -46,12 +46,13 @@ int Property::DistLhsAffect(Trait* trait, Property& lhs, Property& rhs)
 	Trait* lhsSecondTrait = lhsTraitChildren[1];
 	std::vector<int> lhsSecondTraitIds = lhsSecondTrait->GetAllTraitIds();
 
-	Trait* rhsFirstTrait = rhs.traits.front();
-	switch (rhsFirstTrait->id)
+	Trait* rhsMasterNode = rhs.traits.front();
+	auto rhsMasterNodeChild = rhsMasterNode->GetChildren().front();
+	switch (rhsMasterNodeChild->id)
 	{
 		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_AFFECT:
 		{
-			std::vector<Trait*> rhsTraitChildren = rhsFirstTrait->GetChildren();
+			std::vector<Trait*> rhsTraitChildren = rhsMasterNodeChild->GetChildren();
 			Trait* rhsAffectType = rhsTraitChildren[0];
 			Trait* rhsAffectTypeChild = rhsAffectType->GetChildren().front();
 			std::vector<int> rhsAffectTypeIds = rhsAffectType->GetAllTraitIds();
@@ -59,10 +60,32 @@ int Property::DistLhsAffect(Trait* trait, Property& lhs, Property& rhs)
 			Trait* rhsSecondTrait = rhsTraitChildren[1];
 			std::vector<int> rhsSecondTraitIds = rhsSecondTrait->GetAllTraitIds();
 
-			auto pairResult = std::mismatch(lhsSecondTraitIds.begin(), lhsSecondTraitIds.end(), rhsSecondTraitIds.begin());
-			if (pairResult.first != lhsSecondTraitIds.end() && pairResult.second != rhsSecondTraitIds.end())
+			// Damage to Healing
+			if (lhsSecondTraitIds[0] != rhsSecondTraitIds[0])
 			{
 				return 20;
+			}
+			// If both are specifying which type of damage or healing it is
+			else if (lhsSecondTraitIds.size() > 2 && rhsSecondTraitIds.size() > 2)
+			{
+				if (lhsSecondTraitIds.size() > rhsSecondTraitIds.size())
+				{
+					auto pairResult = std::mismatch(rhsSecondTraitIds.begin() + 2, rhsSecondTraitIds.end(),
+							lhsSecondTraitIds.begin() + 2);
+					if (pairResult.first != rhsSecondTraitIds.end() && pairResult.second != lhsSecondTraitIds.end())
+					{
+						return 20;
+					}
+				}
+				else
+				{
+					auto pairResult = std::mismatch(lhsSecondTraitIds.begin() + 2, lhsSecondTraitIds.end(),
+							rhsSecondTraitIds.begin() + 2);
+					if (pairResult.first != lhsSecondTraitIds.end() && pairResult.second != rhsSecondTraitIds.end())
+					{
+						return 20;
+					}
+				}
 			}
 
 			auto it = std::find(lhsAffectTypeIds.begin(), lhsAffectTypeIds.end(), rhsAffectTypeChild->id);
@@ -70,7 +93,7 @@ int Property::DistLhsAffect(Trait* trait, Property& lhs, Property& rhs)
 			{
 				Trait* rhsAffectTypeChildSpecifier = rhsAffectTypeChild->GetChildren().front();
 				it = std::find(lhsAffectTypeIds.begin(), lhsAffectTypeIds.end(), rhsAffectTypeChildSpecifier->id);
-				if (it ==lhsAffectTypeIds.end())
+				if (it == lhsAffectTypeIds.end())
 				{
 					return 20;
 				}

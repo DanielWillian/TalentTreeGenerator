@@ -28,19 +28,19 @@ public:
 		return result;
 	}
 
-	friend std::ostream& operator<< (std::ostream& out, const Trait& trait)
+	virtual std::string toString() const
 	{
-		out << "( " << trait.id << "";
-		if (trait.HasChildren())
+		std::string out = "( " + std::to_string(id);
+		if (HasChildren())
 		{
-			out << ", { ";
-			for (Trait* subTrait : trait.subTraits)
+			out += " { ";
+			for (Trait* subTrait : subTraits)
 			{
-				out << subTrait << " ";
+				out += subTrait->toString() + " ";
 			}
-			out << "}";
+			out += "}";
 		}
-		out << " )";
+		out += " )";
 		return out;
 	}
 
