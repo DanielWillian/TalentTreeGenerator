@@ -28,6 +28,22 @@ public:
 		return result;
 	}
 
+	friend std::ostream& operator<< (std::ostream& out, const Trait& trait)
+	{
+		out << "( " << trait.id << "";
+		if (trait.HasChildren())
+		{
+			out << ", { ";
+			for (Trait* subTrait : trait.subTraits)
+			{
+				out << subTrait << " ";
+			}
+			out << "}";
+		}
+		out << " )";
+		return out;
+	}
+
 public:
 	int id;
 	std::vector<Trait*> subTraits;
