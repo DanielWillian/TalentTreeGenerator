@@ -3,24 +3,37 @@
 #include "Trait.h"
 #include "TraitConstants.h"
 
+class TraitNode
+{
+public:
+	TraitNode(const int inId, const std::vector<std::vector<TraitNode*>>& inTraitSubOptions)
+	{
+		id = inId;
+		propertySubOptions = inTraitSubOptions;
+	}
+	TraitNode() {}
+
+	int id;
+	std::vector<std::vector<TraitNode*>> propertySubOptions;
+};
+
 class TraitRepository
 {
 public:
 	TraitRepository();
 
-	TraitChild direct;
-	TraitChild damage;
-	TraitChild healing;
+private:
+	std::vector<Trait*> GenerateTraitFromTraitNode(TraitNode* propertyNode);
 
-	TraitParent directAffectType1;
-	TraitParent directAffectType;
+	template<class T>
+	std::vector<std::vector<T*>> PermuteLists(const std::vector<std::vector<T*>>& listOfLists);
 
-	TraitParent damageDamage;
+	template<class T>
+	std::vector<std::vector<T>> PermuteLists(const std::vector<std::vector<T>>& listOfLists);
 
-	TraitParent healingHealing;
+	TraitNode masterNode;
 
-	TraitParent directDamageAffect;
-
-	TraitParent directHealingAffect;
+public:
+	std::vector<TraitParent*> possibleTraits;
 };
 
