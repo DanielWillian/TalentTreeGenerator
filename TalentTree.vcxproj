@@ -153,6 +153,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Trait.h" />
     <ClInclude Include="TraitConstants.h" />
+    <ClInclude Include="TraitDictionary.h" />
     <ClInclude Include="TraitRepository.h" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TalentTree.cpp" />
+    <ClCompile Include="TraitDictionary.cpp" />
     <ClCompile Include="TraitRepository.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
