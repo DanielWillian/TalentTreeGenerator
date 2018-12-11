@@ -8,6 +8,8 @@ class TraitRepository
 public:
 	TraitRepository();
 
+	std::vector<TraitParent*> GetTraitsWithIds(const std::vector<std::string>& ids);
+
 private:
 	std::vector<Trait*> GenerateTraitsFromDictEntry(const TraitDictEntry& dictEntry);
 

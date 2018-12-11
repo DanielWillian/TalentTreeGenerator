@@ -11,6 +11,39 @@ TraitRepository::TraitRepository()
 	}
 }
 
+
+std::vector<TraitParent*> TraitRepository::GetTraitsWithIds(const std::vector<std::string>& ids)
+{
+	std::vector<TraitParent*> result;
+
+	for (auto* trait : possibleTraits)
+	{
+		bool bFound = false;
+		for (auto& id : ids)
+		{
+			bFound = false;
+			for (auto& traitId : trait->GetAllTraitIds())
+			{
+				if (id == traitId)
+				{
+					bFound = true;
+					break;
+				}
+			}
+			if (!bFound)
+			{
+				break;
+			}
+		}
+		if (bFound)
+		{
+			result.push_back(trait);
+		}
+	}
+
+	return result;
+}
+
 std::vector<Trait*> TraitRepository::GenerateTraitsFromDictEntry(const TraitDictEntry& dictEntry)
 {
 	if (dictEntry.type == TraitDictionary::TERMINAL)
