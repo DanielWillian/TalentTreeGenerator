@@ -30,9 +30,6 @@
     <ClInclude Include="SimilarityTable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TraitConstants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TraitRepository.h">
       <Filter>Header Files</Filter>
     </ClInclude>

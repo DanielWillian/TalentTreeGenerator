@@ -14,7 +14,7 @@ public:
 	static int DistanceBetweenProperties(Property& lhs, Property& rhs);
 
 private:
-	static int DistLhsAffect(Trait* trait, Property& lhs, Property& rhs);
+	static int DistLhsAffect(Property& lhs, Property& rhs);
 
 private:
 	std::vector<TraitParent*> traits;

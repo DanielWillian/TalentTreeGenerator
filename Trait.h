@@ -28,6 +28,26 @@ public:
 		return result;
 	}
 
+	virtual Trait* GetTraitWithId(const std::string& id)
+	{
+		if (this->id == id)
+		{
+			return this;
+		}
+		else
+		{
+			for (Trait* trait : subTraits)
+			{
+				Trait* possibleTrait = trait->GetTraitWithId(id);
+				if (possibleTrait)
+				{
+					return possibleTrait;
+				}
+			}
+		}
+		return nullptr;
+	}
+
 	virtual std::string toString() const
 	{
 		std::string out = "( " + id;

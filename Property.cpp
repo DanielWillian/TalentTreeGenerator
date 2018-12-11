@@ -10,116 +10,95 @@ constexpr unsigned int hashString(const char *s, int off = 0)
 
 int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
 {
-	Trait* lhsMasterNode = lhs.traits.front();
-	auto lhsMasterNodeChild = lhsMasterNode->GetChildren().front();
+	std::vector<std::string> lhsIds = lhs.traits.front()->GetAllTraitIds();
 
-	switch (hashString(lhsMasterNodeChild->id.c_str()))
+	if (std::find(lhsIds.begin(), lhsIds.end(), "affect") != lhsIds.end())
 	{
-		case hashString("affect"):
-		{
-			return DistLhsAffect(lhsMasterNodeChild, lhs, rhs);
-			break;
-		}
-		case hashString("stats"):
-		{
-			break;
-		}
-		case hashString("resourceRelated"):
-		{
-			break;
-		}
-		case hashString("alteration"):
-		{
-			break;
-		}
-		default:
-			throw std::invalid_argument("Property not supported");
-			break;
+		return DistLhsAffect(lhs, rhs);
+	}
+	else if (std::find(lhsIds.begin(), lhsIds.end(), "stats") != lhsIds.end())
+	{
+	}
+	else if (std::find(lhsIds.begin(), lhsIds.end(), "resourceRelated") != lhsIds.end())
+	{
+	}
+	else if (std::find(lhsIds.begin(), lhsIds.end(), "alteration") != lhsIds.end())
+	{
 	}
 
 	return 0;
 }
 
-int Property::DistLhsAffect(Trait* trait, Property& lhs, Property& rhs)
+int Property::DistLhsAffect(Property& lhs, Property& rhs)
 {
-	std::vector<Trait*> lhsTraitChildren = trait->GetChildren();
-	Trait* lhsAffectType = lhsTraitChildren[0];
-	Trait* lhsAffectTypeChild = lhsAffectType->GetChildren().front();
-	std::vector<std::string> lhsAffectTypeIds = lhsAffectType->GetAllTraitIds();
+	auto lhsIds = lhs.traits.front()->GetAllTraitIds();
+	auto rhsIds = rhs.traits.front()->GetAllTraitIds();
 
-	Trait* lhsSecondTrait = lhsTraitChildren[1];
-	std::vector<std::string> lhsSecondTraitIds = lhsSecondTrait->GetAllTraitIds();
-
-	Trait* rhsMasterNode = rhs.traits.front();
-	auto rhsMasterNodeChild = rhsMasterNode->GetChildren().front();
-	switch (hashString(rhsMasterNodeChild->id.c_str()))
+	if (std::find(rhsIds.begin(), rhsIds.end(), "affect") != rhsIds.end())
 	{
-		case hashString("affect"):
+		const bool bLhsContainDamage = std::find(lhsIds.begin(), lhsIds.end(), "damage") != lhsIds.end();
+		const bool bRhsContainDamage = std::find(rhsIds.begin(), rhsIds.end(), "damage") != rhsIds.end();
+		// Damage to Healing
+		if (bLhsContainDamage != bRhsContainDamage)
 		{
-			std::vector<Trait*> rhsTraitChildren = rhsMasterNodeChild->GetChildren();
-			Trait* rhsAffectType = rhsTraitChildren[0];
-			Trait* rhsAffectTypeChild = rhsAffectType->GetChildren().front();
-			std::vector<std::string> rhsAffectTypeIds = rhsAffectType->GetAllTraitIds();
+			return 20;
+		}
+		else
+		{
+			if (bLhsContainDamage)
+			{
+				auto lhsDamageIds = lhs.traits.front()->GetTraitWithId("damage")->GetAllTraitIds();
+				auto rhsDamageIds = rhs.traits.front()->GetTraitWithId("damage")->GetAllTraitIds();
+				// Neither contain all damage
+				if (std::find(lhsIds.begin(), lhsIds.end(), "allDamage") == lhsIds.end() &&
+						std::find(rhsIds.begin(), rhsIds.end(), "allDamage") == rhsIds.end())
+				{
+					const bool bLhsDamageType1 = std::find(lhsIds.begin(), lhsIds.end(), "damageType1") != lhsIds.end();
+					const bool bRhsDamageType1 = std::find(rhsIds.begin(), rhsIds.end(), "damageType1") != rhsIds.end();
+					if (bLhsDamageType1 == bRhsDamageType1 && lhsDamageIds != rhsDamageIds)
+					{
+						return 20;
+					}
+				}
+			}
+			else
+			{
+				auto lhsHealingIds = lhs.traits.front()->GetTraitWithId("healing")->GetAllTraitIds();
+				auto rhsHealingIds = rhs.traits.front()->GetTraitWithId("healing")->GetAllTraitIds();
+				// Neither contain all healing
+				if (std::find(lhsIds.begin(), lhsIds.end(), "allHealing") == lhsIds.end() &&
+						std::find(rhsIds.begin(), rhsIds.end(), "allHealing") == rhsIds.end())
+				{
+					if (lhsHealingIds != rhsHealingIds)
+					{
+						return 20;
+					}
+				}
+			}
+		}
 
-			Trait* rhsSecondTrait = rhsTraitChildren[1];
-			std::vector<std::string> rhsSecondTraitIds = rhsSecondTrait->GetAllTraitIds();
-
-			// Damage to Healing
-			if (lhsSecondTraitIds[0] != rhsSecondTraitIds[0])
+		const bool bLhsAffectType1 = std::find(lhsIds.begin(), lhsIds.end(), "affectType1") != lhsIds.end();
+		const bool bRhsAffectType1 = std::find(rhsIds.begin(), rhsIds.end(), "affectType1") != rhsIds.end();
+		if (bLhsAffectType1 == bRhsAffectType1)
+		{
+			auto lhsAffectTypeIds = lhs.traits.front()->GetTraitWithId("affectType")->GetAllTraitIds();
+			auto rhsAffectTypeIds = rhs.traits.front()->GetTraitWithId("affectType")->GetAllTraitIds();
+			if (lhsAffectTypeIds != rhsAffectTypeIds)
 			{
 				return 20;
 			}
-			// If both are specifying which type of damage or healing it is
-			else if (lhsSecondTraitIds.size() > 2 && rhsSecondTraitIds.size() > 2)
-			{
-				if (lhsSecondTraitIds.size() > rhsSecondTraitIds.size())
-				{
-					auto pairResult = std::mismatch(rhsSecondTraitIds.begin() + 2, rhsSecondTraitIds.end(),
-							lhsSecondTraitIds.begin() + 2);
-					if (pairResult.first != rhsSecondTraitIds.end() && pairResult.second != lhsSecondTraitIds.end())
-					{
-						return 20;
-					}
-				}
-				else
-				{
-					auto pairResult = std::mismatch(lhsSecondTraitIds.begin() + 2, lhsSecondTraitIds.end(),
-							rhsSecondTraitIds.begin() + 2);
-					if (pairResult.first != lhsSecondTraitIds.end() && pairResult.second != rhsSecondTraitIds.end())
-					{
-						return 20;
-					}
-				}
-			}
+		}
 
-			auto it = std::find(lhsAffectTypeIds.begin(), lhsAffectTypeIds.end(), rhsAffectTypeChild->id);
-			if (it != lhsAffectTypeIds.end())
-			{
-				Trait* rhsAffectTypeChildSpecifier = rhsAffectTypeChild->GetChildren().front();
-				it = std::find(lhsAffectTypeIds.begin(), lhsAffectTypeIds.end(), rhsAffectTypeChildSpecifier->id);
-				if (it == lhsAffectTypeIds.end())
-				{
-					return 20;
-				}
-			}
-
-			return 1;
-		}
-		case hashString("stats"):
-		{
-			break;
-		}
-		case hashString("resourceRelated"):
-		{
-			break;
-		}
-		case hashString("alteration"):
-		{
-			break;
-		}
-		default:
-			throw std::invalid_argument("Property not supported");
-			break;
+		return 1;
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "stats") != rhsIds.end())
+	{
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "resourceRelated") != rhsIds.end())
+	{
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "alteration") != rhsIds.end())
+	{
 	}
 
 	return 0;

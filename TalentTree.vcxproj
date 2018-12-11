@@ -152,7 +152,6 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Trait.h" />
-    <ClInclude Include="TraitConstants.h" />
     <ClInclude Include="TraitDictionary.h" />
     <ClInclude Include="TraitRepository.h" />
   </ItemGroup>
