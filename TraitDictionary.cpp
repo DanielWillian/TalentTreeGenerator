@@ -50,6 +50,65 @@ TraitDictionary::TraitDictionary()
 	entries.push_back({ "affect2", CONCATENATIONS, { "affectType", "healing" } });
 	entries.push_back({ "affect", ALTERNATIVES, { "affect1", "affect2" } });
 
-	entries.push_back({ "property", ALTERNATIVES, { "affect" } });
+
+
+	entries.push_back({ "attackSpeed", TERMINAL, {} });
+	entries.push_back({ "castSpeed", TERMINAL, {} });
+
+	entries.push_back({ "allCriticalChance", TERMINAL, {} });
+	entries.push_back({ "specCriticalChance", TERMINAL, {} });
+	entries.push_back({ "criticalChanceDamage", CONCATENATIONS, { "specCriticalChance", "damage" } });
+	entries.push_back({ "criticalChanceHealing", CONCATENATIONS, { "specCriticalChance", "healing" } });
+	entries.push_back({ "criticalChance", ALTERNATIVES,
+			{ "allCriticalChance", "criticalChanceDamage", "criticalChanceHealing" } });
+
+	entries.push_back({ "allCriticalEffect", TERMINAL, {} });
+	entries.push_back({ "specCriticalEffect", TERMINAL, {} });
+	entries.push_back({ "criticalEffectDamage", CONCATENATIONS, { "specCriticalEffect", "damage" } });
+	entries.push_back({ "criticalEffectHealing", CONCATENATIONS, { "specCriticalEffect", "healing" } });
+	entries.push_back({ "criticalEffect", ALTERNATIVES,
+			{ "allCriticalEffect", "criticalEffectDamage", "criticalEffectHealing" } });
+	entries.push_back({ "critical", ALTERNATIVES, { "criticalChance", "criticalEffect" } });
+
+	entries.push_back({ "allHitChance", TERMINAL, {} });
+	entries.push_back({ "specHitChance", TERMINAL, {} });
+	entries.push_back({ "hitChanceDamage", CONCATENATIONS, { "specHitChance", "damageType1" } });
+	entries.push_back({ "hitChance", ALTERNATIVES, { "allHitChance", "hitChanceDamage" } });
+	entries.push_back({ "offensive", ALTERNATIVES, { "attackSpeed", "castSpeed", "critical", "hitChance" } });
+
+	entries.push_back({ "allEvasionChance", TERMINAL, {} });
+	entries.push_back({ "specEvasionChance", TERMINAL, {} });
+	entries.push_back({ "evasionChanceDamage", CONCATENATIONS, { "specEvasionChance", "damageType1" } });
+	entries.push_back({ "evasion", ALTERNATIVES, { "allEvasionChance", "evasionChanceDamage" } });
+
+	entries.push_back({ "allDodgeChance", TERMINAL, {} });
+	entries.push_back({ "specDodgeChance", TERMINAL, {} });
+	entries.push_back({ "dodgeChanceDamage", CONCATENATIONS, { "specDodgeChance", "damageType1" } });
+	entries.push_back({ "allDodgeReduction", TERMINAL, {} });
+	entries.push_back({ "specDodgeReduction", TERMINAL, {} });
+	entries.push_back({ "dodgeReductionDamage", CONCATENATIONS, { "specDodgeReduction", "damageType1" } });
+	entries.push_back({ "dodge", ALTERNATIVES,
+			{ "allDodgeChance", "dodgeChanceDamage", "allDodgeReduction", "dodgeReductionDamage" } });
+
+	entries.push_back({ "allBlockChance", TERMINAL, {} });
+	entries.push_back({ "specBlockChance", TERMINAL, {} });
+	entries.push_back({ "blockChanceDamage", CONCATENATIONS, { "specBlockChance", "damageType1" } });
+	entries.push_back({ "allBlockReduction", TERMINAL, {} });
+	entries.push_back({ "specBlockReduction", TERMINAL, {} });
+	entries.push_back({ "blockReductionDamage", CONCATENATIONS, { "specBlockReduction", "damageType1" } });
+	entries.push_back({ "block", ALTERNATIVES,
+			{ "allBlockChance", "blockChanceDamage", "allBlockReduction", "blockReductionDamage" } });
+
+	entries.push_back({ "allArmour", TERMINAL, {} });
+	entries.push_back({ "specArmour", TERMINAL, {} });
+	entries.push_back({ "armourDamage", CONCATENATIONS, { "specArmour", "damageType1" } });
+	entries.push_back({ "armour", ALTERNATIVES, { "allArmour", "armourDamage" } });
+	entries.push_back({ "defensive", ALTERNATIVES, { "evasion", "dodge", "block", "armour" } });
+
+	entries.push_back({ "movementSpeed", TERMINAL, {} });
+	entries.push_back({ "cooldown", TERMINAL, {} });
+	entries.push_back({ "stats", ALTERNATIVES, { "offensive", "defensive", "movementSpeed", "cooldown" } });
+
+	entries.push_back({ "property", ALTERNATIVES, { "affect", "stats" } });
 }
 
