@@ -7,7 +7,7 @@
 class Trait
 {
 public:
-	Trait(const int inId)
+	Trait(const std::string inId)
 	{
 		id = inId;
 	}
@@ -16,13 +16,13 @@ public:
 	virtual bool HasChildren() const { return false; }
 	virtual std::vector<Trait*>& GetChildren() { return subTraits; }
 
-	virtual std::vector<int> GetAllTraitIds()
+	virtual std::vector<std::string> GetAllTraitIds()
 	{
-		std::vector<int> result;
+		std::vector<std::string> result;
 		result.push_back(id);
 		for (Trait* trait : GetChildren())
 		{
-			std::vector<int> childTraits = trait->GetAllTraitIds();
+			std::vector<std::string> childTraits = trait->GetAllTraitIds();
 			std::move(childTraits.begin(), childTraits.end(), std::back_inserter(result));
 		}
 		return result;
@@ -30,7 +30,7 @@ public:
 
 	virtual std::string toString() const
 	{
-		std::string out = "( " + std::to_string(id);
+		std::string out = "( " + id;
 		if (HasChildren())
 		{
 			out += " { ";
@@ -45,14 +45,14 @@ public:
 	}
 
 public:
-	int id;
+	std::string id;
 	std::vector<Trait*> subTraits;
 };
 
 class TraitParent : public Trait
 {
 public:
-	TraitParent(const int inId, const std::vector<Trait*>& inSubTraits) : Trait(inId)
+	TraitParent(const std::string inId, const std::vector<Trait*>& inSubTraits) : Trait(inId)
 	{
 		subTraits = inSubTraits;
 	}
@@ -64,7 +64,7 @@ public:
 class TraitChild : public Trait
 {
 public:
-	TraitChild(const int inId) : Trait(inId) {}
+	TraitChild(const std::string inId) : Trait(inId) {}
 	TraitChild() {}
 };
 

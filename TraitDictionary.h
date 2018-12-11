@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 
 class TraitDictEntry
 {
@@ -21,6 +22,11 @@ class TraitDictionary
 {
 public:
 	TraitDictionary();
+
+	TraitDictEntry GetDictEntry(const std::string& key)
+	{
+		return *std::find_if(entries.begin(), entries.end(), [&key](const auto e) { return e.key == key; });
+	}
 
 public:
 	static const int TERMINAL = 0;

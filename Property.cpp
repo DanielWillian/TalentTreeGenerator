@@ -1,30 +1,34 @@
 #include "stdafx.h"
 #include "Property.h"
-#include "TraitConstants.h"
 #include <stdexcept>
 #include <algorithm>
+
+constexpr unsigned int hashString(const char *s, int off = 0)
+{
+	return !s[off] ? 27 : (hashString(s, off+1)*3) ^ s[off];
+}
 
 int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
 {
 	Trait* lhsMasterNode = lhs.traits.front();
 	auto lhsMasterNodeChild = lhsMasterNode->GetChildren().front();
 
-	switch (lhsMasterNodeChild->id)
+	switch (hashString(lhsMasterNodeChild->id.c_str()))
 	{
-		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_AFFECT:
+		case hashString("affect"):
 		{
 			return DistLhsAffect(lhsMasterNodeChild, lhs, rhs);
 			break;
 		}
-		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_STATS:
+		case hashString("stats"):
 		{
 			break;
 		}
-		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_RESOURCE_RELATED:
+		case hashString("resourceRelated"):
 		{
 			break;
 		}
-		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_ALTERATION:
+		case hashString("alteration"):
 		{
 			break;
 		}
@@ -41,24 +45,24 @@ int Property::DistLhsAffect(Trait* trait, Property& lhs, Property& rhs)
 	std::vector<Trait*> lhsTraitChildren = trait->GetChildren();
 	Trait* lhsAffectType = lhsTraitChildren[0];
 	Trait* lhsAffectTypeChild = lhsAffectType->GetChildren().front();
-	std::vector<int> lhsAffectTypeIds = lhsAffectType->GetAllTraitIds();
+	std::vector<std::string> lhsAffectTypeIds = lhsAffectType->GetAllTraitIds();
 
 	Trait* lhsSecondTrait = lhsTraitChildren[1];
-	std::vector<int> lhsSecondTraitIds = lhsSecondTrait->GetAllTraitIds();
+	std::vector<std::string> lhsSecondTraitIds = lhsSecondTrait->GetAllTraitIds();
 
 	Trait* rhsMasterNode = rhs.traits.front();
 	auto rhsMasterNodeChild = rhsMasterNode->GetChildren().front();
-	switch (rhsMasterNodeChild->id)
+	switch (hashString(rhsMasterNodeChild->id.c_str()))
 	{
-		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_AFFECT:
+		case hashString("affect"):
 		{
 			std::vector<Trait*> rhsTraitChildren = rhsMasterNodeChild->GetChildren();
 			Trait* rhsAffectType = rhsTraitChildren[0];
 			Trait* rhsAffectTypeChild = rhsAffectType->GetChildren().front();
-			std::vector<int> rhsAffectTypeIds = rhsAffectType->GetAllTraitIds();
+			std::vector<std::string> rhsAffectTypeIds = rhsAffectType->GetAllTraitIds();
 
 			Trait* rhsSecondTrait = rhsTraitChildren[1];
-			std::vector<int> rhsSecondTraitIds = rhsSecondTrait->GetAllTraitIds();
+			std::vector<std::string> rhsSecondTraitIds = rhsSecondTrait->GetAllTraitIds();
 
 			// Damage to Healing
 			if (lhsSecondTraitIds[0] != rhsSecondTraitIds[0])
@@ -101,15 +105,15 @@ int Property::DistLhsAffect(Trait* trait, Property& lhs, Property& rhs)
 
 			return 1;
 		}
-		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_STATS:
+		case hashString("stats"):
 		{
 			break;
 		}
-		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_RESOURCE_RELATED:
+		case hashString("resourceRelated"):
 		{
 			break;
 		}
-		case TraitConstants::FIRST_LAYER_FIRST_TRAIT_ALTERATION:
+		case hashString("alteration"):
 		{
 			break;
 		}
