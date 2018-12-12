@@ -6,16 +6,16 @@
 class Property
 {
 public:
-	Property(const std::vector<TraitParent*>& inTraits)
+	Property(TraitParent* inTrait)
 	{
-		traits = inTraits;
+		trait = inTrait;
 	}
 
 	static int DistanceBetweenProperties(Property& lhs, Property& rhs);
 
 	bool operator==(const Property& other) const
 	{
-		return traits == other.traits;
+		return trait == other.trait;
 	}
 
 private:
@@ -34,6 +34,6 @@ private:
 	static int DistForDamageType1(const Property& lhs, const Property& rhs);
 
 private:
-	std::vector<TraitParent*> traits;
+	TraitParent* trait;
 };
 
