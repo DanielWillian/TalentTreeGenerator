@@ -33,7 +33,7 @@ private:
 
 	static int DistForDamageType1(const Property& lhs, const Property& rhs);
 
-private:
+public:
 	TraitParent* trait;
 };
 

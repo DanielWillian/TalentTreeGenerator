@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "TraitRepository.h"
-#include <iostream>
 
 TraitRepository::TraitRepository()
 {
@@ -10,7 +9,6 @@ TraitRepository::TraitRepository()
 		possibleTraits.push_back(static_cast<TraitParent*>(trait));
 	}
 }
-
 
 std::vector<TraitParent*> TraitRepository::GetTraitsWithIds(const std::vector<std::string>& ids)
 {
