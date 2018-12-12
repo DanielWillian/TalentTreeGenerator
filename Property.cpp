@@ -22,9 +22,11 @@ int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
 	}
 	else if (std::find(lhsIds.begin(), lhsIds.end(), "resourceRelated") != lhsIds.end())
 	{
+		return DistLhsResourceRelated(lhs, rhs);
 	}
 	else if (std::find(lhsIds.begin(), lhsIds.end(), "alteration") != lhsIds.end())
 	{
+		return DistLhsAlteration(lhs, rhs);
 	}
 
 	return 0;
@@ -213,6 +215,46 @@ int Property::DistLhsStats(Property& lhs, Property& rhs)
 	}
 
 	return 0;
+}
+
+int Property::DistLhsResourceRelated(Property& lhs, Property& rhs)
+{
+	auto lhsIds = lhs.traits.front()->GetAllTraitIds();
+	auto rhsIds = rhs.traits.front()->GetAllTraitIds();
+
+	if (std::find(rhsIds.begin(), rhsIds.end(), "resourceRelated") != rhsIds.end())
+	{
+		std::vector<std::vector<std::string>> idListOfPossibleEquals = { {"mana", "manaRegen", "manaVemp"},
+			{"health", "healthRegen", "healthVamp"}, {"shield", "shieldRegen", "shieldVamp"} };
+		for (auto& idList : idListOfPossibleEquals)
+		{
+			for (auto& lhsId : idList)
+			{
+				const bool bLhsContainId = std::find(lhsIds.begin(), lhsIds.end(), lhsId) != lhsIds.end();
+				for (auto& rhsId : idList)
+				{
+					const bool bRhsContainId = std::find(rhsIds.begin(), rhsIds.end(), rhsId) != rhsIds.end();
+					if (bLhsContainId && bRhsContainId)
+					{
+						return 1;
+					}
+				}
+			}
+		}
+
+		return 20;
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "alteration") != rhsIds.end())
+	{
+		return 1;
+	}
+
+	return 0;
+}
+
+int Property::DistLhsAlteration(Property& lhs, Property& rhs)
+{
+	return 1;
 }
 
 int Property::DistForDamageOrHealing(const Property& lhs, const Property& rhs)
