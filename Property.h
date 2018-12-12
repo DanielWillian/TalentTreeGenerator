@@ -13,7 +13,14 @@ public:
 
 	static int DistanceBetweenProperties(Property& lhs, Property& rhs);
 
+	bool operator==(const Property& other) const
+	{
+		return traits == other.traits;
+	}
+
 private:
+	static Property* GetLesserProperty(Property& lhs, Property& rhs);
+
 	static int DistLhsAffect(Property& lhs, Property& rhs);
 
 	static int DistLhsStats(Property& lhs, Property& rhs);

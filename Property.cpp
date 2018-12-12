@@ -3,33 +3,62 @@
 #include <stdexcept>
 #include <algorithm>
 
-constexpr unsigned int hashString(const char *s, int off = 0)
-{
-	return !s[off] ? 27 : (hashString(s, off+1)*3) ^ s[off];
-}
-
 int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
 {
-	std::vector<std::string> lhsIds = lhs.traits.front()->GetAllTraitIds();
+	Property* lesserProperty = GetLesserProperty(lhs, rhs);
+	Property* otherProperty = *lesserProperty == lhs ? &rhs : &lhs;
+	std::vector<std::string> lesserIds = lesserProperty->traits.front()->GetAllTraitIds();
 
-	if (std::find(lhsIds.begin(), lhsIds.end(), "affect") != lhsIds.end())
+	if (std::find(lesserIds.begin(), lesserIds.end(), "affect") != lesserIds.end())
 	{
-		return DistLhsAffect(lhs, rhs);
+		return DistLhsAffect(*lesserProperty, *otherProperty);
 	}
-	else if (std::find(lhsIds.begin(), lhsIds.end(), "stats") != lhsIds.end())
+	else if (std::find(lesserIds.begin(), lesserIds.end(), "stats") != lesserIds.end())
 	{
-		return DistLhsStats(lhs, rhs);
+		return DistLhsStats(*lesserProperty, *otherProperty);
 	}
-	else if (std::find(lhsIds.begin(), lhsIds.end(), "resourceRelated") != lhsIds.end())
+	else if (std::find(lesserIds.begin(), lesserIds.end(), "resourceRelated") != lesserIds.end())
 	{
-		return DistLhsResourceRelated(lhs, rhs);
+		return DistLhsResourceRelated(*lesserProperty, *otherProperty);
 	}
-	else if (std::find(lhsIds.begin(), lhsIds.end(), "alteration") != lhsIds.end())
+	else if (std::find(lesserIds.begin(), lesserIds.end(), "alteration") != lesserIds.end())
 	{
-		return DistLhsAlteration(lhs, rhs);
+		return DistLhsAlteration(*lesserProperty, *otherProperty);
 	}
 
 	return 0;
+}
+
+Property* Property::GetLesserProperty(Property& lhs, Property& rhs)
+{
+	std::vector<std::string> lhsIds = lhs.traits.front()->GetAllTraitIds();
+	std::vector<std::string> rhsIds = rhs.traits.front()->GetAllTraitIds();
+
+	if (std::find(lhsIds.begin(), lhsIds.end(), "affect") != lhsIds.end())
+	{
+		return &lhs;
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "affect") != rhsIds.end())
+	{
+		return &rhs;
+	}
+	else if (std::find(lhsIds.begin(), lhsIds.end(), "stats") != lhsIds.end())
+	{
+		return &lhs;
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "stats") != rhsIds.end())
+	{
+		return &rhs;
+	}
+	else if (std::find(lhsIds.begin(), lhsIds.end(), "resourceRelated") != lhsIds.end())
+	{
+		return &lhs;
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "resourceRelated") != rhsIds.end())
+	{
+		return &rhs;
+	}
+	return &lhs;
 }
 
 int Property::DistLhsAffect(Property& lhs, Property& rhs)
