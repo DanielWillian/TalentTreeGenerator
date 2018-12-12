@@ -16,6 +16,8 @@ public:
 private:
 	static int DistLhsAffect(Property& lhs, Property& rhs);
 
+	static int DistForDamageOrHealing(const Property& lhs, const Property& rhs);
+
 private:
 	std::vector<TraitParent*> traits;
 };
