@@ -109,6 +109,34 @@ TraitDictionary::TraitDictionary()
 	entries.push_back({ "cooldown", TERMINAL, {} });
 	entries.push_back({ "stats", ALTERNATIVES, { "offensive", "defensive", "movementSpeed", "cooldown" } });
 
-	entries.push_back({ "property", ALTERNATIVES, { "affect", "stats" } });
+
+
+	entries.push_back({ "health", TERMINAL, {} });
+	entries.push_back({ "mana", TERMINAL, {} });
+	entries.push_back({ "shield", TERMINAL, {} });
+	entries.push_back({ "resource", ALTERNATIVES, { "health", "mana", "shield" } });
+
+	entries.push_back({ "healthRegen", TERMINAL, {} });
+	entries.push_back({ "manaRegen", TERMINAL, {} });
+	entries.push_back({ "shieldRegen", TERMINAL, {} });
+	entries.push_back({ "regen", ALTERNATIVES, { "healthRegen", "manaRegen", "shieldRegen" } });
+
+	entries.push_back({ "healthVamp", TERMINAL, {} });
+	entries.push_back({ "manaVamp", TERMINAL, {} });
+	entries.push_back({ "shieldVamp", TERMINAL, {} });
+	entries.push_back({ "vampirism", ALTERNATIVES, { "healthVamp", "manaVamp", "shieldVamp" } });
+	entries.push_back({ "resourceRecovery", ALTERNATIVES, { "regen", "vampirism" } });
+	entries.push_back({ "resourceRelated", ALTERNATIVES, { "resource", "resourceRecovery" } });
+
+
+
+	entries.push_back({ "beneficial", TERMINAL, {} });
+	entries.push_back({ "alterationBeneficial", CONCATENATIONS, { "alterationType", "beneficial" } });
+
+	entries.push_back({ "detrimental", TERMINAL, {} });
+	entries.push_back({ "alterationDetrimental", CONCATENATIONS, { "alterationType", "detrimental" } });
+	entries.push_back({ "alteration", ALTERNATIVES, { "alterationBeneficial", "alterationDetrimental" } });
+
+	entries.push_back({ "property", ALTERNATIVES, { "affect", "stats", "resourceRelated", "alteration" } });
 }
 
