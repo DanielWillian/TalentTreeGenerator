@@ -18,6 +18,7 @@ int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
 	}
 	else if (std::find(lhsIds.begin(), lhsIds.end(), "stats") != lhsIds.end())
 	{
+		return DistLhsStats(lhs, rhs);
 	}
 	else if (std::find(lhsIds.begin(), lhsIds.end(), "resourceRelated") != lhsIds.end())
 	{
@@ -118,6 +119,102 @@ int Property::DistLhsAffect(Property& lhs, Property& rhs)
 	return 0;
 }
 
+int Property::DistLhsStats(Property& lhs, Property& rhs)
+{
+	auto lhsIds = lhs.traits.front()->GetAllTraitIds();
+	auto rhsIds = rhs.traits.front()->GetAllTraitIds();
+
+	if (std::find(rhsIds.begin(), rhsIds.end(), "stats") != rhsIds.end())
+	{
+		const bool bLhsContainOffensive = std::find(lhsIds.begin(), lhsIds.end(), "offensive") != lhsIds.end();
+		const bool bRhsContainOffensive = std::find(rhsIds.begin(), rhsIds.end(), "offensive") != rhsIds.end();
+		const bool bLhsContainDefensive = std::find(lhsIds.begin(), lhsIds.end(), "defensive") != lhsIds.end();
+		const bool bRhsContainDefensive = std::find(rhsIds.begin(), rhsIds.end(), "defensive") != rhsIds.end();
+
+		if ((bLhsContainOffensive && bRhsContainDefensive) || (bLhsContainDefensive && bRhsContainOffensive))
+		{
+			return 20;
+		}
+
+		if (bLhsContainOffensive && bRhsContainOffensive)
+		{
+			int result = DistForDamageType1(lhs, rhs);
+			if (result > 5)
+			{
+				return result;
+			}
+			const bool bLhsSpecCritical =
+					std::find(lhsIds.begin(), lhsIds.end(), "specCriticalChance") != lhsIds.end() ||
+					std::find(lhsIds.begin(), lhsIds.end(), "specCriticalEffect") != lhsIds.end();
+			const bool bRhsSpecCritical =
+					std::find(rhsIds.begin(), rhsIds.end(), "specCriticalChance") != rhsIds.end() ||
+					std::find(rhsIds.begin(), rhsIds.end(), "specCriticalEffect") != rhsIds.end();
+			if (bLhsSpecCritical && bRhsSpecCritical)
+			{
+				result = DistForDamageOrHealing(lhs, rhs);
+				if (result > 5)
+				{
+					return result;
+				}
+			}
+		}
+
+		if (bLhsContainDefensive && bRhsContainDefensive)
+		{
+			int result = DistForDamageType1(lhs, rhs);
+			if (result > 5)
+			{
+				return result;
+			}
+
+			for (auto& id : {"evasion", "dodge", "block", "armour"})
+			{
+				const bool bLhsContainId = std::find(lhsIds.begin(), lhsIds.end(), id) != lhsIds.end();
+				const bool bRhsContainId = std::find(rhsIds.begin(), rhsIds.end(), id) != rhsIds.end();
+				if (bLhsContainId && bRhsContainId)
+				{
+					return 1;
+				}
+			}
+
+			return 20;
+		}
+
+		return 1;
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "resourceRelated") != rhsIds.end())
+	{
+		const bool bLhsContainOffensive = std::find(lhsIds.begin(), lhsIds.end(), "offensive") != lhsIds.end();
+		const bool bLhsContainDefensive = std::find(lhsIds.begin(), lhsIds.end(), "defensive") != lhsIds.end();
+		const bool bRhsContainVampirism = std::find(rhsIds.begin(), rhsIds.end(), "vampirism") != rhsIds.end();
+
+		if (bLhsContainOffensive && bRhsContainVampirism)
+		{
+			return 5;
+		}
+		if (bLhsContainDefensive && !bRhsContainVampirism)
+		{
+			return 5;
+		}
+
+		return 20;
+	}
+	else if (std::find(rhsIds.begin(), rhsIds.end(), "alteration") != rhsIds.end())
+	{
+		const bool bLhsContainOffensive = std::find(lhsIds.begin(), lhsIds.end(), "offensive") != lhsIds.end();
+		const bool bLhsContainDefensive = std::find(lhsIds.begin(), lhsIds.end(), "defensive") != lhsIds.end();
+
+		if (bLhsContainOffensive)
+		{
+			return 1;
+		}
+
+		return 20;
+	}
+
+	return 0;
+}
+
 int Property::DistForDamageOrHealing(const Property& lhs, const Property& rhs)
 {
 	auto lhsIds = lhs.traits.front()->GetAllTraitIds();
@@ -161,6 +258,26 @@ int Property::DistForDamageOrHealing(const Property& lhs, const Property& rhs)
 					return 20;
 				}
 			}
+		}
+	}
+
+	return 1;
+}
+
+int Property::DistForDamageType1(const Property& lhs, const Property& rhs)
+{
+	auto lhsIds = lhs.traits.front()->GetAllTraitIds();
+	auto rhsIds = rhs.traits.front()->GetAllTraitIds();
+
+	const bool bLhsContainDamageType = std::find(lhsIds.begin(), lhsIds.end(), "damageType1") != lhsIds.end();
+	const bool bRhsContainDamageType = std::find(rhsIds.begin(), rhsIds.end(), "damageType1") != rhsIds.end();
+	if (bLhsContainDamageType && bRhsContainDamageType)
+	{
+		auto lhsDamageIds = lhs.traits.front()->GetTraitWithId("damageType1")->GetAllTraitIds();
+		auto rhsDamageIds = rhs.traits.front()->GetTraitWithId("damageType1")->GetAllTraitIds();
+		if (lhsDamageIds != rhsDamageIds)
+		{
+			return 20;
 		}
 	}
 
