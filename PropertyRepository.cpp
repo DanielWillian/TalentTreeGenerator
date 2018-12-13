@@ -8,8 +8,30 @@ PropertyRepository::PropertyRepository()
 	{
 		allProperties.push_back(new Property(traitParent));
 	}
+
+	auto properties = GetPropertiesWithoutIds(allProperties, {"damageType", "healingType", "damageType1"});
+	level1Properties.insert(std::begin(properties), std::end(properties));
 }
 
+std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
+		const std::vector<Property*>& properties,
+		const std::vector<std::string>& ids)
+{
+	auto result = properties;
+
+	for (const auto& id : ids)
+	{
+		result.erase(std::remove_if(result.begin(), result.end(),
+				[&](auto* p) -> bool
+				{
+					const auto& traitIds = p->trait->GetAllTraitIds();
+					return std::find(traitIds.begin(), traitIds.end(), id) != traitIds.end();
+				}),
+				result.end());
+	}
+
+	return result;
+}
 
 std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vector<std::string>& ids)
 {
