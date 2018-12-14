@@ -3,10 +3,10 @@
 #include <stdexcept>
 #include <algorithm>
 
-int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
+int Property::DistanceBetweenProperties(const Property& lhs, const Property& rhs)
 {
-	Property* lesserProperty = GetLesserProperty(lhs, rhs);
-	Property* otherProperty = *lesserProperty == lhs ? &rhs : &lhs;
+	const Property* lesserProperty = GetLesserProperty(lhs, rhs);
+	const Property* otherProperty = *lesserProperty == lhs ? &rhs : &lhs;
 	std::vector<std::string> lesserIds = lesserProperty->trait->GetAllTraitIds();
 
 	if (std::find(lesserIds.begin(), lesserIds.end(), "affect") != lesserIds.end())
@@ -29,7 +29,7 @@ int Property::DistanceBetweenProperties(Property& lhs, Property& rhs)
 	return 0;
 }
 
-Property* Property::GetLesserProperty(Property& lhs, Property& rhs)
+const Property* Property::GetLesserProperty(const Property& lhs, const Property& rhs)
 {
 	std::vector<std::string> lhsIds = lhs.trait->GetAllTraitIds();
 	std::vector<std::string> rhsIds = rhs.trait->GetAllTraitIds();
@@ -61,7 +61,7 @@ Property* Property::GetLesserProperty(Property& lhs, Property& rhs)
 	return &lhs;
 }
 
-int Property::DistLhsAffect(Property& lhs, Property& rhs)
+int Property::DistLhsAffect(const Property& lhs, const Property& rhs)
 {
 	auto lhsIds = lhs.trait->GetAllTraitIds();
 	auto rhsIds = rhs.trait->GetAllTraitIds();
@@ -150,7 +150,7 @@ int Property::DistLhsAffect(Property& lhs, Property& rhs)
 	return 0;
 }
 
-int Property::DistLhsStats(Property& lhs, Property& rhs)
+int Property::DistLhsStats(const Property& lhs, const Property& rhs)
 {
 	auto lhsIds = lhs.trait->GetAllTraitIds();
 	auto rhsIds = rhs.trait->GetAllTraitIds();
@@ -246,7 +246,7 @@ int Property::DistLhsStats(Property& lhs, Property& rhs)
 	return 0;
 }
 
-int Property::DistLhsResourceRelated(Property& lhs, Property& rhs)
+int Property::DistLhsResourceRelated(const Property& lhs, const Property& rhs)
 {
 	auto lhsIds = lhs.trait->GetAllTraitIds();
 	auto rhsIds = rhs.trait->GetAllTraitIds();
@@ -281,7 +281,7 @@ int Property::DistLhsResourceRelated(Property& lhs, Property& rhs)
 	return 0;
 }
 
-int Property::DistLhsAlteration(Property& lhs, Property& rhs)
+int Property::DistLhsAlteration(const Property& lhs, const Property& rhs)
 {
 	return 1;
 }

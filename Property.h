@@ -11,7 +11,7 @@ public:
 		trait = inTrait;
 	}
 
-	static int DistanceBetweenProperties(Property& lhs, Property& rhs);
+	static int DistanceBetweenProperties(const Property& lhs, const Property& rhs);
 
 	bool operator==(const Property& other) const
 	{
@@ -19,15 +19,15 @@ public:
 	}
 
 private:
-	static Property* GetLesserProperty(Property& lhs, Property& rhs);
+	static const Property* GetLesserProperty(const Property& lhs, const Property& rhs);
 
-	static int DistLhsAffect(Property& lhs, Property& rhs);
+	static int DistLhsAffect(const Property& lhs, const Property& rhs);
 
-	static int DistLhsStats(Property& lhs, Property& rhs);
+	static int DistLhsStats(const Property& lhs, const Property& rhs);
 
-	static int DistLhsResourceRelated(Property& lhs, Property& rhs);
+	static int DistLhsResourceRelated(const Property& lhs, const Property& rhs);
 
-	static int DistLhsAlteration(Property& lhs, Property& rhs);
+	static int DistLhsAlteration(const Property& lhs, const Property& rhs);
 
 	static int DistForDamageOrHealing(const Property& lhs, const Property& rhs);
 

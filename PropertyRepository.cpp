@@ -11,6 +11,7 @@ PropertyRepository::PropertyRepository()
 
 	auto properties = GetPropertiesWithoutIds(allProperties, {"damageType", "healingType", "damageType1"});
 	level1Properties.insert(std::begin(properties), std::end(properties));
+	level3Properties.insert(std::begin(properties), std::end(properties));
 }
 
 std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
