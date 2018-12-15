@@ -42,6 +42,12 @@
     <ClInclude Include="PathGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TalentEntry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Talent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
