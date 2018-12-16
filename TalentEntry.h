@@ -10,6 +10,19 @@ public:
 	{
 	}
 
+	virtual std::string toString() const
+	{
+		std::string out = "( { ";
+		for (auto& id : property->trait->GetTerminalTraitsId())
+		{
+			out += id + ", ";
+		}
+		out += "}, " + modifier;
+		out += ", " + std::to_string(value);
+		out += " )";
+		return out;
+	}
+
 public:
 	Property* property;
 	std::string modifier;

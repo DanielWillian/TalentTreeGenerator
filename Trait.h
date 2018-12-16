@@ -28,6 +28,24 @@ public:
 		return result;
 	}
 
+	virtual std::vector<std::string> GetTerminalTraitsId()
+	{
+		std::vector<std::string> result;
+		if (!HasChildren())
+		{
+			result.push_back(id);
+		}
+		else
+		{
+			for (Trait* trait : GetChildren())
+			{
+				std::vector<std::string> childTraits = trait->GetTerminalTraitsId();
+				std::move(childTraits.begin(), childTraits.end(), std::back_inserter(result));
+			}
+		}
+		return result;
+	}
+
 	virtual Trait* GetTraitWithId(const std::string& id)
 	{
 		if (this->id == id)
