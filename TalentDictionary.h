@@ -28,7 +28,7 @@ class TalentDictionary
 public:
 	TalentDictionary();
 
-	TalentDictEntry GetDictEntry(const std::string& key)
+	TalentDictEntry GetDictEntry(const std::string& key) const
 	{
 		return *std::find_if(entries.begin(), entries.end(), [&key](const auto e) { return e.key == key; });
 	}
