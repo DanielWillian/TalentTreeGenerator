@@ -15,6 +15,8 @@ TalentDictionary::TalentDictionary()
 	entries.push_back({"castSpeed", "*", BASE, {0.95f, 0.99f}});
 	entries.push_back({"allCriticalChance", "*", BASE, {1.01f, 1.05f}});
 	entries.push_back({"allCriticalEffect", "*", BASE, {1.01f, 1.1f}});
+	entries.push_back({"specCriticalChance", "*", BASE, {1.01f, 1.05f}});
+	entries.push_back({"specCriticalEffect", "*", BASE, {1.01f, 1.1f}});
 	entries.push_back({"allHitChance", "*", BASE, {1.01f, 1.03f}});
 	entries.push_back({"allEvasionChance", "*", BASE, {1.01f, 1.15f}});
 	entries.push_back({"allDodgeChance", "*", BASE, {1.01f, 1.05f}});

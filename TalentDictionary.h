@@ -33,6 +33,8 @@ public:
 		return *std::find_if(entries.begin(), entries.end(), [&key](const auto e) { return e.key == key; });
 	}
 
+	virtual std::pair<int, int> GetPropertiesNumberRange() const { return {1, 1}; }
+
 public:
 	static const int BASE = 0;
 	static const int MODIFIER = 1;

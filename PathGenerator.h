@@ -26,6 +26,14 @@ public:
 	std::unordered_set<Property*> GetAllRelatedProperties(const Property* property,
 			std::unordered_set<Property*> properties) const;
 
+private:
+	template<typename Iter>
+	Iter SelectRandom(Iter start, Iter end) const;
+
+	int GetRandomInt(const int min, const int max) const;
+
+	float GetRandomFloat(const float min, const float max) const;
+
 public:
 	std::unordered_set<Property*> lesserProperties;
 

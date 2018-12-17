@@ -7,24 +7,6 @@
 #include <random>
 #include <iterator>
 
-template<typename Iter, typename RandomGenerator>
-Iter SelectRandom(Iter start, Iter end, RandomGenerator& randomGen)
-{
-	std::uniform_int_distribution<> dis(0, std::distance(start, end) - 1);
-	std::advance(start, dis(randomGen));
-
-	return start;
-}
-
-template<typename Iter>
-Iter SelectRandom(Iter start, Iter end)
-{
-	static std::random_device rd;
-	static std::mt19937 gen(rd());
-
-	return SelectRandom(start, end, gen);
-}
-
 std::unordered_set<Property*> PathGenerator::GetAllRelatedProperties(
 		const Property* property,
 		std::unordered_set<Property*> properties) const
@@ -47,18 +29,49 @@ Talent PathGenerator::GenerateRandomTalent(const bool lesser) const
 	auto& properties = lesser ? lesserProperties : greaterProperties;
 	auto* dictionary = lesser ? lesserDictionary : greaterDictionary;
 	auto* property = GetRandomProperty(properties);
-	TalentDictEntry dictEntry = dictionary->GetDictEntry(property->trait->GetTerminalTraitsId()[0]);
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_real_distribution<float> dis(dictEntry.values.first,
-			std::nextafter(dictEntry.values.second, std::numeric_limits<float>::max()));
-	float talentValue = roundf(dis(gen) * 100) / 100;
 
-	return Talent({ {property, dictEntry.modifier, talentValue} });
+	auto propertyRange = dictionary->GetPropertiesNumberRange();
+	const int numberOfProperties = GetRandomInt(propertyRange.first, propertyRange.second);
+
+	std::vector<TalentEntry> tupleList;
+	for (int i = 0; i < numberOfProperties; i++)
+	{
+		TalentDictEntry dictEntry = dictionary->GetDictEntry(property->trait->GetTerminalTraitsId()[0]);
+		const float randomValue = GetRandomFloat(dictEntry.values.first, dictEntry.values.second);
+		const float talentValue = ((roundf(randomValue * 100) / 100 - 1) / numberOfProperties) + 1;
+
+		tupleList.push_back({property, dictEntry.modifier, talentValue});
+	}
+
+	return Talent(tupleList);
+}
+
+int PathGenerator::GetRandomInt(const int min, const int max) const
+{
+	static std::random_device rd;
+	static std::mt19937 gen(rd());
+	std::uniform_int_distribution<int> dis(min, max);
+	return dis(gen);
+}
+
+float PathGenerator::GetRandomFloat(const float min, const float max) const
+{
+	static std::random_device rd;
+	static std::mt19937 gen(rd());
+	std::uniform_real_distribution<float> dis(min, std::nextafter(max, std::numeric_limits<float>::max()));
+	return dis(gen);
 }
 
 Property* PathGenerator::GetRandomProperty(std::unordered_set<Property*> properties) const
 {
 	return *SelectRandom(properties.begin(), properties.end());
+}
+
+template<typename Iter>
+Iter PathGenerator::SelectRandom(Iter start, Iter end) const
+{
+	std::advance(start, GetRandomInt(0, std::distance(start, end) - 1));
+
+	return start;
 }
 
