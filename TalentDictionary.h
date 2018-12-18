@@ -33,6 +33,10 @@ public:
 		return *std::find_if(entries.begin(), entries.end(), [&key](const auto e) { return e.key == key; });
 	}
 
+	virtual std::vector<TalentDictEntry> GetDictEntries(const std::string& key) const;
+
+	virtual std::vector<TalentDictEntry> GetModifierEntries() const;
+
 	virtual std::pair<int, int> GetPropertiesNumberRange() const { return {1, 1}; }
 
 public:

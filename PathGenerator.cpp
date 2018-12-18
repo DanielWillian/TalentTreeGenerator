@@ -96,9 +96,26 @@ Talent PathGenerator::GenerateRandomTalent(const std::unordered_set<Property*>& 
 	{
 		auto* property = GetRandomProperty(properties);
 
-		TalentDictEntry dictEntry = dictionary->GetDictEntry(property->trait->GetTerminalTraitsId()[0]);
+		auto terminalIds = property->trait->GetTerminalTraitsId();
+		auto dictEntries = dictionary->GetDictEntries(terminalIds[0]);
+		TalentDictEntry dictEntry = *SelectRandom(dictEntries.begin(), dictEntries.end());
+
+		float valueModifier = 1;
+		auto modifierEntries = dictionary->GetModifierEntries();
+		for (auto it = terminalIds.begin() + 1; it != terminalIds.end(); it++)
+		{
+			for (auto& entry : modifierEntries)
+			{
+				if (*it == entry.key)
+				{
+					valueModifier *= GetRandomFloat(entry.values.first, entry.values.second);
+				}
+			}
+		}
+
 		const float randomValue = GetRandomFloat(dictEntry.values.first, dictEntry.values.second);
-		const float talentValue = ((roundf(randomValue * 100) / 100 - 1) / numberOfProperties) + 1;
+		float talentValue = ((roundf(randomValue * 100) / 100 - 1) / numberOfProperties) + 1;
+		talentValue = std::min(talentValue, dictEntry.values.second) * valueModifier;
 
 		tupleList.push_back({property, dictEntry.modifier, talentValue});
 	}
