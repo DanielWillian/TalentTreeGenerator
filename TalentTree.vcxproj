@@ -154,6 +154,8 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Talent.h" />
     <ClInclude Include="TalentDictionary.h" />
+    <ClInclude Include="TalentDictionaryLevel1.h" />
+    <ClInclude Include="TalentDictionaryLevel3.h" />
     <ClInclude Include="TalentEntry.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Trait.h" />
@@ -172,6 +174,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TalentDictionary.cpp" />
+    <ClCompile Include="TalentDictionaryLevel1.cpp" />
+    <ClCompile Include="TalentDictionaryLevel3.cpp" />
     <ClCompile Include="TalentTree.cpp" />
     <ClCompile Include="TraitDictionary.cpp" />
     <ClCompile Include="TraitRepository.cpp" />

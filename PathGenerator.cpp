@@ -35,7 +35,10 @@ std::vector<Talent> PathGenerator::GeneratePath(int numLesser, int numGreater)
 	result.push_back(GenerateRandomTalent(true));
 	numLesser--;
 	std::unordered_set<Property*> lesserPossibleProperties = lesserProperties;
-	IntersectionOfProperties(lesserPossibleProperties, result[0]);
+	for (auto& talent : result)
+	{
+		IntersectionOfProperties(lesserPossibleProperties, talent);
+	}
 	for (int i = 0; i < numLesser; i++)
 	{
 		Talent talent = GenerateRandomTalent(lesserPossibleProperties, lesserDictionary);
@@ -44,7 +47,10 @@ std::vector<Talent> PathGenerator::GeneratePath(int numLesser, int numGreater)
 	}
 
 	std::unordered_set<Property*> greaterPossibleProperties = greaterProperties;
-	IntersectionOfProperties(greaterPossibleProperties, result[0]);
+	for (auto& talent : result)
+	{
+		IntersectionOfProperties(greaterPossibleProperties, talent);
+	}
 	for (int i = 0; i < numGreater; i++)
 	{
 		Talent talent = GenerateRandomTalent(greaterPossibleProperties, greaterDictionary);
@@ -105,7 +111,7 @@ Talent PathGenerator::GenerateRandomTalent(const std::unordered_set<Property*>& 
 		dictEntries.erase(std::remove_if(dictEntries.begin(), dictEntries.end(),
 				[&] (const auto& e)
 				{
-					return alreadyHasProperty ? possibleEntryIt->modifier == e.modifier : false;
+					return alreadyHasProperty ? possibleEntryIt->modifier != e.modifier : false;
 				}),
 				dictEntries.end());
 		TalentDictEntry dictEntry = *SelectRandom(dictEntries.begin(), dictEntries.end());
@@ -124,8 +130,8 @@ Talent PathGenerator::GenerateRandomTalent(const std::unordered_set<Property*>& 
 		}
 
 		const float randomValue = GetRandomFloat(dictEntry.values.first, dictEntry.values.second);
-		float talentValue = ((roundf(randomValue * 100) / 100 - 1) * valueModifier / numberOfProperties) + 1;
-		talentValue += alreadyHasProperty ? possibleEntryIt->value : 0;
+		float talentValue = (roundf((randomValue - 1) * valueModifier / numberOfProperties * 100) / 100) + 1;
+		talentValue += alreadyHasProperty ? possibleEntryIt->value - 1 : 0;
 		talentValue = std::min(talentValue, dictEntry.values.second);
 
 		if (!alreadyHasProperty)
@@ -153,7 +159,8 @@ float PathGenerator::GetRandomFloat(const float min, const float max) const
 {
 	static std::random_device rd;
 	static std::mt19937 gen(rd());
-	std::uniform_real_distribution<float> dis(min, std::nextafter(max, std::numeric_limits<float>::max()));
+	const float nextAfter = std::nextafter(max, std::numeric_limits<float>::max());
+	std::uniform_real_distribution<float> dis(min, nextAfter);
 	return dis(gen);
 }
 
