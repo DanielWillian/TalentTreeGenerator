@@ -6,10 +6,16 @@ PropertyRepository::PropertyRepository()
 	std::vector<TraitParent*> traitList = traitRepository.possibleTraits;
 	for (auto* traitParent : traitList)
 	{
-		allProperties.push_back(new Property(traitParent));
+		allProperties.push_back(std::unique_ptr<Property>(new Property(traitParent)));
 	}
 
-	auto properties = GetPropertiesWithoutIds(allProperties, {"damageType", "healingType", "damageType1"});
+	std::vector<Property*> properties;
+	for (const auto& ptr : allProperties)
+	{
+		properties.push_back(ptr.get());
+	}
+
+	properties = GetPropertiesWithoutIds(properties, {"damageType", "healingType", "damageType1"});
 	level1Properties.insert(std::begin(properties), std::end(properties));
 	level3Properties.insert(std::begin(properties), std::end(properties));
 }
@@ -38,7 +44,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vecto
 {
 	std::vector<Property*> result;
 
-	for (auto* property : allProperties)
+	for (const auto& property : allProperties)
 	{
 		bool bFound = false;
 		for (auto& id : ids)
@@ -59,7 +65,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vecto
 		}
 		if (bFound)
 		{
-			result.push_back(property);
+			result.push_back(property.get());
 		}
 	}
 

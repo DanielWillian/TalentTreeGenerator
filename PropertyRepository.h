@@ -3,6 +3,7 @@
 #include "Property.h"
 #include "TraitRepository.h"
 #include <unordered_set>
+#include <memory>
 
 class PropertyRepository
 {
@@ -16,7 +17,7 @@ private:
 			const std::vector<std::string>& ids);
 
 public:
-	std::vector<Property*> allProperties;
+	std::vector<std::unique_ptr<Property>> allProperties;
 
 	std::unordered_set<Property*> level1Properties;
 
