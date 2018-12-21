@@ -46,7 +46,8 @@ std::vector<Trait*> TraitRepository::GenerateTraitsFromDictEntry(const TraitDict
 {
 	if (dictEntry.type == TraitDictionary::TERMINAL)
 	{
-		return { new TraitChild(dictEntry.key) };
+		std::unique_ptr<Trait> ptr(new TraitChild(dictEntry.key));
+		return { GetTrait(ptr) };
 	}
 	else if (dictEntry.type == TraitDictionary::ALTERNATIVES)
 	{
@@ -55,7 +56,8 @@ std::vector<Trait*> TraitRepository::GenerateTraitsFromDictEntry(const TraitDict
 		{
 			for (auto* trait : GenerateTraitsFromDictEntry(traitDictionary.GetDictEntry(value)))
 			{
-				result.push_back({ new TraitParent(dictEntry.key, { trait }) });
+				std::unique_ptr<Trait> ptr(new TraitParent(dictEntry.key, { trait }));
+				result.push_back({ GetTrait(ptr) });
 			}
 		}
 		return result;
@@ -71,7 +73,8 @@ std::vector<Trait*> TraitRepository::GenerateTraitsFromDictEntry(const TraitDict
 		std::vector<Trait*> result;
 		for (auto& traitList : permutedTraits)
 		{
-			result.push_back({ new TraitParent(dictEntry.key, traitList) });
+			std::unique_ptr<Trait> ptr(new TraitParent(dictEntry.key, traitList));
+			result.push_back({ GetTrait(ptr) });
 		}
 		return result;
 	}
@@ -105,5 +108,20 @@ std::vector<std::vector<T*>> TraitRepository::PermuteLists(const std::vector<std
 	}
 
 	return listPermutation;
+}
+
+Trait* TraitRepository::GetTrait(std::unique_ptr<Trait>& trait)
+{
+	auto possibleSaved = std::find_if(allTraits.begin(), allTraits.end(),
+			[&] (const auto& t) { return *t == *trait; });
+	if (possibleSaved == allTraits.end())
+	{
+		allTraits.push_back(std::move(trait));
+		return allTraits.back().get();
+	}
+	else
+	{
+		return possibleSaved->get();
+	}
 }
 

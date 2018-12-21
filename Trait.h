@@ -7,16 +7,26 @@
 class Trait
 {
 public:
+	Trait() {}
 	Trait(const std::string inId)
 	{
 		id = inId;
 	}
-	Trait() {}
+	Trait(const std::string inId, const std::vector<Trait*>& inSubTraits) : Trait(inId)
+	{
+		subTraits = inSubTraits;
+	}
+	Trait(const Trait& other)
+	{
+		id = other.id;
+		subTraits = other.subTraits;
+	}
 
 	virtual bool HasChildren() const { return false; }
 	virtual std::vector<Trait*>& GetChildren() { return subTraits; }
+	virtual const std::vector<Trait*>& GetChildren() const { return subTraits; }
 
-	virtual std::vector<std::string> GetAllTraitIds()
+	virtual std::vector<std::string> GetAllTraitIds() const
 	{
 		std::vector<std::string> result;
 		result.push_back(id);
@@ -82,6 +92,11 @@ public:
 		return out;
 	}
 
+	virtual bool operator==(const Trait& rhs) const
+	{
+		return id == rhs.id && subTraits == rhs.subTraits;
+	}
+
 public:
 	std::string id;
 	std::vector<Trait*> subTraits;
@@ -90,11 +105,8 @@ public:
 class TraitParent : public Trait
 {
 public:
-	TraitParent(const std::string inId, const std::vector<Trait*>& inSubTraits) : Trait(inId)
-	{
-		subTraits = inSubTraits;
-	}
 	TraitParent() {}
+	TraitParent(const std::string inId, const std::vector<Trait*>& inSubTraits) : Trait(inId, inSubTraits) {}
 
 	virtual bool HasChildren() const override { return true; }
 };
