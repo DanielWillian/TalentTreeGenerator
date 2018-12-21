@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <memory>
 
 class TraitDictEntry
 {
@@ -23,9 +24,9 @@ class TraitDictionary
 public:
 	TraitDictionary();
 
-	TraitDictEntry GetDictEntry(const std::string& key)
+	const TraitDictEntry& GetDictEntry(const std::string& key)
 	{
-		return *std::find_if(entries.begin(), entries.end(), [&key](const auto e) { return e.key == key; });
+		return **std::find_if(entries.begin(), entries.end(), [&key](const auto& e) { return e->key == key; });
 	}
 
 public:
@@ -33,7 +34,7 @@ public:
 	static const int ALTERNATIVES = 1;
 	static const int CONCATENATIONS = 2;
 
-public:
-	std::vector<TraitDictEntry> entries;
+private:
+	std::vector<std::unique_ptr<TraitDictEntry>> entries;
 };
 
