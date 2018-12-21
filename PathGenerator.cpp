@@ -109,34 +109,34 @@ Talent PathGenerator::GenerateRandomTalent(const std::unordered_set<Property*>& 
 		auto terminalIds = property->trait->GetTerminalTraitsId();
 		auto dictEntries = dictionary->GetDictEntries(terminalIds[0]);
 		dictEntries.erase(std::remove_if(dictEntries.begin(), dictEntries.end(),
-				[&] (const auto& e)
+				[&] (const auto* e)
 				{
-					return alreadyHasProperty ? possibleEntryIt->modifier != e.modifier : false;
+					return alreadyHasProperty ? possibleEntryIt->modifier != e->modifier : false;
 				}),
 				dictEntries.end());
-		TalentDictEntry dictEntry = *SelectRandom(dictEntries.begin(), dictEntries.end());
+		TalentDictEntry* dictEntry = *SelectRandom(dictEntries.begin(), dictEntries.end());
 
 		float valueModifier = 1;
 		auto modifierEntries = dictionary->GetModifierEntries();
 		for (auto it = terminalIds.begin() + 1; it != terminalIds.end(); it++)
 		{
-			for (auto& entry : modifierEntries)
+			for (auto* entry : modifierEntries)
 			{
-				if (*it == entry.key)
+				if (*it == entry->key)
 				{
-					valueModifier *= GetRandomFloat(entry.values.first, entry.values.second);
+					valueModifier *= GetRandomFloat(entry->values.first, entry->values.second);
 				}
 			}
 		}
 
-		const float randomValue = GetRandomFloat(dictEntry.values.first, dictEntry.values.second);
+		const float randomValue = GetRandomFloat(dictEntry->values.first, dictEntry->values.second);
 		float talentValue = (roundf((randomValue - 1) * valueModifier / numberOfProperties * 100) / 100) + 1;
 		talentValue += alreadyHasProperty ? possibleEntryIt->value - 1 : 0;
-		talentValue = std::min(talentValue, dictEntry.values.second);
+		talentValue = std::min(talentValue, dictEntry->values.second);
 
 		if (!alreadyHasProperty)
 		{
-			tupleList.push_back({property, dictEntry.modifier, talentValue});
+			tupleList.push_back({property, dictEntry->modifier, talentValue});
 		}
 		else
 		{

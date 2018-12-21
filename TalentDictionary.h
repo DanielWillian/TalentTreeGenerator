@@ -4,6 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <utility>
+#include <memory>
 
 class TalentDictEntry
 {
@@ -26,14 +27,14 @@ public:
 class TalentDictionary
 {
 public:
-	virtual TalentDictEntry GetDictEntry(const std::string& key) const
+	virtual const TalentDictEntry& GetDictEntry(const std::string& key) const
 	{
-		return *std::find_if(entries.begin(), entries.end(), [&key](const auto e) { return e.key == key; });
+		return **std::find_if(entries.begin(), entries.end(), [&key](const auto& e) { return e->key == key; });
 	}
 
-	virtual std::vector<TalentDictEntry> GetDictEntries(const std::string& key) const;
+	virtual std::vector<TalentDictEntry*> GetDictEntries(const std::string& key) const;
 
-	virtual std::vector<TalentDictEntry> GetModifierEntries() const;
+	virtual std::vector<TalentDictEntry*> GetModifierEntries() const;
 
 	virtual std::pair<int, int> GetPropertiesNumberRange() const { return {1, 1}; }
 
@@ -42,7 +43,7 @@ public:
 	static const int MODIFIER = 1;
 
 public:
-	std::vector<TalentDictEntry> entries;
+	std::vector<std::unique_ptr<TalentDictEntry>> entries;
 	int level;
 };
 
