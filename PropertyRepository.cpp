@@ -15,7 +15,7 @@ PropertyRepository::PropertyRepository()
 		properties.push_back(ptr.get());
 	}
 
-	properties = GetPropertiesWithoutIds(properties, {"damageType", "healingType", "damageType1"});
+	properties = GetPropertiesWithoutIds(properties, {"damageType", "healingType", "damageType1", "attributes"});
 	level1Properties.insert(std::begin(properties), std::end(properties));
 	level3Properties.insert(std::begin(properties), std::end(properties));
 }

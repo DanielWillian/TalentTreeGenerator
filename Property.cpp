@@ -8,6 +8,15 @@ int Property::DistanceBetweenProperties(const Property& lhs, const Property& rhs
 	const Property* lesserProperty = GetLesserProperty(lhs, rhs);
 	const Property* otherProperty = *lesserProperty == lhs ? &rhs : &lhs;
 	std::vector<std::string> lesserIds = lesserProperty->trait->GetAllTraitIds();
+	std::vector<std::string> otherIds = otherProperty->trait->GetAllTraitIds();
+
+	if (std::find(lesserIds.begin(), lesserIds.end(), "attributes") != lesserIds.end())
+	{
+		if (std::find(otherIds.begin(), otherIds.end(), "attributes") == otherIds.end())
+		{
+			return 20;
+		}
+	}
 
 	if (std::find(lesserIds.begin(), lesserIds.end(), "affect") != lesserIds.end())
 	{

@@ -152,8 +152,13 @@ TraitDictionary::TraitDictionary()
 	dictEntries.push_back(new TraitDictEntry{ "alteration", ALTERNATIVES,
 			{ "alterationBeneficial", "alterationDetrimental" } });
 
-	dictEntries.push_back(new TraitDictEntry{ "property", ALTERNATIVES,
+	dictEntries.push_back(new TraitDictEntry{ "attributes", TERMINAL, {} });
+
+	dictEntries.push_back(new TraitDictEntry{ "general", ALTERNATIVES,
 			{ "affect", "stats", "resourceRelated", "alteration" } });
+
+	dictEntries.push_back(new TraitDictEntry{ "property", ALTERNATIVES,
+			{ "attributes", "general" } });
 
 	for (auto* e : dictEntries)
 	{
