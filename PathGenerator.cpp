@@ -129,8 +129,10 @@ Talent PathGenerator::GenerateRandomTalent(const std::unordered_set<Property*>& 
 			}
 		}
 
+		const int dictPrecision = dictionary->GetFloatPrecision();
 		const float randomValue = GetRandomFloat(dictEntry->values.first, dictEntry->values.second);
-		float talentValue = (roundf((randomValue - 1) * valueModifier / numberOfProperties * 100) / 100) + 1;
+		float talentValue = (roundf((randomValue - 1) * valueModifier / numberOfProperties * dictPrecision)
+				/ dictPrecision) + 1;
 		talentValue += alreadyHasProperty ? possibleEntryIt->value - 1 : 0;
 		talentValue = std::min(talentValue, dictEntry->values.second);
 

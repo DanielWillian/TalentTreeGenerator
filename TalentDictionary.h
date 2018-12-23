@@ -38,6 +38,8 @@ public:
 
 	virtual std::pair<int, int> GetPropertiesNumberRange() const { return {1, 1}; }
 
+	virtual int GetFloatPrecision() const { return 100; }
+
 public:
 	static const int BASE = 0;
 	static const int MODIFIER = 1;

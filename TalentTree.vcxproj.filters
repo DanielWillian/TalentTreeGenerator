@@ -60,6 +60,9 @@
     <ClInclude Include="Statics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TalentDictionaryLevel2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -93,6 +96,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TalentDictionaryLevel3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TalentDictionaryLevel2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

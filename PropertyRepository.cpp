@@ -15,10 +15,13 @@ PropertyRepository::PropertyRepository()
 		properties.push_back(ptr.get());
 	}
 
-	properties = GetPropertiesWithoutIds(properties, {"weaponType", "damageType", "healingType",
+	auto level1 = GetPropertiesWithoutIds(properties, {"weaponType", "damageType", "healingType",
 			"damageType1", "attributes"});
-	level1Properties.insert(std::begin(properties), std::end(properties));
-	level3Properties.insert(std::begin(properties), std::end(properties));
+	level1Properties.insert(std::begin(level1), std::end(level1));
+	level3Properties.insert(std::begin(level1), std::end(level1));
+
+	auto level2 = GetPropertiesWithIds({"attributes"});
+	level2Properties.insert(std::begin(level2), std::end(level2));
 }
 
 std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(

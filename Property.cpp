@@ -10,12 +10,11 @@ int Property::DistanceBetweenProperties(const Property& lhs, const Property& rhs
 	std::vector<std::string> lesserIds = lesserProperty->trait->GetAllTraitIds();
 	std::vector<std::string> otherIds = otherProperty->trait->GetAllTraitIds();
 
-	if (std::find(lesserIds.begin(), lesserIds.end(), "attributes") != lesserIds.end())
+	const bool bLesserAttri = Statics::Contain(lesserIds, std::string("attributes"));
+	const bool bOtherAttri = Statics::Contain(otherIds, std::string("attributes"));
+	if (bLesserAttri || bOtherAttri)
 	{
-		if (std::find(otherIds.begin(), otherIds.end(), "attributes") == otherIds.end())
-		{
-			return 20;
-		}
+		return !bLesserAttri || !bOtherAttri ? 20 : 0;
 	}
 
 	const int weaponDist = DistWeapon(lhs, rhs);
