@@ -66,6 +66,9 @@
     <ClInclude Include="TalentDictionaryLevel4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TalentDictionaryLevel6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -106,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="TalentDictionaryLevel4.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TalentDictionaryLevel6.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

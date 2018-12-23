@@ -42,6 +42,10 @@ std::vector<Talent> PathGenerator::GeneratePath(int numLesser, int numGreater)
 	}
 
 	std::unordered_set<Property*> greaterPossibleProperties = greaterProperties;
+	for (auto& talent : result)
+	{
+		IntersectionOfProperties(greaterPossibleProperties, talent);
+	}
 	for (int i = 0; i < numGreater; i++)
 	{
 		Talent talent = GenerateRandomTalent(greaterPossibleProperties, greaterDictionary);
