@@ -112,16 +112,20 @@ std::vector<std::vector<T*>> TraitRepository::PermuteLists(const std::vector<std
 
 Trait* TraitRepository::GetTrait(std::unique_ptr<Trait>& trait)
 {
+	/*
 	auto possibleSaved = std::find_if(allTraits.begin(), allTraits.end(),
 			[&] (const auto& t) { return *t == *trait; });
 	if (possibleSaved == allTraits.end())
 	{
+	*/
 		allTraits.push_back(std::move(trait));
 		return allTraits.back().get();
+	/*
 	}
 	else
 	{
 		return possibleSaved->get();
 	}
+	*/
 }
 

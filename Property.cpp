@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Property.h"
-#include <stdexcept>
+#include "Statics.h"
 #include <algorithm>
 
 int Property::DistanceBetweenProperties(const Property& lhs, const Property& rhs)
@@ -18,21 +18,23 @@ int Property::DistanceBetweenProperties(const Property& lhs, const Property& rhs
 		}
 	}
 
+	const int weaponDist = DistWeapon(lhs, rhs);
+
 	if (std::find(lesserIds.begin(), lesserIds.end(), "affect") != lesserIds.end())
 	{
-		return DistLhsAffect(*lesserProperty, *otherProperty);
+		return DistLhsAffect(*lesserProperty, *otherProperty) + weaponDist;
 	}
 	else if (std::find(lesserIds.begin(), lesserIds.end(), "stats") != lesserIds.end())
 	{
-		return DistLhsStats(*lesserProperty, *otherProperty);
+		return DistLhsStats(*lesserProperty, *otherProperty) + weaponDist;
 	}
 	else if (std::find(lesserIds.begin(), lesserIds.end(), "resourceRelated") != lesserIds.end())
 	{
-		return DistLhsResourceRelated(*lesserProperty, *otherProperty);
+		return DistLhsResourceRelated(*lesserProperty, *otherProperty) + weaponDist;
 	}
 	else if (std::find(lesserIds.begin(), lesserIds.end(), "alteration") != lesserIds.end())
 	{
-		return DistLhsAlteration(*lesserProperty, *otherProperty);
+		return DistLhsAlteration(*lesserProperty, *otherProperty) + weaponDist;
 	}
 
 	return 0;
@@ -68,6 +70,53 @@ const Property* Property::GetLesserProperty(const Property& lhs, const Property&
 		return &rhs;
 	}
 	return &lhs;
+}
+
+int Property::DistWeapon(const Property& lhs, const Property& rhs)
+{
+	auto lhsIds = lhs.trait->GetTraitWithId("weapon")->GetAllTraitIds();
+	auto rhsIds = rhs.trait->GetTraitWithId("weapon")->GetAllTraitIds();
+
+	if (Statics::Contain(lhsIds, std::string("allWeapon")) ||
+			Statics::Contain(rhsIds, std::string("allWeapon")))
+	{
+		return 0;
+	}
+	else
+	{
+		const bool bLhsType1 = Statics::Contain(lhsIds, std::string("weaponType1"));
+		const bool bRhsType1 = Statics::Contain(rhsIds, std::string("weaponType1"));
+		if (bLhsType1 == bRhsType1)
+		{
+			const auto matchPair = std::mismatch(lhsIds.begin(), lhsIds.end(), rhsIds.begin(), rhsIds.end());
+			if (matchPair.first != lhsIds.end() || matchPair.second != rhsIds.end())
+			{
+				return 20;
+			}
+		}
+		else
+		{
+			const auto type1Ids = bLhsType1 ? lhsIds : rhsIds;
+			const auto type2Ids = bLhsType1 ? rhsIds : lhsIds;
+			if (Statics::Contain(type1Ids, std::string("oneHanded")))
+			{
+				if (!Statics::ContainAny(type2Ids, {"axe", "sword", "mace", "dagger", "scythe", "fist", "wand",
+							"card", "crossbow", "thrown", "shield", "relic"}))
+				{
+					return 20;
+				}
+			}
+			else
+			{
+				if (!Statics::ContainAny(type2Ids, {"axe", "sword", "mace", "polearm", "scythe", "bow"}))
+				{
+					return 20;
+				}
+			}
+		}
+	}
+
+	return 0;
 }
 
 int Property::DistLhsAffect(const Property& lhs, const Property& rhs)

@@ -21,6 +21,8 @@ public:
 private:
 	static const Property* GetLesserProperty(const Property& lhs, const Property& rhs);
 
+	static int DistWeapon(const Property& lhs, const Property& rhs);
+
 	static int DistLhsAffect(const Property& lhs, const Property& rhs);
 
 	static int DistLhsStats(const Property& lhs, const Property& rhs);

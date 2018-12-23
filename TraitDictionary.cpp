@@ -154,8 +154,49 @@ TraitDictionary::TraitDictionary()
 
 	dictEntries.push_back(new TraitDictEntry{ "attributes", TERMINAL, {} });
 
+	dictEntries.push_back(new TraitDictEntry{ "allWeapon", TERMINAL, {} });
+
+	dictEntries.push_back(new TraitDictEntry{ "oneHanded", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "twoHanded", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "weaponType1", ALTERNATIVES,
+			{"oneHanded", "twoHanded"} });
+
+	dictEntries.push_back(new TraitDictEntry{ "axe", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "sword", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "mace", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "polearm", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "dagger", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "scythe", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "fist", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "staff", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "wand", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "card", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "bow", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "crossbow", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "thrown", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "shield", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "relic", TERMINAL, {} });
+	dictEntries.push_back(new TraitDictEntry{ "weaponType2", ALTERNATIVES,
+			{"axe", "sword", "mace", "polearm", "dagger", "scythe", "fist",
+					"staff" ,"wand", "card", "bow", "crossbow", "thrown", "shield", "relic"} });
+
+	dictEntries.push_back(new TraitDictEntry{ "weaponType", ALTERNATIVES,
+			{"weaponType1", "weaponType2"} });
+
+	dictEntries.push_back(new TraitDictEntry{ "weapon", ALTERNATIVES,
+			{"allWeapon", "weaponType"} });
+
+	dictEntries.push_back(new TraitDictEntry{ "affectWeapon", CONCATENATIONS,
+			{ "affect", "weapon"} });
+	dictEntries.push_back(new TraitDictEntry{ "statsWeapon", CONCATENATIONS,
+			{ "stats", "weapon"} });
+	dictEntries.push_back(new TraitDictEntry{ "resourceRelatedWeapon", CONCATENATIONS,
+			{ "resourceRelated", "weapon"} });
+	dictEntries.push_back(new TraitDictEntry{ "alterationWeapon", CONCATENATIONS,
+			{ "alteration", "weapon"} });
+
 	dictEntries.push_back(new TraitDictEntry{ "general", ALTERNATIVES,
-			{ "affect", "stats", "resourceRelated", "alteration" } });
+			{ "affectWeapon", "statsWeapon", "resourceRelatedWeapon", "alterationWeapon" } });
 
 	dictEntries.push_back(new TraitDictEntry{ "property", ALTERNATIVES,
 			{ "attributes", "general" } });

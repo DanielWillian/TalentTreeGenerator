@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <iterator>
+#include <algorithm>
 
 class Trait
 {
@@ -94,7 +95,9 @@ public:
 
 	virtual bool operator==(const Trait& rhs) const
 	{
-		return id == rhs.id && subTraits == rhs.subTraits;
+		const auto matchPair = std::mismatch(subTraits.begin(), subTraits.end(), rhs.subTraits.begin(), rhs.subTraits.end(),
+				[] (const auto* l, const auto* r) { return *l == *r; });
+		return id == rhs.id && matchPair.first == subTraits.end() && matchPair.second == rhs.subTraits.end();
 	}
 
 public:
