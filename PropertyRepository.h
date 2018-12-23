@@ -25,6 +25,8 @@ public:
 
 	std::unordered_set<Property*> level3Properties;
 
+	std::unordered_set<Property*> level4Properties;
+
 	TraitRepository traitRepository;
 };
 

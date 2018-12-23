@@ -20,8 +20,6 @@ public:
 	{
 	}
 
-	Talent GenerateRandomTalent(const bool lesser) const;
-
 	Property* GetRandomProperty(std::unordered_set<Property*> properties) const;
 
 	std::unordered_set<Property*> GetAllRelatedProperties(const Property* property,
@@ -30,7 +28,7 @@ public:
 	std::vector<Talent> GeneratePath(int numLesser, int numGreater);
 
 private:
-	Talent GenerateRandomTalent(const std::unordered_set<Property*>& properties, const TalentDictionary* dictionary) const;
+	Talent GenerateRandomTalent(std::unordered_set<Property*>& inOutProperties, const TalentDictionary* dictionary) const;
 
 	template<typename Iter>
 	Iter SelectRandom(Iter start, Iter end) const;
@@ -40,6 +38,8 @@ private:
 	float GetRandomFloat(const float min, const float max) const;
 
 	void IntersectionOfProperties(std::unordered_set<Property*>& inOutProperties, const Talent& talent) const;
+
+	void IntersectionOfProperties(std::unordered_set<Property*>& inOutProperties, const Property* property) const;
 
 	std::unordered_set<Property*> GetIntersection(const std::unordered_set<Property*>& a,
 			const std::unordered_set<Property*>& b) const;

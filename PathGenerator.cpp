@@ -32,29 +32,19 @@ std::vector<Talent> PathGenerator::GeneratePath(int numLesser, int numGreater)
 	}
 	std::vector<Talent> result;
 
-	result.push_back(GenerateRandomTalent(true));
-	numLesser--;
 	std::unordered_set<Property*> lesserPossibleProperties = lesserProperties;
-	for (auto& talent : result)
-	{
-		IntersectionOfProperties(lesserPossibleProperties, talent);
-	}
+	result.push_back(GenerateRandomTalent(lesserPossibleProperties, lesserDictionary));
+	numLesser--;
 	for (int i = 0; i < numLesser; i++)
 	{
 		Talent talent = GenerateRandomTalent(lesserPossibleProperties, lesserDictionary);
-		IntersectionOfProperties(lesserPossibleProperties, talent);
 		result.push_back(talent);
 	}
 
 	std::unordered_set<Property*> greaterPossibleProperties = greaterProperties;
-	for (auto& talent : result)
-	{
-		IntersectionOfProperties(greaterPossibleProperties, talent);
-	}
 	for (int i = 0; i < numGreater; i++)
 	{
 		Talent talent = GenerateRandomTalent(greaterPossibleProperties, greaterDictionary);
-		IntersectionOfProperties(greaterPossibleProperties, talent);
 		result.push_back(talent);
 	}
 
@@ -68,6 +58,12 @@ void PathGenerator::IntersectionOfProperties(std::unordered_set<Property*>& inOu
 		inOutProperties = GetIntersection(inOutProperties,
 				GetAllRelatedProperties(talentEntry.property, inOutProperties));
 	}
+}
+
+void PathGenerator::IntersectionOfProperties(std::unordered_set<Property*>& inOutProperties, const Property* property) const
+{
+	inOutProperties = GetIntersection(inOutProperties,
+			GetAllRelatedProperties(property, inOutProperties));
 }
 
 std::unordered_set<Property*> PathGenerator::GetIntersection(const std::unordered_set<Property*>& a,
@@ -84,14 +80,7 @@ std::unordered_set<Property*> PathGenerator::GetIntersection(const std::unordere
 	return result;
 }
 
-Talent PathGenerator::GenerateRandomTalent(const bool lesser) const
-{
-	auto& properties = lesser ? lesserProperties : greaterProperties;
-	auto* dictionary = lesser ? lesserDictionary : greaterDictionary;
-	return GenerateRandomTalent(properties, dictionary);
-}
-
-Talent PathGenerator::GenerateRandomTalent(const std::unordered_set<Property*>& properties,
+Talent PathGenerator::GenerateRandomTalent(std::unordered_set<Property*>& inOutProperties,
 		const TalentDictionary* dictionary) const
 {
 	auto propertyRange = dictionary->GetPropertiesNumberRange();
@@ -100,7 +89,7 @@ Talent PathGenerator::GenerateRandomTalent(const std::unordered_set<Property*>& 
 	std::vector<TalentEntry> tupleList;
 	for (int i = 0; i < numberOfProperties; i++)
 	{
-		auto* property = GetRandomProperty(properties);
+		auto* property = GetRandomProperty(inOutProperties);
 
 		auto possibleEntryIt = std::find_if(tupleList.begin(), tupleList.end(),
 				[&] (const auto& e) { return *e.property == *property; });
@@ -134,11 +123,12 @@ Talent PathGenerator::GenerateRandomTalent(const std::unordered_set<Property*>& 
 		float talentValue = (roundf((randomValue - 1) * valueModifier / numberOfProperties * dictPrecision)
 				/ dictPrecision) + 1;
 		talentValue += alreadyHasProperty ? possibleEntryIt->value - 1 : 0;
-		talentValue = std::min(talentValue, dictEntry->values.second);
+		talentValue = std::min(talentValue, dictEntry->values.second * valueModifier);
 
 		if (!alreadyHasProperty)
 		{
 			tupleList.push_back({property, dictEntry->modifier, talentValue});
+			IntersectionOfProperties(inOutProperties, property);
 		}
 		else
 		{

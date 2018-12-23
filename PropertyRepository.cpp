@@ -22,6 +22,9 @@ PropertyRepository::PropertyRepository()
 
 	auto level2 = GetPropertiesWithIds({"attributes"});
 	level2Properties.insert(std::begin(level2), std::end(level2));
+
+	auto level4 = GetPropertiesWithoutIds(properties, {"weaponType", "attributes"});
+	level4Properties.insert(std::begin(level4), std::end(level4));
 }
 
 std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
