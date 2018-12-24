@@ -9,17 +9,19 @@ class Trait
 {
 public:
 	Trait() {}
-	Trait(const std::string inId)
+	Trait(const std::string inId, const int inIndex)
 	{
 		id = inId;
+		index = inIndex;
 	}
-	Trait(const std::string inId, const std::vector<Trait*>& inSubTraits) : Trait(inId)
+	Trait(const std::string inId, const int inIndex, const std::vector<Trait*>& inSubTraits) : Trait(inId, inIndex)
 	{
 		subTraits = inSubTraits;
 	}
 	Trait(const Trait& other)
 	{
 		id = other.id;
+		index = other.index;
 		subTraits = other.subTraits;
 	}
 
@@ -102,6 +104,7 @@ public:
 
 public:
 	std::string id;
+	int index;
 	std::vector<Trait*> subTraits;
 };
 
@@ -109,7 +112,8 @@ class TraitParent : public Trait
 {
 public:
 	TraitParent() {}
-	TraitParent(const std::string inId, const std::vector<Trait*>& inSubTraits) : Trait(inId, inSubTraits) {}
+	TraitParent(const std::string inId, const int inIndex, const std::vector<Trait*>& inSubTraits)
+			: Trait(inId, inIndex, inSubTraits) {}
 
 	virtual bool HasChildren() const override { return true; }
 };
@@ -117,7 +121,7 @@ public:
 class TraitChild : public Trait
 {
 public:
-	TraitChild(const std::string inId) : Trait(inId) {}
+	TraitChild(const std::string inId, const int inIndex) : Trait(inId, inIndex) {}
 	TraitChild() {}
 };
 

@@ -4,6 +4,9 @@
 #include "TraitDictionary.h"
 #include <memory>
 
+class Trait;
+class TraitParent;
+
 class TraitRepository
 {
 public:
@@ -26,11 +29,15 @@ private:
 
 	inline Trait* GetTrait(std::unique_ptr<Trait>& trait);
 
+	inline int GetNextIndex() const;
+
 private:
 	TraitRepository();
 
 public:
 	std::vector<TraitParent*> possibleTraits;
+
+	std::vector<std::vector<std::string>> allTraitsIds;
 
 	TraitDictionary traitDictionary;
 
