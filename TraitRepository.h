@@ -7,7 +7,14 @@
 class TraitRepository
 {
 public:
-	TraitRepository();
+	static TraitRepository& GetInstance()
+	{
+		static TraitRepository instance;
+		return instance;
+	}
+
+	TraitRepository(TraitRepository const&) = delete;
+	void operator=(TraitRepository const&) = delete;
 
 	std::vector<TraitParent*> GetTraitsWithIds(const std::vector<std::string>& ids);
 
@@ -18,6 +25,9 @@ private:
 	std::vector<std::vector<T*>> PermuteLists(const std::vector<std::vector<T*>>& listOfLists);
 
 	inline Trait* GetTrait(std::unique_ptr<Trait>& trait);
+
+private:
+	TraitRepository();
 
 public:
 	std::vector<TraitParent*> possibleTraits;

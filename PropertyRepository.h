@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Property.h"
-#include "TraitRepository.h"
 #include <unordered_set>
 #include <memory>
 
@@ -32,7 +31,5 @@ public:
 	std::unordered_set<Property*> level6Properties;
 
 	std::unordered_set<Property*> level7Properties;
-
-	TraitRepository traitRepository;
 };
 

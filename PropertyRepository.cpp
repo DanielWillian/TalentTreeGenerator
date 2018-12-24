@@ -1,9 +1,10 @@
 #include "stdafx.h"
+#include "TraitRepository.h"
 #include "PropertyRepository.h"
 
 PropertyRepository::PropertyRepository()
 {
-	std::vector<TraitParent*> traitList = traitRepository.possibleTraits;
+	std::vector<TraitParent*> traitList = TraitRepository::GetInstance().possibleTraits;
 	for (auto* traitParent : traitList)
 	{
 		allProperties.push_back(std::unique_ptr<Property>(new Property(traitParent)));
