@@ -113,14 +113,16 @@ std::vector<std::vector<T*>> TraitRepository::PermuteLists(const std::vector<std
 Trait* TraitRepository::GetTrait(std::unique_ptr<Trait>& trait)
 {
 	/*
-	auto possibleSaved = std::find_if(allTraits.begin(), allTraits.end(),
+	auto possibleSaved = std::find_if(allTraitsSaved.begin(), allTraitsSaved.end(),
 			[&] (const auto& t) { return *t == *trait; });
-	if (possibleSaved == allTraits.end())
+	if (possibleSaved == allTraitsSaved.end())
 	{
 	*/
 		allTraitsIds.push_back(trait->GetAllTraitIds());
-		allTraits.push_back(std::move(trait));
-		return allTraits.back().get();
+		allTraitsSaved.push_back(std::move(trait));
+		Trait* movedTrait = allTraitsSaved.back().get();
+		allTraits.push_back(movedTrait);
+		return movedTrait;
 	/*
 	}
 	else
@@ -132,6 +134,6 @@ Trait* TraitRepository::GetTrait(std::unique_ptr<Trait>& trait)
 
 int TraitRepository::GetNextIndex() const
 {
-	return static_cast<int>(allTraits.size());
+	return static_cast<int>(allTraitsSaved.size());
 }
 

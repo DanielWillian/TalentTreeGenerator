@@ -37,11 +37,13 @@ private:
 public:
 	std::vector<TraitParent*> possibleTraits;
 
+	std::vector<Trait*> allTraits;
+
 	std::vector<std::vector<std::string>> allTraitsIds;
 
 	TraitDictionary traitDictionary;
 
 private:
-	std::vector<std::unique_ptr<Trait>> allTraits;
+	std::vector<std::unique_ptr<Trait>> allTraitsSaved;
 };
 

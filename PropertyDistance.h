@@ -2,6 +2,7 @@
 
 #include "Property.h"
 #include "Trait.h"
+#include <unordered_map>
 
 class PropertyDistance
 {
@@ -18,13 +19,30 @@ public:
 	int DistanceBetweenProperties(const Property& lhs, const Property& rhs);
 
 private:
-	PropertyDistance() {}
+	std::unordered_map<int, std::unordered_map<int, int>> weaponDistances;
+
+	std::unordered_map<int, std::unordered_map<int, int>> affectDistances;
+
+	std::unordered_map<int, std::unordered_map<int, int>> statsDistances;
+
+	std::unordered_map<int, std::unordered_map<int, int>> resourceRelatedDistances;
+
+	std::unordered_map<int, std::unordered_map<int, int>> alterationDistances;
+
+private:
+	PropertyDistance();
 
 	const Property* GetLesserProperty(const Property& lhs, const Property& rhs);
 
-	int DistWeapon(const Trait* lhs, const Trait* rhs);
+	int DistLhsAffect(const Trait* lhs, const Property& rhs);
 
-	std::string GetGeneralType(const Property& property);
+	int DistLhsStats(const Trait* lhs, const Property& rhs);
+
+	int DistLhsResourceRelated(const Trait* lhs, const Property& rhs);
+
+	int DistLhsAlteration(const Trait* lhs, const Property& rhs);
+
+	int DistWeapon(const Trait* lhs, const Trait* rhs);
 
 	int DistAffectAffect(const Trait* lhs, const Trait* rhs);
 
@@ -34,25 +52,17 @@ private:
 
 	int DistAffectAlteration(const Trait* lhs, const Trait* rhs);
 
-	int DistLhsAffect(const Property& lhs, const Property& rhs);
-
 	int DistStatsStats(const Trait* lhs, const Trait* rhs);
 
 	int DistStatsResourceRelated(const Trait* lhs, const Trait* rhs);
 
 	int DistStatsAlteration(const Trait* lhs, const Trait* rhs);
 
-	int DistLhsStats(const Property& lhs, const Property& rhs);
-
 	int DistResourceRelatedResourceRelated(const Trait* lhs, const Trait* rhs);
 
 	int DistResourceRelatedAlteration(const Trait* lhs, const Trait* rhs);
 
-	int DistLhsResourceRelated(const Property& lhs, const Property& rhs);
-
 	int DistAlterationAlteration(const Trait* lhs, const Trait* rhs);
-
-	int DistLhsAlteration(const Property& lhs, const Property& rhs);
 
 	int DistForDamageOrHealing(const Trait* lhs, const Trait* rhs);
 
