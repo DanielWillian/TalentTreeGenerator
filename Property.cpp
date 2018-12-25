@@ -8,8 +8,8 @@ int Property::DistanceBetweenProperties(const Property& lhs, const Property& rhs
 {
 	const Property* lesserProperty = GetLesserProperty(lhs, rhs);
 	const Property* otherProperty = *lesserProperty == lhs ? &rhs : &lhs;
-	std::vector<std::string> lesserIds = TraitRepository::GetInstance().allTraitsIds[lesserProperty->trait->index];
-	std::vector<std::string> otherIds = TraitRepository::GetInstance().allTraitsIds[otherProperty->trait->index];
+	std::vector<std::string>& lesserIds = TraitRepository::GetInstance().allTraitsIds[lesserProperty->trait->index];
+	std::vector<std::string>& otherIds = TraitRepository::GetInstance().allTraitsIds[otherProperty->trait->index];
 
 	const bool bLesserAttri = Statics::Contain(lesserIds, std::string("attributes"));
 	const bool bOtherAttri = Statics::Contain(otherIds, std::string("attributes"));
@@ -42,8 +42,8 @@ int Property::DistanceBetweenProperties(const Property& lhs, const Property& rhs
 
 const Property* Property::GetLesserProperty(const Property& lhs, const Property& rhs)
 {
-	std::vector<std::string> lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
-	std::vector<std::string> rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	std::vector<std::string>& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
+	std::vector<std::string>& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
 
 	if (std::find(lhsIds.begin(), lhsIds.end(), "affect") != lhsIds.end())
 	{
@@ -74,8 +74,8 @@ const Property* Property::GetLesserProperty(const Property& lhs, const Property&
 
 int Property::DistWeapon(const Property& lhs, const Property& rhs)
 {
-	auto lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("weapon")->index];
-	auto rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("weapon")->index];
+	auto& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("weapon")->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("weapon")->index];
 
 	if (Statics::Contain(lhsIds, std::string("allWeapon")) ||
 			Statics::Contain(rhsIds, std::string("allWeapon")))
@@ -121,8 +121,8 @@ int Property::DistWeapon(const Property& lhs, const Property& rhs)
 
 int Property::DistLhsAffect(const Property& lhs, const Property& rhs)
 {
-	auto lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
-	auto rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	auto& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
 
 	if (std::find(rhsIds.begin(), rhsIds.end(), "affect") != rhsIds.end())
 	{
@@ -136,8 +136,8 @@ int Property::DistLhsAffect(const Property& lhs, const Property& rhs)
 		const bool bRhsAffectType1 = std::find(rhsIds.begin(), rhsIds.end(), "affectType1") != rhsIds.end();
 		if (bLhsAffectType1 == bRhsAffectType1)
 		{
-			auto lhsAffectTypeIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("affectType")->index];
-			auto rhsAffectTypeIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("affectType")->index];
+			auto& lhsAffectTypeIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("affectType")->index];
+			auto& rhsAffectTypeIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("affectType")->index];
 			if (lhsAffectTypeIds != rhsAffectTypeIds)
 			{
 				return 20;
@@ -173,8 +173,8 @@ int Property::DistLhsAffect(const Property& lhs, const Property& rhs)
 			const bool bRhsContainDamageType = std::find(rhsIds.begin(), rhsIds.end(), "damageType1") != rhsIds.end();
 			if (bLhsContainDamageType && bRhsContainDamageType)
 			{
-				auto lhsDamageIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("damageType1")->index];
-				auto rhsDamageIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("damageType1")->index];
+				auto& lhsDamageIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("damageType1")->index];
+				auto& rhsDamageIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("damageType1")->index];
 				if (lhsDamageIds != rhsDamageIds)
 				{
 					return 20;
@@ -210,8 +210,8 @@ int Property::DistLhsAffect(const Property& lhs, const Property& rhs)
 
 int Property::DistLhsStats(const Property& lhs, const Property& rhs)
 {
-	auto lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
-	auto rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	auto& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
 
 	if (std::find(rhsIds.begin(), rhsIds.end(), "stats") != rhsIds.end())
 	{
@@ -306,8 +306,8 @@ int Property::DistLhsStats(const Property& lhs, const Property& rhs)
 
 int Property::DistLhsResourceRelated(const Property& lhs, const Property& rhs)
 {
-	auto lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
-	auto rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	auto& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
 
 	if (std::find(rhsIds.begin(), rhsIds.end(), "resourceRelated") != rhsIds.end())
 	{
@@ -346,8 +346,8 @@ int Property::DistLhsAlteration(const Property& lhs, const Property& rhs)
 
 int Property::DistForDamageOrHealing(const Property& lhs, const Property& rhs)
 {
-	auto lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
-	auto rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	auto& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
 
 	const bool bLhsContainDamage = std::find(lhsIds.begin(), lhsIds.end(), "damage") != lhsIds.end();
 	const bool bRhsContainDamage = std::find(rhsIds.begin(), rhsIds.end(), "damage") != rhsIds.end();
@@ -360,8 +360,8 @@ int Property::DistForDamageOrHealing(const Property& lhs, const Property& rhs)
 	{
 		if (bLhsContainDamage)
 		{
-			auto lhsDamageIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("damage")->index];
-			auto rhsDamageIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("damage")->index];
+			auto& lhsDamageIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("damage")->index];
+			auto& rhsDamageIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("damage")->index];
 			// Neither contain all damage
 			if (std::find(lhsIds.begin(), lhsIds.end(), "allDamage") == lhsIds.end() &&
 					std::find(rhsIds.begin(), rhsIds.end(), "allDamage") == rhsIds.end())
@@ -376,8 +376,8 @@ int Property::DistForDamageOrHealing(const Property& lhs, const Property& rhs)
 		}
 		else
 		{
-			auto lhsHealingIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("healing")->index];
-			auto rhsHealingIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("healing")->index];
+			auto& lhsHealingIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("healing")->index];
+			auto& rhsHealingIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("healing")->index];
 			// Neither contain all healing
 			if (std::find(lhsIds.begin(), lhsIds.end(), "allHealing") == lhsIds.end() &&
 					std::find(rhsIds.begin(), rhsIds.end(), "allHealing") == rhsIds.end())
@@ -395,15 +395,15 @@ int Property::DistForDamageOrHealing(const Property& lhs, const Property& rhs)
 
 int Property::DistForDamageType1(const Property& lhs, const Property& rhs)
 {
-	auto lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
-	auto rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	auto& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
 
 	const bool bLhsContainDamageType = std::find(lhsIds.begin(), lhsIds.end(), "damageType1") != lhsIds.end();
 	const bool bRhsContainDamageType = std::find(rhsIds.begin(), rhsIds.end(), "damageType1") != rhsIds.end();
 	if (bLhsContainDamageType && bRhsContainDamageType)
 	{
-		auto lhsDamageIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("damageType1")->index];
-		auto rhsDamageIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("damageType1")->index];
+		auto& lhsDamageIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->GetTraitWithId("damageType1")->index];
+		auto& rhsDamageIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->GetTraitWithId("damageType1")->index];
 		if (lhsDamageIds != rhsDamageIds)
 		{
 			return 20;

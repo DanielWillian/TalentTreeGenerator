@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "TraitRepository.h"
 #include "PropertyRepository.h"
+#include "TraitRepository.h"
 
 PropertyRepository::PropertyRepository()
 {
