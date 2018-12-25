@@ -59,7 +59,7 @@ public:
 		return result;
 	}
 
-	virtual Trait* GetTraitWithId(const std::string& id)
+	virtual const Trait* GetTraitWithId(const std::string& id) const
 	{
 		if (this->id == id)
 		{
@@ -69,7 +69,7 @@ public:
 		{
 			for (Trait* trait : subTraits)
 			{
-				Trait* possibleTrait = trait->GetTraitWithId(id);
+				const Trait* possibleTrait = trait->GetTraitWithId(id);
 				if (possibleTrait)
 				{
 					return possibleTrait;
