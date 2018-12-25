@@ -75,6 +75,9 @@
     <ClInclude Include="TalentDictionaryLevel7.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PropertyDistance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -123,6 +126,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TalentDictionaryLevel7.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertyDistance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

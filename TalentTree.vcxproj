@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="PathGenerator.h" />
     <ClInclude Include="Property.h" />
+    <ClInclude Include="PropertyDistance.h" />
     <ClInclude Include="PropertyRepository.h" />
     <ClInclude Include="SimilarityTable.h" />
     <ClInclude Include="Statics.h" />
@@ -171,6 +172,7 @@
   <ItemGroup>
     <ClCompile Include="PathGenerator.cpp" />
     <ClCompile Include="Property.cpp" />
+    <ClCompile Include="PropertyDistance.cpp" />
     <ClCompile Include="PropertyRepository.cpp" />
     <ClCompile Include="SimilarityTable.cpp" />
     <ClCompile Include="stdafx.cpp">

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "PathGenerator.h"
+#include "PropertyDistance.h"
 #include "Talent.h"
 #include "TalentEntry.h"
 #include <cmath>
@@ -15,7 +16,7 @@ std::unordered_set<Property*> PathGenerator::GetAllRelatedProperties(
 
 	for (auto* otherProperty : properties)
 	{
-		if (Property::DistanceBetweenProperties(*property, *otherProperty) <= 5)
+		if (PropertyDistance::GetInstance().DistanceBetweenProperties(*property, *otherProperty) <= 5)
 		{
 			result.insert(otherProperty);
 		}
