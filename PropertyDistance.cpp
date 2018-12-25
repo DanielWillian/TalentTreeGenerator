@@ -7,7 +7,8 @@
 
 PropertyDistance::PropertyDistance()
 {
-	auto& allTraits = TraitRepository::GetInstance().allTraits;
+	const TraitRepository& traitRepository = TraitRepository::GetInstance();
+	auto& allTraits = traitRepository.allTraits;
 	std::vector<Trait*> weaponTraits;
 	for (auto* trait : allTraits)
 	{
@@ -142,7 +143,9 @@ int PropertyDistance::DistanceBetweenProperties(const Property& lhs, const Prope
 		return !bLesserAttri || !bOtherAttri ? 20 : 0;
 	}
 
-	const int weaponDist = DistWeapon(lhs.trait->GetTraitWithId("weapon"), rhs.trait->GetTraitWithId("weapon"));
+	const Trait* lhsWeapon = lhs.trait->GetTraitWithId("weapon");
+	const Trait* rhsWeapon = rhs.trait->GetTraitWithId("weapon");
+	const int weaponDist = weaponDistances[lhsWeapon->index][rhsWeapon->index];
 
 	if (Statics::Contain(lesserIds, std::string("affect")))
 	{

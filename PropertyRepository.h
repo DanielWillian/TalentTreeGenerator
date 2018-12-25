@@ -7,11 +7,20 @@
 class PropertyRepository
 {
 public:
-	PropertyRepository();
+	static PropertyRepository& GetInstance()
+	{
+		static PropertyRepository instance;
+		return instance;
+	}
+
+	PropertyRepository(PropertyRepository const&) = delete;
+	void operator=(PropertyRepository const&) = delete;
 
 	std::vector<Property*> GetPropertiesWithIds(const std::vector<std::string>& ids);
 
 private:
+	PropertyRepository();
+
 	std::vector<Property*> GetPropertiesWithoutIds(const std::vector<Property*>& properties,
 			const std::vector<std::string>& ids);
 
