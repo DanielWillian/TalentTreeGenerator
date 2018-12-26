@@ -97,9 +97,12 @@ public:
 
 	virtual bool operator==(const Trait& rhs) const
 	{
-		const auto matchPair = std::mismatch(subTraits.begin(), subTraits.end(), rhs.subTraits.begin(), rhs.subTraits.end(),
-				[] (const auto* l, const auto* r) { return *l == *r; });
-		return id == rhs.id && matchPair.first == subTraits.end() && matchPair.second == rhs.subTraits.end();
+		return index == rhs.index;
+	}
+
+	virtual bool operator<(const Trait& rhs) const
+	{
+		return index < rhs.index;
 	}
 
 public:
