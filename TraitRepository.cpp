@@ -118,7 +118,9 @@ Trait* TraitRepository::GetTrait(std::unique_ptr<Trait>& trait)
 	if (possibleSaved == allTraitsSaved.end())
 	{
 	*/
-		allTraitsIds.push_back(trait->GetAllTraitIds());
+		std::vector<std::string> allTraitId = trait->GetAllTraitIds();
+		std::sort(allTraitId.begin(), allTraitId.end());
+		allTraitsIds.push_back(std::move(allTraitId));
 		allTraitsSaved.push_back(std::move(trait));
 		Trait* movedTrait = allTraitsSaved.back().get();
 		allTraits.push_back(movedTrait);
