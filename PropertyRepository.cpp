@@ -18,20 +18,20 @@ PropertyRepository::PropertyRepository()
 
 	auto level1 = GetPropertiesWithoutIds(properties, {"weaponType", "damageType", "healingType",
 			"damageType1", "attributes"});
-	level1Properties.insert(std::begin(level1), std::end(level1));
-	level3Properties.insert(std::begin(level1), std::end(level1));
+	level1Properties.insert(std::end(level1Properties), std::begin(level1), std::end(level1));
+	level3Properties.insert(std::end(level3Properties), std::begin(level1), std::end(level1));
 
 	auto level2 = GetPropertiesWithIds({"attributes"});
-	level2Properties.insert(std::begin(level2), std::end(level2));
+	level2Properties.insert(std::end(level2Properties), std::begin(level2), std::end(level2));
 
 	auto level4 = GetPropertiesWithoutIds(properties, {"weaponType", "attributes"});
-	level4Properties.insert(std::begin(level4), std::end(level4));
-	level6Properties.insert(std::begin(level4), std::end(level4));
+	level4Properties.insert(std::end(level4Properties), std::begin(level4), std::end(level4));
+	level6Properties.insert(std::end(level6Properties), std::begin(level4), std::end(level4));
 
-	level5Properties.insert(std::begin(level2), std::end(level2));
+	level5Properties.insert(std::end(level5Properties), std::begin(level2), std::end(level2));
 
 	auto level7 = GetPropertiesWithoutIds(properties, {"attributes"});
-	level7Properties.insert(std::begin(level7), std::end(level7));
+	level7Properties.insert(std::end(level7Properties), std::begin(level7), std::end(level7));
 }
 
 std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(

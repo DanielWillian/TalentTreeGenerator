@@ -27,18 +27,18 @@ private:
 public:
 	std::vector<std::unique_ptr<Property>> allProperties;
 
-	std::unordered_set<Property*> level1Properties;
+	std::vector<Property*> level1Properties;
 
-	std::unordered_set<Property*> level2Properties;
+	std::vector<Property*> level2Properties;
 
-	std::unordered_set<Property*> level3Properties;
+	std::vector<Property*> level3Properties;
 
-	std::unordered_set<Property*> level4Properties;
+	std::vector<Property*> level4Properties;
 
-	std::unordered_set<Property*> level5Properties;
+	std::vector<Property*> level5Properties;
 
-	std::unordered_set<Property*> level6Properties;
+	std::vector<Property*> level6Properties;
 
-	std::unordered_set<Property*> level7Properties;
+	std::vector<Property*> level7Properties;
 };
 
