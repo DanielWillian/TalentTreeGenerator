@@ -16,6 +16,8 @@ public:
 	PropertyDistance(PropertyDistance const&) = delete;
 	void operator=(PropertyDistance const&) = delete;
 
+	std::unordered_map<int, std::unordered_map<int, int>> GeneratePropertyDistances(const std::vector<Property*>& properties);
+
 	int DistanceBetweenProperties(const Property& lhs, const Property& rhs);
 
 private:
@@ -32,7 +34,7 @@ private:
 private:
 	PropertyDistance();
 
-	const Property* GetLesserProperty(const Property& lhs, const Property& rhs);
+	const Property* GetLesserProperty(const Property& lhs, const Property& rhs) const;
 
 	int DistLhsAffect(const Trait* lhs, const Property& rhs);
 

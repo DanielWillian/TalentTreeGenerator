@@ -154,6 +154,7 @@
     <ClInclude Include="SimilarityTable.h" />
     <ClInclude Include="Statics.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Storage.h" />
     <ClInclude Include="Talent.h" />
     <ClInclude Include="TalentDictionary.h" />
     <ClInclude Include="TalentDictionaryLevel1.h" />
@@ -181,6 +182,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Storage.cpp" />
     <ClCompile Include="TalentDictionary.cpp" />
     <ClCompile Include="TalentDictionaryLevel1.cpp" />
     <ClCompile Include="TalentDictionaryLevel2.cpp" />

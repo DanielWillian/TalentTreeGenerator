@@ -129,6 +129,38 @@ PropertyDistance::PropertyDistance()
 	}
 }
 
+std::unordered_map<int, std::unordered_map<int, int>> PropertyDistance::GeneratePropertyDistances(
+		const std::vector<Property*>& properties)
+{
+	std::unordered_map<int, std::unordered_map<int, int>> halfMatrix(properties.size());
+	for (auto lhsIt = properties.begin(); lhsIt != properties.end(); lhsIt++)
+	{
+		std::unordered_map<int, int> lhsDists(std::distance(lhsIt, properties.end()));
+		for (auto rhsIt = lhsIt; rhsIt != properties.end(); rhsIt++)
+		{
+			lhsDists[(*rhsIt)->trait->index] = DistanceBetweenProperties(**lhsIt, **rhsIt);
+		}
+		halfMatrix[(*lhsIt)->trait->index] = std::move(lhsDists);
+	}
+
+	std::unordered_map<int, std::unordered_map<int, int>> result(properties.size());
+	for (size_t i = 0; i < properties.size(); i++)
+	{
+		result[properties[i]->trait->index] = std::move(std::unordered_map<int, int>(properties.size()));
+	}
+
+	for (auto& lhsDistList : halfMatrix)
+	{
+		for (auto& rhsDist : lhsDistList.second)
+		{
+			result[lhsDistList.first][rhsDist.first] = rhsDist.second;
+			result[rhsDist.first][lhsDistList.first] = rhsDist.second;
+		}
+	}
+
+	return std::move(result);
+}
+
 int PropertyDistance::DistanceBetweenProperties(const Property& lhs, const Property& rhs)
 {
 	const Property* lesserProperty = GetLesserProperty(lhs, rhs);
@@ -168,7 +200,7 @@ int PropertyDistance::DistanceBetweenProperties(const Property& lhs, const Prope
 	return 0;
 }
 
-const Property* PropertyDistance::GetLesserProperty(const Property& lhs, const Property& rhs)
+const Property* PropertyDistance::GetLesserProperty(const Property& lhs, const Property& rhs) const
 {
 	std::vector<std::string>& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
 	std::vector<std::string>& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
