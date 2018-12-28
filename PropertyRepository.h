@@ -40,5 +40,7 @@ public:
 	std::vector<Property*> level6Properties;
 
 	std::vector<Property*> level7Properties;
+
+	std::vector<Property*> level8Properties;
 };
 

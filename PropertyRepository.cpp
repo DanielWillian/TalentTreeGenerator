@@ -32,6 +32,7 @@ PropertyRepository::PropertyRepository()
 
 	auto level7 = GetPropertiesWithoutIds(properties, {"attributes"});
 	level7Properties.insert(std::end(level7Properties), std::begin(level7), std::end(level7));
+	level8Properties.insert(std::end(level8Properties), std::begin(level7), std::end(level7));
 }
 
 std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(

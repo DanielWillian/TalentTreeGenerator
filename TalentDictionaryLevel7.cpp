@@ -6,7 +6,7 @@ TalentDictionaryLevel7::TalentDictionaryLevel7()
 	level = 7;
 	std::vector<TalentDictEntry*> dictEntries;
 	dictEntries.push_back(new TalentDictEntry{"direct", "*", BASE, {1.2f, 1.3f}});
-	dictEntries.push_back(new TalentDictEntry{"duration", "*", BASE, {1.2f, 1.4f}});
+	dictEntries.push_back(new TalentDictEntry{"duration", "*", BASE, {1.2f, 1.3f}});
 	dictEntries.push_back(new TalentDictEntry{"potency", "*", BASE, {1.2f, 1.3f}});
 	dictEntries.push_back(new TalentDictEntry{"urgency", "*", BASE, {1.2f, 1.3f}});
 	dictEntries.push_back(new TalentDictEntry{"singleTarget", "*", BASE, {1.2f, 1.3f}});
