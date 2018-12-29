@@ -11,7 +11,7 @@
 
 std::vector<Property*> PathGenerator::GetAllRelatedProperties(
 		const Property* property,
-		std::vector<Property*> properties) const
+		const std::vector<Property*>& properties) const
 {
 	std::vector<Property*> result;
 

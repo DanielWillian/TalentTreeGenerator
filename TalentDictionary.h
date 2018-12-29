@@ -43,6 +43,8 @@ public:
 public:
 	static const int BASE = 0;
 	static const int MODIFIER = 1;
+	static const int BENEFICIAL = 2;
+	static const int DETRIMENTAL = 3;
 
 public:
 	std::vector<std::unique_ptr<TalentDictEntry>> entries;

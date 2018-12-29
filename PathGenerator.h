@@ -22,7 +22,7 @@ public:
 	Property* GetRandomProperty(std::vector<Property*> properties) const;
 
 	std::vector<Property*> GetAllRelatedProperties(const Property* property,
-			std::vector<Property*> properties) const;
+			const std::vector<Property*>& properties) const;
 
 	std::vector<Talent> GeneratePath(int numLesser, int numGreater);
 

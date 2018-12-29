@@ -165,6 +165,7 @@
     <ClInclude Include="TalentDictionaryLevel6.h" />
     <ClInclude Include="TalentDictionaryLevel7.h" />
     <ClInclude Include="TalentDictionaryLevel8.h" />
+    <ClInclude Include="TalentDictionaryLevel9.h" />
     <ClInclude Include="TalentEntry.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Trait.h" />
@@ -193,6 +194,7 @@
     <ClCompile Include="TalentDictionaryLevel6.cpp" />
     <ClCompile Include="TalentDictionaryLevel7.cpp" />
     <ClCompile Include="TalentDictionaryLevel8.cpp" />
+    <ClCompile Include="TalentDictionaryLevel9.cpp" />
     <ClCompile Include="TalentTree.cpp" />
     <ClCompile Include="TraitDictionary.cpp" />
     <ClCompile Include="TraitRepository.cpp" />

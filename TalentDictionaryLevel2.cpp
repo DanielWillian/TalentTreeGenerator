@@ -5,7 +5,7 @@ TalentDictionaryLevel2::TalentDictionaryLevel2()
 {
 	level = 2;
 	std::vector<TalentDictEntry*> dictEntries;
-	dictEntries.push_back(new TalentDictEntry{"attributes", "+", BASE, {10, 15}});
+	dictEntries.push_back(new TalentDictEntry{"attributes", "+", BASE, {10.0f, 15.0f}});
 
 	for (auto* e : dictEntries)
 	{
