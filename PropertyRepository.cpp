@@ -34,7 +34,8 @@ PropertyRepository::PropertyRepository()
 	level7Properties.insert(std::end(level7Properties), std::begin(level7), std::end(level7));
 	level8Properties.insert(std::end(level8Properties), std::begin(level7), std::end(level7));
 
-	level9Properties.insert(std::end(level9Properties), std::begin(level1), std::end(level1));
+	auto level9 = GetPropertiesWithoutIds(level1, {"specCriticalChance", "specCriticalEffect"});
+	level9Properties.insert(std::end(level9Properties), std::begin(level9), std::end(level9));
 }
 
 std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
@@ -53,6 +54,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
 				}),
 				result.end());
 	}
+	std::sort(result.begin(), result.end());
 
 	return result;
 }

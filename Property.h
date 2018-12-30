@@ -15,6 +15,11 @@ public:
 		return trait == other.trait;
 	}
 
+	bool operator<(const Property& other) const
+	{
+		return trait < other.trait;
+	}
+
 public:
 	TraitParent* trait;
 };

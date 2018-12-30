@@ -553,7 +553,7 @@ int PropertyDistance::DistResourceRelatedResourceRelated(const Trait* lhs, const
 	auto& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs->index];
 	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs->index];
 
-	std::vector<std::vector<std::string>> idListOfPossibleEquals = { {"mana", "manaRegen", "manaVemp"},
+	std::vector<std::vector<std::string>> idListOfPossibleEquals = { {"mana", "manaRegen", "manaVamp"},
 		{"health", "healthRegen", "healthVamp"}, {"shield", "shieldRegen", "shieldVamp"} };
 	for (auto& idList : idListOfPossibleEquals)
 	{

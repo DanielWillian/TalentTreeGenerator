@@ -24,9 +24,9 @@ public:
 	std::vector<Property*> GetAllRelatedProperties(const Property* property,
 			const std::vector<Property*>& properties) const;
 
-	std::vector<Talent> GeneratePath(int numLesser, int numGreater);
+	virtual std::vector<Talent> GeneratePath(int numLesser, int numGreater);
 
-private:
+protected:
 	Talent GenerateRandomTalent(std::vector<Property*>& inOutProperties, const TalentDictionary* dictionary) const;
 
 	template<typename Iter>

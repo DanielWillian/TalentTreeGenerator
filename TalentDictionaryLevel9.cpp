@@ -15,9 +15,7 @@ TalentDictionaryLevel9::TalentDictionaryLevel9()
 	dictEntries.push_back(new TalentDictEntry{"attackSpeed", "*", BENEFICIAL, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{"castSpeed", "*", BENEFICIAL, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{"allCriticalChance", "*", BENEFICIAL, {2.0f, 2.5f}});
-	dictEntries.push_back(new TalentDictEntry{"specCriticalChance", "*", BENEFICIAL, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{"allCriticalEffect", "*", BENEFICIAL, {2.0f, 2.5f}});
-	dictEntries.push_back(new TalentDictEntry{"specCriticalEffect", "*", BENEFICIAL, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{"allHitChance", "*", BENEFICIAL, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{"allEvasionChance", "*", BENEFICIAL, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{"allDodgeChance", "*", BENEFICIAL, {2.0f, 2.5f}});
