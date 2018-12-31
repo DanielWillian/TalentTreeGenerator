@@ -90,12 +90,15 @@
     <ClInclude Include="PathGeneratorLevel9.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TalentTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TalentTreeGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SimilarityTable.cpp">
@@ -153,6 +156,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PathGeneratorLevel9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TalentTreeGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
