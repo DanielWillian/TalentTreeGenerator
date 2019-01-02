@@ -5,6 +5,7 @@
 #include "Talent.h"
 #include "TalentDictionary.h"
 #include <vector>
+#include <memory>
 
 class PathGeneratorLevel9 : public PathGenerator
 {
@@ -18,6 +19,6 @@ public:
 	{
 	}
 
-	std::vector<Talent> GeneratePath(int numLesser, int numGreater) override;
+	std::vector<std::unique_ptr<Talent>> GeneratePath(int numLesser, int numGreater) override;
 };
 

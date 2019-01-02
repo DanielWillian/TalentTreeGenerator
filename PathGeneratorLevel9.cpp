@@ -9,7 +9,7 @@
 #include <random>
 #include <iterator>
 
-std::vector<Talent> PathGeneratorLevel9::GeneratePath(int numLesser, int numGreater)
+std::vector<std::unique_ptr<Talent>> PathGeneratorLevel9::GeneratePath(int numLesser, int numGreater)
 {
 	if (numLesser < 1 && numGreater >= 0)
 	{
@@ -63,6 +63,8 @@ std::vector<Talent> PathGeneratorLevel9::GeneratePath(int numLesser, int numGrea
 	tupleList.push_back({beneficial, beneficialDictEntry->modifier, beneficialValue});
 	tupleList.push_back({detrimental, detrimentalDictEntry->modifier, detrimentalValue});
 
-	return { Talent(tupleList) };
+	std::vector<std::unique_ptr<Talent>> result;
+	result.push_back(std::unique_ptr<Talent>(new Talent(tupleList)));
+	return std::move(result);
 }
 

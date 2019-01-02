@@ -4,6 +4,7 @@
 #include "Talent.h"
 #include "TalentDictionary.h"
 #include <vector>
+#include <memory>
 
 class PathGenerator
 {
@@ -24,10 +25,10 @@ public:
 	std::vector<Property*> GetAllRelatedProperties(const Property* property,
 			const std::vector<Property*>& properties) const;
 
-	virtual std::vector<Talent> GeneratePath(int numLesser, int numGreater);
+	virtual std::vector<std::unique_ptr<Talent>> GeneratePath(int numLesser, int numGreater);
 
 protected:
-	Talent GenerateRandomTalent(std::vector<Property*>& inOutProperties, const TalentDictionary* dictionary) const;
+	std::unique_ptr<Talent> GenerateRandomTalent(std::vector<Property*>& inOutProperties, const TalentDictionary* dictionary) const;
 
 	template<typename Iter>
 	Iter SelectRandom(Iter start, Iter end) const;

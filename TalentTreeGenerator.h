@@ -16,6 +16,8 @@ public:
 		pathCounts = inPathCounts;
 	}
 
+	virtual std::unique_ptr<TalentTree> GenerateTalentTree();
+
 public:
 	std::vector<PathGenerator*> pathGenerators;
 	std::vector<std::vector<std::pair<int, std::pair<int, int>>>> pathCounts;

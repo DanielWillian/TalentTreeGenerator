@@ -26,35 +26,35 @@ std::vector<Property*> PathGenerator::GetAllRelatedProperties(
 	return result;
 }
 
-std::vector<Talent> PathGenerator::GeneratePath(int numLesser, int numGreater)
+std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePath(int numLesser, int numGreater)
 {
 	if (numLesser <= 1 && numGreater <= 0)
 	{
 		return {};
 	}
-	std::vector<Talent> result;
+	std::vector<std::unique_ptr<Talent>> result;
 
 	std::vector<Property*> lesserPossibleProperties = lesserProperties;
 	result.push_back(GenerateRandomTalent(lesserPossibleProperties, lesserDictionary));
 	numLesser--;
 	for (int i = 0; i < numLesser; i++)
 	{
-		Talent talent = GenerateRandomTalent(lesserPossibleProperties, lesserDictionary);
-		result.push_back(talent);
+		std::unique_ptr<Talent> talent = GenerateRandomTalent(lesserPossibleProperties, lesserDictionary);
+		result.push_back(std::move(talent));
 	}
 
 	std::vector<Property*> greaterPossibleProperties = greaterProperties;
 	for (auto& talent : result)
 	{
-		IntersectionOfProperties(greaterPossibleProperties, talent);
+		IntersectionOfProperties(greaterPossibleProperties, *talent);
 	}
 	for (int i = 0; i < numGreater; i++)
 	{
-		Talent talent = GenerateRandomTalent(greaterPossibleProperties, greaterDictionary);
-		result.push_back(talent);
+		std::unique_ptr<Talent> talent = GenerateRandomTalent(greaterPossibleProperties, greaterDictionary);
+		result.push_back(std::move(talent));
 	}
 
-	return result;
+	return std::move(result);
 }
 
 void PathGenerator::IntersectionOfProperties(std::vector<Property*>& inOutProperties, const Talent& talent) const
@@ -88,7 +88,7 @@ void PathGenerator::GetIntersection(std::vector<Property*>& a,
 	}
 }
 
-Talent PathGenerator::GenerateRandomTalent(std::vector<Property*>& inOutProperties,
+std::unique_ptr<Talent> PathGenerator::GenerateRandomTalent(std::vector<Property*>& inOutProperties,
 		const TalentDictionary* dictionary) const
 {
 	auto propertyRange = dictionary->GetPropertiesNumberRange();
@@ -144,7 +144,7 @@ Talent PathGenerator::GenerateRandomTalent(std::vector<Property*>& inOutProperti
 		}
 	}
 
-	return Talent(tupleList);
+	return std::move(std::unique_ptr<Talent>(new Talent(tupleList)));
 }
 
 int PathGenerator::GetRandomInt(const int min, const int max) const

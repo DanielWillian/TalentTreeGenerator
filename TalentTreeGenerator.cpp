@@ -25,3 +25,20 @@ TalentTreeGenerator::TalentTreeGenerator(const std::vector<PathGenerator*>& inPa
 			pathCountsLevel5, pathCountsLevel7, pathCountsLevel9};
 }
 
+std::unique_ptr<TalentTree> TalentTreeGenerator::GenerateTalentTree()
+{
+	std::vector<std::vector<std::unique_ptr<Talent>>> talentPaths;
+	for (size_t i = 0; i < pathGenerators.size(); i++)
+	{
+		for (auto& talentCount : pathCounts[i])
+		{
+			for (int j = 0; j < talentCount.first; j++)
+			{
+				talentPaths.push_back(std::move(pathGenerators[i]->GeneratePath(
+						talentCount.second.first, talentCount.second.second)));
+			}
+		}
+	}
+	return std::move(std::unique_ptr<TalentTree>(new TalentTree(talentPaths)));
+}
+
