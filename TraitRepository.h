@@ -31,6 +31,8 @@ private:
 
 	inline int GetNextIndex() const;
 
+	std::vector<std::string> GetTraitIds(const Trait* trait);
+
 private:
 	TraitRepository();
 

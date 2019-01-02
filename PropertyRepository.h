@@ -44,5 +44,8 @@ public:
 	std::vector<Property*> level8Properties;
 
 	std::vector<Property*> level9Properties;
+
+private:
+	class TraitRepository* traitRepository;
 };
 

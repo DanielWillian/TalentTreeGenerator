@@ -4,7 +4,8 @@
 
 PropertyRepository::PropertyRepository()
 {
-	std::vector<TraitParent*> traitList = TraitRepository::GetInstance().possibleTraits;
+	traitRepository = &TraitRepository::GetInstance();
+	std::vector<TraitParent*> traitList = traitRepository->possibleTraits;
 	for (auto* traitParent : traitList)
 	{
 		allProperties.push_back(std::unique_ptr<Property>(new Property(traitParent)));
@@ -16,25 +17,24 @@ PropertyRepository::PropertyRepository()
 		properties.push_back(ptr.get());
 	}
 
-	auto level1 = GetPropertiesWithoutIds(properties, {"weaponType", "damageType", "healingType",
-			"damageType1", "attributes"});
+	auto level2 = GetPropertiesWithIds({"attributes"});
+	auto level7 = GetPropertiesWithoutIds(properties, {"attributes"});
+	auto level4 = GetPropertiesWithoutIds(level7, {"weaponType"});
+	auto level1 = GetPropertiesWithoutIds(level4, {"damageType", "healingType", "damageType1"});
+	auto level9 = GetPropertiesWithoutIds(level1, {"specCriticalChance", "specCriticalEffect"});
 	level1Properties.insert(std::end(level1Properties), std::begin(level1), std::end(level1));
 	level3Properties.insert(std::end(level3Properties), std::begin(level1), std::end(level1));
 
-	auto level2 = GetPropertiesWithIds({"attributes"});
 	level2Properties.insert(std::end(level2Properties), std::begin(level2), std::end(level2));
 
-	auto level4 = GetPropertiesWithoutIds(properties, {"weaponType", "attributes"});
 	level4Properties.insert(std::end(level4Properties), std::begin(level4), std::end(level4));
 	level6Properties.insert(std::end(level6Properties), std::begin(level4), std::end(level4));
 
 	level5Properties.insert(std::end(level5Properties), std::begin(level2), std::end(level2));
 
-	auto level7 = GetPropertiesWithoutIds(properties, {"attributes"});
 	level7Properties.insert(std::end(level7Properties), std::begin(level7), std::end(level7));
 	level8Properties.insert(std::end(level8Properties), std::begin(level7), std::end(level7));
 
-	auto level9 = GetPropertiesWithoutIds(level1, {"specCriticalChance", "specCriticalEffect"});
 	level9Properties.insert(std::end(level9Properties), std::begin(level9), std::end(level9));
 }
 
@@ -49,7 +49,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
 		result.erase(std::remove_if(result.begin(), result.end(),
 				[&](auto* p) -> bool
 				{
-					const auto& traitIds = p->trait->GetAllTraitIds();
+					const auto& traitIds = traitRepository->allTraitsIds[p->trait->index];
 					return std::find(traitIds.begin(), traitIds.end(), id) != traitIds.end();
 				}),
 				result.end());
@@ -69,7 +69,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vecto
 		for (auto& id : ids)
 		{
 			bFound = false;
-			for (auto& traitId : property->trait->GetAllTraitIds())
+			for (auto& traitId : traitRepository->allTraitsIds[property->trait->index])
 			{
 				if (id == traitId)
 				{

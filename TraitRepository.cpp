@@ -118,11 +118,11 @@ Trait* TraitRepository::GetTrait(std::unique_ptr<Trait>& trait)
 	if (possibleSaved == allTraitsSaved.end())
 	{
 	*/
-		std::vector<std::string> allTraitId = trait->GetAllTraitIds();
-		std::sort(allTraitId.begin(), allTraitId.end());
-		allTraitsIds.push_back(std::move(allTraitId));
 		allTraitsSaved.push_back(std::move(trait));
 		Trait* movedTrait = allTraitsSaved.back().get();
+		std::vector<std::string> allTraitId = GetTraitIds(movedTrait);
+		std::sort(allTraitId.begin(), allTraitId.end());
+		allTraitsIds.push_back(std::move(allTraitId));
 		allTraits.push_back(movedTrait);
 		return movedTrait;
 	/*
@@ -137,5 +137,19 @@ Trait* TraitRepository::GetTrait(std::unique_ptr<Trait>& trait)
 int TraitRepository::GetNextIndex() const
 {
 	return static_cast<int>(allTraitsSaved.size());
+}
+
+std::vector<std::string> TraitRepository::GetTraitIds(const Trait* trait)
+{
+	std::vector<std::string> result;
+	result.push_back(trait->id);
+
+	for (const Trait* child : trait->subTraits)
+	{
+		std::vector<std::string>& childTraits = allTraitsIds[child->index];
+		std::copy(childTraits.begin(), childTraits.end(), std::back_inserter(result));
+	}
+
+	return std::move(result);
 }
 
