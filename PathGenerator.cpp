@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "PathGenerator.h"
 #include "PropertyDistance.h"
+#include "PropertyRepository.h"
 #include "Talent.h"
 #include "TalentEntry.h"
 #include "Statics.h"
@@ -88,63 +89,97 @@ void PathGenerator::GetIntersection(std::vector<Property*>& a,
 	}
 }
 
-std::unique_ptr<Talent> PathGenerator::GenerateRandomTalent(std::vector<Property*>& inOutProperties,
-		const TalentDictionary* dictionary) const
+std::unique_ptr<Talent> PathGenerator::GenerateTalent(const std::vector<std::string>& desiredTraits,
+		const bool bLesser) const
+{
+	const auto& properties = bLesser ? lesserProperties : greaterProperties;
+	const auto* dictionary = bLesser ? lesserDictionary : greaterDictionary;
+	auto desiredProperties = PropertyRepository::GetInstance().GetPropertiesWithIds(properties, desiredTraits);
+	if (!desiredProperties.empty())
+	{
+		auto* desiredProperty = *SelectRandom(desiredProperties.begin(), desiredProperties.end());
+		auto relatedProperties = GetAllRelatedProperties(desiredProperty, properties);
+		return GenerateRandomTalent(relatedProperties, dictionary, desiredProperty);
+	}
+
+	return std::move(std::unique_ptr<Talent>(nullptr));
+}
+
+std::unique_ptr<Talent> PathGenerator::GenerateRandomTalent(
+		std::vector<Property*>& inOutProperties,
+		const TalentDictionary* dictionary,
+		Property* startingProperty) const
 {
 	auto propertyRange = dictionary->GetPropertiesNumberRange();
-	const int numberOfProperties = GetRandomInt(propertyRange.first, propertyRange.second);
+	int numberOfProperties = GetRandomInt(propertyRange.first, propertyRange.second);
 
 	std::vector<TalentEntry> tupleList;
+	if (startingProperty)
+	{
+		GenerateRandomTalentTuple(inOutProperties, dictionary, numberOfProperties, tupleList, startingProperty);
+		numberOfProperties--;
+	}
+
 	for (int i = 0; i < numberOfProperties; i++)
 	{
 		auto* property = GetRandomProperty(inOutProperties);
 
-		auto possibleEntryIt = std::find_if(tupleList.begin(), tupleList.end(),
-				[&] (const auto& e) { return *e.property == *property; });
-		const bool alreadyHasProperty = possibleEntryIt != tupleList.end();
-
-		auto terminalIds = property->trait->GetTerminalTraitsId();
-		auto dictEntries = dictionary->GetDictEntries(terminalIds[0]);
-		dictEntries.erase(std::remove_if(dictEntries.begin(), dictEntries.end(),
-				[&] (const auto* e)
-				{
-					return alreadyHasProperty ? possibleEntryIt->modifier != e->modifier : false;
-				}),
-				dictEntries.end());
-		TalentDictEntry* dictEntry = *SelectRandom(dictEntries.begin(), dictEntries.end());
-
-		float valueModifier = 1;
-		auto modifierEntries = dictionary->GetModifierEntries();
-		for (auto it = terminalIds.begin() + 1; it != terminalIds.end(); it++)
-		{
-			for (auto* entry : modifierEntries)
-			{
-				if (*it == entry->key)
-				{
-					valueModifier *= GetRandomFloat(entry->values.first, entry->values.second);
-				}
-			}
-		}
-
-		const int dictPrecision = dictionary->GetFloatPrecision();
-		const float randomValue = GetRandomFloat(dictEntry->values.first, dictEntry->values.second);
-		float talentValue = (roundf((randomValue - 1) * valueModifier / numberOfProperties * dictPrecision)
-				/ dictPrecision) + 1;
-		talentValue += alreadyHasProperty ? possibleEntryIt->value - 1 : 0;
-		talentValue = std::min(talentValue, dictEntry->values.second * valueModifier);
-
-		if (!alreadyHasProperty)
-		{
-			tupleList.push_back({property, dictEntry->modifier, talentValue});
-			IntersectionOfProperties(inOutProperties, property);
-		}
-		else
-		{
-			possibleEntryIt->value = talentValue;
-		}
+		GenerateRandomTalentTuple(inOutProperties, dictionary, numberOfProperties, tupleList, property);
 	}
 
 	return std::move(std::unique_ptr<Talent>(new Talent(tupleList)));
+}
+
+void PathGenerator::GenerateRandomTalentTuple(
+		std::vector<Property*>& inOutProperties,
+		const TalentDictionary* dictionary,
+		const int numberOfProperties,
+		std::vector<TalentEntry>& tupleList,
+		Property* property) const
+{
+	auto possibleEntryIt = std::find_if(tupleList.begin(), tupleList.end(),
+			[&] (const auto& e) { return *e.property == *property; });
+	const bool alreadyHasProperty = possibleEntryIt != tupleList.end();
+
+	auto terminalIds = property->trait->GetTerminalTraitsId();
+	auto dictEntries = dictionary->GetDictEntries(terminalIds[0]);
+	dictEntries.erase(std::remove_if(dictEntries.begin(), dictEntries.end(),
+			[&] (const auto* e)
+			{
+				return alreadyHasProperty ? possibleEntryIt->modifier != e->modifier : false;
+			}),
+			dictEntries.end());
+	TalentDictEntry* dictEntry = *SelectRandom(dictEntries.begin(), dictEntries.end());
+
+	float valueModifier = 1;
+	auto modifierEntries = dictionary->GetModifierEntries();
+	for (auto it = terminalIds.begin() + 1; it != terminalIds.end(); it++)
+	{
+		for (auto* entry : modifierEntries)
+		{
+			if (*it == entry->key)
+			{
+				valueModifier *= GetRandomFloat(entry->values.first, entry->values.second);
+			}
+		}
+	}
+
+	const int dictPrecision = dictionary->GetFloatPrecision();
+	const float randomValue = GetRandomFloat(dictEntry->values.first, dictEntry->values.second);
+	float talentValue = (roundf((randomValue - 1) * valueModifier / numberOfProperties * dictPrecision)
+			/ dictPrecision) + 1;
+	talentValue += alreadyHasProperty ? possibleEntryIt->value - 1 : 0;
+	talentValue = std::min(talentValue, dictEntry->values.second * valueModifier);
+
+	if (!alreadyHasProperty)
+	{
+		tupleList.push_back({property, dictEntry->modifier, talentValue});
+		IntersectionOfProperties(inOutProperties, property);
+	}
+	else
+	{
+		possibleEntryIt->value = talentValue;
+	}
 }
 
 int PathGenerator::GetRandomInt(const int min, const int max) const

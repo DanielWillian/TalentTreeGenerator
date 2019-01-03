@@ -27,8 +27,14 @@ public:
 
 	virtual std::vector<std::unique_ptr<Talent>> GeneratePath(int numLesser, int numGreater);
 
+	virtual std::unique_ptr<Talent> GenerateTalent(const std::vector<std::string>& desiredTraits,
+			const bool bLesser) const;
+
 protected:
-	std::unique_ptr<Talent> GenerateRandomTalent(std::vector<Property*>& inOutProperties, const TalentDictionary* dictionary) const;
+	virtual std::unique_ptr<Talent> GenerateRandomTalent(
+			std::vector<Property*>& inOutProperties,
+			const TalentDictionary* dictionary,
+			Property* startingProperty = nullptr) const;
 
 	template<typename Iter>
 	Iter SelectRandom(Iter start, Iter end) const;
@@ -43,6 +49,13 @@ protected:
 
 	void GetIntersection(std::vector<Property*>& a,
 			const std::vector<Property*>& b) const;
+
+	virtual void GenerateRandomTalentTuple(
+			std::vector<Property*>& inOutProperties,
+			const TalentDictionary* dictionary,
+			const int numberOfProperties,
+			std::vector<TalentEntry>& tupleList,
+			Property* property) const;
 
 public:
 	std::vector<Property*> lesserProperties;

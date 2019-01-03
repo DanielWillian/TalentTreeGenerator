@@ -16,13 +16,14 @@ public:
 	PropertyRepository(PropertyRepository const&) = delete;
 	void operator=(PropertyRepository const&) = delete;
 
-	std::vector<Property*> GetPropertiesWithIds(const std::vector<std::string>& ids);
+	std::vector<Property*> GetPropertiesWithIds(const std::vector<Property*>& properties,
+			const std::vector<std::string>& ids) const;
 
 private:
 	PropertyRepository();
 
 	std::vector<Property*> GetPropertiesWithoutIds(const std::vector<Property*>& properties,
-			const std::vector<std::string>& ids);
+			const std::vector<std::string>& ids) const;
 
 public:
 	std::vector<std::unique_ptr<Property>> allProperties;

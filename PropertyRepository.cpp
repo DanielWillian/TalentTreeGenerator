@@ -17,7 +17,7 @@ PropertyRepository::PropertyRepository()
 		properties.push_back(ptr.get());
 	}
 
-	auto level2 = GetPropertiesWithIds({"attributes"});
+	auto level2 = GetPropertiesWithIds(properties, {"attributes"});
 	auto level7 = GetPropertiesWithoutIds(properties, {"attributes"});
 	auto level4 = GetPropertiesWithoutIds(level7, {"weaponType"});
 	auto level1 = GetPropertiesWithoutIds(level4, {"damageType", "healingType", "damageType1"});
@@ -40,7 +40,7 @@ PropertyRepository::PropertyRepository()
 
 std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
 		const std::vector<Property*>& properties,
-		const std::vector<std::string>& ids)
+		const std::vector<std::string>& ids) const
 {
 	auto result = properties;
 
@@ -59,11 +59,12 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
 	return result;
 }
 
-std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vector<std::string>& ids)
+std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vector<Property*>& properties,
+		const std::vector<std::string>& ids) const
 {
 	std::vector<Property*> result;
 
-	for (const auto& property : allProperties)
+	for (auto* property : properties)
 	{
 		bool bFound = false;
 		for (auto& id : ids)
@@ -84,7 +85,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vecto
 		}
 		if (bFound)
 		{
-			result.push_back(property.get());
+			result.push_back(property);
 		}
 	}
 
