@@ -27,7 +27,42 @@ std::vector<Property*> PathGenerator::GetAllRelatedProperties(
 	return result;
 }
 
-std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePath(int numLesser, int numGreater)
+std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePath(
+		int numLesser,
+		int numGreater,
+		std::vector<Property*>* startingProperties)
+{
+	std::vector<Property*> lesserPossibleProperties = lesserProperties;
+	std::vector<Property*> greaterPossibleProperties = greaterProperties;
+	return GeneratePathInternal(numLesser,
+			numGreater,
+			lesserPossibleProperties,
+			greaterPossibleProperties,
+			startingProperties);
+}
+
+std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathWithTraits(
+		const std::vector<std::string>& desiredTraits,
+		int numLesser,
+		int numGreater)
+{
+	auto desiredProperties = PropertyRepository::GetInstance().GetPropertiesWithIds(lesserProperties, desiredTraits);
+	if (!desiredProperties.empty())
+	{
+		return GeneratePath(numLesser, numGreater, &desiredProperties);
+	}
+
+	std::vector<std::unique_ptr<Talent>> result;
+	result.push_back(std::move(std::unique_ptr<Talent>(nullptr)));
+	return result;
+}
+
+std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathInternal(
+		int numLesser,
+		int numGreater,
+		std::vector<Property*> inOutLesserPossibleProperties,
+		std::vector<Property*> inOutGreaterPossibleProperties,
+		std::vector<Property*>* startingProperties)
 {
 	if (numLesser <= 1 && numGreater <= 0)
 	{
@@ -35,23 +70,49 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePath(int numLesser, 
 	}
 	std::vector<std::unique_ptr<Talent>> result;
 
-	std::vector<Property*> lesserPossibleProperties = lesserProperties;
-	result.push_back(GenerateRandomTalent(lesserPossibleProperties, lesserDictionary));
+	Property* startingProperty;
+	startingProperty = startingProperties ?
+			*SelectRandom(startingProperties->begin(), startingProperties->end()) :
+			nullptr;
+	result.push_back(GenerateRandomTalent(inOutLesserPossibleProperties,
+				lesserDictionary,
+				startingProperty));
+	if (startingProperties)
+	{
+		GetIntersection(*startingProperties, inOutLesserPossibleProperties);
+	}
 	numLesser--;
 	for (int i = 0; i < numLesser; i++)
 	{
-		std::unique_ptr<Talent> talent = GenerateRandomTalent(lesserPossibleProperties, lesserDictionary);
+		startingProperty = startingProperties ?
+				*SelectRandom(startingProperties->begin(), startingProperties->end()) :
+				nullptr;
+		std::unique_ptr<Talent> talent = GenerateRandomTalent(inOutLesserPossibleProperties,
+				lesserDictionary,
+				startingProperty);
+		if (startingProperties)
+		{
+			GetIntersection(*startingProperties, inOutLesserPossibleProperties);
+		}
 		result.push_back(std::move(talent));
 	}
 
-	std::vector<Property*> greaterPossibleProperties = greaterProperties;
 	for (auto& talent : result)
 	{
-		IntersectionOfProperties(greaterPossibleProperties, *talent);
+		IntersectionOfProperties(inOutGreaterPossibleProperties, *talent);
 	}
 	for (int i = 0; i < numGreater; i++)
 	{
-		std::unique_ptr<Talent> talent = GenerateRandomTalent(greaterPossibleProperties, greaterDictionary);
+		startingProperty = startingProperties ?
+				*SelectRandom(startingProperties->begin(), startingProperties->end()) :
+				nullptr;
+		std::unique_ptr<Talent> talent = GenerateRandomTalent(inOutGreaterPossibleProperties,
+				greaterDictionary,
+				startingProperty);
+		if (startingProperties)
+		{
+			GetIntersection(*startingProperties, inOutGreaterPossibleProperties);
+		}
 		result.push_back(std::move(talent));
 	}
 

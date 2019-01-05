@@ -19,6 +19,9 @@ public:
 	{
 	}
 
-	std::vector<std::unique_ptr<Talent>> GeneratePath(int numLesser, int numGreater) override;
+	virtual std::vector<std::unique_ptr<Talent>> GeneratePath(
+			int numLesser,
+			int numGreater,
+			Property* startingProperty = nullptr);
 };
 

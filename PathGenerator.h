@@ -25,7 +25,15 @@ public:
 	std::vector<Property*> GetAllRelatedProperties(const Property* property,
 			const std::vector<Property*>& properties) const;
 
-	virtual std::vector<std::unique_ptr<Talent>> GeneratePath(int numLesser, int numGreater);
+	virtual std::vector<std::unique_ptr<Talent>> GeneratePath(
+			int numLesser,
+			int numGreater,
+			std::vector<Property*>* startingProperties = nullptr);
+
+	virtual std::vector<std::unique_ptr<Talent>> GeneratePathWithTraits(
+			const std::vector<std::string>& desiredTraits,
+			int numLesser,
+			int numGreater);
 
 	virtual std::unique_ptr<Talent> GenerateTalent(const std::vector<std::string>& desiredTraits,
 			const bool bLesser) const;
@@ -56,6 +64,13 @@ protected:
 			const int numberOfProperties,
 			std::vector<TalentEntry>& tupleList,
 			Property* property) const;
+
+	virtual std::vector<std::unique_ptr<Talent>> GeneratePathInternal(
+			int numLesser,
+			int numGreater,
+			std::vector<Property*> inOutLesserPossibleProperties,
+			std::vector<Property*> inOutGreaterPossibleProperties,
+			std::vector<Property*>* startingProperties = nullptr);
 
 public:
 	std::vector<Property*> lesserProperties;

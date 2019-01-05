@@ -9,7 +9,10 @@
 #include <random>
 #include <iterator>
 
-std::vector<std::unique_ptr<Talent>> PathGeneratorLevel9::GeneratePath(int numLesser, int numGreater)
+std::vector<std::unique_ptr<Talent>> PathGeneratorLevel9::GeneratePath(
+		int numLesser,
+		int numGreater,
+		Property* startingProperty)
 {
 	if (numLesser < 1 && numGreater >= 0)
 	{
