@@ -170,6 +170,7 @@
     <ClInclude Include="TalentEntry.h" />
     <ClInclude Include="TalentTree.h" />
     <ClInclude Include="TalentTreeGenerator.h" />
+    <ClInclude Include="TalentTreeStructure.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Trait.h" />
     <ClInclude Include="TraitDictionary.h" />
@@ -201,6 +202,7 @@
     <ClCompile Include="TalentDictionaryLevel9.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TalentTreeGenerator.cpp" />
+    <ClCompile Include="TalentTreeStructure.cpp" />
     <ClCompile Include="TraitDictionary.cpp" />
     <ClCompile Include="TraitRepository.cpp" />
   </ItemGroup>
