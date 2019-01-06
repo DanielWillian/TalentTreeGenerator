@@ -64,7 +64,7 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathInternal(
 		std::vector<Property*> inOutGreaterPossibleProperties,
 		std::vector<Property*>* startingProperties)
 {
-	if (numLesser <= 1 && numGreater <= 0)
+	if (numLesser < 1 && numGreater <= 0)
 	{
 		return {};
 	}
