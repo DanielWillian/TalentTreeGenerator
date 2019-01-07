@@ -1,18 +1,18 @@
 #pragma once
 
 #include "Talent.h"
-#include <vector>
+#include <unordered_map>
 #include <memory>
 
 class TalentTree
 {
 public:
-	TalentTree(std::vector<std::vector<std::unique_ptr<Talent>>>& inOutTalentPaths)
+	TalentTree(std::unordered_map<std::string, std::unique_ptr<Talent>>& inOutTalents)
 	{
-		talentPaths = std::move(inOutTalentPaths);
+		talents = std::move(inOutTalents);
 	}
 
 public:
-	std::vector<std::vector<std::unique_ptr<Talent>>> talentPaths;
+	std::unordered_map<std::string, std::unique_ptr<Talent>> talents;
 };
 

@@ -1,44 +1,75 @@
 #include "stdafx.h"
 #include "TalentTreeGenerator.h"
+#include <stdexcept>
 
-TalentTreeGenerator::TalentTreeGenerator(const std::vector<PathGenerator*>& inPathGenerators)
+TalentTreeGenerator::TalentTreeGenerator(const std::vector<PathGenerator*>& inPathGenerators,
+		const std::unordered_map<std::string, std::vector<std::string>>& inTalentPathsNames)
 {
 	pathGenerators = inPathGenerators;
 
-	std::vector<std::pair<int, std::pair<int, int>>> pathCountsLevel1;
-	pathCountsLevel1.push_back({8, {4, 1}});
-	pathCountsLevel1.push_back({4, {4, 0}});
-	pathCountsLevel1.push_back({8, {2, 1}});
-	std::vector<std::pair<int, std::pair<int, int>>> pathCountsLevel2;
-	pathCountsLevel2.push_back({4, {5, 0}});
-	std::vector<std::pair<int, std::pair<int, int>>> pathCountsLevel4;
-	pathCountsLevel4.push_back({32, {4, 1}});
-	pathCountsLevel4.push_back({16, {3, 1}});
-	pathCountsLevel4.push_back({16, {5, 1}});
-	std::vector<std::pair<int, std::pair<int, int>>> pathCountsLevel5;
-	pathCountsLevel5.push_back({8, {7, 0}});
-	std::vector<std::pair<int, std::pair<int, int>>> pathCountsLevel7;
-	pathCountsLevel7.push_back({16, {7, 2}});
-	std::vector<std::pair<int, std::pair<int, int>>> pathCountsLevel9;
-	pathCountsLevel9.push_back({8, {1, 0}});
-	pathCounts = {pathCountsLevel1, pathCountsLevel2, pathCountsLevel4,
-			pathCountsLevel5, pathCountsLevel7, pathCountsLevel9};
+	for (const auto& pathName : inTalentPathsNames)
+	{
+		const int generatorIndex = GetGeneratorIndexFromTalentPathName(pathName.first);
+		int lesserCount = 0;
+		int greaterCount = 0;
+		for (const auto& talentName : pathName.second)
+		{
+			if (IsGreaterTalent(talentName))
+			{
+				greaterCount++;
+			}
+			else
+			{
+				lesserCount++;
+			}
+		}
+		talentPathsData[pathName.first] = {generatorIndex, {lesserCount, greaterCount}, pathName.second};
+	}
 }
 
 std::unique_ptr<TalentTree> TalentTreeGenerator::GenerateTalentTree()
 {
-	std::vector<std::vector<std::unique_ptr<Talent>>> talentPaths;
-	for (size_t i = 0; i < pathGenerators.size(); i++)
+	std::unordered_map<std::string, std::unique_ptr<Talent>> talentNames;
+	for (const auto& pathData : talentPathsData)
 	{
-		for (auto& talentCount : pathCounts[i])
+		for (auto& talentName : GeneratePath(pathData.first))
 		{
-			for (int j = 0; j < talentCount.first; j++)
-			{
-				talentPaths.push_back(std::move(pathGenerators[i]->GeneratePath(
-						talentCount.second.first, talentCount.second.second)));
-			}
+			talentNames[talentName.first] = std::move(talentName.second);
 		}
 	}
-	return std::move(std::unique_ptr<TalentTree>(new TalentTree(talentPaths)));
+	return std::move(std::unique_ptr<TalentTree>(new TalentTree(talentNames)));
+}
+
+std::unordered_map<std::string, std::unique_ptr<Talent>> TalentTreeGenerator::GeneratePath(const std::string& pathName)
+{
+	auto& data = talentPathsData[pathName];
+	std::unordered_map<std::string, std::unique_ptr<Talent>> talentNames;
+	auto talentPath = pathGenerators[data.generatorIndex]->GeneratePath(
+			data.talentCount.first, data.talentCount.second);
+	for (size_t i = 0; i < data.talentNames.size(); i++)
+	{
+		talentNames[data.talentNames[i]] = std::move(talentPath[i]);
+	}
+	return talentNames;
+}
+
+bool TalentTreeGenerator::IsGreaterTalent(const std::string name)
+{
+	const char index = name[0];
+	return index == '3' || index == '6' || index == '8';
+}
+
+int TalentTreeGenerator::GetGeneratorIndexFromTalentPathName(const std::string name)
+{
+	switch (name[0])
+	{
+		case '1': return 0;
+		case '2': return 1;
+		case '4': return 2;
+		case '5': return 3;
+		case '7': return 4;
+		case '9': return 5;
+		default: throw std::invalid_argument("invalid talent path name: " + name);
+	}
 }
 

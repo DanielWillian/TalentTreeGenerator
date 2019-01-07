@@ -130,5 +130,41 @@ TalentTreeStructure::TalentTreeStructure()
 	talentPaths["9F"] = {"9F"};
 	talentPaths["9G"] = {"9G"};
 	talentPaths["9H"] = {"9H"};
+
+
+	talentConnections["0"] = { {"1A", true}, {"1E", true}, {"1I", true}, {"1M", true},
+			{"1Q", true}, {"1U", true}, {"1Y", true}, {"1c", true} };
+	talentConnections["1A"] = { {"1B", true} };
+	talentConnections["1B"] = { {"1C", true} };
+	talentConnections["1C"] = { {"1D", true} };
+	talentConnections["1D"] = { {"3A", true} };
+	talentConnections["1E"] = { {"1F", true} };
+	talentConnections["1F"] = { {"1G", true} };
+	talentConnections["1G"] = { {"1H", true} };
+	talentConnections["1H"] = { {"3A", true} };
+	talentConnections["1I"] = { {"1J", true} };
+	talentConnections["1J"] = { {"1K", true} };
+	talentConnections["1K"] = { {"1L", true} };
+	talentConnections["1L"] = { {"3B", true} };
+	talentConnections["1M"] = { {"1N", true} };
+	talentConnections["1N"] = { {"1O", true} };
+	talentConnections["1O"] = { {"1P", true} };
+	talentConnections["1P"] = { {"3B", true} };
+	talentConnections["1Q"] = { {"1R", true} };
+	talentConnections["1R"] = { {"1S", true} };
+	talentConnections["1S"] = { {"1T", true} };
+	talentConnections["1T"] = { {"3C", true} };
+	talentConnections["1U"] = { {"1V", true} };
+	talentConnections["1V"] = { {"1W", true} };
+	talentConnections["1W"] = { {"1X", true} };
+	talentConnections["1X"] = { {"3C", true} };
+	talentConnections["1Y"] = { {"1Z", true} };
+	talentConnections["1Z"] = { {"1a", true} };
+	talentConnections["1a"] = { {"1b", true} };
+	talentConnections["1b"] = { {"3D", true} };
+	talentConnections["1c"] = { {"1d", true} };
+	talentConnections["1d"] = { {"1e", true} };
+	talentConnections["1e"] = { {"1f", true} };
+	talentConnections["1f"] = { {"3D", true} };
 }
 
