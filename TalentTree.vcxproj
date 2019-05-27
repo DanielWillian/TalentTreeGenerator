@@ -150,6 +150,7 @@
     <ClInclude Include="PathGenerator.h" />
     <ClInclude Include="PathGeneratorLevel9.h" />
     <ClInclude Include="Property.h" />
+    <ClInclude Include="PropertyDictionary.h" />
     <ClInclude Include="PropertyDistance.h" />
     <ClInclude Include="PropertyRepository.h" />
     <ClInclude Include="SimilarityTable.h" />
@@ -180,6 +181,7 @@
     <ClCompile Include="PathGenerator.cpp" />
     <ClCompile Include="PathGeneratorLevel9.cpp" />
     <ClCompile Include="Property.cpp" />
+    <ClCompile Include="PropertyDictionary.cpp" />
     <ClCompile Include="PropertyDistance.cpp" />
     <ClCompile Include="PropertyRepository.cpp" />
     <ClCompile Include="SimilarityTable.cpp" />
