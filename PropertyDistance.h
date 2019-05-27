@@ -36,6 +36,7 @@ private:
 
 	const Property* GetLesserProperty(const Property& lhs, const Property& rhs) const;
 
+	/*
 	int DistLhsAffect(const Trait* lhs, const Property& rhs);
 
 	int DistLhsStats(const Trait* lhs, const Property& rhs);
@@ -43,6 +44,7 @@ private:
 	int DistLhsResourceRelated(const Trait* lhs, const Property& rhs);
 
 	int DistLhsAlteration(const Trait* lhs, const Property& rhs);
+	*/
 
 	int DistWeapon(const Trait* lhs, const Trait* rhs);
 

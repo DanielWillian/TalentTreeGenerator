@@ -1,26 +1,31 @@
 #pragma once
 
-#include "Trait.h"
+#include <string>
+#include <vector>
 
 class Property
 {
 public:
-	Property(TraitParent* inTrait)
+	Property() {}
+
+	Property(const int inIndex, const std::vector<std::string>& inIds)
 	{
-		trait = inTrait;
+		index = inIndex;
+		ids = inIds;
 	}
 
 	bool operator==(const Property& other) const
 	{
-		return trait == other.trait;
+		return index == other.index;
 	}
 
 	bool operator<(const Property& other) const
 	{
-		return trait < other.trait;
+		return index < other.index;
 	}
 
 public:
-	TraitParent* trait;
+	int index;
+	std::vector<std::string> ids;
 };
 

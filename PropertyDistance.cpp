@@ -138,15 +138,15 @@ std::unordered_map<int, std::unordered_map<int, int>> PropertyDistance::Generate
 		std::unordered_map<int, int> lhsDists(std::distance(lhsIt, properties.end()));
 		for (auto rhsIt = lhsIt; rhsIt != properties.end(); rhsIt++)
 		{
-			lhsDists[(*rhsIt)->trait->index] = DistanceBetweenProperties(**lhsIt, **rhsIt);
+			lhsDists[(*rhsIt)->index] = DistanceBetweenProperties(**lhsIt, **rhsIt);
 		}
-		halfMatrix[(*lhsIt)->trait->index] = std::move(lhsDists);
+		halfMatrix[(*lhsIt)->index] = std::move(lhsDists);
 	}
 
 	std::unordered_map<int, std::unordered_map<int, int>> result(properties.size());
 	for (size_t i = 0; i < properties.size(); i++)
 	{
-		result[properties[i]->trait->index] = std::move(std::unordered_map<int, int>(properties.size()));
+		result[properties[i]->index] = std::move(std::unordered_map<int, int>(properties.size()));
 	}
 
 	for (auto& lhsDistList : halfMatrix)
@@ -165,8 +165,8 @@ int PropertyDistance::DistanceBetweenProperties(const Property& lhs, const Prope
 {
 	const Property* lesserProperty = GetLesserProperty(lhs, rhs);
 	const Property* otherProperty = *lesserProperty == lhs ? &rhs : &lhs;
-	std::vector<std::string>& lesserIds = TraitRepository::GetInstance().allTraitsIds[lesserProperty->trait->index];
-	std::vector<std::string>& otherIds = TraitRepository::GetInstance().allTraitsIds[otherProperty->trait->index];
+	std::vector<std::string>& lesserIds = TraitRepository::GetInstance().allTraitsIds[lesserProperty->index];
+	std::vector<std::string>& otherIds = TraitRepository::GetInstance().allTraitsIds[otherProperty->index];
 
 	const bool bLesserAttri = Statics::Contain(lesserIds, std::string("attributes"));
 	const bool bOtherAttri = Statics::Contain(otherIds, std::string("attributes"));
@@ -175,26 +175,22 @@ int PropertyDistance::DistanceBetweenProperties(const Property& lhs, const Prope
 		return !bLesserAttri || !bOtherAttri ? 20 : 0;
 	}
 
-	const Trait* lhsWeapon = lhs.trait->GetTraitWithId("weapon");
-	const Trait* rhsWeapon = rhs.trait->GetTraitWithId("weapon");
-	const int weaponDist = weaponDistances[lhsWeapon->index][rhsWeapon->index];
-
 	if (Statics::Contain(lesserIds, std::string("affect")))
 	{
-		return DistLhsAffect(lesserProperty->trait->GetTraitWithId("affect"), *otherProperty) + weaponDist;
+		//return DistLhsAffect(lesserProperty->trait->GetTraitWithId("affect"), *otherProperty) + weaponDist;
 	}
 	else if (Statics::Contain(lesserIds, std::string("stats")))
 	{
-		return DistLhsStats(lesserProperty->trait->GetTraitWithId("stats"), *otherProperty) + weaponDist;
+		//return DistLhsStats(lesserProperty->trait->GetTraitWithId("stats"), *otherProperty) + weaponDist;
 	}
 	else if (Statics::Contain(lesserIds, std::string("resourceRelated")))
 	{
-		return DistLhsResourceRelated(lesserProperty->trait->GetTraitWithId("resourceRelated"),
-				*otherProperty) + weaponDist;
+		//return DistLhsResourceRelated(lesserProperty->trait->GetTraitWithId("resourceRelated"),
+				//*otherProperty) + weaponDist;
 	}
 	else if (Statics::Contain(lesserIds, std::string("alteration")))
 	{
-		return DistLhsAlteration(lesserProperty->trait->GetTraitWithId("alteration"), *otherProperty) + weaponDist;
+		//return DistLhsAlteration(lesserProperty->trait->GetTraitWithId("alteration"), *otherProperty) + weaponDist;
 	}
 
 	return 0;
@@ -202,8 +198,8 @@ int PropertyDistance::DistanceBetweenProperties(const Property& lhs, const Prope
 
 const Property* PropertyDistance::GetLesserProperty(const Property& lhs, const Property& rhs) const
 {
-	std::vector<std::string>& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.trait->index];
-	std::vector<std::string>& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	std::vector<std::string>& lhsIds = TraitRepository::GetInstance().allTraitsIds[lhs.index];
+	std::vector<std::string>& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.index];
 
 	if (Statics::Contain(lhsIds, std::string("affect")))
 	{
@@ -232,9 +228,10 @@ const Property* PropertyDistance::GetLesserProperty(const Property& lhs, const P
 	return &lhs;
 }
 
+/*
 int PropertyDistance::DistLhsAffect(const Trait* lhs, const Property& rhs)
 {
-	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.index];
 	const Trait* rhsTrait = nullptr;
 
 	if (Statics::Contain(rhsIds, std::string("affect")))
@@ -259,7 +256,7 @@ int PropertyDistance::DistLhsAffect(const Trait* lhs, const Property& rhs)
 
 int PropertyDistance::DistLhsStats(const Trait* lhs, const Property& rhs)
 {
-	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.index];
 	const Trait* rhsTrait = nullptr;
 
 	if (Statics::Contain(rhsIds, std::string("stats")))
@@ -280,7 +277,7 @@ int PropertyDistance::DistLhsStats(const Trait* lhs, const Property& rhs)
 
 int PropertyDistance::DistLhsResourceRelated(const Trait* lhs, const Property& rhs)
 {
-	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.trait->index];
+	auto& rhsIds = TraitRepository::GetInstance().allTraitsIds[rhs.index];
 	const Trait* rhsTrait = nullptr;
 
 	if (Statics::Contain(rhsIds, std::string("resourceRelated")))
@@ -301,6 +298,7 @@ int PropertyDistance::DistLhsAlteration(const Trait* lhs, const Property& rhs)
 
 	return affectDistances[lhs->index][rhsTrait->index];
 }
+*/
 
 int PropertyDistance::DistWeapon(const Trait* lhs, const Trait* rhs)
 {

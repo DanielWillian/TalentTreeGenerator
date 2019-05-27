@@ -13,7 +13,7 @@ public:
 	virtual std::string toString() const
 	{
 		std::string out = "( { ";
-		for (auto& id : property->trait->GetTerminalTraitsId())
+		for (auto& id : property->ids)
 		{
 			out += id + ", ";
 		}

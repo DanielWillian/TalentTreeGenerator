@@ -8,7 +8,7 @@ PropertyRepository::PropertyRepository()
 	std::vector<TraitParent*> traitList = traitRepository->possibleTraits;
 	for (auto* traitParent : traitList)
 	{
-		allProperties.push_back(std::unique_ptr<Property>(new Property(traitParent)));
+		allProperties.push_back(std::unique_ptr<Property>(new Property()));
 	}
 
 	std::vector<Property*> properties;
@@ -49,7 +49,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
 		result.erase(std::remove_if(result.begin(), result.end(),
 				[&](auto* p) -> bool
 				{
-					const auto& traitIds = traitRepository->allTraitsIds[p->trait->index];
+					const auto& traitIds = traitRepository->allTraitsIds[p->index];
 					return std::find(traitIds.begin(), traitIds.end(), id) != traitIds.end();
 				}),
 				result.end());
@@ -70,7 +70,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vecto
 		for (auto& id : ids)
 		{
 			bFound = false;
-			for (auto& traitId : traitRepository->allTraitsIds[property->trait->index])
+			for (auto& traitId : traitRepository->allTraitsIds[property->index])
 			{
 				if (id == traitId)
 				{

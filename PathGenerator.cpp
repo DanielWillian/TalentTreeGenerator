@@ -202,7 +202,7 @@ void PathGenerator::GenerateRandomTalentTuple(
 			[&] (const auto& e) { return *e.property == *property; });
 	const bool alreadyHasProperty = possibleEntryIt != tupleList.end();
 
-	auto terminalIds = property->trait->GetTerminalTraitsId();
+	auto terminalIds = property->ids;
 	auto dictEntries = dictionary->GetDictEntries(terminalIds[0]);
 	dictEntries.erase(std::remove_if(dictEntries.begin(), dictEntries.end(),
 			[&] (const auto* e)

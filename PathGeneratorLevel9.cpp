@@ -31,7 +31,7 @@ std::vector<std::unique_ptr<Talent>> PathGeneratorLevel9::GeneratePath(
 		detrimental = GetRandomProperty(difference);
 	}
 
-	auto beneficialTerminalIds = beneficial->trait->GetTerminalTraitsId();
+	auto beneficialTerminalIds = beneficial->ids;
 	auto beneficialDictEntries = lesserDictionary->GetDictEntries(beneficialTerminalIds[0]);
 	beneficialDictEntries.erase(std::remove_if(beneficialDictEntries.begin(), beneficialDictEntries.end(),
 			[&] (const auto* entry)
@@ -41,7 +41,7 @@ std::vector<std::unique_ptr<Talent>> PathGeneratorLevel9::GeneratePath(
 			beneficialDictEntries.end());
 	TalentDictEntry* beneficialDictEntry = *SelectRandom(beneficialDictEntries.begin(), beneficialDictEntries.end());
 
-	auto detrimentalTerminalIds = detrimental->trait->GetTerminalTraitsId();
+	auto detrimentalTerminalIds = detrimental->ids;
 	auto detrimentalDictEntries = lesserDictionary->GetDictEntries(detrimentalTerminalIds[0]);
 	detrimentalDictEntries.erase(std::remove_if(detrimentalDictEntries.begin(), detrimentalDictEntries.end(),
 			[&] (const auto* entry)
