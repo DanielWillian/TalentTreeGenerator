@@ -15,6 +15,8 @@ PropertyDictionary::PropertyDictionary()
 
 	std::vector<std::string> weaponType = { "NoWeaponType", "OneHanded", "TwoHanded", "Axe", "Bow", "Crossbow",
 			"Dagger", "FistWeapon", "Gun", "Mace", "Polearm", "Staff", "Sword", "Thrown", "Wand" };
+
+	std::vector<PropertyDictEntry*> dictEntries;
 	dictEntries.push_back(new PropertyDictEntry{ "Health", noDamageType, weaponType });
 	dictEntries.push_back(new PropertyDictEntry{ "Mana", noDamageType, weaponType });
 	dictEntries.push_back(new PropertyDictEntry{ "HealthRegen", noDamageType, weaponType });
@@ -33,10 +35,10 @@ PropertyDictionary::PropertyDictionary()
 	dictEntries.push_back(new PropertyDictEntry{ "OvertimeDamage", allDamageType, weaponType });
 	dictEntries.push_back(new PropertyDictEntry{ "DurationOfDot", allDamageType, weaponType });
 
-	std::vector<PropertyDictEntry*> dictEntries;
 	for (auto* e : dictEntries)
 	{
-		entries.push_back(std::unique_ptr<PropertyDictEntry>(e));
+		managedEntries.push_back(std::unique_ptr<PropertyDictEntry>(e));
+		entries.push_back(e);
 	}
 }
 

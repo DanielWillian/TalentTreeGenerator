@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Property.h"
+#include "PropertyDictionary.h"
 #include <unordered_set>
 #include <memory>
 
@@ -21,6 +22,8 @@ public:
 
 private:
 	PropertyRepository();
+
+	std::vector<Property*> GeneratePropertiesFromDictionary(const PropertyDictionary& dict);
 
 	std::vector<Property*> GetPropertiesWithoutIds(const std::vector<Property*>& properties,
 			const std::vector<std::string>& ids) const;
@@ -47,6 +50,6 @@ public:
 	std::vector<Property*> level9Properties;
 
 private:
-	class TraitRepository* traitRepository;
+	PropertyDictionary propertyDictionary;
 };
 

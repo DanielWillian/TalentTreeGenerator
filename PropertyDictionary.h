@@ -26,17 +26,10 @@ class PropertyDictionary
 public:
 	PropertyDictionary();
 
-	const PropertyDictEntry& GetDictEntry(const std::string& id)
-	{
-		return **std::find_if(entries.begin(), entries.end(), [&id](const auto& e) { return e->id == id; });
-	}
-
 public:
-	static const int TERMINAL = 0;
-	static const int ALTERNATIVES = 1;
-	static const int CONCATENATIONS = 2;
+	std::vector<PropertyDictEntry*> entries;
 
 private:
-	std::vector<std::unique_ptr<PropertyDictEntry>> entries;
+	std::vector<std::unique_ptr<PropertyDictEntry>> managedEntries;
 };
 

@@ -1,14 +1,11 @@
 #include "stdafx.h"
 #include "PropertyRepository.h"
-#include "TraitRepository.h"
 
 PropertyRepository::PropertyRepository()
 {
-	traitRepository = &TraitRepository::GetInstance();
-	std::vector<TraitParent*> traitList = traitRepository->possibleTraits;
-	for (auto* traitParent : traitList)
+	for (auto* p : GeneratePropertiesFromDictionary(propertyDictionary))
 	{
-		allProperties.push_back(std::unique_ptr<Property>(new Property()));
+		allProperties.push_back(std::unique_ptr<Property>(p));
 	}
 
 	std::vector<Property*> properties;
@@ -17,11 +14,11 @@ PropertyRepository::PropertyRepository()
 		properties.push_back(ptr.get());
 	}
 
-	auto level2 = GetPropertiesWithIds(properties, {"attributes"});
-	auto level7 = GetPropertiesWithoutIds(properties, {"attributes"});
-	auto level4 = GetPropertiesWithoutIds(level7, {"weaponType"});
-	auto level1 = GetPropertiesWithoutIds(level4, {"damageType", "healingType", "damageType1"});
-	auto level9 = GetPropertiesWithoutIds(level1, {"specCriticalChance", "specCriticalEffect"});
+	auto level2 = GetPropertiesWithIds(properties, {"Health", "NoWeaponType"});
+	auto level7 = properties;
+	auto level4 = GetPropertiesWithIds(level7, {"NoWeaponType"});
+	auto level1 = GetPropertiesWithIds(level4, {"NoDamageType"});
+	auto level9 = GetPropertiesWithoutIds(level1, {"CriticalChance", "CriticalAmp"});
 	level1Properties.insert(std::end(level1Properties), std::begin(level1), std::end(level1));
 	level3Properties.insert(std::end(level3Properties), std::begin(level1), std::end(level1));
 
@@ -38,6 +35,25 @@ PropertyRepository::PropertyRepository()
 	level9Properties.insert(std::end(level9Properties), std::begin(level9), std::end(level9));
 }
 
+std::vector<Property*> PropertyRepository::GeneratePropertiesFromDictionary(const PropertyDictionary& dict)
+{
+	std::vector<Property*> result;
+
+	int index = 0;
+	for (auto* e : dict.entries)
+	{
+		for (auto& damageType : e->damageTypes)
+		{
+			for (auto& weaponType : e->weaponTypes)
+			{
+				result.push_back(new Property(index++, { e->id, damageType, weaponType }));
+			}
+		}
+	}
+
+	return result;
+}
+
 std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
 		const std::vector<Property*>& properties,
 		const std::vector<std::string>& ids) const
@@ -49,8 +65,7 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithoutIds(
 		result.erase(std::remove_if(result.begin(), result.end(),
 				[&](auto* p) -> bool
 				{
-					const auto& traitIds = traitRepository->allTraitsIds[p->index];
-					return std::find(traitIds.begin(), traitIds.end(), id) != traitIds.end();
+					return std::find(p->ids.begin(), p->ids.end(), id) != p->ids.end();
 				}),
 				result.end());
 	}
@@ -70,9 +85,9 @@ std::vector<Property*> PropertyRepository::GetPropertiesWithIds(const std::vecto
 		for (auto& id : ids)
 		{
 			bFound = false;
-			for (auto& traitId : traitRepository->allTraitsIds[property->index])
+			for (auto& propertyId : property->ids)
 			{
-				if (id == traitId)
+				if (id == propertyId)
 				{
 					bFound = true;
 					break;
