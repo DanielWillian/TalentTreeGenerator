@@ -31,6 +31,12 @@ private:
 public:
 	std::vector<std::unique_ptr<Property>> allProperties;
 
+	std::vector<std::string> baseProperties;
+
+	std::vector<std::string> damageTypes;
+
+	std::vector<std::string> weaponTypes;
+
 	std::vector<Property*> level1Properties;
 
 	std::vector<Property*> level2Properties;
