@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "Constants.h"
 #include "PropertyRepository.h"
 
 PropertyRepository::PropertyRepository()
@@ -14,11 +15,11 @@ PropertyRepository::PropertyRepository()
 		properties.push_back(ptr.get());
 	}
 
-	auto level2 = GetPropertiesWithIds(properties, {"Health", "NoWeaponType"});
+	auto level2 = GetPropertiesWithIds(properties, { HEALTH, NO_WEAPON_TYPE });
 	auto level7 = properties;
-	auto level4 = GetPropertiesWithIds(level7, {"NoWeaponType"});
-	auto level1 = GetPropertiesWithIds(level4, {"NoDamageType"});
-	auto level9 = GetPropertiesWithoutIds(level1, {"CriticalChance", "CriticalAmp"});
+	auto level4 = GetPropertiesWithIds(level7, { NO_WEAPON_TYPE });
+	auto level1 = GetPropertiesWithIds(level4, { NO_DAMAGE_TYPE });
+	auto level9 = GetPropertiesWithoutIds(level1, { CRITICAL_CHANCE, CRITICAL_AMP });
 	level1Properties.insert(std::end(level1Properties), std::begin(level1), std::end(level1));
 	level3Properties.insert(std::end(level3Properties), std::begin(level1), std::end(level1));
 
