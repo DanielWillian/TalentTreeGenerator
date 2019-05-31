@@ -50,7 +50,11 @@ PropertyDistance::PropertyDistance()
 
 int PropertyDistance::DistanceBetweenProperties(const Property& lhs, const Property& rhs)
 {
-	return 0;
+	int dist = 0;
+	dist += DistanceBetweenBaseProperties(lhs.ids[0], rhs.ids[0]);
+	dist += DistanceBetweenDamageTypes(lhs.ids[1], rhs.ids[1]);
+	dist += DistanceBetweenWeaponTypes(lhs.ids[2], rhs.ids[2]);
+	return dist;
 }
 
 int PropertyDistance::DistanceBetweenBaseProperties(const std::string& lhs, const std::string& rhs)

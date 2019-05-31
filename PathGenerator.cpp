@@ -18,7 +18,8 @@ std::vector<Property*> PathGenerator::GetAllRelatedProperties(
 
 	for (auto* otherProperty : properties)
 	{
-		if (PropertyDistance::GetInstance().DistanceBetweenProperties(*property, *otherProperty) <= 5)
+		if (PropertyDistance::GetInstance().DistanceBetweenProperties(*property, *otherProperty) <=
+				PropertyDistance::SIMILARITY_THRESHOLD)
 		{
 			result.push_back(otherProperty);
 		}
