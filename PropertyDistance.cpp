@@ -4,6 +4,15 @@
 #include "PropertyRepository.h"
 #include <algorithm>
 
+const int PropertyDistance::SIMILARITY_THRESHOLD = 5;
+const int PropertyDistance::NOT_SIMILAR = 20;
+
+const int PropertyDistance::NO_TYPE = 0;
+const int PropertyDistance::DAMAGE_TYPE1 = 1;
+const int PropertyDistance::DAMAGE_TYPE2 = 2;
+const int PropertyDistance::WEAPON_TYPE1 = 1;
+const int PropertyDistance::WEAPON_TYPE2 = 2;
+
 PropertyDistance::PropertyDistance()
 {
 	PropertyRepository& rep = PropertyRepository::GetInstance();
@@ -15,6 +24,26 @@ PropertyDistance::PropertyDistance()
 			const int baseDistance = DistanceBetweenBaseProperties(*lhsIt, *rhsIt);
 			basePropertyDistances[*lhsIt][*rhsIt] = baseDistance;
 			basePropertyDistances[*rhsIt][*lhsIt] = baseDistance;
+		}
+	}
+
+	for (auto lhsIt = rep.damageTypes.begin(); lhsIt != rep.damageTypes.end(); lhsIt++)
+	{
+		for (auto rhsIt = lhsIt; rhsIt != rep.damageTypes.end(); rhsIt++)
+		{
+			const int damageDistance = DistanceBetweenDamageTypes(*lhsIt, *rhsIt);
+			damageTypeDistances[*lhsIt][*rhsIt] = damageDistance;
+			damageTypeDistances[*rhsIt][*lhsIt] = damageDistance;
+		}
+	}
+
+	for (auto lhsIt = rep.weaponTypes.begin(); lhsIt != rep.weaponTypes.end(); lhsIt++)
+	{
+		for (auto rhsIt = lhsIt; rhsIt != rep.weaponTypes.end(); rhsIt++)
+		{
+			const int weaponDistance = DistanceBetweenWeaponTypes(*lhsIt, *rhsIt);
+			weaponTypeDistances[*lhsIt][*rhsIt] = weaponDistance;
+			weaponTypeDistances[*rhsIt][*lhsIt] = weaponDistance;
 		}
 	}
 }
@@ -91,6 +120,88 @@ int PropertyDistance::DistanceBetweenBaseProperties(const std::string& lhs, cons
 		return 0;
 	}
 
-	return 20;
+	return NOT_SIMILAR;
+}
+
+int PropertyDistance::DistanceBetweenDamageTypes(const std::string& lhs, const std::string& rhs)
+{
+	if (lhs == rhs)
+	{
+		return 0;
+	}
+
+	if (GetTypeOfDamageType(lhs) == GetTypeOfDamageType(rhs))
+	{
+		return lhs == rhs ? 0 : NOT_SIMILAR;
+	}
+
+	return 0;
+}
+
+int PropertyDistance::GetTypeOfDamageType(const std::string& damageType)
+{
+	if (damageType == NO_DAMAGE_TYPE)
+	{
+		return NO_TYPE;
+	}
+	else if (damageType == PHYSICAL || damageType == MAGICAL)
+	{
+		return DAMAGE_TYPE1;
+	}
+
+	return DAMAGE_TYPE2;
+}
+
+int PropertyDistance::DistanceBetweenWeaponTypes(const std::string& lhs, const std::string& rhs)
+{
+	if (lhs == rhs)
+	{
+		return 0;
+	}
+
+	if (lhs == NO_WEAPON_TYPE || rhs == NO_WEAPON_TYPE)
+	{
+		return 0;
+	}
+	else if (GetTypeOfWeaponType(lhs) == GetTypeOfWeaponType(rhs))
+	{
+		return lhs == rhs ? 0 : NOT_SIMILAR;
+	}
+	else
+	{
+		auto& type1 = GetTypeOfWeaponType(lhs) == WEAPON_TYPE1 ? lhs : rhs;
+		auto& type2 = type1 == lhs ? rhs : lhs;
+
+		std::vector<std::string> similar;
+
+		if (type1 == ONE_HANDED)
+		{
+			similar = { AXE, DAGGER, FIST_WEAPON, GUN, MACE, SWORD, THROWN, WAND };
+		}
+		else
+		{
+			similar = { AXE, BOW, CROSSBOW, GUN, MACE, POLEARM, STAFF, SWORD };
+		}
+
+		if (std::find(similar.begin(), similar.end(), type2) != similar.end())
+		{
+			return 0;
+		}
+	}
+
+	return NOT_SIMILAR;
+}
+
+int PropertyDistance::GetTypeOfWeaponType(const std::string& weaponType)
+{
+	if (weaponType == NO_WEAPON_TYPE)
+	{
+		return NO_TYPE;
+	}
+	else if (weaponType == ONE_HANDED || weaponType == TWO_HANDED)
+	{
+		return WEAPON_TYPE1;
+	}
+	return WEAPON_TYPE2;
 }
 

@@ -25,9 +25,27 @@ public:
 
 	std::unordered_map<std::string, std::unordered_map<std::string, int>> weaponTypeDistances;
 
+	static const int SIMILARITY_THRESHOLD;
+
+private:
+	static const int NO_TYPE;
+	static const int DAMAGE_TYPE1;
+	static const int DAMAGE_TYPE2;
+	static const int WEAPON_TYPE1;
+	static const int WEAPON_TYPE2;
+	static const int NOT_SIMILAR;
+
 private:
 	PropertyDistance();
 
 	int DistanceBetweenBaseProperties(const std::string& lhs, const std::string& rhs);
+
+	int DistanceBetweenDamageTypes(const std::string& lhs, const std::string& rhs);
+
+	int GetTypeOfDamageType(const std::string& damageType);
+
+	int DistanceBetweenWeaponTypes(const std::string& lhs, const std::string& rhs);
+
+	int GetTypeOfWeaponType(const std::string& weaponType);
 };
 
