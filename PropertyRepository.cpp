@@ -27,7 +27,7 @@ PropertyRepository::PropertyRepository()
 	auto level7 = properties;
 	auto level4 = GetPropertiesWithIds(level7, { NO_WEAPON_TYPE });
 	auto level1 = GetPropertiesWithIds(level4, { NO_DAMAGE_TYPE });
-	auto level9 = GetPropertiesWithoutIds(level1, { CRITICAL_CHANCE, CRITICAL_AMP });
+	auto level9 = level1;
 	level1Properties.insert(std::end(level1Properties), std::begin(level1), std::end(level1));
 	level3Properties.insert(std::end(level3Properties), std::begin(level1), std::end(level1));
 
