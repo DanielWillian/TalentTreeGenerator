@@ -35,7 +35,7 @@ public:
 	template<typename T>
 	static bool Contain(const std::vector<T>& vec, const T& elem)
 	{
-		return std::binary_search(vec.begin(), vec.end(), elem);
+		return std::find(vec.begin(), vec.end(), elem) != vec.end();
 	}
 };
 
