@@ -23,7 +23,8 @@ public:
 	Property* GetRandomProperty(std::vector<Property*> properties) const;
 
 	std::vector<Property*> GetAllRelatedProperties(const Property* property,
-			const std::vector<Property*>& properties) const;
+			const std::vector<Property*>& properties,
+			const int distanceThreshold) const;
 
 	virtual std::vector<std::unique_ptr<Talent>> GeneratePath(
 			int numLesser,
@@ -40,7 +41,7 @@ public:
 
 protected:
 	virtual std::unique_ptr<Talent> GenerateRandomTalent(
-			std::vector<Property*>& inOutProperties,
+			std::vector<Property*> inProperties,
 			const TalentDictionary* dictionary,
 			Property* startingProperty = nullptr) const;
 
@@ -51,9 +52,13 @@ protected:
 
 	float GetRandomFloat(const float min, const float max) const;
 
-	void IntersectionOfProperties(std::vector<Property*>& inOutProperties, const Talent& talent) const;
+	void IntersectionOfProperties(std::vector<Property*>& inOutProperties,
+			const Talent& talent,
+			const int distanceThreshold) const;
 
-	void IntersectionOfProperties(std::vector<Property*>& inOutProperties, const Property* property) const;
+	void IntersectionOfProperties(std::vector<Property*>& inOutProperties,
+			const Property* property,
+			const int distanceThreshold) const;
 
 	void GetIntersection(std::vector<Property*>& a,
 			const std::vector<Property*>& b) const;
@@ -68,8 +73,8 @@ protected:
 	virtual std::vector<std::unique_ptr<Talent>> GeneratePathInternal(
 			int numLesser,
 			int numGreater,
-			std::vector<Property*> inOutLesserPossibleProperties,
-			std::vector<Property*> inOutGreaterPossibleProperties,
+			std::vector<Property*> inLesserPossibleProperties,
+			std::vector<Property*> inGreaterPossibleProperties,
 			std::vector<Property*>* startingProperties = nullptr);
 
 public:

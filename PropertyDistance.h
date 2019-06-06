@@ -25,7 +25,9 @@ public:
 
 	std::unordered_map<std::string, std::unordered_map<std::string, int>> weaponTypeDistances;
 
-	static const int SIMILARITY_THRESHOLD;
+	static const int NOT_SIMILAR;
+	static const int SOMEWHAT_SIMILAR;
+	static const int SIMILAR;
 
 private:
 	static const int NO_TYPE;
@@ -33,7 +35,6 @@ private:
 	static const int DAMAGE_TYPE2;
 	static const int WEAPON_TYPE1;
 	static const int WEAPON_TYPE2;
-	static const int NOT_SIMILAR;
 
 private:
 	PropertyDistance();

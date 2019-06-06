@@ -4,8 +4,9 @@
 #include "PropertyRepository.h"
 #include <algorithm>
 
-const int PropertyDistance::SIMILARITY_THRESHOLD = 5;
 const int PropertyDistance::NOT_SIMILAR = 20;
+const int PropertyDistance::SOMEWHAT_SIMILAR = 5;
+const int PropertyDistance::SIMILAR = 0;
 
 const int PropertyDistance::NO_TYPE = 0;
 const int PropertyDistance::DAMAGE_TYPE1 = 1;
@@ -121,7 +122,7 @@ int PropertyDistance::DistanceBetweenBaseProperties(const std::string& lhs, cons
 
 	if (std::find(similar.begin(), similar.end(), higher) != similar.end())
 	{
-		return 0;
+		return SIMILAR;
 	}
 
 	return NOT_SIMILAR;
@@ -131,15 +132,19 @@ int PropertyDistance::DistanceBetweenDamageTypes(const std::string& lhs, const s
 {
 	if (lhs == rhs)
 	{
-		return 0;
+		return SIMILAR;
 	}
 
-	if (GetTypeOfDamageType(lhs) == GetTypeOfDamageType(rhs))
+	if (lhs == NO_DAMAGE_TYPE || rhs == NO_DAMAGE_TYPE)
 	{
-		return lhs == rhs ? 0 : NOT_SIMILAR;
+		return SOMEWHAT_SIMILAR;
+	}
+	else if (GetTypeOfDamageType(lhs) == GetTypeOfDamageType(rhs))
+	{
+		return lhs == rhs ? SIMILAR : NOT_SIMILAR;
 	}
 
-	return 0;
+	return SIMILAR;
 }
 
 int PropertyDistance::GetTypeOfDamageType(const std::string& damageType)
@@ -160,16 +165,16 @@ int PropertyDistance::DistanceBetweenWeaponTypes(const std::string& lhs, const s
 {
 	if (lhs == rhs)
 	{
-		return 0;
+		return SIMILAR;
 	}
 
 	if (lhs == NO_WEAPON_TYPE || rhs == NO_WEAPON_TYPE)
 	{
-		return 0;
+		return SOMEWHAT_SIMILAR;
 	}
 	else if (GetTypeOfWeaponType(lhs) == GetTypeOfWeaponType(rhs))
 	{
-		return lhs == rhs ? 0 : NOT_SIMILAR;
+		return lhs == rhs ? SIMILAR : NOT_SIMILAR;
 	}
 	else
 	{
@@ -189,7 +194,7 @@ int PropertyDistance::DistanceBetweenWeaponTypes(const std::string& lhs, const s
 
 		if (std::find(similar.begin(), similar.end(), type2) != similar.end())
 		{
-			return 0;
+			return SIMILAR;
 		}
 	}
 

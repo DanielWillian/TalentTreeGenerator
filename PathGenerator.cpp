@@ -12,14 +12,15 @@
 
 std::vector<Property*> PathGenerator::GetAllRelatedProperties(
 		const Property* property,
-		const std::vector<Property*>& properties) const
+		const std::vector<Property*>& properties,
+		const int distanceThreshold) const
 {
 	std::vector<Property*> result;
 
 	for (auto* otherProperty : properties)
 	{
 		if (PropertyDistance::GetInstance().DistanceBetweenProperties(*property, *otherProperty) <=
-				PropertyDistance::SIMILARITY_THRESHOLD)
+				distanceThreshold)
 		{
 			result.push_back(otherProperty);
 		}
@@ -61,8 +62,8 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathWithTraits(
 std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathInternal(
 		int numLesser,
 		int numGreater,
-		std::vector<Property*> inOutLesserPossibleProperties,
-		std::vector<Property*> inOutGreaterPossibleProperties,
+		std::vector<Property*> inLesserPossibleProperties,
+		std::vector<Property*> inGreaterPossibleProperties,
 		std::vector<Property*>* startingProperties)
 {
 	if (numLesser < 1 && numGreater <= 0)
@@ -75,12 +76,14 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathInternal(
 	startingProperty = startingProperties ?
 			*SelectRandom(startingProperties->begin(), startingProperties->end()) :
 			nullptr;
-	result.push_back(GenerateRandomTalent(inOutLesserPossibleProperties,
+	auto startingTalent = GenerateRandomTalent(inLesserPossibleProperties,
 				lesserDictionary,
-				startingProperty));
+				startingProperty);
+	IntersectionOfProperties(inLesserPossibleProperties, *startingTalent.get(), PropertyDistance::SOMEWHAT_SIMILAR);
+	result.push_back(std::move(startingTalent));
 	if (startingProperties)
 	{
-		GetIntersection(*startingProperties, inOutLesserPossibleProperties);
+		GetIntersection(*startingProperties, inLesserPossibleProperties);
 	}
 	numLesser--;
 	for (int i = 0; i < numLesser; i++)
@@ -88,31 +91,33 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathInternal(
 		startingProperty = startingProperties ?
 				*SelectRandom(startingProperties->begin(), startingProperties->end()) :
 				nullptr;
-		std::unique_ptr<Talent> talent = GenerateRandomTalent(inOutLesserPossibleProperties,
+		std::unique_ptr<Talent> talent = GenerateRandomTalent(inLesserPossibleProperties,
 				lesserDictionary,
 				startingProperty);
+		IntersectionOfProperties(inLesserPossibleProperties, *talent.get(), PropertyDistance::SOMEWHAT_SIMILAR);
 		if (startingProperties)
 		{
-			GetIntersection(*startingProperties, inOutLesserPossibleProperties);
+			GetIntersection(*startingProperties, inLesserPossibleProperties);
 		}
 		result.push_back(std::move(talent));
 	}
 
 	for (auto& talent : result)
 	{
-		IntersectionOfProperties(inOutGreaterPossibleProperties, *talent);
+		IntersectionOfProperties(inGreaterPossibleProperties, *talent, PropertyDistance::SOMEWHAT_SIMILAR);
 	}
 	for (int i = 0; i < numGreater; i++)
 	{
 		startingProperty = startingProperties ?
 				*SelectRandom(startingProperties->begin(), startingProperties->end()) :
 				nullptr;
-		std::unique_ptr<Talent> talent = GenerateRandomTalent(inOutGreaterPossibleProperties,
+		std::unique_ptr<Talent> talent = GenerateRandomTalent(inGreaterPossibleProperties,
 				greaterDictionary,
 				startingProperty);
+		IntersectionOfProperties(inGreaterPossibleProperties, *talent.get(), PropertyDistance::SOMEWHAT_SIMILAR);
 		if (startingProperties)
 		{
-			GetIntersection(*startingProperties, inOutGreaterPossibleProperties);
+			GetIntersection(*startingProperties, inGreaterPossibleProperties);
 		}
 		result.push_back(std::move(talent));
 	}
@@ -120,19 +125,27 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathInternal(
 	return std::move(result);
 }
 
-void PathGenerator::IntersectionOfProperties(std::vector<Property*>& inOutProperties, const Talent& talent) const
+void PathGenerator::IntersectionOfProperties(
+		std::vector<Property*>& inOutProperties,
+		const Talent& talent,
+		const int distanceThreshold
+		) const
 {
 	for (auto& talentEntry : talent.talentEntries)
 	{
 		GetIntersection(inOutProperties,
-				GetAllRelatedProperties(talentEntry.property, inOutProperties));
+				GetAllRelatedProperties(talentEntry.property, inOutProperties, distanceThreshold));
 	}
 }
 
-void PathGenerator::IntersectionOfProperties(std::vector<Property*>& inOutProperties, const Property* property) const
+void PathGenerator::IntersectionOfProperties(
+		std::vector<Property*>& inOutProperties,
+		const Property* property,
+		const int distanceThreshold
+		) const
 {
 	GetIntersection(inOutProperties,
-			GetAllRelatedProperties(property, inOutProperties));
+			GetAllRelatedProperties(property, inOutProperties, distanceThreshold));
 }
 
 void PathGenerator::GetIntersection(std::vector<Property*>& a,
@@ -160,7 +173,7 @@ std::unique_ptr<Talent> PathGenerator::GenerateTalent(const std::vector<std::str
 	if (!desiredProperties.empty())
 	{
 		auto* desiredProperty = *SelectRandom(desiredProperties.begin(), desiredProperties.end());
-		auto relatedProperties = GetAllRelatedProperties(desiredProperty, properties);
+		auto relatedProperties = GetAllRelatedProperties(desiredProperty, properties, PropertyDistance::SIMILAR);
 		return GenerateRandomTalent(relatedProperties, dictionary, desiredProperty);
 	}
 
@@ -168,7 +181,7 @@ std::unique_ptr<Talent> PathGenerator::GenerateTalent(const std::vector<std::str
 }
 
 std::unique_ptr<Talent> PathGenerator::GenerateRandomTalent(
-		std::vector<Property*>& inOutProperties,
+		std::vector<Property*> inProperties,
 		const TalentDictionary* dictionary,
 		Property* startingProperty) const
 {
@@ -178,15 +191,15 @@ std::unique_ptr<Talent> PathGenerator::GenerateRandomTalent(
 	std::vector<TalentEntry> tupleList;
 	if (startingProperty)
 	{
-		GenerateRandomTalentTuple(inOutProperties, dictionary, numberOfProperties, tupleList, startingProperty);
+		GenerateRandomTalentTuple(inProperties, dictionary, numberOfProperties, tupleList, startingProperty);
 		numberOfProperties--;
 	}
 
 	for (int i = 0; i < numberOfProperties; i++)
 	{
-		auto* property = GetRandomProperty(inOutProperties);
+		auto* property = GetRandomProperty(inProperties);
 
-		GenerateRandomTalentTuple(inOutProperties, dictionary, numberOfProperties, tupleList, property);
+		GenerateRandomTalentTuple(inProperties, dictionary, numberOfProperties, tupleList, property);
 	}
 
 	return std::move(std::unique_ptr<Talent>(new Talent(tupleList)));
@@ -236,7 +249,7 @@ void PathGenerator::GenerateRandomTalentTuple(
 	if (!alreadyHasProperty)
 	{
 		tupleList.push_back({property, dictEntry->modifier, talentValue});
-		IntersectionOfProperties(inOutProperties, property);
+		IntersectionOfProperties(inOutProperties, property, PropertyDistance::SIMILAR);
 	}
 	else
 	{

@@ -24,7 +24,7 @@ std::vector<std::unique_ptr<Talent>> PathGeneratorLevel9::GeneratePath(
 	while ((!beneficial || !detrimental) && beneficial == detrimental)
 	{
 		beneficial = GetRandomProperty(lesserProperties);
-		auto related = GetAllRelatedProperties(beneficial, lesserProperties);
+		auto related = GetAllRelatedProperties(beneficial, lesserProperties, PropertyDistance::SOMEWHAT_SIMILAR);
 		std::vector<Property*> difference;
 		std::set_difference(lesserProperties.begin(), lesserProperties.end(),
 				related.begin(), related.end(), std::inserter(difference, std::begin(difference)));

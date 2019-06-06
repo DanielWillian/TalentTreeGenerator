@@ -24,6 +24,17 @@ public:
 		return index < other.index;
 	}
 
+	virtual std::string toString() const
+	{
+		std::string out = "{ ";
+		for (auto& id : ids)
+		{
+			out += id + ", ";
+		}
+		out += "}";
+		return out;
+	}
+
 public:
 	int index;
 	std::vector<std::string> ids;

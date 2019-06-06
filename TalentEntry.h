@@ -12,12 +12,9 @@ public:
 
 	virtual std::string toString() const
 	{
-		std::string out = "( { ";
-		for (auto& id : property->ids)
-		{
-			out += id + ", ";
-		}
-		out += "}, " + modifier;
+		std::string out = "( ";
+		out += property->toString();
+		out += ", " + modifier;
 		out += ", " + std::to_string(value);
 		out += " )";
 		return out;
