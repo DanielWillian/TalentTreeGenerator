@@ -12,7 +12,7 @@ TalentDictionaryLevel1::TalentDictionaryLevel1()
 	dictEntries.push_back(new TalentDictEntry{MANA_REGEN, "*", BASE, {1.01f, 1.1f}});
 	dictEntries.push_back(new TalentDictEntry{ATTACK_SPEED, "*", BASE, {1.01f, 1.05f}});
 	dictEntries.push_back(new TalentDictEntry{CAST_SPEED, "*", BASE, {1.01f, 1.05f}});
-	dictEntries.push_back(new TalentDictEntry{DODGE_CHANCE, "*", BASE, {1.01f, 1.05f}});
+	dictEntries.push_back(new TalentDictEntry{DODGE_CHANCE, "*", BASE, {1.01f, 1.03f}});
 	dictEntries.push_back(new TalentDictEntry{RESISTANCE, "*", BASE, {1.01f, 1.03f}});
 	dictEntries.push_back(new TalentDictEntry{HIT_CHANCE, "*", BASE, {1.01f, 1.03f}});
 	dictEntries.push_back(new TalentDictEntry{CRITICAL_CHANCE, "*", BASE, {1.01f, 1.05f}});
@@ -22,7 +22,7 @@ TalentDictionaryLevel1::TalentDictionaryLevel1()
 	dictEntries.push_back(new TalentDictEntry{AREA_OF_EFFECT_DAMAGE, "*", BASE, {1.05f, 1.1f}});
 	dictEntries.push_back(new TalentDictEntry{DIRECT_DAMAGE, "*", BASE, {1.05f, 1.1f}});
 	dictEntries.push_back(new TalentDictEntry{OVER_TIME_DAMAGE, "*", BASE, {1.05f, 1.1f}});
-	dictEntries.push_back(new TalentDictEntry{DURATION_OF_DOT, "*", BASE, {1.05f, 1.2f}});
+	dictEntries.push_back(new TalentDictEntry{DURATION_OF_DOT, "*", BASE, {1.01f, 1.05f}});
 	dictEntries.push_back(new TalentDictEntry{NO_DAMAGE_TYPE, "-", MODIFIER, {1.0f, 1.0f}});
 	dictEntries.push_back(new TalentDictEntry{NO_WEAPON_TYPE, "-", MODIFIER, {1.0f, 1.0f}});
 
