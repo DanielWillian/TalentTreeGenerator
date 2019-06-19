@@ -155,6 +155,7 @@
     <ClInclude Include="PropertyDictionary.h" />
     <ClInclude Include="PropertyDistance.h" />
     <ClInclude Include="PropertyRepository.h" />
+    <ClInclude Include="Random.h" />
     <ClInclude Include="SimilarityTable.h" />
     <ClInclude Include="Statics.h" />
     <ClInclude Include="stdafx.h" />
@@ -187,6 +188,7 @@
     <ClCompile Include="PropertyDictionary.cpp" />
     <ClCompile Include="PropertyDistance.cpp" />
     <ClCompile Include="PropertyRepository.cpp" />
+    <ClCompile Include="Random.cpp" />
     <ClCompile Include="SimilarityTable.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

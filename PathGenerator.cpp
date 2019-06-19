@@ -2,6 +2,7 @@
 #include "PathGenerator.h"
 #include "PropertyDistance.h"
 #include "PropertyRepository.h"
+#include "Random.h"
 #include "Talent.h"
 #include "TalentEntry.h"
 #include "Statics.h"
@@ -259,19 +260,12 @@ void PathGenerator::GenerateRandomTalentTuple(
 
 int PathGenerator::GetRandomInt(const int min, const int max) const
 {
-	static std::random_device rd;
-	static std::mt19937 gen(rd());
-	std::uniform_int_distribution<int> dis(min, max);
-	return dis(gen);
+	return Random::GetInstance().GetRandomInt(min, max);
 }
 
 float PathGenerator::GetRandomFloat(const float min, const float max) const
 {
-	static std::random_device rd;
-	static std::mt19937 gen(rd());
-	const float nextAfter = std::nextafter(max, std::numeric_limits<float>::max());
-	std::uniform_real_distribution<float> dis(min, nextAfter);
-	return dis(gen);
+	return Random::GetInstance().GetRandomFloat(min, max);
 }
 
 Property* PathGenerator::GetRandomProperty(std::vector<Property*> properties) const
@@ -282,7 +276,7 @@ Property* PathGenerator::GetRandomProperty(std::vector<Property*> properties) co
 template<typename Iter>
 Iter PathGenerator::SelectRandom(Iter start, Iter end) const
 {
-	std::advance(start, GetRandomInt(0, std::distance(start, end) - 1));
+	std::advance(start, GetRandomInt(0, (int) (std::distance(start, end) - 1)));
 
 	return start;
 }
