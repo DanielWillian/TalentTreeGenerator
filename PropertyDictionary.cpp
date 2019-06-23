@@ -6,7 +6,7 @@ PropertyDictionary::PropertyDictionary()
 {
 	std::vector<std::string> noDamageType = { NO_DAMAGE_TYPE };
 	std::vector<std::string> onlyDamageType1 = { PHYSICAL, MAGICAL};
-	std::vector<std::string> onlyDamageType2 = { ACID, BLUDGENING, COLD, FIRE, FORCE, LIGHTNING,
+	std::vector<std::string> onlyDamageType2 = { ACID, BLUDGEONING, COLD, FIRE, FORCE, LIGHTNING,
 			NECROTIC, PIERCING, POISON, PSYCHIC, RADIANT, SLASHING, THUNDER };
 	std::vector<std::string> damageType1(noDamageType);
 	std::copy(onlyDamageType1.begin(), onlyDamageType1.end(), std::back_inserter(damageType1));

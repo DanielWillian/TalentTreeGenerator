@@ -24,7 +24,7 @@ extern const std::string NO_DAMAGE_TYPE;
 extern const std::string PHYSICAL;
 extern const std::string MAGICAL;
 extern const std::string ACID;
-extern const std::string BLUDGENING;
+extern const std::string BLUDGEONING;
 extern const std::string COLD;
 extern const std::string FIRE;
 extern const std::string FORCE;

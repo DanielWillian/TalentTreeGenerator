@@ -29,7 +29,7 @@ TalentDictionaryLevel6::TalentDictionaryLevel6()
 	dictEntries.push_back(new TalentDictEntry{PHYSICAL, "-", MODIFIER, {1.25f, 1.5f}});
 	dictEntries.push_back(new TalentDictEntry{MAGICAL, "-", MODIFIER, {1.25f, 1.5f}});
 	dictEntries.push_back(new TalentDictEntry{ACID, "-", MODIFIER, {1.5f, 1.75f}});
-	dictEntries.push_back(new TalentDictEntry{BLUDGENING, "-", MODIFIER, {1.5f, 1.75f}});
+	dictEntries.push_back(new TalentDictEntry{BLUDGEONING, "-", MODIFIER, {1.5f, 1.75f}});
 	dictEntries.push_back(new TalentDictEntry{COLD, "-", MODIFIER, {1.5f, 1.75f}});
 	dictEntries.push_back(new TalentDictEntry{FIRE, "-", MODIFIER, {1.5f, 1.75f}});
 	dictEntries.push_back(new TalentDictEntry{FORCE, "-", MODIFIER, {1.5f, 1.75f}});
