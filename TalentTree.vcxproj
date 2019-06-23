@@ -101,7 +101,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -152,16 +152,13 @@
   <ItemGroup>
     <ClInclude Include="Constants.h" />
     <ClInclude Include="PathGenerator.h" />
-    <ClInclude Include="PathGeneratorLevel9.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="PropertyDictionary.h" />
     <ClInclude Include="PropertyDistance.h" />
     <ClInclude Include="PropertyRepository.h" />
     <ClInclude Include="Random.h" />
-    <ClInclude Include="SimilarityTable.h" />
     <ClInclude Include="Statics.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Storage.h" />
     <ClInclude Include="Talent.h" />
     <ClInclude Include="TalentDictionary.h" />
     <ClInclude Include="TalentDictionaryLevel1.h" />
@@ -178,20 +175,15 @@
     <ClInclude Include="TalentTreeGenerator.h" />
     <ClInclude Include="TalentTreeStructure.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Trait.h" />
-    <ClInclude Include="TraitDictionary.h" />
-    <ClInclude Include="TraitRepository.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Constants.cpp" />
     <ClCompile Include="PathGenerator.cpp" />
-    <ClCompile Include="PathGeneratorLevel9.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="PropertyDictionary.cpp" />
     <ClCompile Include="PropertyDistance.cpp" />
     <ClCompile Include="PropertyRepository.cpp" />
     <ClCompile Include="Random.cpp" />
-    <ClCompile Include="SimilarityTable.cpp" />
     <ClCompile Include="Statics.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -199,7 +191,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Storage.cpp" />
     <ClCompile Include="Talent.cpp" />
     <ClCompile Include="TalentDictionary.cpp" />
     <ClCompile Include="TalentDictionaryLevel1.cpp" />
@@ -216,8 +207,6 @@
     <ClCompile Include="TalentTree.cpp" />
     <ClCompile Include="TalentTreeGenerator.cpp" />
     <ClCompile Include="TalentTreeStructure.cpp" />
-    <ClCompile Include="TraitDictionary.cpp" />
-    <ClCompile Include="TraitRepository.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

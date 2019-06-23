@@ -24,18 +24,6 @@
     <ClInclude Include="Property.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Trait.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SimilarityTable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TraitRepository.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TraitDictionary.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PropertyRepository.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -78,16 +66,10 @@
     <ClInclude Include="PropertyDistance.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Storage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TalentDictionaryLevel8.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TalentDictionaryLevel9.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PathGeneratorLevel9.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TalentTree.h">
@@ -113,16 +95,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SimilarityTable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Property.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TraitRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TraitDictionary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PropertyRepository.cpp">
@@ -158,16 +131,10 @@
     <ClCompile Include="PropertyDistance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Storage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TalentDictionaryLevel8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TalentDictionaryLevel9.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PathGeneratorLevel9.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">

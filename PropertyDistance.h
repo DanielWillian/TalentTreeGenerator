@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Property.h"
-#include "Trait.h"
 #include <unordered_map>
 
 class PropertyDistance
