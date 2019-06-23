@@ -1,0 +1,1509 @@
+Seed: 0
+
+4Ag: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4Ah: { ( { DirectDamage, Magical, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.100000 ) }
+4Ai: { ( { HitChance, Cold, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, Cold, NoWeaponType }, *, 1.090000 ) }
+4Aj: { ( { CriticalChance, Cold, NoWeaponType }, *, 1.070000 ) }
+6V: { ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.120000 ), ( { CriticalAmp, Magical, NoWeaponType }, *, 1.090000 ) }
+
+1g: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+1h: { ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+3E: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+1A: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+1B: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+1C: { ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+1D: { ( { Health, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+3A: { ( { Health, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+
+1E: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+1F: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+1G: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+1H: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.120000 ) }
+
+1I: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+1J: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+1K: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.120000 ) }
+1L: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+3B: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+1M: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+1N: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+1O: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+1P: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4Aw: { ( { AreaOfEffectDamage, Fire, NoWeaponType }, *, 1.140000 ), ( { AreaOfEffectSize, Fire, NoWeaponType }, *, 1.090000 ) }
+4Ax: { ( { HitChance, Magical, NoWeaponType }, *, 1.040000 ) }
+4Ay: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+4Az: { ( { CriticalAmp, Fire, NoWeaponType }, *, 1.050000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ) }
+6Z: { ( { CriticalChance, Magical, NoWeaponType }, *, 1.040000 ), ( { DirectDamage, Fire, NoWeaponType }, *, 1.100000 ), ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.070000 ) }
+
+1Q: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.110000 ) }
+1R: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+1S: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+1T: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+3C: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.080000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+4As: { ( { HitChance, Physical, NoWeaponType }, *, 1.050000 ) }
+4At: { ( { CriticalChance, Piercing, NoWeaponType }, *, 1.080000 ) }
+4Au: { ( { SingleTargetDamage, Physical, NoWeaponType }, *, 1.100000 ), ( { HitChance, Piercing, NoWeaponType }, *, 1.030000 ) }
+4Av: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+6Y: { ( { HitChance, Physical, NoWeaponType }, *, 1.020000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.140000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.050000 ) }
+
+1U: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+1V: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+1W: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+1X: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.120000 ) }
+
+4Ao: { ( { Resistance, Magical, NoWeaponType }, *, 1.040000 ) }
+4Ap: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4Aq: { ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+4Ar: { ( { Health, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+6X: { ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+1Y: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+1Z: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+1a: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+1b: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+3D: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+4Ak: { ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.080000 ), ( { AreaOfEffectSize, Psychic, NoWeaponType }, *, 1.080000 ) }
+4Al: { ( { OverTimeDamage, Psychic, NoWeaponType }, *, 1.100000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.050000 ) }
+4Am: { ( { OverTimeDamage, Psychic, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectSize, Psychic, NoWeaponType }, *, 1.130000 ) }
+4An: { ( { CriticalAmp, Psychic, NoWeaponType }, *, 1.130000 ) }
+6W: { ( { AreaOfEffectSize, Psychic, NoWeaponType }, *, 1.090000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.090000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.040000 ) }
+
+1c: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+1d: { ( { Health, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+1e: { ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+1f: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+4Ac: { ( { CriticalChance, Psychic, NoWeaponType }, *, 1.030000 ), ( { OverTimeDamage, Magical, NoWeaponType }, *, 1.080000 ) }
+4Ad: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4Ae: { ( { CriticalAmp, Magical, NoWeaponType }, *, 1.120000 ) }
+4Af: { ( { OverTimeDamage, Magical, NoWeaponType }, *, 1.070000 ), ( { DurationOfDot, Psychic, NoWeaponType }, *, 1.060000 ) }
+6U: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.110000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+1i: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+1j: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+1k: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+1l: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+3F: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.100000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+4AY: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.120000 ) }
+4AZ: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4Aa: { ( { AreaOfEffectSize, Bludgeoning, NoWeaponType }, *, 1.140000 ) }
+4Ab: { ( { OverTimeDamage, Bludgeoning, NoWeaponType }, *, 1.130000 ), ( { CriticalAmp, Bludgeoning, NoWeaponType }, *, 1.040000 ) }
+6T: { ( { CriticalChance, Bludgeoning, NoWeaponType }, *, 1.070000 ), ( { AreaOfEffectDamage, Bludgeoning, NoWeaponType }, *, 1.130000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.110000 ) }
+
+1m: { ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+1n: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+3G: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4AU: { ( { DurationOfDot, Bludgeoning, NoWeaponType }, *, 1.080000 ) }
+4AV: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+4AW: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.110000 ) }
+4AX: { ( { CriticalChance, Physical, NoWeaponType }, *, 1.100000 ) }
+6S: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.110000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+
+1o: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+1p: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+3H: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4AQ: { ( { HitChance, Physical, NoWeaponType }, *, 1.020000 ), ( { DirectDamage, Thunder, NoWeaponType }, *, 1.090000 ) }
+4AR: { ( { HitChance, Thunder, NoWeaponType }, *, 1.050000 ) }
+4AS: { ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+4AT: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+6R: { ( { CriticalChance, Thunder, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, Thunder, NoWeaponType }, *, 1.090000 ), ( { SingleTargetDamage, Thunder, NoWeaponType }, *, 1.070000 ) }
+
+1q: { ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+1r: { ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+1s: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+1t: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+3I: { ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { Health, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4AI: { ( { DirectDamage, Lightning, NoWeaponType }, *, 1.150000 ) }
+4AJ: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+4AK: { ( { AreaOfEffectSize, Lightning, NoWeaponType }, *, 1.130000 ), ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.070000 ) }
+4AL: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+6P: { ( { HitChance, Lightning, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.130000 ), ( { CriticalChance, Lightning, NoWeaponType }, *, 1.040000 ) }
+
+1u: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+1v: { ( { Health, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+3J: { ( { Health, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+4AE: { ( { OverTimeDamage, Radiant, NoWeaponType }, *, 1.090000 ), ( { CriticalChance, Radiant, NoWeaponType }, *, 1.060000 ) }
+4AF: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.120000 ) }
+4AG: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+4AH: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+6O: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+1w: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.110000 ) }
+1x: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+3K: { ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4AA: { ( { CriticalChance, Necrotic, NoWeaponType }, *, 1.030000 ), ( { SingleTargetDamage, Magical, NoWeaponType }, *, 1.060000 ) }
+4AB: { ( { DirectDamage, Necrotic, NoWeaponType }, *, 1.170000 ) }
+4AC: { ( { DirectDamage, Magical, NoWeaponType }, *, 1.120000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ) }
+4AD: { ( { SingleTargetDamage, Magical, NoWeaponType }, *, 1.090000 ), ( { CriticalAmp, Necrotic, NoWeaponType }, *, 1.080000 ) }
+6N: { ( { CriticalChance, Magical, NoWeaponType }, *, 1.040000 ), ( { SingleTargetDamage, Necrotic, NoWeaponType }, *, 1.090000 ), ( { CriticalAmp, Necrotic, NoWeaponType }, *, 1.030000 ), ( { DirectDamage, Magical, NoWeaponType }, *, 1.080000 ) }
+
+1y: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+1z: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+1AA: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+1AB: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+3L: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+
+4w: { ( { AreaOfEffectSize, Piercing, NoWeaponType }, *, 1.200000 ) }
+4x: { ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+4y: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.120000 ) }
+4z: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.090000 ) }
+6M: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+
+1AC: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+1AD: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+3M: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+4s: { ( { CriticalAmp, Slashing, NoWeaponType }, *, 1.040000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ) }
+4t: { ( { DurationOfDot, Magical, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.090000 ) }
+4u: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+4v: { ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.090000 ), ( { DurationOfDot, Magical, NoWeaponType }, *, 1.030000 ) }
+6L: { ( { OverTimeDamage, Magical, NoWeaponType }, *, 1.060000 ), ( { DurationOfDot, Magical, NoWeaponType }, *, 1.040000 ), ( { CriticalChance, Magical, NoWeaponType }, *, 1.040000 ), ( { CriticalAmp, Magical, NoWeaponType }, *, 1.030000 ) }
+
+1AE: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+1AF: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+3N: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4o: { ( { CriticalAmp, Slashing, NoWeaponType }, *, 1.050000 ), ( { OverTimeDamage, Slashing, NoWeaponType }, *, 1.090000 ) }
+4p: { ( { HitChance, Slashing, NoWeaponType }, *, 1.030000 ), ( { DurationOfDot, Magical, NoWeaponType }, *, 1.020000 ) }
+4q: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+4r: { ( { AreaOfEffectSize, Slashing, NoWeaponType }, *, 1.160000 ), ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.140000 ) }
+6K: { ( { AreaOfEffectSize, Slashing, NoWeaponType }, *, 1.180000 ), ( { DurationOfDot, Magical, NoWeaponType }, *, 1.030000 ), ( { DurationOfDot, Slashing, NoWeaponType }, *, 1.060000 ) }
+
+1AG: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+1AH: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+1AI: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+1AJ: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+3O: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.100000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+4k: { ( { SingleTargetDamage, Poison, NoWeaponType }, *, 1.210000 ) }
+4l: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.050000 ), ( { OverTimeDamage, Poison, NoWeaponType }, *, 1.150000 ) }
+4m: { ( { HitChance, Poison, NoWeaponType }, *, 1.020000 ), ( { OverTimeDamage, Poison, NoWeaponType }, *, 1.110000 ) }
+4n: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+6J: { ( { CriticalAmp, Poison, NoWeaponType }, *, 1.040000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.040000 ), ( { DurationOfDot, Poison, NoWeaponType }, *, 1.050000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.050000 ) }
+
+1AK: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+1AL: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+3P: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+2A: { ( { Health, NoDamageType, NoWeaponType }, +, 20.000000 ) }
+2B: { ( { Health, NoDamageType, NoWeaponType }, +, 22.000000 ) }
+2C: { ( { Health, NoDamageType, NoWeaponType }, +, 24.000000 ) }
+2D: { ( { Health, NoDamageType, NoWeaponType }, +, 21.000000 ) }
+2E: { ( { Health, NoDamageType, NoWeaponType }, +, 23.000000 ) }
+
+2F: { ( { Health, NoDamageType, NoWeaponType }, +, 22.000000 ) }
+2G: { ( { Health, NoDamageType, NoWeaponType }, +, 22.000000 ) }
+2H: { ( { Health, NoDamageType, NoWeaponType }, +, 23.000000 ) }
+2I: { ( { Health, NoDamageType, NoWeaponType }, +, 25.000000 ) }
+2J: { ( { Health, NoDamageType, NoWeaponType }, +, 23.000000 ) }
+
+2K: { ( { Health, NoDamageType, NoWeaponType }, +, 23.000000 ) }
+2L: { ( { Health, NoDamageType, NoWeaponType }, +, 25.000000 ) }
+2M: { ( { Health, NoDamageType, NoWeaponType }, +, 22.000000 ) }
+2N: { ( { Health, NoDamageType, NoWeaponType }, +, 23.000000 ) }
+2O: { ( { Health, NoDamageType, NoWeaponType }, +, 23.000000 ) }
+
+2P: { ( { Health, NoDamageType, NoWeaponType }, +, 25.000000 ) }
+2Q: { ( { Health, NoDamageType, NoWeaponType }, +, 22.000000 ) }
+2R: { ( { Health, NoDamageType, NoWeaponType }, +, 23.000000 ) }
+2S: { ( { Health, NoDamageType, NoWeaponType }, +, 20.000000 ) }
+2T: { ( { Health, NoDamageType, NoWeaponType }, +, 23.000000 ) }
+
+4A: { ( { SingleTargetDamage, Fire, NoWeaponType }, *, 1.200000 ) }
+4B: { ( { HitChance, Physical, NoWeaponType }, *, 1.040000 ) }
+4C: { ( { SingleTargetDamage, Fire, NoWeaponType }, *, 1.280000 ) }
+4D: { ( { CriticalAmp, Fire, NoWeaponType }, *, 1.040000 ), ( { SingleTargetDamage, Fire, NoWeaponType }, *, 1.120000 ) }
+6A: { ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+4E: { ( { AreaOfEffectDamage, Thunder, NoWeaponType }, *, 1.070000 ), ( { DurationOfDot, Thunder, NoWeaponType }, *, 1.060000 ) }
+4F: { ( { AreaOfEffectDamage, Thunder, NoWeaponType }, *, 1.150000 ) }
+4G: { ( { CriticalChance, Magical, NoWeaponType }, *, 1.100000 ) }
+4H: { ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.180000 ) }
+6B: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.110000 ), ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+4I: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4J: { ( { CriticalChance, Piercing, NoWeaponType }, *, 1.040000 ) }
+4K: { ( { DirectDamage, Physical, NoWeaponType }, *, 1.100000 ), ( { AreaOfEffectSize, Piercing, NoWeaponType }, *, 1.110000 ) }
+4L: { ( { HitChance, Piercing, NoWeaponType }, *, 1.030000 ), ( { DirectDamage, Physical, NoWeaponType }, *, 1.120000 ) }
+6C: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.040000 ), ( { DirectDamage, Physical, NoWeaponType }, *, 1.060000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.070000 ) }
+
+4M: { ( { SingleTargetDamage, Physical, NoWeaponType }, *, 1.120000 ) }
+4N: { ( { DirectDamage, Poison, NoWeaponType }, *, 1.150000 ), ( { CriticalChance, Poison, NoWeaponType }, *, 1.050000 ) }
+4O: { ( { CriticalChance, Poison, NoWeaponType }, *, 1.110000 ) }
+4P: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+6D: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4Q: { ( { SingleTargetDamage, Radiant, NoWeaponType }, *, 1.080000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.020000 ) }
+4R: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4S: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.040000 ), ( { HitChance, Radiant, NoWeaponType }, *, 1.020000 ) }
+4T: { ( { DurationOfDot, Radiant, NoWeaponType }, *, 1.070000 ) }
+6E: { ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.160000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.020000 ), ( { CriticalAmp, Radiant, NoWeaponType }, *, 1.040000 ) }
+
+4U: { ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.100000 ), ( { CriticalChance, Magical, NoWeaponType }, *, 1.040000 ) }
+4V: { ( { AreaOfEffectSize, Cold, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.100000 ) }
+4W: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+4X: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+6F: { ( { CriticalAmp, Magical, NoWeaponType }, *, 1.040000 ), ( { OverTimeDamage, Cold, NoWeaponType }, *, 1.060000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ), ( { DurationOfDot, Cold, NoWeaponType }, *, 1.050000 ) }
+
+4Y: { ( { OverTimeDamage, Bludgeoning, NoWeaponType }, *, 1.210000 ) }
+4Z: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.100000 ) }
+4a: { ( { SingleTargetDamage, Bludgeoning, NoWeaponType }, *, 1.200000 ) }
+4b: { ( { CriticalAmp, Bludgeoning, NoWeaponType }, *, 1.180000 ) }
+6G: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+4c: { ( { SingleTargetDamage, Radiant, NoWeaponType }, *, 1.140000 ), ( { HitChance, Radiant, NoWeaponType }, *, 1.030000 ) }
+4d: { ( { SingleTargetDamage, Physical, NoWeaponType }, *, 1.070000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.070000 ) }
+4e: { ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4f: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+6H: { ( { SingleTargetDamage, Radiant, NoWeaponType }, *, 1.090000 ), ( { CriticalAmp, Radiant, NoWeaponType }, *, 1.060000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.060000 ) }
+
+4g: { ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.080000 ), ( { AreaOfEffectDamage, Psychic, NoWeaponType }, *, 1.100000 ) }
+4h: { ( { CriticalAmp, Psychic, NoWeaponType }, *, 1.090000 ), ( { HitChance, Psychic, NoWeaponType }, *, 1.030000 ) }
+4i: { ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4j: { ( { CriticalChance, Psychic, NoWeaponType }, *, 1.110000 ) }
+6I: { ( { AreaOfEffectSize, Psychic, NoWeaponType }, *, 1.100000 ), ( { DurationOfDot, Psychic, NoWeaponType }, *, 1.080000 ), ( { AreaOfEffectDamage, Psychic, NoWeaponType }, *, 1.090000 ), ( { CriticalAmp, Psychic, NoWeaponType }, *, 1.030000 ) }
+
+4AM: { ( { SingleTargetDamage, Fire, NoWeaponType }, *, 1.070000 ), ( { OverTimeDamage, Fire, NoWeaponType }, *, 1.070000 ) }
+4AN: { ( { SingleTargetDamage, Fire, NoWeaponType }, *, 1.090000 ), ( { DurationOfDot, Fire, NoWeaponType }, *, 1.050000 ) }
+4AO: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.050000 ) }
+4AP: { ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.130000 ) }
+6Q: { ( { CriticalChance, Physical, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.060000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.070000 ) }
+
+4BA: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.190000 ) }
+4BB: { ( { HitChance, Thunder, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, Thunder, NoWeaponType }, *, 1.070000 ) }
+4BC: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+4BD: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+6a: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.050000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.120000 ) }
+
+4BE: { ( { DurationOfDot, Thunder, NoWeaponType }, *, 1.090000 ) }
+4BF: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+4BG: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+4BH: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+6b: { ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.080000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4BI: { ( { CriticalChance, Slashing, NoWeaponType }, *, 1.120000 ) }
+4BJ: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.020000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.080000 ) }
+4BK: { ( { AreaOfEffectSize, Slashing, NoWeaponType }, *, 1.210000 ) }
+4BL: { ( { DurationOfDot, Slashing, NoWeaponType }, *, 1.130000 ) }
+6c: { ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.070000 ), ( { HitChance, Slashing, NoWeaponType }, *, 1.040000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.080000 ) }
+
+4BM: { ( { OverTimeDamage, Necrotic, NoWeaponType }, *, 1.090000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.020000 ) }
+4BN: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4BO: { ( { AreaOfEffectDamage, Necrotic, NoWeaponType }, *, 1.250000 ) }
+4BP: { ( { DurationOfDot, Necrotic, NoWeaponType }, *, 1.060000 ), ( { OverTimeDamage, Necrotic, NoWeaponType }, *, 1.130000 ) }
+6d: { ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.090000 ), ( { DurationOfDot, Necrotic, NoWeaponType }, *, 1.060000 ), ( { HitChance, Necrotic, NoWeaponType }, *, 1.030000 ) }
+
+4BQ: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.130000 ) }
+4BR: { ( { DirectDamage, Magical, NoWeaponType }, *, 1.110000 ) }
+4BS: { ( { HitChance, Force, NoWeaponType }, *, 1.060000 ) }
+4BT: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.150000 ) }
+6e: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4BU: { ( { OverTimeDamage, Necrotic, NoWeaponType }, *, 1.100000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.080000 ) }
+4BV: { ( { CriticalChance, Necrotic, NoWeaponType }, *, 1.070000 ) }
+4BW: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4BX: { ( { CriticalChance, Necrotic, NoWeaponType }, *, 1.060000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.040000 ) }
+6f: { ( { OverTimeDamage, Necrotic, NoWeaponType }, *, 1.150000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.060000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.040000 ) }
+
+4BY: { ( { CriticalAmp, Psychic, NoWeaponType }, *, 1.100000 ) }
+4BZ: { ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.100000 ), ( { OverTimeDamage, Psychic, NoWeaponType }, *, 1.080000 ) }
+4Ba: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+6g: { ( { DurationOfDot, Psychic, NoWeaponType }, *, 1.060000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.070000 ), ( { CriticalAmp, Psychic, NoWeaponType }, *, 1.040000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.010000 ) }
+
+4Bb: { ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.240000 ) }
+4Bc: { ( { DurationOfDot, Piercing, NoWeaponType }, *, 1.100000 ) }
+4Bd: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+4Be: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.150000 ) }
+4Bf: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.100000 ) }
+6h: { ( { HitChance, Piercing, NoWeaponType }, *, 1.030000 ), ( { OverTimeDamage, Piercing, NoWeaponType }, *, 1.130000 ), ( { SingleTargetDamage, Physical, NoWeaponType }, *, 1.100000 ) }
+
+4Bg: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+4Bh: { ( { CriticalAmp, Magical, NoWeaponType }, *, 1.070000 ) }
+4Bi: { ( { CriticalChance, Force, NoWeaponType }, *, 1.050000 ), ( { DirectDamage, Magical, NoWeaponType }, *, 1.070000 ) }
+4Bj: { ( { SingleTargetDamage, Magical, NoWeaponType }, *, 1.090000 ), ( { HitChance, Force, NoWeaponType }, *, 1.030000 ) }
+4Bk: { ( { CriticalChance, Magical, NoWeaponType }, *, 1.050000 ), ( { SingleTargetDamage, Force, NoWeaponType }, *, 1.110000 ) }
+6i: { ( { HitChance, Magical, NoWeaponType }, *, 1.050000 ), ( { HitChance, Force, NoWeaponType }, *, 1.020000 ) }
+
+4Bl: { ( { AreaOfEffectDamage, Lightning, NoWeaponType }, *, 1.130000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.070000 ) }
+4Bm: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4Bn: { ( { CriticalAmp, Lightning, NoWeaponType }, *, 1.120000 ) }
+6j: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+4Bo: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4Bp: { ( { Resistance, Magical, NoWeaponType }, *, 1.040000 ) }
+4Bq: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+6k: { ( { DodgeChance, Magical, NoWeaponType }, *, 1.020000 ), ( { Resistance, Magical, NoWeaponType }, *, 1.060000 ) }
+
+4Br: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.110000 ) }
+4Bs: { ( { AreaOfEffectDamage, Fire, NoWeaponType }, *, 1.240000 ) }
+4Bt: { ( { DirectDamage, Physical, NoWeaponType }, *, 1.220000 ) }
+4Bu: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.220000 ) }
+4Bv: { ( { CriticalAmp, Fire, NoWeaponType }, *, 1.040000 ), ( { AreaOfEffectDamage, Fire, NoWeaponType }, *, 1.130000 ) }
+6l: { ( { CriticalAmp, Fire, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectSize, Fire, NoWeaponType }, *, 1.170000 ), ( { DirectDamage, Physical, NoWeaponType }, *, 1.060000 ) }
+
+4Bw: { ( { CriticalAmp, Thunder, NoWeaponType }, *, 1.130000 ) }
+4Bx: { ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.280000 ) }
+4By: { ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ), ( { CriticalAmp, Thunder, NoWeaponType }, *, 1.030000 ) }
+4Bz: { ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4CA: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.190000 ) }
+6m: { ( { OverTimeDamage, Thunder, NoWeaponType }, *, 1.120000 ), ( { HitChance, Thunder, NoWeaponType }, *, 1.040000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.030000 ) }
+
+4CB: { ( { AreaOfEffectDamage, Fire, NoWeaponType }, *, 1.170000 ) }
+4CC: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+4CD: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+6n: { ( { CriticalAmp, Fire, NoWeaponType }, *, 1.060000 ), ( { DirectDamage, Fire, NoWeaponType }, *, 1.080000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ) }
+
+4CE: { ( { AreaOfEffectDamage, Cold, NoWeaponType }, *, 1.150000 ) }
+4CF: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4CG: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+6o: { ( { AreaOfEffectDamage, Cold, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.060000 ), ( { DurationOfDot, Cold, NoWeaponType }, *, 1.100000 ) }
+
+4CH: { ( { SingleTargetDamage, Cold, NoWeaponType }, *, 1.080000 ), ( { CriticalChance, Cold, NoWeaponType }, *, 1.030000 ) }
+4CI: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+4CJ: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.110000 ) }
+4CK: { ( { HitChance, Physical, NoWeaponType }, *, 1.040000 ) }
+4CL: { ( { SingleTargetDamage, Cold, NoWeaponType }, *, 1.180000 ) }
+6p: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+
+4CM: { ( { CriticalAmp, Thunder, NoWeaponType }, *, 1.190000 ) }
+4CN: { ( { CriticalAmp, Thunder, NoWeaponType }, *, 1.040000 ), ( { DirectDamage, Physical, NoWeaponType }, *, 1.110000 ) }
+4CO: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.170000 ) }
+4CP: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+4CQ: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.090000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.040000 ) }
+6q: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.110000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4CR: { ( { CriticalAmp, Lightning, NoWeaponType }, *, 1.150000 ) }
+4CS: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+4CT: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.080000 ), ( { OverTimeDamage, Lightning, NoWeaponType }, *, 1.100000 ) }
+6r: { ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.120000 ), ( { AreaOfEffectSize, Lightning, NoWeaponType }, *, 1.100000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.100000 ) }
+
+4CU: { ( { DodgeChance, Magical, NoWeaponType }, *, 1.040000 ) }
+4CV: { ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4CW: { ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+6s: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+
+4CX: { ( { CriticalChance, Fire, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, Fire, NoWeaponType }, *, 1.060000 ) }
+4CY: { ( { HitChance, Fire, NoWeaponType }, *, 1.040000 ) }
+4CZ: { ( { DirectDamage, Fire, NoWeaponType }, *, 1.130000 ) }
+4Ca: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+4Cb: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.070000 ), ( { CriticalChance, Fire, NoWeaponType }, *, 1.040000 ) }
+6t: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.070000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.050000 ) }
+
+4Cc: { ( { AreaOfEffectSize, Radiant, NoWeaponType }, *, 1.140000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.030000 ) }
+4Cd: { ( { DirectDamage, Physical, NoWeaponType }, *, 1.230000 ) }
+4Ce: { ( { DirectDamage, Physical, NoWeaponType }, *, 1.240000 ) }
+4Cf: { ( { CriticalChance, Radiant, NoWeaponType }, *, 1.050000 ), ( { CriticalAmp, Radiant, NoWeaponType }, *, 1.050000 ) }
+4Cg: { ( { CriticalAmp, Radiant, NoWeaponType }, *, 1.030000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.040000 ) }
+6u: { ( { CriticalChance, Radiant, NoWeaponType }, *, 1.050000 ), ( { DirectDamage, Radiant, NoWeaponType }, *, 1.090000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.030000 ) }
+
+4Ch: { ( { CriticalChance, Piercing, NoWeaponType }, *, 1.040000 ) }
+4Ci: { ( { SingleTargetDamage, Piercing, NoWeaponType }, *, 1.150000 ) }
+4Cj: { ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ), ( { SingleTargetDamage, Magical, NoWeaponType }, *, 1.070000 ) }
+6v: { ( { SingleTargetDamage, Magical, NoWeaponType }, *, 1.190000 ), ( { DurationOfDot, Magical, NoWeaponType }, *, 1.070000 ) }
+
+4Ck: { ( { DurationOfDot, Radiant, NoWeaponType }, *, 1.110000 ) }
+4Cl: { ( { SingleTargetDamage, Radiant, NoWeaponType }, *, 1.160000 ) }
+4Cm: { ( { CriticalAmp, Magical, NoWeaponType }, *, 1.160000 ) }
+6w: { ( { OverTimeDamage, Magical, NoWeaponType }, *, 1.090000 ), ( { OverTimeDamage, Radiant, NoWeaponType }, *, 1.080000 ), ( { DurationOfDot, Radiant, NoWeaponType }, *, 1.090000 ) }
+
+4Cn: { ( { HitChance, Poison, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.130000 ) }
+4Co: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.120000 ) }
+4Cp: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+4Cq: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+4Cr: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+6x: { ( { CriticalAmp, Poison, NoWeaponType }, *, 1.120000 ), ( { AreaOfEffectSize, Poison, NoWeaponType }, *, 1.060000 ) }
+
+4Cs: { ( { SingleTargetDamage, Poison, NoWeaponType }, *, 1.150000 ), ( { DurationOfDot, Poison, NoWeaponType }, *, 1.060000 ) }
+4Ct: { ( { OverTimeDamage, Poison, NoWeaponType }, *, 1.240000 ) }
+4Cu: { ( { OverTimeDamage, Poison, NoWeaponType }, *, 1.090000 ), ( { OverTimeDamage, Magical, NoWeaponType }, *, 1.080000 ) }
+4Cv: { ( { CriticalChance, Magical, NoWeaponType }, *, 1.040000 ), ( { OverTimeDamage, Poison, NoWeaponType }, *, 1.120000 ) }
+4Cw: { ( { HitChance, Magical, NoWeaponType }, *, 1.050000 ) }
+6y: { ( { SingleTargetDamage, Poison, NoWeaponType }, *, 1.090000 ), ( { CriticalChance, Magical, NoWeaponType }, *, 1.080000 ), ( { SingleTargetDamage, Magical, NoWeaponType }, *, 1.080000 ) }
+
+4Cx: { ( { HitChance, Slashing, NoWeaponType }, *, 1.050000 ) }
+4Cy: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4Cz: { ( { SingleTargetDamage, Physical, NoWeaponType }, *, 1.080000 ), ( { DurationOfDot, Slashing, NoWeaponType }, *, 1.030000 ) }
+6z: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+
+4DA: { ( { SingleTargetDamage, Cold, NoWeaponType }, *, 1.140000 ) }
+4DB: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.050000 ) }
+4DC: { ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+6AA: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+4DD: { ( { CriticalChance, Psychic, NoWeaponType }, *, 1.020000 ), ( { CriticalAmp, Magical, NoWeaponType }, *, 1.070000 ) }
+4DE: { ( { SingleTargetDamage, Magical, NoWeaponType }, *, 1.110000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ) }
+4DF: { ( { DirectDamage, Psychic, NoWeaponType }, *, 1.130000 ) }
+4DG: { ( { CriticalChance, Psychic, NoWeaponType }, *, 1.020000 ), ( { DirectDamage, Psychic, NoWeaponType }, *, 1.130000 ) }
+4DH: { ( { CriticalChance, Psychic, NoWeaponType }, *, 1.040000 ) }
+6AB: { ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+4DI: { ( { Resistance, Magical, NoWeaponType }, *, 1.040000 ) }
+4DJ: { ( { Health, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+4DK: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4DL: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4DM: { ( { Resistance, Magical, NoWeaponType }, *, 1.050000 ) }
+6AC: { ( { DodgeChance, Magical, NoWeaponType }, *, 1.020000 ), ( { Resistance, Magical, NoWeaponType }, *, 1.060000 ) }
+
+4DN: { ( { AreaOfEffectSize, Force, NoWeaponType }, *, 1.190000 ) }
+4DO: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+4DP: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.080000 ), ( { DurationOfDot, Force, NoWeaponType }, *, 1.070000 ) }
+6AD: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+4DQ: { ( { AreaOfEffectSize, Poison, NoWeaponType }, *, 1.110000 ), ( { DirectDamage, Magical, NoWeaponType }, *, 1.080000 ) }
+4DR: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+4DS: { ( { CriticalAmp, Poison, NoWeaponType }, *, 1.180000 ) }
+6AE: { ( { CriticalAmp, Magical, NoWeaponType }, *, 1.080000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.030000 ) }
+
+4DT: { ( { SingleTargetDamage, Thunder, NoWeaponType }, *, 1.100000 ), ( { SingleTargetDamage, Physical, NoWeaponType }, *, 1.080000 ) }
+4DU: { ( { CriticalAmp, Thunder, NoWeaponType }, *, 1.090000 ) }
+4DV: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+4DW: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.060000 ), ( { OverTimeDamage, Thunder, NoWeaponType }, *, 1.080000 ) }
+4DX: { ( { HitChance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+6AF: { ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.100000 ), ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+4DY: { ( { AreaOfEffectSize, Slashing, NoWeaponType }, *, 1.220000 ) }
+4DZ: { ( { DirectDamage, Slashing, NoWeaponType }, *, 1.150000 ) }
+4Da: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+4Db: { ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.110000 ) }
+4Dc: { ( { CriticalAmp, Magical, NoWeaponType }, *, 1.100000 ) }
+6AG: { ( { AreaOfEffectDamage, Slashing, NoWeaponType }, *, 1.070000 ), ( { DirectDamage, Slashing, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.080000 ), ( { CriticalAmp, Slashing, NoWeaponType }, *, 1.050000 ) }
+
+4Dd: { ( { OverTimeDamage, Cold, NoWeaponType }, *, 1.140000 ), ( { CriticalAmp, Cold, NoWeaponType }, *, 1.060000 ) }
+4De: { ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+4Df: { ( { CriticalAmp, Cold, NoWeaponType }, *, 1.050000 ), ( { CriticalAmp, Magical, NoWeaponType }, *, 1.060000 ) }
+6AH: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+4Dg: { ( { CriticalAmp, Psychic, NoWeaponType }, *, 1.090000 ), ( { CriticalAmp, Magical, NoWeaponType }, *, 1.070000 ) }
+4Dh: { ( { HitChance, Psychic, NoWeaponType }, *, 1.030000 ) }
+4Di: { ( { CriticalChance, Magical, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.070000 ) }
+6AI: { ( { DurationOfDot, Magical, NoWeaponType }, *, 1.080000 ), ( { OverTimeDamage, Psychic, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectSize, Psychic, NoWeaponType }, *, 1.090000 ) }
+
+4Dj: { ( { DirectDamage, Piercing, NoWeaponType }, *, 1.080000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.020000 ) }
+4Dk: { ( { CriticalChance, Piercing, NoWeaponType }, *, 1.050000 ), ( { HitChance, Piercing, NoWeaponType }, *, 1.020000 ) }
+4Dl: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.140000 ) }
+4Dm: { ( { AreaOfEffectSize, Piercing, NoWeaponType }, *, 1.180000 ) }
+4Dn: { ( { CriticalAmp, Physical, NoWeaponType }, *, 1.120000 ) }
+6AJ: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+4Do: { ( { HitChance, Acid, NoWeaponType }, *, 1.050000 ) }
+4Dp: { ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.120000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.060000 ) }
+4Dq: { ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+4Dr: { ( { AreaOfEffectSize, Acid, NoWeaponType }, *, 1.210000 ) }
+4Ds: { ( { CriticalChance, Acid, NoWeaponType }, *, 1.060000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.060000 ) }
+6AK: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.070000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.080000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.020000 ) }
+
+4Dt: { ( { AreaOfEffectSize, Radiant, NoWeaponType }, *, 1.300000 ) }
+4Du: { ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+4Dv: { ( { DurationOfDot, Magical, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectSize, Radiant, NoWeaponType }, *, 1.110000 ) }
+6AL: { ( { AreaOfEffectDamage, Radiant, NoWeaponType }, *, 1.090000 ), ( { HitChance, Radiant, NoWeaponType }, *, 1.030000 ), ( { OverTimeDamage, Magical, NoWeaponType }, *, 1.060000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ) }
+
+5A: { ( { Health, NoDamageType, NoWeaponType }, +, 40.000000 ) }
+5B: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5C: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5D: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5E: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5F: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5G: { ( { Health, NoDamageType, NoWeaponType }, +, 38.000000 ) }
+
+5H: { ( { Health, NoDamageType, NoWeaponType }, +, 40.000000 ) }
+5I: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5J: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5K: { ( { Health, NoDamageType, NoWeaponType }, +, 38.000000 ) }
+5L: { ( { Health, NoDamageType, NoWeaponType }, +, 38.000000 ) }
+5M: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5N: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+
+5O: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5P: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5Q: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5R: { ( { Health, NoDamageType, NoWeaponType }, +, 40.000000 ) }
+5S: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5T: { ( { Health, NoDamageType, NoWeaponType }, +, 40.000000 ) }
+5U: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+
+5V: { ( { Health, NoDamageType, NoWeaponType }, +, 38.000000 ) }
+5W: { ( { Health, NoDamageType, NoWeaponType }, +, 35.000000 ) }
+5X: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5Y: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5Z: { ( { Health, NoDamageType, NoWeaponType }, +, 35.000000 ) }
+5a: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5b: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+
+5c: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5d: { ( { Health, NoDamageType, NoWeaponType }, +, 35.000000 ) }
+5e: { ( { Health, NoDamageType, NoWeaponType }, +, 40.000000 ) }
+5f: { ( { Health, NoDamageType, NoWeaponType }, +, 35.000000 ) }
+5g: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5h: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5i: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+
+5j: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5k: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5l: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5m: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5n: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5o: { ( { Health, NoDamageType, NoWeaponType }, +, 38.000000 ) }
+5p: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+
+5q: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5r: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5s: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5t: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5u: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5v: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5w: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+
+5x: { ( { Health, NoDamageType, NoWeaponType }, +, 37.000000 ) }
+5y: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5z: { ( { Health, NoDamageType, NoWeaponType }, +, 38.000000 ) }
+5AA: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5AB: { ( { Health, NoDamageType, NoWeaponType }, +, 39.000000 ) }
+5AC: { ( { Health, NoDamageType, NoWeaponType }, +, 36.000000 ) }
+5AD: { ( { Health, NoDamageType, NoWeaponType }, +, 35.000000 ) }
+
+7A: { ( { OverTimeDamage, Radiant, TwoHanded }, *, 1.140000 ), ( { OverTimeDamage, Magical, Polearm }, *, 1.170000 ) }
+7B: { ( { CriticalAmp, Magical, TwoHanded }, *, 1.040000 ), ( { CriticalChance, Radiant, Polearm }, *, 1.040000 ), ( { SingleTargetDamage, Magical, TwoHanded }, *, 1.090000 ) }
+7C: { ( { HitChance, Magical, Polearm }, *, 1.090000 ), ( { DurationOfDot, Magical, Polearm }, *, 1.150000 ) }
+7D: { ( { DurationOfDot, Radiant, TwoHanded }, *, 1.070000 ), ( { OverTimeDamage, Radiant, TwoHanded }, *, 1.120000 ), ( { DurationOfDot, Radiant, Polearm }, *, 1.080000 ) }
+7E: { ( { OverTimeDamage, Radiant, TwoHanded }, *, 1.140000 ), ( { CriticalChance, Radiant, TwoHanded }, *, 1.030000 ), ( { OverTimeDamage, Magical, Polearm }, *, 1.150000 ) }
+7F: { ( { DurationOfDot, Radiant, Polearm }, *, 1.180000 ), ( { CriticalChance, Radiant, Polearm }, *, 1.090000 ) }
+7G: { ( { SingleTargetDamage, Magical, Polearm }, *, 1.120000 ), ( { CriticalChance, Magical, Polearm }, *, 1.080000 ), ( { DurationOfDot, Magical, TwoHanded }, *, 1.110000 ) }
+8A: { ( { SingleTargetDamage, Magical, Polearm }, *, 1.140000 ), ( { HitChance, Radiant, Polearm }, *, 1.050000 ), ( { CriticalAmp, Magical, TwoHanded }, *, 1.050000 ), ( { CriticalAmp, Radiant, TwoHanded }, *, 1.060000 ) }
+8B: { ( { HitChance, Magical, TwoHanded }, *, 1.030000 ), ( { CriticalChance, Radiant, TwoHanded }, *, 1.100000 ), ( { CriticalAmp, Radiant, Polearm }, *, 1.130000 ), ( { SingleTargetDamage, Magical, TwoHanded }, *, 1.130000 ) }
+
+7H: { ( { HitChance, Radiant, Staff }, *, 1.060000 ), ( { SingleTargetDamage, Radiant, Staff }, *, 1.130000 ), ( { HitChance, Magical, Staff }, *, 1.050000 ) }
+7I: { ( { CastSpeed, NoDamageType, Staff }, *, 1.110000 ), ( { DirectDamage, NoDamageType, Staff }, *, 1.180000 ) }
+7J: { ( { Mana, NoDamageType, TwoHanded }, *, 1.020000 ), ( { CriticalAmp, NoDamageType, TwoHanded }, *, 1.030000 ), ( { HitChance, NoDamageType, Staff }, *, 1.030000 ) }
+7K: { ( { DirectDamage, Radiant, TwoHanded }, *, 1.130000 ), ( { DirectDamage, Magical, Staff }, *, 1.190000 ) }
+7L: { ( { CriticalAmp, Magical, Staff }, *, 1.070000 ), ( { CriticalChance, Magical, TwoHanded }, *, 1.120000 ) }
+7M: { ( { CriticalAmp, NoDamageType, TwoHanded }, *, 1.050000 ), ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.050000 ), ( { ManaRegen, NoDamageType, Staff }, *, 1.030000 ) }
+7N: { ( { CriticalAmp, NoDamageType, TwoHanded }, *, 1.030000 ), ( { HitChance, NoDamageType, TwoHanded }, *, 1.030000 ), ( { CriticalChance, NoDamageType, Staff }, *, 1.060000 ) }
+8C: { ( { ManaRegen, NoDamageType, Staff }, *, 1.090000 ), ( { CriticalAmp, NoDamageType, Staff }, *, 1.030000 ), ( { CriticalChance, NoDamageType, Staff }, *, 1.040000 ), ( { HitChance, NoDamageType, TwoHanded }, *, 1.020000 ) }
+8D: { ( { HitChance, Magical, Staff }, *, 1.050000 ), ( { CriticalChance, Radiant, Staff }, *, 1.130000 ), ( { SingleTargetDamage, Magical, TwoHanded }, *, 1.140000 ) }
+
+7O: { ( { AreaOfEffectSize, Necrotic, OneHanded }, *, 1.090000 ), ( { AreaOfEffectSize, Physical, OneHanded }, *, 1.140000 ), ( { OverTimeDamage, Physical, Axe }, *, 1.140000 ) }
+7P: { ( { AreaOfEffectDamage, NoDamageType, OneHanded }, *, 1.140000 ), ( { AttackSpeed, NoDamageType, OneHanded }, *, 1.070000 ) }
+7Q: { ( { ManaRegen, NoDamageType, OneHanded }, *, 1.070000 ), ( { AreaOfEffectDamage, NoDamageType, Axe }, *, 1.090000 ), ( { CriticalChance, NoDamageType, OneHanded }, *, 1.050000 ) }
+7R: { ( { AreaOfEffectDamage, NoDamageType, Axe }, *, 1.080000 ), ( { CriticalAmp, NoDamageType, Axe }, *, 1.030000 ), ( { DurationOfDot, NoDamageType, OneHanded }, *, 1.030000 ) }
+7S: { ( { HitChance, Physical, Axe }, *, 1.050000 ), ( { OverTimeDamage, Necrotic, OneHanded }, *, 1.140000 ), ( { OverTimeDamage, Physical, OneHanded }, *, 1.130000 ) }
+7T: { ( { CriticalChance, Physical, Axe }, *, 1.050000 ), ( { CriticalChance, Necrotic, Axe }, *, 1.060000 ), ( { AreaOfEffectSize, Necrotic, OneHanded }, *, 1.170000 ) }
+7U: { ( { CriticalChance, NoDamageType, OneHanded }, *, 1.080000 ), ( { HitChance, NoDamageType, OneHanded }, *, 1.030000 ) }
+8E: { ( { AreaOfEffectDamage, NoDamageType, OneHanded }, *, 1.090000 ), ( { CriticalChance, NoDamageType, OneHanded }, *, 1.040000 ), ( { Mana, NoDamageType, Axe }, *, 1.030000 ), ( { OverTimeDamage, NoDamageType, Axe }, *, 1.070000 ) }
+8F: { ( { HitChance, Necrotic, OneHanded }, *, 1.140000 ), ( { AreaOfEffectSize, Necrotic, OneHanded }, *, 1.240000 ) }
+
+7V: { ( { AreaOfEffectDamage, Lightning, Polearm }, *, 1.270000 ), ( { OverTimeDamage, Magical, Polearm }, *, 1.180000 ) }
+7W: { ( { DurationOfDot, Magical, TwoHanded }, *, 1.110000 ), ( { CriticalChance, Magical, Polearm }, *, 1.130000 ) }
+7X: { ( { CriticalAmp, Lightning, Polearm }, *, 1.100000 ), ( { AreaOfEffectSize, Lightning, Polearm }, *, 1.210000 ) }
+7Y: { ( { HitChance, Magical, Polearm }, *, 1.040000 ), ( { CriticalChance, Magical, TwoHanded }, *, 1.040000 ), ( { DurationOfDot, Magical, Polearm }, *, 1.120000 ) }
+7Z: { ( { CriticalChance, NoDamageType, Polearm }, *, 1.040000 ), ( { AreaOfEffectDamage, NoDamageType, Polearm }, *, 1.110000 ), ( { Mana, NoDamageType, TwoHanded }, *, 1.040000 ) }
+7a: { ( { AreaOfEffectDamage, Magical, Polearm }, *, 1.150000 ), ( { DurationOfDot, Magical, TwoHanded }, *, 1.180000 ) }
+7b: { ( { HitChance, Magical, TwoHanded }, *, 1.040000 ), ( { CriticalChance, Magical, Polearm }, *, 1.070000 ), ( { CriticalAmp, Lightning, Polearm }, *, 1.050000 ) }
+8G: { ( { HitChance, Lightning, Polearm }, *, 1.060000 ), ( { HitChance, Magical, Polearm }, *, 1.050000 ), ( { OverTimeDamage, Lightning, TwoHanded }, *, 1.230000 ) }
+8H: { ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.040000 ), ( { ManaRegen, NoDamageType, Polearm }, *, 1.040000 ), ( { Mana, NoDamageType, TwoHanded }, *, 1.040000 ), ( { OverTimeDamage, NoDamageType, TwoHanded }, *, 1.080000 ) }
+
+7c: { ( { AreaOfEffectDamage, Force, Wand }, *, 1.150000 ), ( { CriticalAmp, Magical, OneHanded }, *, 1.030000 ), ( { DirectDamage, Force, Wand }, *, 1.180000 ) }
+7d: { ( { DirectDamage, Magical, NoWeaponType }, *, 1.150000 ), ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.080000 ) }
+7e: { ( { DirectDamage, Magical, OneHanded }, *, 1.100000 ), ( { CriticalChance, Magical, Wand }, *, 1.040000 ), ( { CriticalAmp, Force, Wand }, *, 1.060000 ) }
+7f: { ( { CriticalChance, Magical, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectSize, Force, NoWeaponType }, *, 1.080000 ), ( { HitChance, Force, NoWeaponType }, *, 1.030000 ) }
+7g: { ( { CriticalAmp, Magical, NoWeaponType }, *, 1.140000 ) }
+7h: { ( { CriticalAmp, Magical, NoWeaponType }, *, 1.070000 ), ( { HitChance, Force, NoWeaponType }, *, 1.060000 ) }
+7i: { ( { DirectDamage, Force, OneHanded }, *, 1.170000 ), ( { CriticalAmp, Magical, Wand }, *, 1.130000 ) }
+8I: { ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.080000 ), ( { DirectDamage, Magical, NoWeaponType }, *, 1.080000 ), ( { HitChance, Force, NoWeaponType }, *, 1.040000 ) }
+8J: { ( { DirectDamage, Magical, Wand }, *, 1.130000 ), ( { CriticalChance, Magical, Wand }, *, 1.090000 ), ( { CriticalAmp, Force, Wand }, *, 1.090000 ), ( { DirectDamage, Magical, OneHanded }, *, 1.120000 ) }
+
+7j: { ( { SingleTargetDamage, Thunder, Staff }, *, 1.260000 ), ( { OverTimeDamage, Physical, TwoHanded }, *, 1.120000 ) }
+7k: { ( { HitChance, Thunder, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.050000 ) }
+7l: { ( { CriticalAmp, Physical, Staff }, *, 1.070000 ), ( { CriticalChance, Physical, TwoHanded }, *, 1.130000 ) }
+7m: { ( { HitChance, Physical, TwoHanded }, *, 1.030000 ), ( { HitChance, Thunder, Staff }, *, 1.060000 ), ( { SingleTargetDamage, Thunder, Staff }, *, 1.120000 ) }
+7n: { ( { SingleTargetDamage, Thunder, NoWeaponType }, *, 1.110000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.080000 ), ( { CriticalChance, Thunder, NoWeaponType }, *, 1.050000 ) }
+7o: { ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.100000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.040000 ) }
+7p: { ( { CriticalChance, Thunder, TwoHanded }, *, 1.110000 ), ( { OverTimeDamage, Physical, TwoHanded }, *, 1.150000 ) }
+8K: { ( { OverTimeDamage, Physical, Staff }, *, 1.310000 ), ( { CriticalChance, Thunder, TwoHanded }, *, 1.080000 ), ( { OverTimeDamage, Thunder, Staff }, *, 1.190000 ) }
+8L: { ( { DurationOfDot, Physical, NoWeaponType }, *, 1.120000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.040000 ), ( { OverTimeDamage, Thunder, NoWeaponType }, *, 1.160000 ) }
+
+7q: { ( { AreaOfEffectDamage, Acid, Polearm }, *, 1.190000 ), ( { DurationOfDot, Physical, TwoHanded }, *, 1.140000 ) }
+7r: { ( { CriticalChance, Acid, TwoHanded }, *, 1.080000 ), ( { CriticalChance, Acid, Polearm }, *, 1.080000 ) }
+7s: { ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.110000 ), ( { CriticalAmp, Acid, NoWeaponType }, *, 1.080000 ) }
+7t: { ( { AreaOfEffectDamage, Acid, Polearm }, *, 1.180000 ), ( { CriticalChance, Physical, TwoHanded }, *, 1.050000 ) }
+7u: { ( { OverTimeDamage, Acid, TwoHanded }, *, 1.160000 ), ( { AreaOfEffectSize, Acid, Polearm }, *, 1.110000 ), ( { DurationOfDot, Physical, TwoHanded }, *, 1.090000 ) }
+7v: { ( { HitChance, Acid, NoWeaponType }, *, 1.060000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.130000 ) }
+7w: { ( { OverTimeDamage, Acid, TwoHanded }, *, 1.120000 ), ( { OverTimeDamage, Physical, TwoHanded }, *, 1.090000 ), ( { AreaOfEffectSize, Physical, TwoHanded }, *, 1.110000 ) }
+8M: { ( { AreaOfEffectSize, Acid, NoWeaponType }, *, 1.100000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.030000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.070000 ), ( { HitChance, Acid, NoWeaponType }, *, 1.030000 ) }
+8N: { ( { HitChance, Physical, Polearm }, *, 1.070000 ), ( { OverTimeDamage, Physical, Polearm }, *, 1.230000 ), ( { DurationOfDot, Acid, Polearm }, *, 1.120000 ) }
+
+7x: { ( { AreaOfEffectSize, Piercing, Wand }, *, 1.240000 ), ( { CriticalAmp, Physical, Wand }, *, 1.100000 ) }
+7y: { ( { DurationOfDot, NoDamageType, Wand }, *, 1.070000 ), ( { ManaRegen, NoDamageType, Wand }, *, 1.040000 ), ( { CriticalAmp, NoDamageType, Wand }, *, 1.050000 ) }
+7z: { ( { CriticalAmp, Physical, OneHanded }, *, 1.040000 ), ( { HitChance, Physical, OneHanded }, *, 1.040000 ) }
+7AA: { ( { AttackSpeed, NoDamageType, Wand }, *, 1.080000 ), ( { ManaRegen, NoDamageType, Wand }, *, 1.050000 ), ( { AreaOfEffectDamage, NoDamageType, Wand }, *, 1.110000 ) }
+7AB: { ( { CriticalChance, Piercing, Wand }, *, 1.180000 ), ( { DurationOfDot, Piercing, Wand }, *, 1.110000 ) }
+7AC: { ( { DurationOfDot, NoDamageType, Wand }, *, 1.080000 ), ( { CriticalAmp, NoDamageType, OneHanded }, *, 1.080000 ) }
+7AD: { ( { AreaOfEffectDamage, NoDamageType, OneHanded }, *, 1.110000 ), ( { DurationOfDot, NoDamageType, OneHanded }, *, 1.080000 ) }
+8O: { ( { AreaOfEffectSize, Physical, Wand }, *, 1.330000 ), ( { AreaOfEffectSize, Piercing, OneHanded }, *, 1.250000 ) }
+8P: { ( { AreaOfEffectDamage, Piercing, OneHanded }, *, 1.300000 ), ( { CriticalChance, Physical, OneHanded }, *, 1.070000 ), ( { CriticalAmp, Piercing, OneHanded }, *, 1.050000 ) }
+
+7AE: { ( { CriticalChance, Cold, Sword }, *, 1.080000 ), ( { HitChance, Cold, TwoHanded }, *, 1.060000 ), ( { DirectDamage, Magical, Sword }, *, 1.130000 ) }
+7AF: { ( { Mana, NoDamageType, Sword }, *, 1.100000 ), ( { CriticalAmp, NoDamageType, TwoHanded }, *, 1.040000 ) }
+7AG: { ( { CriticalAmp, Cold, Sword }, *, 1.070000 ), ( { AreaOfEffectDamage, Magical, TwoHanded }, *, 1.100000 ), ( { AreaOfEffectDamage, Cold, Sword }, *, 1.190000 ) }
+7AH: { ( { CriticalChance, Magical, Sword }, *, 1.070000 ), ( { CriticalChance, Cold, TwoHanded }, *, 1.040000 ) }
+7AI: { ( { AreaOfEffectSize, Cold, Sword }, *, 1.160000 ), ( { CriticalChance, Magical, TwoHanded }, *, 1.050000 ), ( { AreaOfEffectDamage, Magical, Sword }, *, 1.170000 ) }
+7AJ: { ( { AreaOfEffectDamage, Magical, TwoHanded }, *, 1.200000 ), ( { AreaOfEffectSize, Cold, TwoHanded }, *, 1.240000 ) }
+7AK: { ( { AreaOfEffectSize, Magical, TwoHanded }, *, 1.150000 ), ( { DirectDamage, Cold, Sword }, *, 1.110000 ), ( { DirectDamage, Cold, TwoHanded }, *, 1.140000 ) }
+8Q: { ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.060000 ), ( { CriticalChance, NoDamageType, Sword }, *, 1.050000 ), ( { Mana, NoDamageType, TwoHanded }, *, 1.030000 ), ( { CastSpeed, NoDamageType, Sword }, *, 1.060000 ) }
+8R: { ( { AreaOfEffectDamage, NoDamageType, Sword }, *, 1.120000 ), ( { AreaOfEffectSize, NoDamageType, TwoHanded }, *, 1.100000 ), ( { CriticalAmp, NoDamageType, TwoHanded }, *, 1.040000 ), ( { AreaOfEffectSize, NoDamageType, Sword }, *, 1.080000 ) }
+
+7AL: { ( { AreaOfEffectSize, Slashing, Staff }, *, 1.240000 ), ( { HitChance, Magical, Staff }, *, 1.080000 ) }
+7AM: { ( { DirectDamage, Slashing, TwoHanded }, *, 1.110000 ), ( { AreaOfEffectSize, Slashing, Staff }, *, 1.150000 ), ( { CriticalAmp, Magical, TwoHanded }, *, 1.080000 ) }
+7AN: { ( { CriticalChance, Slashing, TwoHanded }, *, 1.030000 ), ( { HitChance, Magical, Staff }, *, 1.050000 ), ( { CriticalAmp, Magical, TwoHanded }, *, 1.040000 ) }
+7AO: { ( { AreaOfEffectSize, Slashing, TwoHanded }, *, 1.100000 ), ( { AreaOfEffectDamage, Slashing, Staff }, *, 1.200000 ), ( { AreaOfEffectSize, Magical, Staff }, *, 1.100000 ) }
+7AP: { ( { HitChance, NoDamageType, Staff }, *, 1.060000 ), ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.060000 ) }
+7AQ: { ( { CriticalAmp, Magical, Staff }, *, 1.080000 ), ( { CriticalAmp, Magical, TwoHanded }, *, 1.030000 ), ( { DirectDamage, Slashing, Staff }, *, 1.190000 ) }
+7AR: { ( { CastSpeed, NoDamageType, Staff }, *, 1.080000 ), ( { AreaOfEffectSize, NoDamageType, TwoHanded }, *, 1.150000 ) }
+8S: { ( { AreaOfEffectSize, Slashing, TwoHanded }, *, 1.230000 ), ( { CriticalAmp, Magical, TwoHanded }, *, 1.060000 ), ( { HitChance, Magical, TwoHanded }, *, 1.050000 ) }
+8T: { ( { CriticalChance, Slashing, TwoHanded }, *, 1.110000 ), ( { DirectDamage, Slashing, Staff }, *, 1.230000 ), ( { DirectDamage, Magical, Staff }, *, 1.170000 ) }
+
+7AS: { ( { HitChance, Acid, Polearm }, *, 1.080000 ), ( { SingleTargetDamage, Acid, TwoHanded }, *, 1.190000 ) }
+7AT: { ( { DirectDamage, Physical, TwoHanded }, *, 1.210000 ), ( { HitChance, Physical, TwoHanded }, *, 1.050000 ) }
+7AU: { ( { HitChance, NoDamageType, TwoHanded }, *, 1.040000 ), ( { CriticalChance, NoDamageType, TwoHanded }, *, 1.060000 ) }
+7AV: { ( { HitChance, Acid, TwoHanded }, *, 1.040000 ), ( { DirectDamage, Acid, TwoHanded }, *, 1.140000 ), ( { CriticalAmp, Physical, TwoHanded }, *, 1.040000 ) }
+7AW: { ( { HitChance, Acid, Polearm }, *, 1.100000 ), ( { SingleTargetDamage, Acid, Polearm }, *, 1.210000 ) }
+7AX: { ( { CriticalChance, Acid, TwoHanded }, *, 1.070000 ), ( { CriticalChance, Physical, Polearm }, *, 1.070000 ) }
+7AY: { ( { CastSpeed, NoDamageType, Polearm }, *, 1.060000 ), ( { SingleTargetDamage, NoDamageType, TwoHanded }, *, 1.150000 ) }
+8U: { ( { HitChance, Physical, TwoHanded }, *, 1.070000 ), ( { HitChance, Physical, Polearm }, *, 1.080000 ), ( { DirectDamage, Acid, TwoHanded }, *, 1.150000 ) }
+8V: { ( { CriticalChance, Acid, TwoHanded }, *, 1.080000 ), ( { SingleTargetDamage, Acid, Polearm }, *, 1.220000 ), ( { SingleTargetDamage, Physical, TwoHanded }, *, 1.120000 ) }
+
+7AZ: { ( { DodgeChance, NoDamageType, OneHanded }, *, 1.040000 ), ( { DodgeChance, NoDamageType, Mace }, *, 1.050000 ) }
+7Aa: { ( { Resistance, Magical, OneHanded }, *, 1.050000 ), ( { DodgeChance, Magical, OneHanded }, *, 1.070000 ) }
+7Ab: { ( { Health, NoDamageType, Mace }, *, 1.060000 ), ( { HealthRegen, NoDamageType, Mace }, *, 1.040000 ) }
+7Ac: { ( { DodgeChance, Magical, OneHanded }, *, 1.070000 ), ( { Resistance, Magical, OneHanded }, *, 1.050000 ) }
+7Ad: { ( { DodgeChance, Magical, Mace }, *, 1.080000 ), ( { DodgeChance, Magical, OneHanded }, *, 1.070000 ) }
+7Ae: { ( { HealthRegen, NoDamageType, Mace }, *, 1.030000 ), ( { HealthRegen, NoDamageType, OneHanded }, *, 1.040000 ), ( { DodgeChance, NoDamageType, Mace }, *, 1.020000 ) }
+7Af: { ( { HealthRegen, NoDamageType, Mace }, *, 1.060000 ), ( { HealthRegen, NoDamageType, OneHanded }, *, 1.090000 ) }
+8W: { ( { DodgeChance, NoDamageType, Mace }, *, 1.040000 ), ( { Resistance, NoDamageType, OneHanded }, *, 1.080000 ) }
+8X: { ( { HealthRegen, NoDamageType, Mace }, *, 1.080000 ), ( { Resistance, NoDamageType, Mace }, *, 1.050000 ), ( { HealthRegen, NoDamageType, OneHanded }, *, 1.070000 ) }
+
+7Ag: { ( { AreaOfEffectDamage, Magical, Wand }, *, 1.100000 ), ( { OverTimeDamage, Force, Wand }, *, 1.140000 ), ( { CriticalAmp, Force, OneHanded }, *, 1.080000 ) }
+7Ah: { ( { CriticalChance, Force, Wand }, *, 1.050000 ), ( { DurationOfDot, Magical, Wand }, *, 1.090000 ), ( { CriticalAmp, Magical, Wand }, *, 1.060000 ) }
+7Ai: { ( { HitChance, NoDamageType, Wand }, *, 1.040000 ), ( { ManaRegen, NoDamageType, OneHanded }, *, 1.100000 ) }
+7Aj: { ( { AreaOfEffectSize, NoDamageType, Wand }, *, 1.120000 ), ( { AreaOfEffectDamage, NoDamageType, OneHanded }, *, 1.110000 ) }
+7Ak: { ( { AreaOfEffectSize, Magical, Wand }, *, 1.200000 ), ( { DurationOfDot, Magical, OneHanded }, *, 1.080000 ) }
+7Al: { ( { HitChance, Magical, Wand }, *, 1.060000 ), ( { OverTimeDamage, Force, Wand }, *, 1.160000 ), ( { AreaOfEffectDamage, Force, Wand }, *, 1.150000 ) }
+7Am: { ( { CriticalAmp, Force, OneHanded }, *, 1.090000 ), ( { HitChance, Magical, Wand }, *, 1.040000 ), ( { AreaOfEffectSize, Force, OneHanded }, *, 1.080000 ) }
+8Y: { ( { CastSpeed, NoDamageType, OneHanded }, *, 1.090000 ), ( { AreaOfEffectSize, NoDamageType, OneHanded }, *, 1.110000 ), ( { DurationOfDot, NoDamageType, Wand }, *, 1.050000 ) }
+8Z: { ( { Mana, NoDamageType, OneHanded }, *, 1.070000 ), ( { OverTimeDamage, NoDamageType, Wand }, *, 1.070000 ), ( { CriticalAmp, NoDamageType, OneHanded }, *, 1.030000 ) }
+
+7An: { ( { OverTimeDamage, Lightning, Thrown }, *, 1.130000 ), ( { OverTimeDamage, Physical, OneHanded }, *, 1.120000 ), ( { AreaOfEffectDamage, Physical, OneHanded }, *, 1.090000 ) }
+7Ao: { ( { DurationOfDot, NoDamageType, OneHanded }, *, 1.120000 ), ( { AreaOfEffectSize, NoDamageType, Thrown }, *, 1.200000 ) }
+7Ap: { ( { CriticalAmp, NoDamageType, OneHanded }, *, 1.080000 ), ( { Mana, NoDamageType, OneHanded }, *, 1.070000 ) }
+7Aq: { ( { CriticalChance, NoDamageType, OneHanded }, *, 1.040000 ), ( { CastSpeed, NoDamageType, Thrown }, *, 1.110000 ) }
+7Ar: { ( { AreaOfEffectDamage, NoDamageType, Thrown }, *, 1.100000 ), ( { HitChance, NoDamageType, Thrown }, *, 1.030000 ), ( { AreaOfEffectDamage, NoDamageType, OneHanded }, *, 1.090000 ) }
+7As: { ( { AreaOfEffectDamage, Lightning, Thrown }, *, 1.310000 ), ( { CriticalChance, Physical, Thrown }, *, 1.050000 ) }
+7At: { ( { DurationOfDot, NoDamageType, OneHanded }, *, 1.050000 ), ( { Mana, NoDamageType, Thrown }, *, 1.030000 ), ( { AreaOfEffectSize, NoDamageType, Thrown }, *, 1.080000 ) }
+8a: { ( { DurationOfDot, Physical, Thrown }, *, 1.130000 ), ( { HitChance, Physical, OneHanded }, *, 1.030000 ), ( { CriticalChance, Lightning, OneHanded }, *, 1.090000 ), ( { AreaOfEffectDamage, Lightning, Thrown }, *, 1.100000 ) }
+8b: { ( { OverTimeDamage, Physical, OneHanded }, *, 1.130000 ), ( { CriticalChance, Physical, Thrown }, *, 1.130000 ) }
+
+7Au: { ( { Resistance, NoDamageType, Axe }, *, 1.040000 ), ( { HealthRegen, NoDamageType, TwoHanded }, *, 1.040000 ), ( { DodgeChance, NoDamageType, TwoHanded }, *, 1.040000 ) }
+7Av: { ( { DodgeChance, NoDamageType, Axe }, *, 1.040000 ), ( { HealthRegen, NoDamageType, Axe }, *, 1.070000 ), ( { Health, NoDamageType, TwoHanded }, *, 1.040000 ) }
+7Aw: { ( { HealthRegen, NoDamageType, TwoHanded }, *, 1.050000 ), ( { Health, NoDamageType, TwoHanded }, *, 1.030000 ), ( { Resistance, NoDamageType, Axe }, *, 1.040000 ) }
+7Ax: { ( { Resistance, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+7Ay: { ( { DodgeChance, NoDamageType, Axe }, *, 1.030000 ), ( { DodgeChance, NoDamageType, TwoHanded }, *, 1.030000 ), ( { HealthRegen, NoDamageType, TwoHanded }, *, 1.050000 ) }
+7Az: { ( { Health, NoDamageType, Axe }, *, 1.050000 ), ( { DodgeChance, NoDamageType, TwoHanded }, *, 1.020000 ), ( { HealthRegen, NoDamageType, Axe }, *, 1.080000 ) }
+7BA: { ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+8c: { ( { Health, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+8d: { ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+7BB: { ( { SingleTargetDamage, Slashing, Staff }, *, 1.150000 ), ( { HitChance, Physical, TwoHanded }, *, 1.030000 ), ( { DurationOfDot, Slashing, Staff }, *, 1.130000 ) }
+7BC: { ( { Mana, NoDamageType, TwoHanded }, *, 1.040000 ), ( { HitChance, NoDamageType, Staff }, *, 1.020000 ), ( { OverTimeDamage, NoDamageType, Staff }, *, 1.090000 ) }
+7BD: { ( { Mana, NoDamageType, TwoHanded }, *, 1.050000 ), ( { HitChance, NoDamageType, TwoHanded }, *, 1.030000 ) }
+7BE: { ( { SingleTargetDamage, NoDamageType, Staff }, *, 1.150000 ), ( { ManaRegen, NoDamageType, Staff }, *, 1.040000 ) }
+7BF: { ( { CriticalAmp, Slashing, TwoHanded }, *, 1.130000 ), ( { OverTimeDamage, Physical, Staff }, *, 1.130000 ) }
+7BG: { ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.030000 ), ( { CriticalAmp, NoDamageType, Staff }, *, 1.030000 ), ( { ManaRegen, NoDamageType, Staff }, *, 1.050000 ) }
+7BH: { ( { OverTimeDamage, Physical, Staff }, *, 1.140000 ), ( { CriticalChance, Physical, Staff }, *, 1.040000 ), ( { CriticalAmp, Physical, Staff }, *, 1.060000 ) }
+8e: { ( { HitChance, NoDamageType, Staff }, *, 1.040000 ), ( { CriticalChance, NoDamageType, Staff }, *, 1.130000 ), ( { SingleTargetDamage, NoDamageType, Staff }, *, 1.120000 ) }
+8f: { ( { OverTimeDamage, Slashing, Staff }, *, 1.220000 ), ( { DurationOfDot, Physical, Staff }, *, 1.100000 ), ( { CriticalChance, Slashing, TwoHanded }, *, 1.070000 ) }
+
+9A: { ( { CriticalAmp, NoDamageType, NoWeaponType }, +, 31.530001 ) }
+
+9B: { ( { Mana, NoDamageType, NoWeaponType }, *, 5.830000 ) }
+
+9C: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 2.150000 ) }
+
+9D: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 2.370000 ) }
+
+9E: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 2.380000 ) }
+
+9F: { ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 2.050000 ) }
+
+9G: { ( { DirectDamage, NoDamageType, NoWeaponType }, *, 2.380000 ) }
+
+9H: { ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 2.130000 ) }
+
+------- Biased level 1 branches -------
+
+Bias: Resistance
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+Bias: SingleTargetDamage
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: HitChance
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+
+Bias: HitChance
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.150000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+
+Bias: DodgeChance
+{ ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Resistance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+
+Bias: SingleTargetDamage
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+Bias: AreaOfEffectSize
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+Bias: Resistance
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+Bias: Mana
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: OverTimeDamage
+{ ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+
+Bias: OverTimeDamage
+{ ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.150000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+
+Bias: Health
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.080000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+Bias: SingleTargetDamage
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+Bias: HitChance
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+
+Bias: HitChance
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: CastSpeed
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+Bias: DodgeChance
+{ ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+Bias: DurationOfDot
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+
+Bias: Mana
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.120000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+
+Bias: Mana
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+Bias: CriticalChance
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: AreaOfEffectDamage
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: AttackSpeed
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+Bias: AreaOfEffectDamage
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+Bias: CriticalChance
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+
+Bias: SingleTargetDamage
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: CastSpeed
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+
+Bias: AreaOfEffectSize
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.130000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+
+Bias: Mana
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: AttackSpeed
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.010000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+
+
+------- Biased level 4 branches -------
+
+Bias: CriticalChance
+{ ( { CriticalChance, Radiant, NoWeaponType }, *, 1.080000 ) }
+{ ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.260000 ) }
+{ ( { DurationOfDot, Physical, NoWeaponType }, *, 1.030000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.020000 ) }
+{ ( { AreaOfEffectDamage, Radiant, NoWeaponType }, *, 1.150000 ) }
+{ ( { DurationOfDot, Radiant, NoWeaponType }, *, 1.080000 ), ( { CriticalChance, Radiant, NoWeaponType }, *, 1.060000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.100000 ) }
+
+Bias: CriticalAmp
+{ ( { CriticalAmp, Bludgeoning, NoWeaponType }, *, 1.110000 ) }
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { DurationOfDot, Physical, NoWeaponType }, *, 1.090000 ) }
+{ ( { OverTimeDamage, Bludgeoning, NoWeaponType }, *, 1.190000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.080000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+Bias: CriticalAmp
+{ ( { CriticalAmp, Poison, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectDamage, Poison, NoWeaponType }, *, 1.310000 ) }
+{ ( { DirectDamage, Physical, NoWeaponType }, *, 1.200000 ) }
+{ ( { CriticalAmp, Physical, NoWeaponType }, *, 1.040000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.210000 ) }
+
+Bias: CastSpeed
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { HitChance, Magical, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectDamage, Force, NoWeaponType }, *, 1.090000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { CriticalAmp, Force, NoWeaponType }, *, 1.130000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+Bias: Poison
+{ ( { DirectDamage, Poison, NoWeaponType }, *, 1.100000 ), ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.130000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+{ ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.100000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.100000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.090000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+Bias: DirectDamage
+{ ( { DirectDamage, Bludgeoning, NoWeaponType }, *, 1.340000 ) }
+{ ( { DirectDamage, Magical, NoWeaponType }, *, 1.260000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { HitChance, Bludgeoning, NoWeaponType }, *, 1.040000 ), ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.100000 ), ( { CriticalChance, Magical, NoWeaponType }, *, 1.060000 ) }
+
+Bias: Piercing
+{ ( { CriticalChance, Piercing, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.140000 ) }
+{ ( { CriticalChance, Piercing, NoWeaponType }, *, 1.090000 ) }
+{ ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.220000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { AreaOfEffectDamage, Piercing, NoWeaponType }, *, 1.230000 ), ( { AreaOfEffectSize, Piercing, NoWeaponType }, *, 1.070000 ) }
+
+Bias: Resistance
+{ ( { Resistance, Magical, NoWeaponType }, *, 1.030000 ) }
+{ ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { Resistance, Magical, NoWeaponType }, *, 1.030000 ), ( { DodgeChance, Magical, NoWeaponType }, *, 1.020000 ) }
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { Resistance, Magical, NoWeaponType }, *, 1.020000 ), ( { DodgeChance, Magical, NoWeaponType }, *, 1.060000 ) }
+
+Bias: Cold
+{ ( { CriticalAmp, Cold, NoWeaponType }, *, 1.030000 ), ( { SingleTargetDamage, Cold, NoWeaponType }, *, 1.140000 ) }
+{ ( { DurationOfDot, Physical, NoWeaponType }, *, 1.090000 ) }
+{ ( { CriticalAmp, Physical, NoWeaponType }, *, 1.140000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { HitChance, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+Bias: CriticalAmp
+{ ( { CriticalAmp, Lightning, NoWeaponType }, *, 1.090000 ) }
+{ ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { CriticalAmp, Lightning, NoWeaponType }, *, 1.150000 ) }
+{ ( { CriticalChance, Magical, NoWeaponType }, *, 1.040000 ), ( { CriticalAmp, Lightning, NoWeaponType }, *, 1.040000 ), ( { AreaOfEffectDamage, Lightning, NoWeaponType }, *, 1.120000 ) }
+
+Bias: OverTimeDamage
+{ ( { OverTimeDamage, Poison, NoWeaponType }, *, 1.120000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.040000 ) }
+{ ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.130000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.070000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalAmp, Physical, NoWeaponType }, *, 1.060000 ), ( { OverTimeDamage, Poison, NoWeaponType }, *, 1.090000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.100000 ) }
+
+Bias: Force
+{ ( { DurationOfDot, Force, NoWeaponType }, *, 1.050000 ) }
+{ ( { CriticalChance, Physical, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, Force, NoWeaponType }, *, 1.040000 ) }
+{ ( { OverTimeDamage, Force, NoWeaponType }, *, 1.250000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.010000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+Bias: DurationOfDot
+{ ( { DurationOfDot, Psychic, NoWeaponType }, *, 1.150000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { CriticalAmp, Physical, NoWeaponType }, *, 1.070000 ), ( { AreaOfEffectSize, Psychic, NoWeaponType }, *, 1.070000 ) }
+{ ( { AreaOfEffectSize, Psychic, NoWeaponType }, *, 1.090000 ), ( { CriticalChance, Psychic, NoWeaponType }, *, 1.030000 ) }
+{ ( { HitChance, Physical, NoWeaponType }, *, 1.040000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.050000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.050000 ) }
+
+Bias: DirectDamage
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.170000 ) }
+{ ( { AreaOfEffectSize, Psychic, NoWeaponType }, *, 1.170000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ), ( { CriticalAmp, Magical, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectDamage, Psychic, NoWeaponType }, *, 1.070000 ) }
+
+Bias: CriticalChance
+{ ( { CriticalChance, Piercing, NoWeaponType }, *, 1.020000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.060000 ) }
+{ ( { DurationOfDot, Physical, NoWeaponType }, *, 1.040000 ), ( { AreaOfEffectDamage, Piercing, NoWeaponType }, *, 1.130000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.080000 ) }
+{ ( { OverTimeDamage, Piercing, NoWeaponType }, *, 1.090000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.110000 ), ( { AreaOfEffectSize, Piercing, NoWeaponType }, *, 1.110000 ) }
+
+Bias: CastSpeed
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { OverTimeDamage, Lightning, NoWeaponType }, *, 1.180000 ) }
+{ ( { CriticalChance, Physical, NoWeaponType }, *, 1.030000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.120000 ) }
+{ ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.060000 ), ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.040000 ), ( { OverTimeDamage, Lightning, NoWeaponType }, *, 1.090000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.060000 ) }
+
+Bias: CriticalChance
+{ ( { CriticalChance, Magical, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectDamage, Bludgeoning, NoWeaponType }, *, 1.120000 ) }
+{ ( { HitChance, Bludgeoning, NoWeaponType }, *, 1.030000 ), ( { CriticalAmp, Magical, NoWeaponType }, *, 1.070000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.060000 ), ( { CriticalChance, Bludgeoning, NoWeaponType }, *, 1.030000 ), ( { OverTimeDamage, Magical, NoWeaponType }, *, 1.080000 ), ( { CriticalAmp, Magical, NoWeaponType }, *, 1.020000 ) }
+
+Bias: AreaOfEffectSize
+{ ( { AreaOfEffectSize, Piercing, NoWeaponType }, *, 1.300000 ) }
+{ ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.080000 ), ( { OverTimeDamage, Piercing, NoWeaponType }, *, 1.120000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.080000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.050000 ) }
+{ ( { CriticalAmp, Piercing, NoWeaponType }, *, 1.040000 ), ( { CriticalChance, Piercing, NoWeaponType }, *, 1.060000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.040000 ) }
+
+Bias: Acid
+{ ( { OverTimeDamage, Acid, NoWeaponType }, *, 1.290000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalChance, Physical, NoWeaponType }, *, 1.080000 ) }
+{ ( { CriticalAmp, Acid, NoWeaponType }, *, 1.180000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+
+Bias: OverTimeDamage
+{ ( { OverTimeDamage, Necrotic, NoWeaponType }, *, 1.100000 ), ( { CriticalChance, Magical, NoWeaponType }, *, 1.040000 ) }
+{ ( { AreaOfEffectDamage, Necrotic, NoWeaponType }, *, 1.100000 ), ( { DurationOfDot, Necrotic, NoWeaponType }, *, 1.050000 ) }
+{ ( { HitChance, Necrotic, NoWeaponType }, *, 1.060000 ) }
+{ ( { OverTimeDamage, Necrotic, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.090000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+
+Bias: AreaOfEffectDamage
+{ ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.080000 ), ( { AreaOfEffectDamage, Poison, NoWeaponType }, *, 1.270000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.080000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { CriticalAmp, Poison, NoWeaponType }, *, 1.150000 ) }
+{ ( { AreaOfEffectDamage, Poison, NoWeaponType }, *, 1.200000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.100000 ) }
+
+Bias: Magical
+{ ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.110000 ) }
+{ ( { DirectDamage, Magical, NoWeaponType }, *, 1.140000 ) }
+{ ( { CriticalAmp, Acid, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectDamage, Magical, NoWeaponType }, *, 1.120000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.060000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+
+Bias: Resistance
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { Resistance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { DodgeChance, Magical, NoWeaponType }, *, 1.050000 ) }
+{ ( { DodgeChance, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { DodgeChance, Magical, NoWeaponType }, *, 1.020000 ), ( { Resistance, Magical, NoWeaponType }, *, 1.050000 ) }
+
+Bias: Radiant
+{ ( { HitChance, Radiant, NoWeaponType }, *, 1.040000 ) }
+{ ( { DirectDamage, Magical, NoWeaponType }, *, 1.190000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ) }
+{ ( { AreaOfEffectDamage, Radiant, NoWeaponType }, *, 1.230000 ) }
+{ ( { CriticalChance, Radiant, NoWeaponType }, *, 1.040000 ), ( { CriticalChance, Magical, NoWeaponType }, *, 1.050000 ), ( { CriticalAmp, Radiant, NoWeaponType }, *, 1.040000 ) }
+
+Bias: ManaRegen
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { AreaOfEffectSize, Acid, NoWeaponType }, *, 1.310000 ) }
+{ ( { AreaOfEffectSize, Acid, NoWeaponType }, *, 1.280000 ) }
+{ ( { DurationOfDot, Magical, NoWeaponType }, *, 1.040000 ), ( { CriticalAmp, Acid, NoWeaponType }, *, 1.050000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: Bludgeoning
+{ ( { HitChance, Bludgeoning, NoWeaponType }, *, 1.020000 ), ( { CriticalChance, Bludgeoning, NoWeaponType }, *, 1.100000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.130000 ) }
+{ ( { DirectDamage, Bludgeoning, NoWeaponType }, *, 1.120000 ), ( { HitChance, Bludgeoning, NoWeaponType }, *, 1.020000 ) }
+{ ( { HitChance, Magical, NoWeaponType }, *, 1.040000 ) }
+{ ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { HitChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { CriticalAmp, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: Force
+{ ( { DurationOfDot, Force, NoWeaponType }, *, 1.040000 ), ( { SingleTargetDamage, Force, NoWeaponType }, *, 1.250000 ) }
+{ ( { CriticalAmp, Force, NoWeaponType }, *, 1.110000 ) }
+{ ( { DurationOfDot, Physical, NoWeaponType }, *, 1.050000 ), ( { CriticalAmp, Force, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalAmp, Force, NoWeaponType }, *, 1.080000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { AttackSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+
+Bias: SingleTargetDamage
+{ ( { SingleTargetDamage, Acid, NoWeaponType }, *, 1.070000 ), ( { CriticalAmp, Acid, NoWeaponType }, *, 1.200000 ) }
+{ ( { HitChance, Physical, NoWeaponType }, *, 1.050000 ) }
+{ ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.030000 ) }
+{ ( { CriticalAmp, Acid, NoWeaponType }, *, 1.040000 ), ( { HitChance, Acid, NoWeaponType }, *, 1.030000 ) }
+{ ( { DurationOfDot, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { OverTimeDamage, NoDamageType, NoWeaponType }, *, 1.050000 ), ( { CastSpeed, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+Bias: DirectDamage
+{ ( { DirectDamage, Acid, NoWeaponType }, *, 1.110000 ), ( { CriticalAmp, Acid, NoWeaponType }, *, 1.140000 ) }
+{ ( { DirectDamage, Physical, NoWeaponType }, *, 1.100000 ), ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.120000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectSize, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { CriticalChance, Acid, NoWeaponType }, *, 1.050000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.060000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+
+Bias: Psychic
+{ ( { HitChance, Psychic, NoWeaponType }, *, 1.040000 ) }
+{ ( { CriticalChance, NoDamageType, NoWeaponType }, *, 1.040000 ), ( { SingleTargetDamage, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { DirectDamage, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+{ ( { SingleTargetDamage, Psychic, NoWeaponType }, *, 1.200000 ) }
+{ ( { HitChance, Psychic, NoWeaponType }, *, 1.020000 ), ( { SingleTargetDamage, Magical, NoWeaponType }, *, 1.090000 ), ( { DirectDamage, Psychic, NoWeaponType }, *, 1.090000 ) }
+
+
+------- Biased level 7 branches -------
+
+Bias: Necrotic
+{ ( { DirectDamage, Necrotic, Gun }, *, 1.240000 ), ( { AreaOfEffectDamage, Necrotic, OneHanded }, *, 1.300000 ) }
+{ ( { CriticalAmp, Physical, OneHanded }, *, 1.070000 ), ( { CriticalAmp, Necrotic, Gun }, *, 1.150000 ) }
+{ ( { CriticalChance, Necrotic, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectSize, Necrotic, NoWeaponType }, *, 1.120000 ), ( { CriticalAmp, Physical, NoWeaponType }, *, 1.040000 ) }
+{ ( { CriticalChance, Necrotic, OneHanded }, *, 1.070000 ), ( { AreaOfEffectSize, Necrotic, OneHanded }, *, 1.120000 ), ( { AreaOfEffectDamage, Necrotic, Gun }, *, 1.170000 ) }
+{ ( { AreaOfEffectDamage, Physical, OneHanded }, *, 1.160000 ), ( { CriticalAmp, Physical, OneHanded }, *, 1.110000 ) }
+{ ( { AreaOfEffectDamage, Necrotic, OneHanded }, *, 1.090000 ), ( { DirectDamage, Necrotic, Gun }, *, 1.150000 ), ( { DirectDamage, Physical, Gun }, *, 1.110000 ) }
+{ ( { HitChance, Physical, Gun }, *, 1.070000 ), ( { AreaOfEffectSize, Necrotic, Gun }, *, 1.260000 ) }
+{ ( { CriticalChance, Necrotic, OneHanded }, *, 1.090000 ), ( { AreaOfEffectSize, Physical, OneHanded }, *, 1.200000 ), ( { DirectDamage, Physical, OneHanded }, *, 1.120000 ) }
+{ ( { AreaOfEffectDamage, Physical, Gun }, *, 1.140000 ), ( { CriticalAmp, Necrotic, Gun }, *, 1.100000 ), ( { CriticalAmp, Physical, Gun }, *, 1.070000 ), ( { HitChance, Physical, Gun }, *, 1.040000 ) }
+
+Bias: Piercing
+{ ( { DurationOfDot, Piercing, Bow }, *, 1.130000 ), ( { HitChance, Magical, Bow }, *, 1.090000 ) }
+{ ( { SingleTargetDamage, Piercing, TwoHanded }, *, 1.170000 ), ( { OverTimeDamage, Piercing, TwoHanded }, *, 1.140000 ) }
+{ ( { AttackSpeed, NoDamageType, Bow }, *, 1.070000 ), ( { SingleTargetDamage, NoDamageType, Bow }, *, 1.150000 ) }
+{ ( { SingleTargetDamage, Piercing, Bow }, *, 1.220000 ), ( { OverTimeDamage, Piercing, Bow }, *, 1.210000 ) }
+{ ( { SingleTargetDamage, Piercing, Bow }, *, 1.160000 ), ( { CriticalAmp, Piercing, Bow }, *, 1.090000 ) }
+{ ( { OverTimeDamage, Piercing, TwoHanded }, *, 1.220000 ), ( { OverTimeDamage, Piercing, Bow }, *, 1.250000 ) }
+{ ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.050000 ), ( { CriticalChance, NoDamageType, TwoHanded }, *, 1.020000 ), ( { OverTimeDamage, NoDamageType, Bow }, *, 1.100000 ) }
+{ ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.050000 ), ( { CriticalChance, NoDamageType, Bow }, *, 1.060000 ), ( { DurationOfDot, NoDamageType, TwoHanded }, *, 1.080000 ) }
+{ ( { SingleTargetDamage, Piercing, Bow }, *, 1.450000 ), ( { HitChance, Magical, Bow }, *, 1.060000 ) }
+
+Bias: Physical
+{ ( { AreaOfEffectDamage, Physical, Gun }, *, 1.240000 ), ( { DurationOfDot, Lightning, OneHanded }, *, 1.220000 ) }
+{ ( { DurationOfDot, Physical, Gun }, *, 1.120000 ), ( { CriticalAmp, Lightning, OneHanded }, *, 1.050000 ), ( { CriticalChance, Lightning, Gun }, *, 1.100000 ) }
+{ ( { DurationOfDot, Lightning, Gun }, *, 1.250000 ), ( { AreaOfEffectDamage, Physical, OneHanded }, *, 1.110000 ) }
+{ ( { AttackSpeed, NoDamageType, Gun }, *, 1.070000 ), ( { ManaRegen, NoDamageType, OneHanded }, *, 1.030000 ), ( { DurationOfDot, NoDamageType, OneHanded }, *, 1.080000 ) }
+{ ( { HitChance, Physical, OneHanded }, *, 1.040000 ), ( { CriticalChance, Lightning, Gun }, *, 1.150000 ) }
+{ ( { DurationOfDot, Physical, Gun }, *, 1.190000 ), ( { CriticalAmp, Physical, OneHanded }, *, 1.070000 ) }
+{ ( { AreaOfEffectDamage, Lightning, OneHanded }, *, 1.210000 ), ( { CriticalChance, Physical, Gun }, *, 1.060000 ) }
+{ ( { CriticalChance, Lightning, OneHanded }, *, 1.070000 ), ( { DurationOfDot, Physical, OneHanded }, *, 1.080000 ), ( { AreaOfEffectSize, Physical, OneHanded }, *, 1.130000 ), ( { DurationOfDot, Lightning, Gun }, *, 1.070000 ) }
+{ ( { CriticalChance, NoDamageType, Gun }, *, 1.070000 ), ( { AttackSpeed, NoDamageType, OneHanded }, *, 1.080000 ), ( { Mana, NoDamageType, OneHanded }, *, 1.040000 ) }
+
+Bias: ManaRegen
+{ ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.050000 ), ( { DurationOfDot, NoDamageType, Polearm }, *, 1.060000 ), ( { Mana, NoDamageType, TwoHanded }, *, 1.050000 ) }
+{ ( { SingleTargetDamage, Bludgeoning, TwoHanded }, *, 1.240000 ), ( { CriticalAmp, Physical, TwoHanded }, *, 1.060000 ) }
+{ ( { OverTimeDamage, Bludgeoning, Polearm }, *, 1.290000 ), ( { SingleTargetDamage, Bludgeoning, TwoHanded }, *, 1.220000 ) }
+{ ( { HitChance, NoDamageType, Polearm }, *, 1.060000 ), ( { ManaRegen, NoDamageType, Polearm }, *, 1.100000 ) }
+{ ( { SingleTargetDamage, Physical, Polearm }, *, 1.170000 ), ( { OverTimeDamage, Physical, Polearm }, *, 1.110000 ), ( { SingleTargetDamage, Physical, TwoHanded }, *, 1.130000 ) }
+{ ( { CriticalAmp, NoDamageType, Polearm }, *, 1.040000 ), ( { Mana, NoDamageType, Polearm }, *, 1.040000 ), ( { CriticalAmp, NoDamageType, TwoHanded }, *, 1.020000 ) }
+{ ( { CriticalChance, NoDamageType, TwoHanded }, *, 1.050000 ), ( { ManaRegen, NoDamageType, Polearm }, *, 1.060000 ) }
+{ ( { OverTimeDamage, Physical, TwoHanded }, *, 1.100000 ), ( { HitChance, Physical, Polearm }, *, 1.040000 ), ( { DurationOfDot, Bludgeoning, Polearm }, *, 1.140000 ), ( { DurationOfDot, Physical, TwoHanded }, *, 1.100000 ) }
+{ ( { CriticalAmp, Physical, Polearm }, *, 1.070000 ), ( { OverTimeDamage, Physical, Polearm }, *, 1.200000 ), ( { HitChance, Physical, Polearm }, *, 1.060000 ) }
+
+Bias: Necrotic
+{ ( { SingleTargetDamage, Necrotic, Wand }, *, 1.280000 ), ( { OverTimeDamage, Necrotic, Wand }, *, 1.380000 ) }
+{ ( { OverTimeDamage, Physical, OneHanded }, *, 1.120000 ), ( { HitChance, Physical, OneHanded }, *, 1.050000 ), ( { CriticalChance, Necrotic, Wand }, *, 1.060000 ) }
+{ ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.140000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.120000 ) }
+{ ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.090000 ), ( { SingleTargetDamage, Necrotic, NoWeaponType }, *, 1.080000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.020000 ) }
+{ ( { SingleTargetDamage, Physical, NoWeaponType }, *, 1.130000 ), ( { CriticalChance, Necrotic, NoWeaponType }, *, 1.050000 ) }
+{ ( { HitChance, Necrotic, OneHanded }, *, 1.050000 ), ( { CriticalChance, Necrotic, Wand }, *, 1.080000 ), ( { CriticalAmp, Physical, OneHanded }, *, 1.060000 ) }
+{ ( { CriticalAmp, Physical, NoWeaponType }, *, 1.030000 ), ( { DurationOfDot, Necrotic, NoWeaponType }, *, 1.070000 ), ( { SingleTargetDamage, Necrotic, NoWeaponType }, *, 1.100000 ) }
+{ ( { HitChance, Necrotic, OneHanded }, *, 1.070000 ), ( { OverTimeDamage, Physical, OneHanded }, *, 1.090000 ), ( { HitChance, Physical, Wand }, *, 1.070000 ) }
+{ ( { CriticalChance, Necrotic, Wand }, *, 1.060000 ), ( { HitChance, Necrotic, Wand }, *, 1.050000 ), ( { OverTimeDamage, Physical, Wand }, *, 1.140000 ), ( { OverTimeDamage, Necrotic, OneHanded }, *, 1.100000 ) }
+
+Bias: Psychic
+{ ( { SingleTargetDamage, Psychic, Polearm }, *, 1.170000 ), ( { OverTimeDamage, Magical, Polearm }, *, 1.140000 ), ( { OverTimeDamage, Psychic, Polearm }, *, 1.180000 ) }
+{ ( { SingleTargetDamage, NoDamageType, TwoHanded }, *, 1.100000 ), ( { CriticalAmp, NoDamageType, Polearm }, *, 1.040000 ), ( { SingleTargetDamage, NoDamageType, Polearm }, *, 1.080000 ) }
+{ ( { CriticalAmp, Psychic, TwoHanded }, *, 1.070000 ), ( { HitChance, Magical, Polearm }, *, 1.090000 ) }
+{ ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.040000 ), ( { HitChance, NoDamageType, Polearm }, *, 1.030000 ), ( { ManaRegen, NoDamageType, Polearm }, *, 1.050000 ) }
+{ ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.040000 ), ( { CriticalChance, NoDamageType, TwoHanded }, *, 1.030000 ), ( { CriticalChance, NoDamageType, Polearm }, *, 1.060000 ) }
+{ ( { OverTimeDamage, NoDamageType, TwoHanded }, *, 1.140000 ), ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.050000 ) }
+{ ( { SingleTargetDamage, NoDamageType, Polearm }, *, 1.160000 ), ( { DurationOfDot, NoDamageType, TwoHanded }, *, 1.100000 ) }
+{ ( { CriticalAmp, Magical, TwoHanded }, *, 1.130000 ), ( { CriticalAmp, Psychic, Polearm }, *, 1.080000 ), ( { OverTimeDamage, Psychic, Polearm }, *, 1.160000 ) }
+{ ( { Mana, NoDamageType, Polearm }, *, 1.050000 ), ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.040000 ), ( { DurationOfDot, NoDamageType, TwoHanded }, *, 1.050000 ), ( { HitChance, NoDamageType, Polearm }, *, 1.040000 ) }
+
+Bias: Radiant
+{ ( { OverTimeDamage, Radiant, Wand }, *, 1.200000 ), ( { CriticalAmp, Magical, Wand }, *, 1.090000 ) }
+{ ( { AreaOfEffectSize, Magical, Wand }, *, 1.120000 ), ( { AreaOfEffectDamage, Magical, Wand }, *, 1.160000 ), ( { CriticalChance, Magical, Wand }, *, 1.060000 ) }
+{ ( { DurationOfDot, Radiant, OneHanded }, *, 1.130000 ), ( { CriticalAmp, Magical, Wand }, *, 1.140000 ) }
+{ ( { CriticalAmp, NoDamageType, Wand }, *, 1.020000 ), ( { AreaOfEffectSize, NoDamageType, Wand }, *, 1.070000 ), ( { CastSpeed, NoDamageType, OneHanded }, *, 1.040000 ) }
+{ ( { CriticalAmp, NoDamageType, Wand }, *, 1.040000 ), ( { HitChance, NoDamageType, Wand }, *, 1.040000 ), ( { CriticalChance, NoDamageType, OneHanded }, *, 1.030000 ) }
+{ ( { DurationOfDot, Radiant, OneHanded }, *, 1.190000 ), ( { CriticalChance, Radiant, Wand }, *, 1.130000 ) }
+{ ( { CastSpeed, NoDamageType, OneHanded }, *, 1.070000 ), ( { CriticalAmp, NoDamageType, Wand }, *, 1.040000 ), ( { DurationOfDot, NoDamageType, Wand }, *, 1.080000 ) }
+{ ( { HitChance, Radiant, Wand }, *, 1.090000 ), ( { AreaOfEffectSize, Radiant, OneHanded }, *, 1.160000 ), ( { AreaOfEffectDamage, Radiant, Wand }, *, 1.180000 ) }
+{ ( { CriticalAmp, Radiant, OneHanded }, *, 1.080000 ), ( { DurationOfDot, Magical, OneHanded }, *, 1.070000 ), ( { CriticalAmp, Radiant, Wand }, *, 1.110000 ) }
+
+Bias: HitChance
+{ ( { HitChance, Magical, Staff }, *, 1.030000 ), ( { CriticalAmp, Acid, Staff }, *, 1.120000 ), ( { CriticalChance, Acid, TwoHanded }, *, 1.060000 ) }
+{ ( { AreaOfEffectSize, Magical, TwoHanded }, *, 1.190000 ), ( { DirectDamage, Acid, TwoHanded }, *, 1.160000 ) }
+{ ( { HitChance, Acid, TwoHanded }, *, 1.050000 ), ( { AreaOfEffectSize, Magical, TwoHanded }, *, 1.180000 ) }
+{ ( { AreaOfEffectSize, Magical, Staff }, *, 1.170000 ), ( { DirectDamage, Acid, Staff }, *, 1.230000 ) }
+{ ( { DirectDamage, Magical, TwoHanded }, *, 1.110000 ), ( { HitChance, Magical, Staff }, *, 1.050000 ), ( { CriticalAmp, Magical, TwoHanded }, *, 1.060000 ) }
+{ ( { HitChance, NoDamageType, Staff }, *, 1.040000 ), ( { AreaOfEffectDamage, NoDamageType, Staff }, *, 1.150000 ) }
+{ ( { AreaOfEffectSize, NoDamageType, TwoHanded }, *, 1.110000 ), ( { Mana, NoDamageType, TwoHanded }, *, 1.020000 ), ( { DirectDamage, NoDamageType, Staff }, *, 1.110000 ) }
+{ ( { CriticalChance, Magical, Staff }, *, 1.120000 ), ( { HitChance, Magical, TwoHanded }, *, 1.040000 ), ( { CriticalChance, Acid, TwoHanded }, *, 1.110000 ) }
+{ ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.060000 ), ( { Mana, NoDamageType, Staff }, *, 1.040000 ), ( { CriticalChance, NoDamageType, Staff }, *, 1.080000 ) }
+
+Bias: Mana
+{ ( { Mana, NoDamageType, Wand }, *, 1.050000 ), ( { DurationOfDot, NoDamageType, Wand }, *, 1.190000 ) }
+{ ( { AreaOfEffectDamage, Piercing, Wand }, *, 1.280000 ), ( { DurationOfDot, Physical, OneHanded }, *, 1.080000 ) }
+{ ( { CriticalChance, NoDamageType, Wand }, *, 1.040000 ), ( { HitChance, NoDamageType, OneHanded }, *, 1.020000 ), ( { DurationOfDot, NoDamageType, Wand }, *, 1.090000 ) }
+{ ( { AreaOfEffectSize, Piercing, Wand }, *, 1.190000 ), ( { CriticalAmp, Physical, OneHanded }, *, 1.040000 ), ( { HitChance, Physical, OneHanded }, *, 1.040000 ) }
+{ ( { OverTimeDamage, Physical, Wand }, *, 1.150000 ), ( { CriticalChance, Piercing, Wand }, *, 1.150000 ) }
+{ ( { OverTimeDamage, Physical, OneHanded }, *, 1.090000 ), ( { CriticalAmp, Physical, Wand }, *, 1.080000 ), ( { AreaOfEffectDamage, Physical, Wand }, *, 1.160000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, OneHanded }, *, 1.060000 ), ( { CriticalAmp, NoDamageType, OneHanded }, *, 1.060000 ), ( { ManaRegen, NoDamageType, Wand }, *, 1.060000 ) }
+{ ( { OverTimeDamage, NoDamageType, Wand }, *, 1.100000 ), ( { CriticalAmp, NoDamageType, OneHanded }, *, 1.040000 ), ( { Mana, NoDamageType, OneHanded }, *, 1.040000 ), ( { AreaOfEffectSize, NoDamageType, OneHanded }, *, 1.100000 ) }
+{ ( { CriticalAmp, Piercing, Wand }, *, 1.100000 ), ( { AreaOfEffectSize, Physical, OneHanded }, *, 1.110000 ), ( { HitChance, Piercing, Wand }, *, 1.060000 ), ( { OverTimeDamage, Piercing, Wand }, *, 1.180000 ) }
+
+Bias: Radiant
+{ ( { AreaOfEffectSize, Radiant, NoWeaponType }, *, 1.100000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.110000 ), ( { CriticalAmp, Radiant, NoWeaponType }, *, 1.060000 ) }
+{ ( { CriticalChance, Radiant, Mace }, *, 1.180000 ) }
+{ ( { OverTimeDamage, Physical, OneHanded }, *, 1.110000 ), ( { AreaOfEffectSize, Physical, OneHanded }, *, 1.110000 ), ( { HitChance, Radiant, Mace }, *, 1.050000 ) }
+{ ( { CriticalAmp, Physical, Mace }, *, 1.080000 ), ( { OverTimeDamage, Physical, Mace }, *, 1.210000 ) }
+{ ( { CriticalAmp, Physical, Mace }, *, 1.090000 ), ( { OverTimeDamage, Radiant, Mace }, *, 1.230000 ) }
+{ ( { DurationOfDot, Radiant, OneHanded }, *, 1.190000 ), ( { CriticalChance, Physical, Mace }, *, 1.060000 ) }
+{ ( { AreaOfEffectDamage, Radiant, OneHanded }, *, 1.160000 ), ( { CriticalChance, Physical, OneHanded }, *, 1.050000 ), ( { OverTimeDamage, Radiant, Mace }, *, 1.160000 ) }
+{ ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.070000 ), ( { DurationOfDot, Radiant, NoWeaponType }, *, 1.140000 ), ( { CriticalAmp, Radiant, NoWeaponType }, *, 1.050000 ) }
+{ ( { CriticalAmp, Physical, Mace }, *, 1.110000 ), ( { AreaOfEffectDamage, Radiant, Mace }, *, 1.140000 ), ( { CriticalChance, Radiant, OneHanded }, *, 1.090000 ) }
+
+Bias: TwoHanded
+{ ( { AreaOfEffectDamage, Acid, TwoHanded }, *, 1.180000 ), ( { AreaOfEffectDamage, Magical, Staff }, *, 1.400000 ) }
+{ ( { DurationOfDot, NoDamageType, Staff }, *, 1.040000 ), ( { CriticalAmp, NoDamageType, Staff }, *, 1.080000 ) }
+{ ( { AreaOfEffectSize, Magical, Staff }, *, 1.220000 ), ( { CriticalAmp, Magical, TwoHanded }, *, 1.040000 ) }
+{ ( { CriticalChance, Acid, Staff }, *, 1.120000 ), ( { CriticalAmp, Acid, TwoHanded }, *, 1.050000 ) }
+{ ( { HitChance, NoDamageType, Staff }, *, 1.040000 ), ( { HitChance, NoDamageType, TwoHanded }, *, 1.040000 ), ( { DurationOfDot, NoDamageType, TwoHanded }, *, 1.060000 ) }
+{ ( { OverTimeDamage, NoDamageType, TwoHanded }, *, 1.120000 ), ( { DurationOfDot, NoDamageType, Staff }, *, 1.120000 ) }
+{ ( { OverTimeDamage, Magical, TwoHanded }, *, 1.130000 ), ( { AreaOfEffectDamage, Magical, Staff }, *, 1.190000 ) }
+{ ( { DurationOfDot, Magical, TwoHanded }, *, 1.090000 ), ( { DurationOfDot, Acid, TwoHanded }, *, 1.050000 ), ( { OverTimeDamage, Magical, TwoHanded }, *, 1.100000 ), ( { DurationOfDot, Acid, Staff }, *, 1.140000 ) }
+{ ( { DurationOfDot, NoDamageType, Staff }, *, 1.050000 ), ( { ManaRegen, NoDamageType, Staff }, *, 1.080000 ), ( { AreaOfEffectSize, NoDamageType, Staff }, *, 1.110000 ), ( { AreaOfEffectDamage, NoDamageType, Staff }, *, 1.090000 ) }
+
+Bias: TwoHanded
+{ ( { DodgeChance, NoDamageType, TwoHanded }, *, 1.050000 ), ( { DodgeChance, NoDamageType, Polearm }, *, 1.110000 ) }
+{ ( { Resistance, Physical, TwoHanded }, *, 1.080000 ), ( { DodgeChance, Physical, Polearm }, *, 1.030000 ) }
+{ ( { Resistance, NoDamageType, Polearm }, *, 1.060000 ), ( { HealthRegen, NoDamageType, Polearm }, *, 1.130000 ) }
+{ ( { DodgeChance, NoDamageType, Polearm }, *, 1.030000 ), ( { HealthRegen, NoDamageType, TwoHanded }, *, 1.070000 ) }
+{ ( { Resistance, Physical, TwoHanded }, *, 1.050000 ), ( { Resistance, Physical, Polearm }, *, 1.050000 ) }
+{ ( { HealthRegen, NoDamageType, Polearm }, *, 1.090000 ), ( { DodgeChance, NoDamageType, TwoHanded }, *, 1.040000 ) }
+{ ( { Resistance, NoDamageType, Polearm }, *, 1.030000 ), ( { DodgeChance, NoDamageType, TwoHanded }, *, 1.020000 ), ( { HealthRegen, NoDamageType, TwoHanded }, *, 1.040000 ) }
+{ ( { DodgeChance, NoDamageType, Polearm }, *, 1.070000 ), ( { Resistance, NoDamageType, TwoHanded }, *, 1.050000 ) }
+{ ( { Resistance, NoDamageType, Polearm }, *, 1.080000 ), ( { Resistance, NoDamageType, TwoHanded }, *, 1.040000 ) }
+
+Bias: Sword
+{ ( { Mana, NoDamageType, Sword }, *, 1.060000 ), ( { Health, NoDamageType, OneHanded }, *, 1.070000 ) }
+{ ( { Mana, NoDamageType, OneHanded }, *, 1.040000 ), ( { HealthRegen, NoDamageType, Sword }, *, 1.100000 ) }
+{ ( { ManaRegen, NoDamageType, OneHanded }, *, 1.170000 ) }
+{ ( { Mana, NoDamageType, OneHanded }, *, 1.020000 ), ( { ManaRegen, NoDamageType, Sword }, *, 1.080000 ), ( { Mana, NoDamageType, Sword }, *, 1.030000 ) }
+{ ( { Mana, NoDamageType, OneHanded }, *, 1.040000 ), ( { ManaRegen, NoDamageType, OneHanded }, *, 1.040000 ) }
+{ ( { Mana, NoDamageType, OneHanded }, *, 1.030000 ), ( { Health, NoDamageType, Sword }, *, 1.050000 ), ( { HealthRegen, NoDamageType, OneHanded }, *, 1.060000 ) }
+{ ( { HealthRegen, NoDamageType, Sword }, *, 1.050000 ), ( { HealthRegen, NoDamageType, OneHanded }, *, 1.040000 ), ( { Mana, NoDamageType, OneHanded }, *, 1.030000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.070000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.100000 ), ( { Health, NoDamageType, NoWeaponType }, *, 1.050000 ) }
+
+Bias: DirectDamage
+{ ( { DirectDamage, Physical, TwoHanded }, *, 1.130000 ), ( { SingleTargetDamage, Radiant, Mace }, *, 1.520000 ) }
+{ ( { CriticalAmp, Physical, TwoHanded }, *, 1.030000 ), ( { CriticalAmp, Physical, Mace }, *, 1.060000 ), ( { HitChance, Physical, TwoHanded }, *, 1.040000 ) }
+{ ( { CriticalChance, NoDamageType, Mace }, *, 1.080000 ), ( { HitChance, NoDamageType, Mace }, *, 1.030000 ) }
+{ ( { CriticalAmp, NoDamageType, Mace }, *, 1.020000 ), ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.030000 ), ( { AttackSpeed, NoDamageType, Mace }, *, 1.050000 ) }
+{ ( { DirectDamage, Radiant, Mace }, *, 1.280000 ), ( { SingleTargetDamage, Radiant, TwoHanded }, *, 1.220000 ) }
+{ ( { HitChance, Physical, Mace }, *, 1.070000 ), ( { CriticalChance, Physical, TwoHanded }, *, 1.030000 ) }
+{ ( { CriticalChance, Physical, TwoHanded }, *, 1.080000 ), ( { CriticalAmp, Radiant, Mace }, *, 1.090000 ) }
+{ ( { CriticalAmp, Radiant, TwoHanded }, *, 1.100000 ), ( { CriticalChance, Physical, Mace }, *, 1.080000 ), ( { HitChance, Physical, Mace }, *, 1.040000 ), ( { CriticalAmp, Radiant, Mace }, *, 1.110000 ) }
+{ ( { HitChance, Radiant, Mace }, *, 1.040000 ), ( { DirectDamage, Physical, TwoHanded }, *, 1.110000 ), ( { CriticalChance, Physical, Mace }, *, 1.040000 ), ( { CriticalAmp, Physical, Mace }, *, 1.070000 ) }
+
+Bias: DirectDamage
+{ ( { DirectDamage, Bludgeoning, TwoHanded }, *, 1.230000 ), ( { AreaOfEffectDamage, Physical, Gun }, *, 1.200000 ) }
+{ ( { HitChance, NoDamageType, Gun }, *, 1.020000 ), ( { CastSpeed, NoDamageType, TwoHanded }, *, 1.050000 ), ( { Mana, NoDamageType, TwoHanded }, *, 1.020000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, TwoHanded }, *, 1.140000 ), ( { CastSpeed, NoDamageType, TwoHanded }, *, 1.050000 ) }
+{ ( { AreaOfEffectDamage, Bludgeoning, Gun }, *, 1.150000 ), ( { AreaOfEffectSize, Bludgeoning, Gun }, *, 1.210000 ), ( { AreaOfEffectSize, Bludgeoning, TwoHanded }, *, 1.090000 ) }
+{ ( { AreaOfEffectSize, Bludgeoning, TwoHanded }, *, 1.270000 ), ( { AreaOfEffectDamage, Bludgeoning, Gun }, *, 1.230000 ) }
+{ ( { CriticalChance, NoDamageType, Gun }, *, 1.100000 ), ( { AreaOfEffectDamage, NoDamageType, TwoHanded }, *, 1.140000 ) }
+{ ( { DirectDamage, Bludgeoning, Gun }, *, 1.120000 ), ( { AreaOfEffectDamage, Physical, TwoHanded }, *, 1.120000 ), ( { HitChance, Bludgeoning, TwoHanded }, *, 1.030000 ) }
+{ ( { CriticalChance, NoDamageType, Gun }, *, 1.090000 ), ( { CriticalChance, NoDamageType, TwoHanded }, *, 1.060000 ), ( { AreaOfEffectDamage, NoDamageType, TwoHanded }, *, 1.140000 ) }
+{ ( { AreaOfEffectSize, Bludgeoning, TwoHanded }, *, 1.180000 ), ( { CriticalChance, Physical, TwoHanded }, *, 1.060000 ), ( { HitChance, Physical, Gun }, *, 1.040000 ), ( { CriticalChance, Bludgeoning, TwoHanded }, *, 1.040000 ) }
+
+Bias: Physical
+{ ( { CriticalChance, Physical, Sword }, *, 1.080000 ), ( { OverTimeDamage, Fire, OneHanded }, *, 1.510000 ) }
+{ ( { AreaOfEffectSize, Fire, NoWeaponType }, *, 1.130000 ), ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.100000 ), ( { CriticalChance, Fire, NoWeaponType }, *, 1.060000 ) }
+{ ( { OverTimeDamage, Fire, Sword }, *, 1.320000 ), ( { OverTimeDamage, Physical, OneHanded }, *, 1.120000 ) }
+{ ( { AreaOfEffectSize, Physical, NoWeaponType }, *, 1.100000 ), ( { CriticalChance, Fire, NoWeaponType }, *, 1.020000 ), ( { AreaOfEffectDamage, Fire, NoWeaponType }, *, 1.090000 ) }
+{ ( { DurationOfDot, Fire, OneHanded }, *, 1.110000 ), ( { DurationOfDot, Physical, Sword }, *, 1.150000 ) }
+{ ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.160000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.030000 ) }
+{ ( { OverTimeDamage, Fire, NoWeaponType }, *, 1.160000 ), ( { HitChance, Fire, NoWeaponType }, *, 1.060000 ) }
+{ ( { HitChance, Fire, NoWeaponType }, *, 1.040000 ), ( { CriticalChance, Fire, NoWeaponType }, *, 1.060000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.030000 ), ( { OverTimeDamage, Fire, NoWeaponType }, *, 1.090000 ) }
+{ ( { OverTimeDamage, Fire, Sword }, *, 1.130000 ), ( { AreaOfEffectSize, Fire, Sword }, *, 1.160000 ), ( { CriticalAmp, Fire, OneHanded }, *, 1.120000 ) }
+
+Bias: FistWeapon
+{ ( { SingleTargetDamage, Slashing, FistWeapon }, *, 1.270000 ), ( { CriticalAmp, Slashing, FistWeapon }, *, 1.130000 ) }
+{ ( { SingleTargetDamage, NoDamageType, FistWeapon }, *, 1.150000 ), ( { SingleTargetDamage, NoDamageType, OneHanded }, *, 1.090000 ) }
+{ ( { OverTimeDamage, Physical, FistWeapon }, *, 1.170000 ), ( { CriticalAmp, Physical, OneHanded }, *, 1.050000 ) }
+{ ( { HitChance, Slashing, OneHanded }, *, 1.060000 ), ( { CriticalAmp, Slashing, OneHanded }, *, 1.080000 ) }
+{ ( { CastSpeed, NoDamageType, OneHanded }, *, 1.070000 ), ( { CriticalChance, NoDamageType, OneHanded }, *, 1.060000 ) }
+{ ( { HitChance, Physical, FistWeapon }, *, 1.050000 ), ( { DurationOfDot, Physical, OneHanded }, *, 1.080000 ), ( { OverTimeDamage, Physical, FistWeapon }, *, 1.140000 ) }
+{ ( { SingleTargetDamage, NoDamageType, FistWeapon }, *, 1.080000 ), ( { Mana, NoDamageType, FistWeapon }, *, 1.030000 ), ( { DurationOfDot, NoDamageType, FistWeapon }, *, 1.090000 ) }
+{ ( { CriticalChance, Slashing, FistWeapon }, *, 1.120000 ), ( { OverTimeDamage, Slashing, OneHanded }, *, 1.140000 ), ( { CriticalAmp, Slashing, FistWeapon }, *, 1.100000 ) }
+{ ( { SingleTargetDamage, Slashing, FistWeapon }, *, 1.100000 ), ( { SingleTargetDamage, Physical, OneHanded }, *, 1.120000 ), ( { OverTimeDamage, Slashing, OneHanded }, *, 1.170000 ), ( { HitChance, Physical, OneHanded }, *, 1.030000 ) }
+
+Bias: Necrotic
+{ ( { CriticalChance, Necrotic, TwoHanded }, *, 1.100000 ), ( { SingleTargetDamage, Necrotic, Gun }, *, 1.360000 ) }
+{ ( { DurationOfDot, NoDamageType, Gun }, *, 1.060000 ), ( { HitChance, NoDamageType, Gun }, *, 1.040000 ), ( { CriticalAmp, NoDamageType, Gun }, *, 1.030000 ) }
+{ ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.050000 ), ( { CriticalChance, NoDamageType, Gun }, *, 1.050000 ), ( { Mana, NoDamageType, Gun }, *, 1.040000 ) }
+{ ( { CriticalAmp, Necrotic, Gun }, *, 1.050000 ), ( { CriticalChance, Magical, TwoHanded }, *, 1.030000 ), ( { DurationOfDot, Necrotic, Gun }, *, 1.130000 ) }
+{ ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.060000 ), ( { CriticalChance, NoDamageType, TwoHanded }, *, 1.030000 ), ( { Mana, NoDamageType, Gun }, *, 1.040000 ) }
+{ ( { CriticalChance, Necrotic, Gun }, *, 1.130000 ), ( { HitChance, Magical, Gun }, *, 1.080000 ) }
+{ ( { DurationOfDot, NoDamageType, Gun }, *, 1.080000 ), ( { OverTimeDamage, NoDamageType, TwoHanded }, *, 1.080000 ), ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.040000 ) }
+{ ( { Mana, NoDamageType, TwoHanded }, *, 1.040000 ), ( { DurationOfDot, NoDamageType, Gun }, *, 1.100000 ), ( { SingleTargetDamage, NoDamageType, Gun }, *, 1.150000 ) }
+{ ( { DurationOfDot, Necrotic, TwoHanded }, *, 1.130000 ), ( { CriticalAmp, Necrotic, Gun }, *, 1.150000 ), ( { HitChance, Magical, TwoHanded }, *, 1.070000 ) }
+
+Bias: AttackSpeed
+{ ( { AttackSpeed, NoDamageType, Staff }, *, 1.060000 ), ( { DurationOfDot, NoDamageType, Staff }, *, 1.130000 ), ( { Mana, NoDamageType, TwoHanded }, *, 1.050000 ) }
+{ ( { CriticalAmp, Magical, TwoHanded }, *, 1.030000 ), ( { CriticalAmp, Fire, TwoHanded }, *, 1.080000 ), ( { SingleTargetDamage, Magical, Staff }, *, 1.150000 ) }
+{ ( { SingleTargetDamage, NoDamageType, TwoHanded }, *, 1.110000 ), ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.060000 ) }
+{ ( { CriticalAmp, Fire, Staff }, *, 1.140000 ), ( { HitChance, Magical, Staff }, *, 1.050000 ) }
+{ ( { CriticalAmp, NoDamageType, TwoHanded }, *, 1.040000 ), ( { AttackSpeed, NoDamageType, Staff }, *, 1.100000 ) }
+{ ( { SingleTargetDamage, Fire, Staff }, *, 1.160000 ), ( { DurationOfDot, Magical, Staff }, *, 1.090000 ), ( { CriticalChance, Magical, Staff }, *, 1.030000 ) }
+{ ( { OverTimeDamage, Magical, TwoHanded }, *, 1.130000 ), ( { CriticalChance, Fire, TwoHanded }, *, 1.050000 ), ( { CriticalChance, Fire, Staff }, *, 1.060000 ) }
+{ ( { OverTimeDamage, Magical, Staff }, *, 1.140000 ), ( { DurationOfDot, Fire, TwoHanded }, *, 1.120000 ), ( { CriticalAmp, Fire, Staff }, *, 1.060000 ), ( { CriticalChance, Magical, Staff }, *, 1.050000 ) }
+{ ( { DurationOfDot, Fire, TwoHanded }, *, 1.090000 ), ( { SingleTargetDamage, Fire, TwoHanded }, *, 1.160000 ), ( { CriticalAmp, Magical, TwoHanded }, *, 1.080000 ) }
+
+Bias: Thrown
+{ ( { CriticalChance, Physical, Thrown }, *, 1.040000 ), ( { CriticalAmp, Bludgeoning, Thrown }, *, 1.080000 ), ( { AreaOfEffectSize, Physical, OneHanded }, *, 1.140000 ) }
+{ ( { OverTimeDamage, Bludgeoning, NoWeaponType }, *, 1.140000 ), ( { CriticalAmp, Bludgeoning, NoWeaponType }, *, 1.080000 ) }
+{ ( { CriticalAmp, Physical, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectSize, Bludgeoning, NoWeaponType }, *, 1.070000 ), ( { CriticalChance, Bludgeoning, NoWeaponType }, *, 1.030000 ) }
+{ ( { DurationOfDot, Physical, OneHanded }, *, 1.110000 ), ( { OverTimeDamage, Bludgeoning, OneHanded }, *, 1.150000 ) }
+{ ( { CriticalChance, Bludgeoning, NoWeaponType }, *, 1.040000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.060000 ) }
+{ ( { AreaOfEffectDamage, Bludgeoning, Thrown }, *, 1.380000 ), ( { DurationOfDot, Bludgeoning, Thrown }, *, 1.060000 ) }
+{ ( { CriticalAmp, Physical, NoWeaponType }, *, 1.060000 ), ( { DurationOfDot, Bludgeoning, NoWeaponType }, *, 1.070000 ) }
+{ ( { DurationOfDot, Bludgeoning, NoWeaponType }, *, 1.090000 ), ( { AreaOfEffectSize, Bludgeoning, NoWeaponType }, *, 1.060000 ), ( { HitChance, Physical, NoWeaponType }, *, 1.020000 ), ( { DurationOfDot, Physical, NoWeaponType }, *, 1.070000 ) }
+{ ( { AreaOfEffectSize, Bludgeoning, Thrown }, *, 1.160000 ), ( { CriticalAmp, Bludgeoning, OneHanded }, *, 1.090000 ), ( { OverTimeDamage, Physical, OneHanded }, *, 1.070000 ), ( { OverTimeDamage, Bludgeoning, Thrown }, *, 1.100000 ) }
+
+Bias: Axe
+{ ( { OverTimeDamage, Piercing, Axe }, *, 1.210000 ), ( { AreaOfEffectDamage, Piercing, TwoHanded }, *, 1.380000 ) }
+{ ( { ManaRegen, NoDamageType, Axe }, *, 1.040000 ), ( { Mana, NoDamageType, Axe }, *, 1.040000 ), ( { AreaOfEffectSize, NoDamageType, TwoHanded }, *, 1.080000 ) }
+{ ( { CriticalChance, Physical, TwoHanded }, *, 1.040000 ), ( { HitChance, Piercing, Axe }, *, 1.040000 ), ( { AreaOfEffectSize, Physical, TwoHanded }, *, 1.080000 ) }
+{ ( { DurationOfDot, Physical, TwoHanded }, *, 1.110000 ), ( { OverTimeDamage, Piercing, TwoHanded }, *, 1.100000 ), ( { AreaOfEffectSize, Piercing, TwoHanded }, *, 1.110000 ) }
+{ ( { AreaOfEffectDamage, Physical, TwoHanded }, *, 1.140000 ), ( { AreaOfEffectSize, Physical, TwoHanded }, *, 1.110000 ) }
+{ ( { CriticalChance, NoDamageType, Axe }, *, 1.030000 ), ( { CastSpeed, NoDamageType, TwoHanded }, *, 1.040000 ), ( { CastSpeed, NoDamageType, Axe }, *, 1.040000 ) }
+{ ( { AreaOfEffectDamage, NoDamageType, TwoHanded }, *, 1.090000 ), ( { CastSpeed, NoDamageType, Axe }, *, 1.050000 ) }
+{ ( { OverTimeDamage, Physical, Axe }, *, 1.190000 ), ( { HitChance, Physical, Axe }, *, 1.120000 ) }
+{ ( { CriticalChance, Piercing, Axe }, *, 1.140000 ), ( { OverTimeDamage, Physical, Axe }, *, 1.140000 ), ( { DurationOfDot, Piercing, Axe }, *, 1.170000 ) }
+
+Bias: Sword
+{ ( { DirectDamage, Poison, Sword }, *, 1.170000 ), ( { HitChance, Physical, OneHanded }, *, 1.110000 ) }
+{ ( { SingleTargetDamage, Physical, Sword }, *, 1.190000 ), ( { HitChance, Physical, OneHanded }, *, 1.060000 ) }
+{ ( { CastSpeed, NoDamageType, Sword }, *, 1.120000 ), ( { CriticalAmp, NoDamageType, Sword }, *, 1.050000 ) }
+{ ( { CriticalChance, Poison, Sword }, *, 1.070000 ), ( { DirectDamage, Poison, Sword }, *, 1.160000 ), ( { CriticalAmp, Poison, Sword }, *, 1.060000 ) }
+{ ( { CastSpeed, NoDamageType, OneHanded }, *, 1.050000 ), ( { SingleTargetDamage, NoDamageType, Sword }, *, 1.070000 ), ( { Mana, NoDamageType, OneHanded }, *, 1.030000 ) }
+{ ( { HitChance, Poison, OneHanded }, *, 1.060000 ), ( { CriticalChance, Physical, OneHanded }, *, 1.090000 ) }
+{ ( { CriticalChance, Physical, OneHanded }, *, 1.040000 ), ( { HitChance, Physical, OneHanded }, *, 1.040000 ) }
+{ ( { HitChance, Poison, OneHanded }, *, 1.050000 ), ( { SingleTargetDamage, Physical, Sword }, *, 1.100000 ), ( { HitChance, Physical, Sword }, *, 1.030000 ), ( { CriticalChance, Poison, OneHanded }, *, 1.060000 ) }
+{ ( { CriticalChance, Physical, OneHanded }, *, 1.040000 ), ( { CriticalAmp, Physical, OneHanded }, *, 1.060000 ), ( { SingleTargetDamage, Physical, OneHanded }, *, 1.120000 ), ( { DirectDamage, Physical, OneHanded }, *, 1.090000 ) }
+
+Bias: Cold
+{ ( { AreaOfEffectDamage, Cold, Sword }, *, 1.240000 ), ( { DurationOfDot, Physical, Sword }, *, 1.290000 ) }
+{ ( { AreaOfEffectSize, Physical, Sword }, *, 1.270000 ), ( { CriticalAmp, Cold, OneHanded }, *, 1.100000 ) }
+{ ( { CriticalChance, Cold, NoWeaponType }, *, 1.050000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.060000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.040000 ) }
+{ ( { DurationOfDot, Cold, Sword }, *, 1.110000 ), ( { DurationOfDot, Cold, OneHanded }, *, 1.140000 ) }
+{ ( { AreaOfEffectSize, Physical, OneHanded }, *, 1.190000 ), ( { CriticalChance, Physical, Sword }, *, 1.110000 ) }
+{ ( { OverTimeDamage, Physical, OneHanded }, *, 1.100000 ), ( { CriticalChance, Cold, Sword }, *, 1.050000 ), ( { DurationOfDot, Physical, Sword }, *, 1.060000 ) }
+{ ( { AreaOfEffectDamage, Cold, NoWeaponType }, *, 1.170000 ), ( { AreaOfEffectDamage, Physical, NoWeaponType }, *, 1.150000 ) }
+{ ( { HitChance, Physical, Sword }, *, 1.040000 ), ( { AreaOfEffectDamage, Cold, Sword }, *, 1.180000 ), ( { CriticalChance, Physical, OneHanded }, *, 1.080000 ), ( { AreaOfEffectSize, Cold, OneHanded }, *, 1.100000 ) }
+{ ( { OverTimeDamage, Physical, NoWeaponType }, *, 1.150000 ), ( { DurationOfDot, Cold, NoWeaponType }, *, 1.090000 ), ( { CriticalChance, Physical, NoWeaponType }, *, 1.030000 ) }
+
+Bias: Health
+{ ( { Health, NoDamageType, FistWeapon }, *, 1.040000 ), ( { HealthRegen, NoDamageType, FistWeapon }, *, 1.080000 ), ( { Health, NoDamageType, OneHanded }, *, 1.070000 ) }
+{ ( { ManaRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { HealthRegen, NoDamageType, NoWeaponType }, *, 1.020000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.020000 ) }
+{ ( { Mana, NoDamageType, NoWeaponType }, *, 1.090000 ) }
+{ ( { Health, NoDamageType, NoWeaponType }, *, 1.030000 ), ( { Mana, NoDamageType, NoWeaponType }, *, 1.040000 ) }
+{ ( { HealthRegen, NoDamageType, FistWeapon }, *, 1.080000 ), ( { HealthRegen, NoDamageType, OneHanded }, *, 1.040000 ), ( { Mana, NoDamageType, FistWeapon }, *, 1.050000 ) }
+{ ( { Health, NoDamageType, OneHanded }, *, 1.050000 ), ( { HealthRegen, NoDamageType, FistWeapon }, *, 1.080000 ) }
+{ ( { ManaRegen, NoDamageType, FistWeapon }, *, 1.040000 ), ( { Mana, NoDamageType, OneHanded }, *, 1.030000 ), ( { HealthRegen, NoDamageType, FistWeapon }, *, 1.070000 ) }
+{ ( { HealthRegen, NoDamageType, OneHanded }, *, 1.040000 ), ( { ManaRegen, NoDamageType, FistWeapon }, *, 1.040000 ), ( { Mana, NoDamageType, OneHanded }, *, 1.030000 ), ( { Mana, NoDamageType, FistWeapon }, *, 1.050000 ) }
+{ ( { HealthRegen, NoDamageType, FistWeapon }, *, 1.140000 ), ( { ManaRegen, NoDamageType, FistWeapon }, *, 1.120000 ) }
+
+Bias: DodgeChance
+{ ( { DodgeChance, Physical, NoWeaponType }, *, 1.050000 ), ( { Resistance, Physical, NoWeaponType }, *, 1.050000 ) }
+{ ( { Resistance, Physical, Wand }, *, 1.080000 ), ( { Resistance, Physical, OneHanded }, *, 1.060000 ) }
+{ ( { Resistance, Physical, OneHanded }, *, 1.080000 ), ( { DodgeChance, Physical, Wand }, *, 1.060000 ) }
+{ ( { Resistance, Physical, Wand }, *, 1.100000 ), ( { DodgeChance, Physical, Wand }, *, 1.060000 ) }
+{ ( { Resistance, Physical, NoWeaponType }, *, 1.100000 ) }
+{ ( { Resistance, Physical, Wand }, *, 1.160000 ) }
+{ ( { DodgeChance, Physical, OneHanded }, *, 1.070000 ), ( { Resistance, Physical, Wand }, *, 1.040000 ) }
+{ ( { Resistance, Physical, Wand }, *, 1.170000 ) }
+{ ( { Resistance, Physical, OneHanded }, *, 1.150000 ) }
+
+Bias: OverTimeDamage
+{ ( { OverTimeDamage, Piercing, Staff }, *, 1.170000 ), ( { CriticalChance, Magical, Staff }, *, 1.070000 ), ( { CriticalChance, Magical, TwoHanded }, *, 1.090000 ) }
+{ ( { CriticalAmp, Magical, Staff }, *, 1.070000 ), ( { DurationOfDot, Piercing, Staff }, *, 1.120000 ), ( { DurationOfDot, Magical, TwoHanded }, *, 1.110000 ) }
+{ ( { CriticalChance, Piercing, NoWeaponType }, *, 1.100000 ) }
+{ ( { CriticalChance, Piercing, Staff }, *, 1.080000 ), ( { AreaOfEffectDamage, Magical, TwoHanded }, *, 1.250000 ) }
+{ ( { HitChance, Magical, Staff }, *, 1.070000 ), ( { OverTimeDamage, Magical, Staff }, *, 1.150000 ) }
+{ ( { OverTimeDamage, Piercing, TwoHanded }, *, 1.150000 ), ( { DurationOfDot, Magical, TwoHanded }, *, 1.110000 ) }
+{ ( { AreaOfEffectSize, Magical, Staff }, *, 1.170000 ), ( { CriticalChance, Magical, Staff }, *, 1.050000 ), ( { HitChance, Magical, Staff }, *, 1.040000 ) }
+{ ( { CriticalAmp, Piercing, TwoHanded }, *, 1.060000 ), ( { AreaOfEffectDamage, Piercing, TwoHanded }, *, 1.330000 ), ( { AreaOfEffectSize, Piercing, TwoHanded }, *, 1.090000 ) }
+{ ( { HitChance, Piercing, NoWeaponType }, *, 1.030000 ), ( { AreaOfEffectSize, Magical, NoWeaponType }, *, 1.110000 ), ( { AreaOfEffectDamage, Piercing, NoWeaponType }, *, 1.090000 ), ( { HitChance, Magical, NoWeaponType }, *, 1.020000 ) }
+
+Bias: Mace
+{ ( { OverTimeDamage, Piercing, Mace }, *, 1.150000 ), ( { OverTimeDamage, Magical, Mace }, *, 1.180000 ), ( { AreaOfEffectDamage, Piercing, OneHanded }, *, 1.180000 ) }
+{ ( { Mana, NoDamageType, Mace }, *, 1.060000 ), ( { AreaOfEffectSize, NoDamageType, Mace }, *, 1.140000 ) }
+{ ( { AreaOfEffectDamage, Piercing, OneHanded }, *, 1.100000 ), ( { AreaOfEffectDamage, Magical, Mace }, *, 1.160000 ), ( { AreaOfEffectSize, Piercing, OneHanded }, *, 1.180000 ) }
+{ ( { OverTimeDamage, NoDamageType, Mace }, *, 1.080000 ), ( { ManaRegen, NoDamageType, Mace }, *, 1.040000 ), ( { DurationOfDot, NoDamageType, Mace }, *, 1.090000 ) }
+{ ( { HitChance, Piercing, Mace }, *, 1.050000 ), ( { CriticalChance, Piercing, Mace }, *, 1.120000 ) }
+{ ( { CriticalAmp, Magical, OneHanded }, *, 1.160000 ) }
+{ ( { CastSpeed, NoDamageType, Mace }, *, 1.090000 ), ( { ManaRegen, NoDamageType, OneHanded }, *, 1.040000 ) }
+{ ( { AreaOfEffectDamage, Magical, Mace }, *, 1.110000 ), ( { OverTimeDamage, Magical, OneHanded }, *, 1.180000 ), ( { HitChance, Piercing, Mace }, *, 1.080000 ) }
+{ ( { CriticalChance, Magical, Mace }, *, 1.080000 ), ( { CriticalAmp, Magical, OneHanded }, *, 1.080000 ), ( { HitChance, Piercing, Mace }, *, 1.050000 ), ( { OverTimeDamage, Magical, OneHanded }, *, 1.080000 ) }
+
+Bias: Bow
+{ ( { Resistance, Physical, Bow }, *, 1.160000 ) }
+{ ( { DodgeChance, NoDamageType, TwoHanded }, *, 1.040000 ), ( { Health, NoDamageType, Bow }, *, 1.030000 ), ( { DodgeChance, NoDamageType, Bow }, *, 1.040000 ) }
+{ ( { HealthRegen, NoDamageType, TwoHanded }, *, 1.150000 ) }
+{ ( { DodgeChance, Physical, Bow }, *, 1.070000 ), ( { Resistance, Physical, Bow }, *, 1.090000 ) }
+{ ( { DodgeChance, Physical, Bow }, *, 1.050000 ), ( { Resistance, Physical, TwoHanded }, *, 1.070000 ) }
+{ ( { Resistance, Physical, TwoHanded }, *, 1.040000 ), ( { Resistance, Physical, Bow }, *, 1.060000 ), ( { DodgeChance, Physical, Bow }, *, 1.050000 ) }
+{ ( { DodgeChance, Physical, TwoHanded }, *, 1.040000 ), ( { DodgeChance, Physical, Bow }, *, 1.050000 ), ( { Resistance, Physical, Bow }, *, 1.030000 ) }
+{ ( { DodgeChance, NoDamageType, TwoHanded }, *, 1.040000 ), ( { Health, NoDamageType, Bow }, *, 1.100000 ) }
+{ ( { Health, NoDamageType, Bow }, *, 1.080000 ), ( { Resistance, NoDamageType, TwoHanded }, *, 1.040000 ), ( { Health, NoDamageType, TwoHanded }, *, 1.070000 ) }
+
+Bias: DurationOfDot
+{ ( { DurationOfDot, Physical, NoWeaponType }, *, 1.050000 ), ( { CriticalChance, Slashing, NoWeaponType }, *, 1.080000 ) }
+{ ( { OverTimeDamage, Physical, Gun }, *, 1.140000 ), ( { SingleTargetDamage, Slashing, TwoHanded }, *, 1.150000 ) }
+{ ( { SingleTargetDamage, Slashing, Gun }, *, 1.250000 ), ( { CriticalChance, Physical, Gun }, *, 1.100000 ) }
+{ ( { OverTimeDamage, Physical, Gun }, *, 1.190000 ), ( { HitChance, Physical, TwoHanded }, *, 1.080000 ) }
+{ ( { HitChance, Slashing, TwoHanded }, *, 1.080000 ), ( { SingleTargetDamage, Physical, Gun }, *, 1.190000 ) }
+{ ( { CriticalAmp, Slashing, NoWeaponType }, *, 1.060000 ), ( { HitChance, Slashing, NoWeaponType }, *, 1.070000 ) }
+{ ( { CriticalChance, Slashing, TwoHanded }, *, 1.070000 ), ( { SingleTargetDamage, Physical, Gun }, *, 1.180000 ) }
+{ ( { SingleTargetDamage, Slashing, TwoHanded }, *, 1.150000 ), ( { DurationOfDot, Slashing, TwoHanded }, *, 1.070000 ), ( { OverTimeDamage, Slashing, TwoHanded }, *, 1.110000 ), ( { CriticalChance, Slashing, Gun }, *, 1.060000 ) }
+{ ( { CriticalAmp, Slashing, TwoHanded }, *, 1.080000 ), ( { OverTimeDamage, Physical, Gun }, *, 1.130000 ), ( { DurationOfDot, Slashing, Gun }, *, 1.190000 ) }
+
+Bias: NoDamageType
+{ ( { SingleTargetDamage, NoDamageType, Axe }, *, 1.150000 ), ( { CriticalAmp, NoDamageType, Axe }, *, 1.140000 ) }
+{ ( { SingleTargetDamage, Fire, Axe }, *, 1.460000 ) }
+{ ( { CriticalAmp, Fire, TwoHanded }, *, 1.110000 ), ( { HitChance, Physical, TwoHanded }, *, 1.050000 ) }
+{ ( { HitChance, Fire, Axe }, *, 1.150000 ) }
+{ ( { HitChance, Physical, Axe }, *, 1.090000 ), ( { SingleTargetDamage, Physical, Axe }, *, 1.110000 ) }
+{ ( { ManaRegen, NoDamageType, Axe }, *, 1.030000 ), ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.040000 ), ( { SingleTargetDamage, NoDamageType, Axe }, *, 1.100000 ) }
+{ ( { CriticalAmp, Physical, TwoHanded }, *, 1.070000 ), ( { HitChance, Fire, TwoHanded }, *, 1.040000 ), ( { DurationOfDot, Fire, TwoHanded }, *, 1.100000 ) }
+{ ( { DurationOfDot, NoDamageType, Axe }, *, 1.130000 ), ( { ManaRegen, NoDamageType, TwoHanded }, *, 1.070000 ), ( { AttackSpeed, NoDamageType, TwoHanded }, *, 1.080000 ) }
+{ ( { HitChance, Physical, Axe }, *, 1.040000 ), ( { HitChance, Physical, TwoHanded }, *, 1.050000 ), ( { DurationOfDot, Physical, TwoHanded }, *, 1.110000 ), ( { CriticalAmp, Physical, Axe }, *, 1.090000 ) }
+
+
