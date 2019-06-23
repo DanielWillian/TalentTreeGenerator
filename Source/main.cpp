@@ -46,37 +46,37 @@ int main(int argc, char **argv)
 
 	TalentDictionaryLevel1 talentDictionary1;
 	TalentDictionaryLevel3 talentDictionary3;
-	BranchGenerator pathGenerator1(propertyRep.level1Properties, &talentDictionary1,
+	BranchGenerator branchGenerator1(propertyRep.level1Properties, &talentDictionary1,
 			propertyRep.level3Properties, &talentDictionary3);
 
 	TalentDictionaryLevel2 talentDictionary2;
-	BranchGenerator pathGenerator2(propertyRep.level2Properties, &talentDictionary2,
+	BranchGenerator branchGenerator2(propertyRep.level2Properties, &talentDictionary2,
 			propertyRep.level2Properties, &talentDictionary2);
 
 	TalentDictionaryLevel4 talentDictionary4;
 	TalentDictionaryLevel6 talentDictionary6;
-	BranchGenerator pathGenerator4(propertyRep.level4Properties, &talentDictionary4,
+	BranchGenerator branchGenerator4(propertyRep.level4Properties, &talentDictionary4,
 			propertyRep.level6Properties, &talentDictionary6);
 
 	TalentDictionaryLevel5 talentDictionary5;
-	BranchGenerator pathGenerator5(propertyRep.level5Properties, &talentDictionary5,
+	BranchGenerator branchGenerator5(propertyRep.level5Properties, &talentDictionary5,
 			propertyRep.level5Properties, &talentDictionary5);
 
 	TalentDictionaryLevel7 talentDictionary7;
 	TalentDictionaryLevel8 talentDictionary8;
-	BranchGenerator pathGenerator7(propertyRep.level7Properties, &talentDictionary7,
+	BranchGenerator branchGenerator7(propertyRep.level7Properties, &talentDictionary7,
 			propertyRep.level8Properties, &talentDictionary8);
 
 	TalentDictionaryLevel9 talentDictionary9;
-	BranchGenerator pathGenerator9(propertyRep.level9Properties, &talentDictionary9,
+	BranchGenerator branchGenerator9(propertyRep.level9Properties, &talentDictionary9,
 			propertyRep.level9Properties, &talentDictionary9);
 
-	std::vector<BranchGenerator*> pathGenerators = {&pathGenerator1, &pathGenerator2, &pathGenerator4,
-			&pathGenerator5, &pathGenerator7, &pathGenerator9};
+	std::vector<BranchGenerator*> branchGenerators = {&branchGenerator1, &branchGenerator2, &branchGenerator4,
+			&branchGenerator5, &branchGenerator7, &branchGenerator9};
 
 	BranchDictionary branchDictionary;
 
-	TalentTreeGenerator talentTreeGenerator(pathGenerators, branchDictionary.talentBranches);
+	TalentTreeGenerator talentTreeGenerator(branchGenerators, branchDictionary.talentBranches);
 
 	auto talentTree = talentTreeGenerator.GenerateTalentTree();
 
@@ -90,9 +90,19 @@ int main(int argc, char **argv)
 	}
 	std::cout << talentTree->talents.size() << std::endl << std::endl;
 
+	std::vector<std::string> level1PropertyNames(propertyRep.baseProperties);
+	std::vector<std::string> level4PropertyNames(level1PropertyNames);
+	std::copy(propertyRep.damageTypes.begin(), propertyRep.damageTypes.end(), std::back_inserter(level4PropertyNames));
+	std::vector<std::string> level7PropertyNames(level4PropertyNames);
+	std::copy(propertyRep.weaponTypes.begin(), propertyRep.weaponTypes.end(), std::back_inserter(level7PropertyNames));
+
+	std::cout << "------- Biased level 1 branches -------" << std::endl << std::endl;
 	for (int i = 0; i < 30; i++)
 	{
-		auto talentBranch = pathGenerator4.GenerateBranchWithTraits({"Acid"}, 4, 1);
+		const int randomInt = random.GetRandomInt(0, (int) level1PropertyNames.size() - 1);
+		std::string randomBias = level1PropertyNames[randomInt];
+		std::cout << "Bias: " << randomBias << std::endl;
+		auto talentBranch = branchGenerator1.GenerateBranchWithTraits({ randomBias }, 4, 1);
 		for (auto& talent : talentBranch)
 		{
 			std::cout << talent->toString() << std::endl;
@@ -101,9 +111,13 @@ int main(int argc, char **argv)
 	}
 	std::cout << std::endl;
 
+	std::cout << "------- Biased level 4 branches -------" << std::endl << std::endl;
 	for (int i = 0; i < 30; i++)
 	{
-		auto talentBranch = pathGenerator7.GenerateBranchWithTraits({"Acid"}, 4, 1);
+		const int randomInt = random.GetRandomInt(0, (int) level4PropertyNames.size() - 1);
+		std::string randomBias = level4PropertyNames[randomInt];
+		std::cout << "Bias: " << randomBias << std::endl;
+		auto talentBranch = branchGenerator4.GenerateBranchWithTraits({ randomBias }, 4, 1);
 		for (auto& talent : talentBranch)
 		{
 			std::cout << talent->toString() << std::endl;
@@ -112,9 +126,13 @@ int main(int argc, char **argv)
 	}
 	std::cout << std::endl;
 
+	std::cout << "------- Biased level 7 branches -------" << std::endl << std::endl;
 	for (int i = 0; i < 30; i++)
 	{
-		auto talentBranch = pathGenerator9.GenerateBranch(1, 0);
+		const int randomInt = random.GetRandomInt(0, (int) level7PropertyNames.size() - 1);
+		std::string randomBias = level7PropertyNames[randomInt];
+		std::cout << "Bias: " << randomBias << std::endl;
+		auto talentBranch = branchGenerator7.GenerateBranchWithTraits({ randomBias }, 4, 1);
 		for (auto& talent : talentBranch)
 		{
 			std::cout << talent->toString() << std::endl;
