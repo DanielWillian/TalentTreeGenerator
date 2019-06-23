@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Property.h"
-#include "PropertyDictionary.h"
+#include "Models/Property.h"
+#include "Dictionaries/PropertyDictionary.h"
 #include <unordered_set>
 #include <memory>
 

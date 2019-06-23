@@ -3,6 +3,7 @@ DerivedDataCache
 Intermediate
 Saved
 Debug
+x64
 .vs
 *.VC.db
 *.opensdf

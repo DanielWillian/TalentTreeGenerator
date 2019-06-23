@@ -1,171 +1,175 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{b2a523a5-6363-49b0-81ac-b11893b87904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Models">
+      <UniqueIdentifier>{2360ff35-36c9-4160-b73d-0e268a487883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Dictionaries">
+      <UniqueIdentifier>{761352d9-17ae-46f0-a1ec-b4810872da52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utils">
+      <UniqueIdentifier>{2b071c35-47cb-43ed-aa92-02643cb25c62}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Property.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PropertyRepository.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentEntry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Talent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionary.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Statics.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel6.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel5.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel7.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PropertyDistance.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel8.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentDictionaryLevel9.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TalentTreeGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PropertyDictionary.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Random.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BranchGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BranchDictionary.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BranchGenerator.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PropertyDistance.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PropertyRepository.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TalentTreeGenerator.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Models\Property.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Models\Talent.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Models\TalentEntry.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Models\TalentTree.cpp">
+      <Filter>Source\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\BranchDictionary.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\PropertyDictionary.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionary.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel1.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel2.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel3.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel4.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel5.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel6.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel7.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel8.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel9.cpp">
+      <Filter>Source\Dictionaries</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utils\Constants.cpp">
+      <Filter>Source\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utils\Random.cpp">
+      <Filter>Source\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utils\Statics.cpp">
+      <Filter>Source\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Property.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PropertyRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel6.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel5.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel7.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PropertyDistance.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel8.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentDictionaryLevel9.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentTreeGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PropertyDictionary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Constants.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Random.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Talent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentEntry.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Statics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TalentTree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BranchGenerator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BranchDictionary.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Source\BranchGenerator.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PropertyDistance.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PropertyRepository.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\stdafx.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\TalentTreeGenerator.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\targetver.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Models\Property.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Models\Talent.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Models\TalentEntry.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Models\TalentTree.h">
+      <Filter>Source\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\BranchDictionary.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\PropertyDictionary.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionary.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel1.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel2.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel3.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel4.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel5.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel6.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel7.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel8.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel9.h">
+      <Filter>Source\Dictionaries</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utils\Constants.h">
+      <Filter>Source\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utils\Random.h">
+      <Filter>Source\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utils\Statics.h">
+      <Filter>Source\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

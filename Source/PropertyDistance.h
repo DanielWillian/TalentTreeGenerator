@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Property.h"
+#include "Models/Property.h"
 #include <unordered_map>
 
 class PropertyDistance

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TalentTree.h"
+#include "Models/TalentTree.h"
 #include "BranchGenerator.h"
 #include <vector>
 #include <unordered_map>

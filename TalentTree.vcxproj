@@ -99,18 +99,20 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>./</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -150,63 +152,58 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Constants.h" />
-    <ClInclude Include="BranchGenerator.h" />
-    <ClInclude Include="Property.h" />
-    <ClInclude Include="PropertyDictionary.h" />
-    <ClInclude Include="PropertyDistance.h" />
-    <ClInclude Include="PropertyRepository.h" />
-    <ClInclude Include="Random.h" />
-    <ClInclude Include="Statics.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Talent.h" />
-    <ClInclude Include="TalentDictionary.h" />
-    <ClInclude Include="TalentDictionaryLevel1.h" />
-    <ClInclude Include="TalentDictionaryLevel2.h" />
-    <ClInclude Include="TalentDictionaryLevel3.h" />
-    <ClInclude Include="TalentDictionaryLevel4.h" />
-    <ClInclude Include="TalentDictionaryLevel5.h" />
-    <ClInclude Include="TalentDictionaryLevel6.h" />
-    <ClInclude Include="TalentDictionaryLevel7.h" />
-    <ClInclude Include="TalentDictionaryLevel8.h" />
-    <ClInclude Include="TalentDictionaryLevel9.h" />
-    <ClInclude Include="TalentEntry.h" />
-    <ClInclude Include="TalentTree.h" />
-    <ClInclude Include="TalentTreeGenerator.h" />
-    <ClInclude Include="BranchDictionary.h" />
-    <ClInclude Include="targetver.h" />
+    <ClCompile Include="Source\BranchGenerator.cpp" />
+    <ClCompile Include="Source\Dictionaries\BranchDictionary.cpp" />
+    <ClCompile Include="Source\Dictionaries\PropertyDictionary.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionary.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel1.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel2.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel3.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel4.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel5.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel6.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel7.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel8.cpp" />
+    <ClCompile Include="Source\Dictionaries\TalentDictionaryLevel9.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Models\Property.cpp" />
+    <ClCompile Include="Source\Models\Talent.cpp" />
+    <ClCompile Include="Source\Models\TalentEntry.cpp" />
+    <ClCompile Include="Source\Models\TalentTree.cpp" />
+    <ClCompile Include="Source\PropertyDistance.cpp" />
+    <ClCompile Include="Source\PropertyRepository.cpp" />
+    <ClCompile Include="Source\stdafx.cpp" />
+    <ClCompile Include="Source\TalentTreeGenerator.cpp" />
+    <ClCompile Include="Source\Utils\Constants.cpp" />
+    <ClCompile Include="Source\Utils\Random.cpp" />
+    <ClCompile Include="Source\Utils\Statics.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Constants.cpp" />
-    <ClCompile Include="BranchGenerator.cpp" />
-    <ClCompile Include="Property.cpp" />
-    <ClCompile Include="PropertyDictionary.cpp" />
-    <ClCompile Include="PropertyDistance.cpp" />
-    <ClCompile Include="PropertyRepository.cpp" />
-    <ClCompile Include="Random.cpp" />
-    <ClCompile Include="Statics.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Talent.cpp" />
-    <ClCompile Include="TalentDictionary.cpp" />
-    <ClCompile Include="TalentDictionaryLevel1.cpp" />
-    <ClCompile Include="TalentDictionaryLevel2.cpp" />
-    <ClCompile Include="TalentDictionaryLevel3.cpp" />
-    <ClCompile Include="TalentDictionaryLevel4.cpp" />
-    <ClCompile Include="TalentDictionaryLevel5.cpp" />
-    <ClCompile Include="TalentDictionaryLevel6.cpp" />
-    <ClCompile Include="TalentDictionaryLevel7.cpp" />
-    <ClCompile Include="TalentDictionaryLevel8.cpp" />
-    <ClCompile Include="TalentDictionaryLevel9.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="TalentEntry.cpp" />
-    <ClCompile Include="TalentTree.cpp" />
-    <ClCompile Include="TalentTreeGenerator.cpp" />
-    <ClCompile Include="BranchDictionary.cpp" />
+    <ClInclude Include="Source\BranchGenerator.h" />
+    <ClInclude Include="Source\Dictionaries\BranchDictionary.h" />
+    <ClInclude Include="Source\Dictionaries\PropertyDictionary.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionary.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel1.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel2.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel3.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel4.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel5.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel6.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel7.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel8.h" />
+    <ClInclude Include="Source\Dictionaries\TalentDictionaryLevel9.h" />
+    <ClInclude Include="Source\Models\Property.h" />
+    <ClInclude Include="Source\Models\Talent.h" />
+    <ClInclude Include="Source\Models\TalentEntry.h" />
+    <ClInclude Include="Source\Models\TalentTree.h" />
+    <ClInclude Include="Source\PropertyDistance.h" />
+    <ClInclude Include="Source\PropertyRepository.h" />
+    <ClInclude Include="Source\stdafx.h" />
+    <ClInclude Include="Source\TalentTreeGenerator.h" />
+    <ClInclude Include="Source\targetver.h" />
+    <ClInclude Include="Source\Utils\Constants.h" />
+    <ClInclude Include="Source\Utils\Random.h" />
+    <ClInclude Include="Source\Utils\Statics.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

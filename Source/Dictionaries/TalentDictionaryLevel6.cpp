@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "TalentDictionaryLevel6.h"
-#include "Constants.h"
+#include "Utils/Constants.h"
 
 TalentDictionaryLevel6::TalentDictionaryLevel6()
 {

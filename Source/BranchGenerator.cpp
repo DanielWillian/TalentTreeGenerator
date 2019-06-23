@@ -2,10 +2,10 @@
 #include "BranchGenerator.h"
 #include "PropertyDistance.h"
 #include "PropertyRepository.h"
-#include "Random.h"
-#include "Talent.h"
-#include "TalentEntry.h"
-#include "Statics.h"
+#include "Utils/Random.h"
+#include "Models/Talent.h"
+#include "Models/TalentEntry.h"
+#include "Utils/Statics.h"
 #include <cmath>
 #include <limits>
 #include <random>

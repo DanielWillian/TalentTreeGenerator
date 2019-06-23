@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "Constants.h"
 #include "PropertyRepository.h"
+#include "Utils/Constants.h"
 
 PropertyRepository::PropertyRepository()
 {

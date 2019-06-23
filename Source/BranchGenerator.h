@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Property.h"
-#include "Talent.h"
-#include "TalentDictionary.h"
+#include "Models/Property.h"
+#include "Models/Talent.h"
+#include "Dictionaries/TalentDictionary.h"
 #include <vector>
 #include <memory>
 

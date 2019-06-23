@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "Constants.h"
 #include "PropertyDistance.h"
 #include "PropertyRepository.h"
+#include "Utils/Constants.h"
 #include <algorithm>
 
 const int PropertyDistance::NOT_SIMILAR = 20;
