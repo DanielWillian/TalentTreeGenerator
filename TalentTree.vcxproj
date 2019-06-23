@@ -101,10 +101,11 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -197,6 +198,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Storage.cpp" />
+    <ClCompile Include="Talent.cpp" />
     <ClCompile Include="TalentDictionary.cpp" />
     <ClCompile Include="TalentDictionaryLevel1.cpp" />
     <ClCompile Include="TalentDictionaryLevel2.cpp" />
@@ -208,6 +210,7 @@
     <ClCompile Include="TalentDictionaryLevel8.cpp" />
     <ClCompile Include="TalentDictionaryLevel9.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TalentEntry.cpp" />
     <ClCompile Include="TalentTreeGenerator.cpp" />
     <ClCompile Include="TalentTreeStructure.cpp" />
     <ClCompile Include="TraitDictionary.cpp" />

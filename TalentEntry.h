@@ -10,15 +10,7 @@ public:
 	{
 	}
 
-	virtual std::string toString() const
-	{
-		std::string out = "( ";
-		out += property->toString();
-		out += ", " + modifier;
-		out += ", " + std::to_string(value);
-		out += " )";
-		return out;
-	}
+	virtual std::string toString() const;
 
 public:
 	Property* property;

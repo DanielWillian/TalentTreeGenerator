@@ -11,16 +11,7 @@ public:
 	{
 	}
 
-	virtual std::string toString() const
-	{
-		std::string out = "{ ";
-		for (auto& talentEntry : talentEntries)
-		{
-			out += talentEntry.toString() + ", ";
-		}
-		out += "}";
-		return out;
-	}
+	virtual std::string toString() const;
 
 public:
 	std::vector<TalentEntry> talentEntries;
