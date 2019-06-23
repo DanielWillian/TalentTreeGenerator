@@ -151,7 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h" />
-    <ClInclude Include="PathGenerator.h" />
+    <ClInclude Include="BranchGenerator.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="PropertyDictionary.h" />
     <ClInclude Include="PropertyDistance.h" />
@@ -173,12 +173,12 @@
     <ClInclude Include="TalentEntry.h" />
     <ClInclude Include="TalentTree.h" />
     <ClInclude Include="TalentTreeGenerator.h" />
-    <ClInclude Include="TalentTreeStructure.h" />
+    <ClInclude Include="BranchDictionary.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Constants.cpp" />
-    <ClCompile Include="PathGenerator.cpp" />
+    <ClCompile Include="BranchGenerator.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="PropertyDictionary.cpp" />
     <ClCompile Include="PropertyDistance.cpp" />
@@ -206,7 +206,7 @@
     <ClCompile Include="TalentEntry.cpp" />
     <ClCompile Include="TalentTree.cpp" />
     <ClCompile Include="TalentTreeGenerator.cpp" />
-    <ClCompile Include="TalentTreeStructure.cpp" />
+    <ClCompile Include="BranchDictionary.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

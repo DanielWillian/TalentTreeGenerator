@@ -6,10 +6,10 @@
 #include <vector>
 #include <memory>
 
-class PathGenerator
+class BranchGenerator
 {
 public:
-	PathGenerator(const std::vector<Property*>& inLesserProperties,
+	BranchGenerator(const std::vector<Property*>& inLesserProperties,
 			TalentDictionary* inLesserDictionary,
 			const std::vector<Property*>& inGreaterProperties,
 			TalentDictionary* inGreaterDictionary)
@@ -26,12 +26,12 @@ public:
 			const std::vector<Property*>& properties,
 			const int distanceThreshold) const;
 
-	virtual std::vector<std::unique_ptr<Talent>> GeneratePath(
+	virtual std::vector<std::unique_ptr<Talent>> GenerateBranch(
 			int numLesser,
 			int numGreater,
 			std::vector<Property*>* startingProperties = nullptr);
 
-	virtual std::vector<std::unique_ptr<Talent>> GeneratePathWithTraits(
+	virtual std::vector<std::unique_ptr<Talent>> GenerateBranchWithTraits(
 			const std::vector<std::string>& desiredTraits,
 			int numLesser,
 			int numGreater);
@@ -70,7 +70,7 @@ protected:
 			std::vector<TalentEntry>& tupleList,
 			Property* property) const;
 
-	virtual std::vector<std::unique_ptr<Talent>> GeneratePathInternal(
+	virtual std::vector<std::unique_ptr<Talent>> GenerateBranchInternal(
 			int numLesser,
 			int numGreater,
 			std::vector<Property*> inLesserPossibleProperties,

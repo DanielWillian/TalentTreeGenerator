@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "PathGenerator.h"
+#include "BranchGenerator.h"
 #include "PropertyDistance.h"
 #include "PropertyRepository.h"
 #include "Random.h"
@@ -11,7 +11,7 @@
 #include <random>
 #include <iterator>
 
-std::vector<Property*> PathGenerator::GetAllRelatedProperties(
+std::vector<Property*> BranchGenerator::GetAllRelatedProperties(
 		const Property* property,
 		const std::vector<Property*>& properties,
 		const int distanceThreshold) const
@@ -30,21 +30,21 @@ std::vector<Property*> PathGenerator::GetAllRelatedProperties(
 	return result;
 }
 
-std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePath(
+std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranch(
 		int numLesser,
 		int numGreater,
 		std::vector<Property*>* startingProperties)
 {
 	std::vector<Property*> lesserPossibleProperties = lesserProperties;
 	std::vector<Property*> greaterPossibleProperties = greaterProperties;
-	return GeneratePathInternal(numLesser,
+	return GenerateBranchInternal(numLesser,
 			numGreater,
 			lesserPossibleProperties,
 			greaterPossibleProperties,
 			startingProperties);
 }
 
-std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathWithTraits(
+std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranchWithTraits(
 		const std::vector<std::string>& desiredTraits,
 		int numLesser,
 		int numGreater)
@@ -52,7 +52,7 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathWithTraits(
 	auto desiredProperties = PropertyRepository::GetInstance().GetPropertiesWithIds(lesserProperties, desiredTraits);
 	if (!desiredProperties.empty())
 	{
-		return GeneratePath(numLesser, numGreater, &desiredProperties);
+		return GenerateBranch(numLesser, numGreater, &desiredProperties);
 	}
 
 	std::vector<std::unique_ptr<Talent>> result;
@@ -60,7 +60,7 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathWithTraits(
 	return result;
 }
 
-std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathInternal(
+std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranchInternal(
 		int numLesser,
 		int numGreater,
 		std::vector<Property*> inLesserPossibleProperties,
@@ -126,7 +126,7 @@ std::vector<std::unique_ptr<Talent>> PathGenerator::GeneratePathInternal(
 	return std::move(result);
 }
 
-void PathGenerator::IntersectionOfProperties(
+void BranchGenerator::IntersectionOfProperties(
 		std::vector<Property*>& inOutProperties,
 		const Talent& talent,
 		const int distanceThreshold
@@ -139,7 +139,7 @@ void PathGenerator::IntersectionOfProperties(
 	}
 }
 
-void PathGenerator::IntersectionOfProperties(
+void BranchGenerator::IntersectionOfProperties(
 		std::vector<Property*>& inOutProperties,
 		const Property* property,
 		const int distanceThreshold
@@ -149,7 +149,7 @@ void PathGenerator::IntersectionOfProperties(
 			GetAllRelatedProperties(property, inOutProperties, distanceThreshold));
 }
 
-void PathGenerator::GetIntersection(std::vector<Property*>& a,
+void BranchGenerator::GetIntersection(std::vector<Property*>& a,
 		const std::vector<Property*>& b) const
 {
 	for (auto it = a.begin(); it != a.end();)
@@ -165,7 +165,7 @@ void PathGenerator::GetIntersection(std::vector<Property*>& a,
 	}
 }
 
-std::unique_ptr<Talent> PathGenerator::GenerateTalent(const std::vector<std::string>& desiredTraits,
+std::unique_ptr<Talent> BranchGenerator::GenerateTalent(const std::vector<std::string>& desiredTraits,
 		const bool bLesser) const
 {
 	const auto& properties = bLesser ? lesserProperties : greaterProperties;
@@ -181,7 +181,7 @@ std::unique_ptr<Talent> PathGenerator::GenerateTalent(const std::vector<std::str
 	return std::move(std::unique_ptr<Talent>(nullptr));
 }
 
-std::unique_ptr<Talent> PathGenerator::GenerateRandomTalent(
+std::unique_ptr<Talent> BranchGenerator::GenerateRandomTalent(
 		std::vector<Property*> inProperties,
 		const TalentDictionary* dictionary,
 		Property* startingProperty) const
@@ -206,7 +206,7 @@ std::unique_ptr<Talent> PathGenerator::GenerateRandomTalent(
 	return std::move(std::unique_ptr<Talent>(new Talent(tupleList)));
 }
 
-void PathGenerator::GenerateRandomTalentTuple(
+void BranchGenerator::GenerateRandomTalentTuple(
 		std::vector<Property*>& inOutProperties,
 		const TalentDictionary* dictionary,
 		const int numberOfProperties,
@@ -258,23 +258,23 @@ void PathGenerator::GenerateRandomTalentTuple(
 	}
 }
 
-int PathGenerator::GetRandomInt(const int min, const int max) const
+int BranchGenerator::GetRandomInt(const int min, const int max) const
 {
 	return Random::GetInstance().GetRandomInt(min, max);
 }
 
-float PathGenerator::GetRandomFloat(const float min, const float max) const
+float BranchGenerator::GetRandomFloat(const float min, const float max) const
 {
 	return Random::GetInstance().GetRandomFloat(min, max);
 }
 
-Property* PathGenerator::GetRandomProperty(std::vector<Property*> properties) const
+Property* BranchGenerator::GetRandomProperty(std::vector<Property*> properties) const
 {
 	return *SelectRandom(properties.begin(), properties.end());
 }
 
 template<typename Iter>
-Iter PathGenerator::SelectRandom(Iter start, Iter end) const
+Iter BranchGenerator::SelectRandom(Iter start, Iter end) const
 {
 	std::advance(start, GetRandomInt(0, (int) (std::distance(start, end) - 1)));
 

@@ -1,16 +1,16 @@
 #pragma once
 
 #include "TalentTree.h"
-#include "PathGenerator.h"
+#include "BranchGenerator.h"
 #include <vector>
 #include <unordered_map>
 
-class TalentTreePathGenerationData
+class TalentTreeBranchGenerationData
 {
 public:
-	TalentTreePathGenerationData() {}
+	TalentTreeBranchGenerationData() {}
 
-	TalentTreePathGenerationData(
+	TalentTreeBranchGenerationData(
 			const int inGeneratorIndex,
 			const std::pair<int, int>& inTalentCount,
 			const std::vector<std::string>& inTalentNames)
@@ -27,21 +27,21 @@ public:
 class TalentTreeGenerator
 {
 public:
-	TalentTreeGenerator(const std::vector<PathGenerator*>& inPathGenerators,
-			const std::unordered_map<std::string, std::vector<std::string>>& inTalentPathsNames);
+	TalentTreeGenerator(const std::vector<BranchGenerator*>& inBranchGenerators,
+			const std::unordered_map<std::string, std::vector<std::string>>& inTalentBranchesNames);
 
 	virtual std::unique_ptr<TalentTree> GenerateTalentTree();
 
 private:
-	std::unordered_map<std::string, std::unique_ptr<Talent>> GeneratePath(const std::string& pathName);
+	std::unordered_map<std::string, std::unique_ptr<Talent>> GenerateBranch(const std::string& pathName);
 
 	bool IsGreaterTalent(const std::string name);
 
-	int GetGeneratorIndexFromTalentPathName(const std::string name);
+	int GetGeneratorIndexFromTalentBranchName(const std::string name);
 
 public:
-	std::vector<PathGenerator*> pathGenerators;
-	std::unordered_map<std::string, TalentTreePathGenerationData> talentPathsData;
+	std::vector<BranchGenerator*> pathGenerators;
+	std::unordered_map<std::string, TalentTreeBranchGenerationData> talentBranchesData;
 	std::vector<std::vector<std::pair<int, std::pair<int, int>>>> pathCounts;
 };
 
