@@ -101,7 +101,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -110,6 +110,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>./</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -191,6 +192,7 @@
     <ClCompile Include="PropertyRepository.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="SimilarityTable.cpp" />
+    <ClCompile Include="Statics.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -211,6 +213,7 @@
     <ClCompile Include="TalentDictionaryLevel9.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TalentEntry.cpp" />
+    <ClCompile Include="TalentTree.cpp" />
     <ClCompile Include="TalentTreeGenerator.cpp" />
     <ClCompile Include="TalentTreeStructure.cpp" />
     <ClCompile Include="TraitDictionary.cpp" />
