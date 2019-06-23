@@ -82,24 +82,13 @@ std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranchInternal(
 				startingProperty);
 	IntersectionOfProperties(inLesserPossibleProperties, *startingTalent.get(), PropertyDistance::SOMEWHAT_SIMILAR);
 	result.push_back(std::move(startingTalent));
-	if (startingProperties)
-	{
-		GetIntersection(*startingProperties, inLesserPossibleProperties);
-	}
 	numLesser--;
 	for (int i = 0; i < numLesser; i++)
 	{
-		startingProperty = startingProperties ?
-				*SelectRandom(startingProperties->begin(), startingProperties->end()) :
-				nullptr;
 		std::unique_ptr<Talent> talent = GenerateRandomTalent(inLesserPossibleProperties,
 				lesserDictionary,
-				startingProperty);
+				nullptr);
 		IntersectionOfProperties(inLesserPossibleProperties, *talent.get(), PropertyDistance::SOMEWHAT_SIMILAR);
-		if (startingProperties)
-		{
-			GetIntersection(*startingProperties, inLesserPossibleProperties);
-		}
 		result.push_back(std::move(talent));
 	}
 
@@ -109,17 +98,10 @@ std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranchInternal(
 	}
 	for (int i = 0; i < numGreater; i++)
 	{
-		startingProperty = startingProperties ?
-				*SelectRandom(startingProperties->begin(), startingProperties->end()) :
-				nullptr;
 		std::unique_ptr<Talent> talent = GenerateRandomTalent(inGreaterPossibleProperties,
 				greaterDictionary,
-				startingProperty);
+				nullptr);
 		IntersectionOfProperties(inGreaterPossibleProperties, *talent.get(), PropertyDistance::SOMEWHAT_SIMILAR);
-		if (startingProperties)
-		{
-			GetIntersection(*startingProperties, inGreaterPossibleProperties);
-		}
 		result.push_back(std::move(talent));
 	}
 

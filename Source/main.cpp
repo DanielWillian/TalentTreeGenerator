@@ -88,7 +88,6 @@ int main(int argc, char **argv)
 		}
 		std::cout << std::endl;
 	}
-	std::cout << talentTree->talents.size() << std::endl << std::endl;
 
 	std::vector<std::string> level1PropertyNames(propertyRep.baseProperties);
 	std::vector<std::string> level4PropertyNames(level1PropertyNames);
@@ -132,7 +131,7 @@ int main(int argc, char **argv)
 		const int randomInt = random.GetRandomInt(0, (int) level7PropertyNames.size() - 1);
 		std::string randomBias = level7PropertyNames[randomInt];
 		std::cout << "Bias: " << randomBias << std::endl;
-		auto talentBranch = branchGenerator7.GenerateBranchWithTraits({ randomBias }, 4, 1);
+		auto talentBranch = branchGenerator7.GenerateBranchWithTraits({ randomBias }, 7, 2);
 		for (auto& talent : talentBranch)
 		{
 			std::cout << talent->toString() << std::endl;
