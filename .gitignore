@@ -6,11 +6,14 @@ Debug
 x64
 .vs
 *.VC.db
+*.cache
+*.filters
 *.opensdf
 *.opendb
 *.sdf
 *.sln
 *.suo
+*.user
 *.xcodeproj
 *.xcworkspace
 *.swp
