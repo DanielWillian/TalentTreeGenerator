@@ -16,7 +16,7 @@ const std::string SINGLE_TARGET_DAMAGE = "SingleTargetDamage";
 const std::string AREA_OF_EFFECT_SIZE = "AreaOfEffectSize";
 const std::string AREA_OF_EFFECT_DAMAGE = "AreaOfEffectDamage";
 const std::string DIRECT_DAMAGE = "DirectDamage";
-const std::string OVER_TIME_DAMAGE = "OverTimeDamage";
+const std::string DAMAGE_OVER_TIME = "DamageOverTime";
 const std::string DURATION_OF_DOT = "DurationOfDot";
 
 const std::string NO_DAMAGE_TYPE = "NoDamageType";

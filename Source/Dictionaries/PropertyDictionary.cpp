@@ -33,7 +33,7 @@ PropertyDictionary::PropertyDictionary()
 	dictEntries.push_back(new PropertyDictEntry{ AREA_OF_EFFECT_SIZE, allDamageType, weaponType });
 	dictEntries.push_back(new PropertyDictEntry{ AREA_OF_EFFECT_DAMAGE, allDamageType, weaponType });
 	dictEntries.push_back(new PropertyDictEntry{ DIRECT_DAMAGE, allDamageType, weaponType });
-	dictEntries.push_back(new PropertyDictEntry{ OVER_TIME_DAMAGE, allDamageType, weaponType });
+	dictEntries.push_back(new PropertyDictEntry{ DAMAGE_OVER_TIME, allDamageType, weaponType });
 	dictEntries.push_back(new PropertyDictEntry{ DURATION_OF_DOT, allDamageType, weaponType });
 
 	for (auto* e : dictEntries)

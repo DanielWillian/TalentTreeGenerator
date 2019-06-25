@@ -17,7 +17,7 @@ extern const std::string SINGLE_TARGET_DAMAGE;
 extern const std::string AREA_OF_EFFECT_SIZE;
 extern const std::string AREA_OF_EFFECT_DAMAGE;
 extern const std::string DIRECT_DAMAGE;
-extern const std::string OVER_TIME_DAMAGE;
+extern const std::string DAMAGE_OVER_TIME;
 extern const std::string DURATION_OF_DOT;
 
 extern const std::string NO_DAMAGE_TYPE;

@@ -21,7 +21,7 @@ TalentDictionaryLevel9::TalentDictionaryLevel9()
 	dictEntries.push_back(new TalentDictEntry{AREA_OF_EFFECT_SIZE, "*", BASE, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{AREA_OF_EFFECT_DAMAGE, "*", BASE, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{DIRECT_DAMAGE, "*", BASE, {2.0f, 2.5f}});
-	dictEntries.push_back(new TalentDictEntry{OVER_TIME_DAMAGE, "*", BASE, {2.0f, 2.5f}});
+	dictEntries.push_back(new TalentDictEntry{DAMAGE_OVER_TIME, "*", BASE, {2.0f, 2.5f}});
 	dictEntries.push_back(new TalentDictEntry{DURATION_OF_DOT, "+", BASE, {5.0f, 7.5f}});
 
 	for (auto* e : dictEntries)
