@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "TalentDictionaryLevel4.h"
 #include "Utils/Constants.h"
 

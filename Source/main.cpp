@@ -1,11 +1,10 @@
 ﻿// TalentTree.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
-#include "BranchGenerator.h"
-#include "PropertyDistance.h"
-#include "PropertyRepository.h"
-#include "TalentTreeGenerator.h"
+#include "Generators/BranchGenerator.h"
+#include "Generators/PropertyDistance.h"
+#include "Generators/PropertyRepository.h"
+#include "Generators/TalentTreeGenerator.h"
 #include "Dictionaries/BranchDictionary.h"
 #include "Dictionaries/TalentDictionaryLevel1.h"
 #include "Dictionaries/TalentDictionaryLevel2.h"

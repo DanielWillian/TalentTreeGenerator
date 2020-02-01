@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Random.h"
 
 int Random::GetRandomInt(const int min, const int max)

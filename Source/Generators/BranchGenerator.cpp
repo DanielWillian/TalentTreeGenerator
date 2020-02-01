@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "BranchGenerator.h"
 #include "PropertyDistance.h"
 #include "PropertyRepository.h"
