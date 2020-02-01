@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Utils/Constants.h"
 #include "PropertyDictionary.h"
 

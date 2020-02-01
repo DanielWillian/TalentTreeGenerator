@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "TalentEntry.h"
 
 std::string TalentEntry::toString() const

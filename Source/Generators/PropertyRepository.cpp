@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "PropertyRepository.h"
 #include "Utils/Constants.h"
 

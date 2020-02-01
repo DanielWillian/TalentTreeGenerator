@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "TalentDictionary.h"
 
 std::vector<TalentDictEntry*> TalentDictionary::GetDictEntries(const std::string& key) const

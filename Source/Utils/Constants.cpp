@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Constants.h"
 
 const std::string HEALTH = "Health";
