@@ -41,11 +41,22 @@ These talents are generated for a specific tree containing 628 nodes, an image o
 
 Detailed explanations on these strings and values are given in the paper.
 
+## Installation
+
+The project is built with cmake. There is no requirement of any specific generator or compiler.
+
+Having cloned the repository and being in its root directory you can build it by using the following commands:
+
+```
+$ mkdir build && cd build && cmake .. && cmake --build .
+```
+
+The executable location depends on the generator used but it is usually in `build/Source`.
+
 ## Usage
 
-The project was made with visual studio 17 and windows os as a target. There is a .vcxproj with the project configuration and you can compile from there.
-
-The executable can with an optional seed as a parameter, a random seed is used if no parameter is passed. The output is composed of the generated talent tree and a few random branches initialized by either a base property or a specialization.
+The executable can be given an optional seed as a parameter, a random seed is used if no parameter is passed. The output is composed of the generated talent tree and a few random branches initialized by either a base property or a specialization.
 A talent tree is a map, a talent is bound to a name of a node in the tree.
 
 There are some outputs in the Output folder with some seeds in case you do not want to generate a talent tree yourself.
+
