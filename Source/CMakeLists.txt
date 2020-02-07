@@ -2,6 +2,7 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Utils)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Models)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Dictionaries)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Generators)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Options)
 
 add_executable(TalentTreeGenerator ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
 
