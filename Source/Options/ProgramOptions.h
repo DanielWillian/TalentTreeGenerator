@@ -5,16 +5,13 @@ class ProgramOptions
 public:
 	ProgramOptions();
 
-	ProgramOptions& withNeedHelp(const bool needHelp);
-	ProgramOptions& withSeed(const long seed);
+	ProgramOptions& withSeed(const unsigned int seed);
 
-	bool needHelp() const;
-	bool hasSeed() const;
-	long getSeed() const;
+	bool getHasSeed() const;
+	unsigned int getSeed() const;
 
 private:
-	bool needHelp;
 	bool hasSeed;
-	long seed;
+	unsigned int seed;
 };
 

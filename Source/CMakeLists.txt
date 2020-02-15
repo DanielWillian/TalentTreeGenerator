@@ -12,6 +12,7 @@ target_link_libraries(TalentTreeGenerator
         Models
         Dictionaries
         Generators
+        Options
 )
 
 target_include_directories(TalentTreeGenerator
