@@ -1,10 +1,11 @@
 #include "Options.h"
 #include "ProgramOptions.h"
 #include <iostream>
-#include <vector>
-#include <string>
 #include <memory>
+#include <random>
 #include <stdexcept>
+#include <string>
+#include <vector>
 
 namespace Options
 {
@@ -15,11 +16,14 @@ void showHelp()
 	std::cout <<
 R"(SYNOPSIS
     ttg -s gen_seed
+    ttg -r
     ttg -h
 
 OPTIONS
     -s gen_seed, --seed gen_seed
             Set the seed to use for the generation
+    -r, --random
+            Set a random seed to use for the generation
     -h, --help
             Show this help)"
 	<< std::endl;
@@ -53,14 +57,9 @@ unsigned int getSeed(const std::string& s)
 	return 0;
 }
 
-ProgramOptions& addSeed(ProgramOptions& programOptions, const std::string& seed)
-{
-	return programOptions.withSeed(getSeed(seed));
-}
-
 enum class Option
 {
-	NONE, HELP, SEED
+	NONE, HELP, SEED, RANDOM
 };
 
 bool needsArgumentOption(const Option option)
@@ -68,6 +67,7 @@ bool needsArgumentOption(const Option option)
 	switch (option)
 	{
 		case Option::SEED: return true;
+		case Option::RANDOM: return false;
 		case Option::HELP: return false;
 		default: return false;
 	}
@@ -88,7 +88,10 @@ void processOption(const Option option,
 	switch (option)
 	{
 		case Option::SEED:
-			addSeed(programOptions, args[currentArg + 1]);
+			programOptions.withSeed(getSeed(args[currentArg + 1]));
+			return;
+		case Option::RANDOM:
+			programOptions.withSeed(std::random_device()());
 			return;
 		case Option::HELP:
 			showHelp();
@@ -102,6 +105,7 @@ Option parseShortOption(const char arg)
 {
 	if ('h' == arg) return Option::HELP;
 	if ('s' == arg) return Option::SEED;
+	if ('r' == arg) return Option::RANDOM;
 	return Option::NONE;
 }
 
@@ -144,6 +148,7 @@ Option parseLongOption(const std::string& arg)
 {
 	if ("help" == arg) return Option::HELP;
 	if ("seed" == arg) return Option::SEED;
+	if ("random" == arg) return Option::RANDOM;
 	return Option::NONE;
 }
 
