@@ -1,7 +1,4 @@
-﻿// TalentTree.cpp : Defines the entry point for the console application.
-//
-
-#include "Generators/BranchGenerator.h"
+﻿#include "Generators/BranchGenerator.h"
 #include "Generators/PropertyDistance.h"
 #include "Generators/PropertyRepository.h"
 #include "Generators/TalentTreeGenerator.h"
@@ -16,30 +13,35 @@
 #include "Dictionaries/TalentDictionaryLevel8.h"
 #include "Dictionaries/TalentDictionaryLevel9.h"
 #include "Models/TalentTree.h"
+#include "Options/Options.h"
+#include "Options/ProgramOptions.h"
 #include "Utils/Random.h"
 #include <iostream>
+#include <memory>
 #include <random>
 #include <sstream>
+#include <string>
+#include <vector>
 
 int main(int argc, char **argv)
 {
-	std::random_device rd;
-	unsigned int seed = rd();
-	if (argc >= 2)
-	{
-		std::istringstream iss(argv[1]);
-
-		if (!(iss >> seed))
-		{
-			std::random_device rd;
-			seed = rd();
-		}
+	std::vector<std::string> args;
+	for (int i = 1; i < argc; i++) {
+		args.push_back(std::string(argv[i]));
 	}
 
-	Random& random = Random::GetInstance();
-	random.gen.seed(seed);
+	std::unique_ptr<ProgramOptions> programOptions = Options::parseArgs(std::move(args));
 
-	std::cout << "Seed: " << seed << std::endl << std::endl;
+	if (!programOptions->getHasSeed())
+	{
+		std::cerr << "Could not retrieve seed!";
+		exit(1);
+	}
+
+	std::cout << "---------- Seed: " << programOptions->getSeed() << " ----------" << std::endl;
+
+	Random& random = Random::GetInstance();
+	random.gen.seed(programOptions->getSeed());
 
 	const PropertyRepository& propertyRep = PropertyRepository::GetInstance();
 

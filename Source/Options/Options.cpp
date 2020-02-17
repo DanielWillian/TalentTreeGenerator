@@ -171,7 +171,7 @@ int parseLongOption(const std::vector<std::string>& args, const int currentArg, 
 }
 }
 
-std::unique_ptr<ProgramOptions> parseArgs(std::vector<std::string> args)
+std::unique_ptr<ProgramOptions> parseArgs(const std::vector<std::string> args)
 {
 	std::unique_ptr<ProgramOptions> programOptions = std::make_unique<ProgramOptions>();
 
