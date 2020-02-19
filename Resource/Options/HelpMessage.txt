@@ -1,0 +1,12 @@
+SYNOPSIS
+    ttg -s gen_seed
+    ttg -r
+    ttg -h
+
+OPTIONS
+    -s gen_seed, --seed gen_seed
+            Set the seed to use for the generation
+    -r, --random
+            Set a random seed to use for the generation
+    -h, --help
+            Show this help

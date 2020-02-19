@@ -1,5 +1,6 @@
 #include "Options.h"
 #include "ProgramOptions.h"
+#include "Resource.h"
 #include <iostream>
 #include <memory>
 #include <random>
@@ -13,20 +14,7 @@ namespace
 {
 void showHelp()
 {
-	std::cout <<
-R"(SYNOPSIS
-    ttg -s gen_seed
-    ttg -r
-    ttg -h
-
-OPTIONS
-    -s gen_seed, --seed gen_seed
-            Set the seed to use for the generation
-    -r, --random
-            Set a random seed to use for the generation
-    -h, --help
-            Show this help)"
-	<< std::endl;
+	std::cout << HelpMessage_txt << std::endl;
 }
 
 void reportError(const std::string& error)
