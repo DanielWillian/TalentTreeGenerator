@@ -68,6 +68,11 @@ bool hasNecessaryArguments(const Option option,
 	return !needsArgumentOption(option) || (currentArg + 1 < args.size());
 }
 
+void addRandomSeed(ProgramOptions& programOptions)
+{
+	programOptions.withSeed(std::random_device()());
+}
+
 void processOption(const Option option,
 		const std::vector<std::string>& args,
 		const int currentArg,
@@ -79,7 +84,7 @@ void processOption(const Option option,
 			programOptions.withSeed(getSeed(args[currentArg + 1]));
 			return;
 		case Option::RANDOM:
-			programOptions.withSeed(std::random_device()());
+			addRandomSeed(programOptions);
 			return;
 		case Option::HELP:
 			showHelp();
@@ -157,16 +162,16 @@ int parseLongOption(const std::vector<std::string>& args, const int currentArg, 
 	processOption(option, args, currentArg, programOptions);
 	return currentArg + (needsArgumentOption(option) ? 2 : 1);
 }
+
+void addDefaultOptions(ProgramOptions& programOptions)
+{
+	addRandomSeed(programOptions);
+}
 }
 
 std::unique_ptr<ProgramOptions> parseArgs(const std::vector<std::string> args)
 {
 	std::unique_ptr<ProgramOptions> programOptions = std::make_unique<ProgramOptions>();
-
-	if (args.size() == 0)
-	{
-		reportError("No arguments passed!");
-	}
 
 	for (int i = 0; i < args.size();)
 	{
@@ -185,6 +190,8 @@ std::unique_ptr<ProgramOptions> parseArgs(const std::vector<std::string> args)
 			reportError("Could not recognize option in argument: " + args[i]);
 		}
 	}
+
+	addDefaultOptions(*programOptions);
 
 	return programOptions;
 }
