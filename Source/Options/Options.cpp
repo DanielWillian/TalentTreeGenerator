@@ -12,6 +12,9 @@ namespace Options
 {
 namespace
 {
+const std::string OPTION_ARG_TALENT_TREE = "talent-tree";
+const std::string OPTION_ARG_BRANCH = "branch";
+
 void showHelp()
 {
 	std::cout << HelpMessage_txt << std::endl;
@@ -47,7 +50,7 @@ unsigned int getSeed(const std::string& s)
 
 enum class Option
 {
-	NONE, HELP, SEED, RANDOM
+	NONE, HELP, SEED, RANDOM, GENERATION
 };
 
 bool needsArgumentOption(const Option option)
@@ -56,6 +59,7 @@ bool needsArgumentOption(const Option option)
 	{
 		case Option::SEED: return true;
 		case Option::RANDOM: return false;
+		case Option::GENERATION: return true;
 		case Option::HELP: return false;
 		default: return false;
 	}
@@ -73,6 +77,14 @@ void addRandomSeed(ProgramOptions& programOptions)
 	programOptions.withSeed(std::random_device()());
 }
 
+GenerationType getGenerationType(const std::string& generationType)
+{
+	if (OPTION_ARG_TALENT_TREE == generationType) return GenerationType::TALENT_TREE;
+	if (OPTION_ARG_BRANCH == generationType) return GenerationType::BRANCH;
+	reportError("Unknown generation type: " + generationType);
+	return GenerationType::NONE;
+}
+
 void processOption(const Option option,
 		const std::vector<std::string>& args,
 		const int currentArg,
@@ -85,6 +97,9 @@ void processOption(const Option option,
 			return;
 		case Option::RANDOM:
 			addRandomSeed(programOptions);
+			return;
+		case Option::GENERATION:
+			programOptions.withGenerationType(getGenerationType(args[currentArg + 1]));
 			return;
 		case Option::HELP:
 			showHelp();
@@ -99,6 +114,7 @@ Option parseShortOption(const char arg)
 	if ('h' == arg) return Option::HELP;
 	if ('s' == arg) return Option::SEED;
 	if ('r' == arg) return Option::RANDOM;
+	if ('g' == arg) return Option::GENERATION;
 	return Option::NONE;
 }
 
@@ -142,6 +158,7 @@ Option parseLongOption(const std::string& arg)
 	if ("help" == arg) return Option::HELP;
 	if ("seed" == arg) return Option::SEED;
 	if ("random" == arg) return Option::RANDOM;
+	if ("generation" == arg) return Option::GENERATION;
 	return Option::NONE;
 }
 
@@ -165,7 +182,11 @@ int parseLongOption(const std::vector<std::string>& args, const int currentArg, 
 
 void addDefaultOptions(ProgramOptions& programOptions)
 {
-	addRandomSeed(programOptions);
+	if (!programOptions.getHasSeed()) addRandomSeed(programOptions);
+	if (GenerationType::NONE == programOptions.getGenerationType())
+	{
+		programOptions.withGenerationType(GenerationType::TALENT_TREE);
+	}
 }
 }
 

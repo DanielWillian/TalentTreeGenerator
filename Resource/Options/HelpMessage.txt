@@ -1,5 +1,5 @@
 SYNOPSIS
-    ttg [-r|-s <gen_seed>]
+    ttg [-r|-s <gen_seed>] [-g <gen_type>]
     ttg -h
 
 OPTIONS
@@ -8,5 +8,11 @@ OPTIONS
     -r, --random
             Set a random seed to use for the generation.
             This is the default.
+    -g <gen_type>, --generation <gen_type>
+            Which <gen_type> to generate.
     -h, --help
             Show this help.
+
+<gen_type> should be one of these arguments:
+    talent-tree   Generate the whole talent tree.
+    branch        Generate isolated branches.
