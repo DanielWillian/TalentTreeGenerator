@@ -23,6 +23,36 @@
 #include <string>
 #include <vector>
 
+const int TALENT_LEVEL1_INDEX = 0;
+const int TALENT_LEVEL2_INDEX = 1;
+const int TALENT_LEVEL3_INDEX = 2;
+const int TALENT_LEVEL4_INDEX = 3;
+const int TALENT_LEVEL5_INDEX = 4;
+const int TALENT_LEVEL6_INDEX = 5;
+const int TALENT_LEVEL7_INDEX = 6;
+const int TALENT_LEVEL8_INDEX = 7;
+const int TALENT_LEVEL9_INDEX = 8;
+
+const int BRANCH_LEVEL1_INDEX = 0;
+const int BRANCH_LEVEL2_INDEX = 1;
+const int BRANCH_LEVEL4_INDEX = 2;
+const int BRANCH_LEVEL5_INDEX = 3;
+const int BRANCH_LEVEL7_INDEX = 4;
+const int BRANCH_LEVEL9_INDEX = 5;
+
+std::vector<std::unique_ptr<TalentDictionary>> createTalentDictionaries();
+std::vector<std::unique_ptr<BranchGenerator>> createBranchGenerators(
+		const std::vector<TalentDictionary*>& dictionaries);
+template <typename T>
+std::vector<T*> mapToRawPointers(const std::vector<std::unique_ptr<T>>& dictionaries);
+
+void generateTalentTree(const std::vector<BranchGenerator*>& branchGenerators);
+void generateBranches(const std::vector<BranchGenerator*>& branchGenerators);
+void generateBranch(const std::vector<std::string>& propertyNames,
+		const BranchGenerator& branchGenerator,
+		const int numLesserTalents,
+		const int numGreaterTalents);
+
 int main(int argc, char **argv)
 {
 	std::vector<std::string> args;
@@ -43,38 +73,106 @@ int main(int argc, char **argv)
 	Random& random = Random::GetInstance();
 	random.gen.seed(programOptions->getSeed());
 
+	const std::vector<std::unique_ptr<TalentDictionary>> dictionaries = createTalentDictionaries();
+	const std::vector<TalentDictionary*> dictionariesRaw = mapToRawPointers(dictionaries);
+	std::vector<std::unique_ptr<BranchGenerator>> branchGenerators = createBranchGenerators(dictionariesRaw);
+	const std::vector<BranchGenerator*> branchGeneratorsRaw = mapToRawPointers(branchGenerators);
+
+	if (programOptions->getGenerationType() == GenerationType::TALENT_TREE)
+	{
+		std::cout << "---------- Generating talent tree ----------" << std::endl << std::endl;
+		generateTalentTree(branchGeneratorsRaw);
+	}
+	else if (programOptions->getGenerationType() == GenerationType::BRANCH)
+	{
+		std::cout << "---------- Generating branches ----------" << std::endl << std::endl;
+		generateBranches(branchGeneratorsRaw);
+	}
+	else
+	{
+		std::cerr << "Could not generate anything." << std::endl;
+		exit(1);
+	}
+
+	return 0;
+}
+
+std::vector<std::unique_ptr<TalentDictionary>> createTalentDictionaries()
+{
+	std::vector<std::unique_ptr<TalentDictionary>> dictionaries;
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel1>());
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel2>());
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel3>());
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel4>());
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel5>());
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel6>());
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel7>());
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel8>());
+	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel9>());
+	return std::move(dictionaries);
+}
+
+std::vector<std::unique_ptr<BranchGenerator>> createBranchGenerators(const std::vector<TalentDictionary*>& dictionaries)
+{
 	const PropertyRepository& propertyRep = PropertyRepository::GetInstance();
 
-	TalentDictionaryLevel1 talentDictionary1;
-	TalentDictionaryLevel3 talentDictionary3;
-	BranchGenerator branchGenerator1(propertyRep.level1Properties, &talentDictionary1,
-			propertyRep.level3Properties, &talentDictionary3);
+	std::unique_ptr<BranchGenerator> branchGenerator1 = std::make_unique<BranchGenerator>(
+			propertyRep.level1Properties,
+			dictionaries[TALENT_LEVEL1_INDEX],
+			propertyRep.level3Properties,
+			dictionaries[TALENT_LEVEL3_INDEX]);
 
-	TalentDictionaryLevel2 talentDictionary2;
-	BranchGenerator branchGenerator2(propertyRep.level2Properties, &talentDictionary2,
-			propertyRep.level2Properties, &talentDictionary2);
+	std::unique_ptr<BranchGenerator> branchGenerator2 = std::make_unique<BranchGenerator>(
+			propertyRep.level2Properties,
+			dictionaries[TALENT_LEVEL2_INDEX],
+			propertyRep.level2Properties,
+			dictionaries[TALENT_LEVEL2_INDEX]);
 
-	TalentDictionaryLevel4 talentDictionary4;
-	TalentDictionaryLevel6 talentDictionary6;
-	BranchGenerator branchGenerator4(propertyRep.level4Properties, &talentDictionary4,
-			propertyRep.level6Properties, &talentDictionary6);
+	std::unique_ptr<BranchGenerator> branchGenerator4 = std::make_unique<BranchGenerator>(
+			propertyRep.level4Properties,
+			dictionaries[TALENT_LEVEL4_INDEX],
+			propertyRep.level6Properties,
+			dictionaries[TALENT_LEVEL6_INDEX]);
 
-	TalentDictionaryLevel5 talentDictionary5;
-	BranchGenerator branchGenerator5(propertyRep.level5Properties, &talentDictionary5,
-			propertyRep.level5Properties, &talentDictionary5);
+	std::unique_ptr<BranchGenerator> branchGenerator5 = std::make_unique<BranchGenerator>(
+			propertyRep.level5Properties,
+			dictionaries[TALENT_LEVEL5_INDEX],
+			propertyRep.level5Properties,
+			dictionaries[TALENT_LEVEL5_INDEX]);
 
-	TalentDictionaryLevel7 talentDictionary7;
-	TalentDictionaryLevel8 talentDictionary8;
-	BranchGenerator branchGenerator7(propertyRep.level7Properties, &talentDictionary7,
-			propertyRep.level8Properties, &talentDictionary8);
+	std::unique_ptr<BranchGenerator> branchGenerator7 = std::make_unique<BranchGenerator>(
+			propertyRep.level7Properties,
+			dictionaries[TALENT_LEVEL7_INDEX],
+			propertyRep.level8Properties,
+			dictionaries[TALENT_LEVEL8_INDEX]);
 
-	TalentDictionaryLevel9 talentDictionary9;
-	BranchGenerator branchGenerator9(propertyRep.level9Properties, &talentDictionary9,
-			propertyRep.level9Properties, &talentDictionary9);
+	std::unique_ptr<BranchGenerator> branchGenerator9 = std::make_unique<BranchGenerator>(
+			propertyRep.level9Properties,
+			dictionaries[TALENT_LEVEL9_INDEX],
+			propertyRep.level9Properties,
+			dictionaries[TALENT_LEVEL9_INDEX]);
 
-	std::vector<BranchGenerator*> branchGenerators = {&branchGenerator1, &branchGenerator2, &branchGenerator4,
-			&branchGenerator5, &branchGenerator7, &branchGenerator9};
+	std::vector<std::unique_ptr<BranchGenerator>> branchGenerators;
+	branchGenerators.push_back(std::move(branchGenerator1));
+	branchGenerators.push_back(std::move(branchGenerator2));
+	branchGenerators.push_back(std::move(branchGenerator4));
+	branchGenerators.push_back(std::move(branchGenerator5));
+	branchGenerators.push_back(std::move(branchGenerator7));
+	branchGenerators.push_back(std::move(branchGenerator9));
 
+	return std::move(branchGenerators);
+}
+
+template <typename T>
+std::vector<T*> mapToRawPointers(const std::vector<std::unique_ptr<T>>& dictionaries)
+{
+	std::vector<T*> rawPointers;
+	for (const auto& dict : dictionaries) rawPointers.push_back(&(*dict));
+	return std::move(rawPointers);
+}
+
+void generateTalentTree(const std::vector<BranchGenerator*>& branchGenerators)
+{
 	BranchDictionary branchDictionary;
 
 	TalentTreeGenerator talentTreeGenerator(branchGenerators, branchDictionary.talentBranches);
@@ -89,6 +187,11 @@ int main(int argc, char **argv)
 		}
 		std::cout << std::endl;
 	}
+}
+
+void generateBranches(const std::vector<BranchGenerator*>& branchGenerators)
+{
+	const PropertyRepository& propertyRep = PropertyRepository::GetInstance();
 
 	std::vector<std::string> level1PropertyNames(propertyRep.baseProperties);
 	std::vector<std::string> level4PropertyNames(level1PropertyNames);
@@ -97,50 +200,38 @@ int main(int argc, char **argv)
 	std::copy(propertyRep.weaponTypes.begin(), propertyRep.weaponTypes.end(), std::back_inserter(level7PropertyNames));
 
 	std::cout << "------- Biased level 1 branches -------" << std::endl << std::endl;
-	for (int i = 0; i < 30; i++)
-	{
-		const int randomInt = random.GetRandomInt(0, (int) level1PropertyNames.size() - 1);
-		std::string randomBias = level1PropertyNames[randomInt];
-		std::cout << "Bias: " << randomBias << std::endl;
-		auto talentBranch = branchGenerator1.GenerateBranchWithTraits({ randomBias }, 4, 1);
-		for (auto& talent : talentBranch)
-		{
-			std::cout << talent->toString() << std::endl;
-		}
-		std::cout << std::endl;
-	}
+	generateBranch(level1PropertyNames, *branchGenerators[BRANCH_LEVEL1_INDEX], 4, 1);
 	std::cout << std::endl;
 
 	std::cout << "------- Biased level 4 branches -------" << std::endl << std::endl;
-	for (int i = 0; i < 30; i++)
-	{
-		const int randomInt = random.GetRandomInt(0, (int) level4PropertyNames.size() - 1);
-		std::string randomBias = level4PropertyNames[randomInt];
-		std::cout << "Bias: " << randomBias << std::endl;
-		auto talentBranch = branchGenerator4.GenerateBranchWithTraits({ randomBias }, 4, 1);
-		for (auto& talent : talentBranch)
-		{
-			std::cout << talent->toString() << std::endl;
-		}
-		std::cout << std::endl;
-	}
+	generateBranch(level4PropertyNames, *branchGenerators[BRANCH_LEVEL4_INDEX], 4, 1);
 	std::cout << std::endl;
 
 	std::cout << "------- Biased level 7 branches -------" << std::endl << std::endl;
+	generateBranch(level7PropertyNames, *branchGenerators[BRANCH_LEVEL7_INDEX], 7, 2);
+	std::cout << std::endl;
+}
+
+void generateBranch(const std::vector<std::string>& propertyNames,
+		const BranchGenerator& branchGenerator,
+		const int numLesserTalents,
+		const int numGreaterTalents)
+{
+	Random& random = Random::GetInstance();
+
 	for (int i = 0; i < 30; i++)
 	{
-		const int randomInt = random.GetRandomInt(0, (int) level7PropertyNames.size() - 1);
-		std::string randomBias = level7PropertyNames[randomInt];
+		const int randomInt = random.GetRandomInt(0, (int) propertyNames.size() - 1);
+		std::string randomBias = propertyNames[randomInt];
 		std::cout << "Bias: " << randomBias << std::endl;
-		auto talentBranch = branchGenerator7.GenerateBranchWithTraits({ randomBias }, 7, 2);
+		auto talentBranch = branchGenerator.GenerateBranchWithTraits({ randomBias },
+				numLesserTalents,
+				numGreaterTalents);
 		for (auto& talent : talentBranch)
 		{
 			std::cout << talent->toString() << std::endl;
 		}
 		std::cout << std::endl;
 	}
-	std::cout << std::endl;
-
-	return 0;
 }
 
