@@ -14,6 +14,7 @@ namespace
 {
 const std::string OPTION_ARG_TALENT_TREE = "talent-tree";
 const std::string OPTION_ARG_BRANCH = "branch";
+const unsigned int DEFAULT_ITERATIONS = 1;
 
 void showHelp()
 {
@@ -35,7 +36,7 @@ unsigned int stoui(const std::string& s)
 	return result;
 }
 
-unsigned int getSeed(const std::string& s)
+unsigned int getUnsignedInt(const std::string& s)
 {
 	try
 	{
@@ -50,7 +51,7 @@ unsigned int getSeed(const std::string& s)
 
 enum class Option
 {
-	NONE, HELP, SEED, RANDOM, GENERATION
+	NONE, HELP, SEED, RANDOM, GENERATION, ITERATIONS
 };
 
 bool needsArgumentOption(const Option option)
@@ -60,6 +61,7 @@ bool needsArgumentOption(const Option option)
 		case Option::SEED: return true;
 		case Option::RANDOM: return false;
 		case Option::GENERATION: return true;
+		case Option::ITERATIONS: return true;
 		case Option::HELP: return false;
 		default: return false;
 	}
@@ -93,13 +95,16 @@ void processOption(const Option option,
 	switch (option)
 	{
 		case Option::SEED:
-			programOptions.withSeed(getSeed(args[currentArg + 1]));
+			programOptions.withSeed(getUnsignedInt(args[currentArg + 1]));
 			return;
 		case Option::RANDOM:
 			addRandomSeed(programOptions);
 			return;
 		case Option::GENERATION:
 			programOptions.withGenerationType(getGenerationType(args[currentArg + 1]));
+			return;
+		case Option::ITERATIONS:
+			programOptions.withIterations(getUnsignedInt(args[currentArg + 1]));
 			return;
 		case Option::HELP:
 			showHelp();
@@ -115,6 +120,7 @@ Option parseShortOption(const char arg)
 	if ('s' == arg) return Option::SEED;
 	if ('r' == arg) return Option::RANDOM;
 	if ('g' == arg) return Option::GENERATION;
+	if ('i' == arg) return Option::ITERATIONS;
 	return Option::NONE;
 }
 
@@ -159,6 +165,7 @@ Option parseLongOption(const std::string& arg)
 	if ("seed" == arg) return Option::SEED;
 	if ("random" == arg) return Option::RANDOM;
 	if ("generation" == arg) return Option::GENERATION;
+	if ("iterations" == arg) return Option::ITERATIONS;
 	return Option::NONE;
 }
 
@@ -186,6 +193,10 @@ void addDefaultOptions(ProgramOptions& programOptions)
 	if (GenerationType::NONE == programOptions.getGenerationType())
 	{
 		programOptions.withGenerationType(GenerationType::TALENT_TREE);
+	}
+	if (programOptions.getIterations() <= 0)
+	{
+		programOptions.withIterations(DEFAULT_ITERATIONS);
 	}
 }
 }

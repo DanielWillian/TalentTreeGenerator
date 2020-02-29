@@ -1,5 +1,5 @@
 SYNOPSIS
-    ttg [-r|-s <gen_seed>] [-g <gen_type>]
+    ttg [-r|-s <gen_seed>] [-g <gen_type>] [-i <iter>]
     ttg -h
 
 OPTIONS
@@ -10,6 +10,10 @@ OPTIONS
             This is the default.
     -g <gen_type>, --generation <gen_type>
             Which <gen_type> to generate.
+            talent-tree is the default.
+    -i <iter>, --iterations <iter>
+            Number of generations to do.
+            1 is the default.
     -h, --help
             Show this help.
 
