@@ -3,13 +3,9 @@
 
 PropertyRepository::PropertyRepository()
 {
-	baseProperties = { HEALTH, MANA, HEALTH_REGEN, MANA_REGEN, ATTACK_SPEED, CAST_SPEED, DODGE_CHANCE,
-			RESISTANCE, HIT_CHANCE, CRITICAL_CHANCE, CRITICAL_AMP, SINGLE_TARGET_DAMAGE,
-			AREA_OF_EFFECT_SIZE, AREA_OF_EFFECT_DAMAGE, DIRECT_DAMAGE, DAMAGE_OVER_TIME, DURATION_OF_DOT };
-	damageTypes = { NO_DAMAGE_TYPE, PHYSICAL, MAGICAL, ACID, BLUDGEONING, COLD, FIRE, FORCE, LIGHTNING,
-			NECROTIC, PIERCING, POISON, PSYCHIC, RADIANT, SLASHING, THUNDER };
-	weaponTypes = { NO_WEAPON_TYPE, ONE_HANDED, TWO_HANDED, AXE, BOW, CROSSBOW,
-			DAGGER, FIST_WEAPON, GUN, MACE, POLEARM, STAFF, SWORD, THROWN, WAND };
+	baseProperties = Constants::getBaseProperties();
+	damageTypes = Constants::getDamageTypes();
+	weaponTypes = Constants::getWeaponTypes();
 
 	for (auto* p : GeneratePropertiesFromDictionary(propertyDictionary))
 	{

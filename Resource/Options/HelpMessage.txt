@@ -1,5 +1,6 @@
 SYNOPSIS
-    ttg [-r|-s <gen_seed>] [-g <gen_type>] [-i <iter>]
+    ttg -g talent-tree [-r|-s <gen_seed>] [-i <iter>]
+    ttg -g branch [-p <bias>] [-r|-s <gen_seed>] [-i <iter>]
     ttg -h
 
 OPTIONS
@@ -11,12 +12,17 @@ OPTIONS
     -g <gen_type>, --generation <gen_type>
             Which <gen_type> to generate.
             talent-tree is the default.
+    -p <bias>, --property <bias>
+            Bias used when generating branches.
     -i <iter>, --iterations <iter>
             Number of generations to do.
             1 is the default.
     -h, --help
             Show this help.
 
-<gen_type> should be one of these arguments:
-    talent-tree   Generate the whole talent tree.
-    branch        Generate isolated branches.
+ARGUMENTS
+    <gen_type>
+talent-tree   Generate the whole talent tree.
+branch        Generate isolated branches.
+    <bias>
+Use '-p help' for a list of <bias>.

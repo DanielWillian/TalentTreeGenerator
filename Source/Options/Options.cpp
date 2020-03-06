@@ -1,6 +1,8 @@
 #include "Options.h"
 #include "ProgramOptions.h"
 #include "Resource.h"
+#include "Utils/Constants.h"
+#include "Utils/Statics.h"
 #include <iostream>
 #include <memory>
 #include <random>
@@ -19,6 +21,11 @@ const unsigned int DEFAULT_ITERATIONS = 1;
 void showHelp()
 {
 	std::cout << HelpMessage_txt << std::endl;
+}
+
+void showPropertyHelp()
+{
+	std::cout << HelpProperties_txt << std::endl;
 }
 
 void reportError(const std::string& error)
@@ -51,7 +58,7 @@ unsigned int getUnsignedInt(const std::string& s)
 
 enum class Option
 {
-	NONE, HELP, SEED, RANDOM, GENERATION, ITERATIONS
+	NONE, HELP, SEED, RANDOM, GENERATION, ITERATIONS, PROPERTY
 };
 
 bool needsArgumentOption(const Option option)
@@ -62,6 +69,7 @@ bool needsArgumentOption(const Option option)
 		case Option::RANDOM: return false;
 		case Option::GENERATION: return true;
 		case Option::ITERATIONS: return true;
+		case Option::PROPERTY: return true;
 		case Option::HELP: return false;
 		default: return false;
 	}
@@ -87,6 +95,16 @@ GenerationType getGenerationType(const std::string& generationType)
 	return GenerationType::NONE;
 }
 
+void processPropertyOption(ProgramOptions& programOptions, std::string property)
+{
+	if ("help" == property)
+	{
+		showPropertyHelp();
+		exit(0);
+	}
+	else programOptions.withProperty(property);
+}
+
 void processOption(const Option option,
 		const std::vector<std::string>& args,
 		const int currentArg,
@@ -106,6 +124,9 @@ void processOption(const Option option,
 		case Option::ITERATIONS:
 			programOptions.withIterations(getUnsignedInt(args[currentArg + 1]));
 			return;
+		case Option::PROPERTY:
+			processPropertyOption(programOptions, args[currentArg + 1]);
+			return;
 		case Option::HELP:
 			showHelp();
 			exit(0);
@@ -121,6 +142,7 @@ Option parseShortOption(const char arg)
 	if ('r' == arg) return Option::RANDOM;
 	if ('g' == arg) return Option::GENERATION;
 	if ('i' == arg) return Option::ITERATIONS;
+	if ('p' == arg) return Option::PROPERTY;
 	return Option::NONE;
 }
 
@@ -166,6 +188,7 @@ Option parseLongOption(const std::string& arg)
 	if ("random" == arg) return Option::RANDOM;
 	if ("generation" == arg) return Option::GENERATION;
 	if ("iterations" == arg) return Option::ITERATIONS;
+	if ("property" == arg) return Option::PROPERTY;
 	return Option::NONE;
 }
 
@@ -199,6 +222,22 @@ void addDefaultOptions(ProgramOptions& programOptions)
 		programOptions.withIterations(DEFAULT_ITERATIONS);
 	}
 }
+
+void verifyOptions(const ProgramOptions& programOptions)
+{
+	if (programOptions.getGenerationType() != GenerationType::BRANCH &&
+			!programOptions.getUseRandomProperty())
+	{
+		reportError("Property bias can only be used in generation of branches!");
+	}
+	if (!programOptions.getUseRandomProperty())
+	{
+		if (!Statics::Contain(Constants::getBaseProperties(), programOptions.getProperty()))
+		{
+			reportError("Unsupported property! Use -p help to see the available properties.");
+		}
+	}
+}
 }
 
 std::unique_ptr<ProgramOptions> parseArgs(const std::vector<std::string> args)
@@ -224,6 +263,7 @@ std::unique_ptr<ProgramOptions> parseArgs(const std::vector<std::string> args)
 	}
 
 	addDefaultOptions(*programOptions);
+	verifyOptions(*programOptions);
 
 	return programOptions;
 }

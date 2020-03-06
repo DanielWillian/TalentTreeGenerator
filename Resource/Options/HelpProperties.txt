@@ -1,0 +1,7 @@
+Valid arguments for -p:
+Health, Mana, HealthRegen, ManaRegen,
+AttackSpeed, CastSpeed,
+DodgeChance, Resistance,
+HitChance, CriticalChance, CriticalAmp,
+SingleTargetDamage, AreaOfEffectSize, AreaOfEffectDamage,
+DirectDamage, DamageOverTime, DurationOfDot

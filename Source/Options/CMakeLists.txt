@@ -23,5 +23,7 @@ add_library(Options ${OPTIONS_SRCS})
 
 target_include_directories(Options
     PRIVATE
+        $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/Source>
         $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/Resource>
 )
+

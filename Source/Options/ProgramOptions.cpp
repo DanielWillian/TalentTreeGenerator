@@ -4,7 +4,9 @@ ProgramOptions::ProgramOptions() :
 	hasSeed(false),
 	seed(0),
 	generationType(GenerationType::NONE),
-	iterations(0) {}
+	iterations(0),
+	useRandomProperty(true),
+	property("") {}
 
 ProgramOptions& ProgramOptions::withIterations(const unsigned int iterations)
 {
@@ -22,6 +24,13 @@ ProgramOptions& ProgramOptions::withSeed(const unsigned int seed)
 ProgramOptions& ProgramOptions::withGenerationType(const GenerationType generationType)
 {
 	this->generationType = generationType;
+	return *this;
+}
+
+ProgramOptions& ProgramOptions::withProperty(const std::string& property)
+{
+	this->property = property;
+	this->useRandomProperty = false;
 	return *this;
 }
 
@@ -43,5 +52,15 @@ unsigned int ProgramOptions::getSeed() const
 GenerationType ProgramOptions::getGenerationType() const
 {
 	return generationType;
+}
+
+bool ProgramOptions::getUseRandomProperty() const
+{
+	return useRandomProperty;
+}
+
+std::string ProgramOptions::getProperty() const
+{
+	return property;
 }
 

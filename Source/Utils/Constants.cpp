@@ -1,4 +1,6 @@
 #include "Constants.h"
+#include <string>
+#include <vector>
 
 const std::string HEALTH = "Health";
 const std::string MANA = "Mana";
@@ -50,3 +52,32 @@ const std::string STAFF = "Staff";
 const std::string SWORD = "Sword";
 const std::string THROWN = "Thrown";
 const std::string WAND = "Wand";
+
+namespace Constants
+{
+std::vector<std::string> getBaseProperties()
+{
+	std::vector<std::string> result = { HEALTH, MANA, HEALTH_REGEN, MANA_REGEN,
+			ATTACK_SPEED, CAST_SPEED,
+			DODGE_CHANCE, RESISTANCE,
+			HIT_CHANCE, CRITICAL_CHANCE, CRITICAL_AMP,
+			SINGLE_TARGET_DAMAGE, AREA_OF_EFFECT_SIZE, AREA_OF_EFFECT_DAMAGE,
+			DIRECT_DAMAGE, DAMAGE_OVER_TIME, DURATION_OF_DOT };
+	return std::move(result);
+}
+std::vector<std::string> getDamageTypes()
+{
+	std::vector<std::string> result = { NO_DAMAGE_TYPE, PHYSICAL, MAGICAL,
+			ACID, BLUDGEONING, COLD, FIRE, FORCE, LIGHTNING,
+			NECROTIC, PIERCING, POISON, PSYCHIC, RADIANT, SLASHING, THUNDER };
+	return std::move(result);
+}
+std::vector<std::string> getWeaponTypes()
+{
+	std::vector<std::string> result = { NO_WEAPON_TYPE, ONE_HANDED, TWO_HANDED,
+			AXE, BOW, CROSSBOW, DAGGER, FIST_WEAPON,
+			GUN, MACE, POLEARM, STAFF, SWORD, THROWN, WAND };
+	return std::move(result);
+}
+}
+
