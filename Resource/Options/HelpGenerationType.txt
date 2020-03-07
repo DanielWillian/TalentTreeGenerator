@@ -1,0 +1,6 @@
+Valid arguments for -g:
+talent-tree   Generate the whole talent tree.
+branches      Generate branches of all available levels.
+branch1       Generate level 1 branches.
+branch4       Generate level 4 branches.
+branch7       Generate level 7 branches.

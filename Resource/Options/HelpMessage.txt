@@ -22,7 +22,7 @@ OPTIONS
 
 ARGUMENTS
     <gen_type>
-talent-tree   Generate the whole talent tree.
-branch        Generate isolated branches.
+talent-tree, branches, branch1, branch4, branch7
+Use '-g help' for a description of these arguments.
     <bias>
 Use '-p help' for a list of <bias>.

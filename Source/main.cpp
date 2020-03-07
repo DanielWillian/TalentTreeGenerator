@@ -163,7 +163,7 @@ void generateArtifact(const ProgramOptions& programOptions)
 				" ----------" << std::endl;
 		generateTalentTree(programOptions.getIterations());
 	}
-	else if (programOptions.getGenerationType() == GenerationType::BRANCH)
+	else if (programOptions.getGenerationType() == GenerationType::BRANCHES)
 	{
 		std::cout << "---------- Generating branches ----------" << std::endl <<
 				"---------- Number of iterations: " << programOptions.getIterations() <<

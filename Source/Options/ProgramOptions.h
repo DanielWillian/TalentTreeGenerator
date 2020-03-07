@@ -4,7 +4,7 @@
 
 enum class GenerationType
 {
-	NONE, TALENT_TREE, BRANCH
+	NONE, TALENT_TREE, BRANCHES, BRANCH_1, BRANCH_4, BRANCH_7
 };
 
 class ProgramOptions

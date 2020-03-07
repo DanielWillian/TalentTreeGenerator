@@ -15,7 +15,10 @@ namespace Options
 namespace
 {
 const std::string OPTION_ARG_TALENT_TREE = "talent-tree";
-const std::string OPTION_ARG_BRANCH = "branch";
+const std::string OPTION_ARG_BRANCHES = "branches";
+const std::string OPTION_ARG_BRANCH_1 = "branch1";
+const std::string OPTION_ARG_BRANCH_4 = "branch4";
+const std::string OPTION_ARG_BRANCH_7 = "branch7";
 const unsigned int DEFAULT_ITERATIONS = 1;
 
 void showHelp()
@@ -26,6 +29,11 @@ void showHelp()
 void showPropertyHelp()
 {
 	std::cout << HelpProperties_txt << std::endl;
+}
+
+void showGenerationTypeHelp()
+{
+	std::cout << HelpGenerationType_txt << std::endl;
 }
 
 void reportError(const std::string& error)
@@ -89,8 +97,16 @@ void addRandomSeed(ProgramOptions& programOptions)
 
 GenerationType getGenerationType(const std::string& generationType)
 {
+	if ("help" == generationType)
+	{
+		showGenerationTypeHelp();
+		exit(0);
+	}
 	if (OPTION_ARG_TALENT_TREE == generationType) return GenerationType::TALENT_TREE;
-	if (OPTION_ARG_BRANCH == generationType) return GenerationType::BRANCH;
+	if (OPTION_ARG_BRANCHES == generationType) return GenerationType::BRANCHES;
+	if (OPTION_ARG_BRANCH_1 == generationType) return GenerationType::BRANCH_1;
+	if (OPTION_ARG_BRANCH_4 == generationType) return GenerationType::BRANCH_4;
+	if (OPTION_ARG_BRANCH_7 == generationType) return GenerationType::BRANCH_7;
 	reportError("Unknown generation type: " + generationType);
 	return GenerationType::NONE;
 }
@@ -204,7 +220,7 @@ int parseLongOption(const std::vector<std::string>& args, const int currentArg, 
 	if (option == Option::NONE) reportError("Unsupported option: " + args[currentArg]);
 	if (!hasNecessaryArguments(option, args, currentArg))
 	{
-		reportError("Option " + args[currentArg] + " does not have the necessary option argument!");
+		reportError("Option " + args[currentArg] + " does not have the required option argument!");
 	}
 	processOption(option, args, currentArg, programOptions);
 	return currentArg + (needsArgumentOption(option) ? 2 : 1);
@@ -225,7 +241,7 @@ void addDefaultOptions(ProgramOptions& programOptions)
 
 void verifyOptions(const ProgramOptions& programOptions)
 {
-	if (programOptions.getGenerationType() != GenerationType::BRANCH &&
+	if (programOptions.getGenerationType() != GenerationType::BRANCHES &&
 			!programOptions.getUseRandomProperty())
 	{
 		reportError("Property bias can only be used in generation of branches!");
