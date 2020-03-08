@@ -1,6 +1,7 @@
 SYNOPSIS
     ttg -g talent-tree [-r|-s <gen_seed>] [-i <iter>]
-    ttg -g branch [-p <bias>] [-r|-s <gen_seed>] [-i <iter>]
+    ttg -g (branches|branch1|branch4|branch7) [-p <bias>]
+            [-r|-s <gen_seed>] [-i <iter>]
     ttg -h
 
 OPTIONS

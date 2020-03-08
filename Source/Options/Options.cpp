@@ -239,18 +239,57 @@ void addDefaultOptions(ProgramOptions& programOptions)
 	}
 }
 
+std::vector<std::string> getWeaponTypesOnly()
+{
+	auto weaponTypes = Constants::getWeaponTypes();
+	static_cast<void>(std::remove(weaponTypes.begin(), weaponTypes.end(), NO_WEAPON_TYPE));
+	return std::move(weaponTypes);
+}
+
+std::vector<std::string> getDamageTypesOnly()
+{
+	auto damageTypes = Constants::getDamageTypes();
+	static_cast<void>(std::remove(damageTypes.begin(), damageTypes.end(), NO_DAMAGE_TYPE));
+	return std::move(damageTypes);
+}
+
 void verifyOptions(const ProgramOptions& programOptions)
 {
-	if (programOptions.getGenerationType() != GenerationType::BRANCHES &&
-			!programOptions.getUseRandomProperty())
-	{
-		reportError("Property bias can only be used in generation of branches!");
-	}
 	if (!programOptions.getUseRandomProperty())
 	{
-		if (!Statics::Contain(Constants::getBaseProperties(), programOptions.getProperty()))
+		const GenerationType generationType = programOptions.getGenerationType();
+		if (generationType != GenerationType::BRANCHES &&
+				generationType != GenerationType::BRANCH_1 &&
+				generationType != GenerationType::BRANCH_4 &&
+				generationType != GenerationType::BRANCH_7)
 		{
-			reportError("Unsupported property! Use -p help to see the available properties.");
+			reportError("Property bias can only be used in generation of branches!");
+		}
+
+		const std::string property = programOptions.getProperty();
+		if (Statics::Contain(getWeaponTypesOnly(), property))
+		{
+			if (generationType != GenerationType::BRANCH_7)
+			{
+				reportError("Unsupported property (" + property + ") " +
+						"for generation of '" + getGenerationTypeName(generationType) + "'!\n" +
+						"Use -p help to see the available properties.");
+			}
+		}
+		else if (Statics::Contain(getDamageTypesOnly(), property))
+		{
+			if (generationType != GenerationType::BRANCH_7 &&
+					generationType != GenerationType::BRANCH_4)
+			{
+				reportError("Unsupported property (" + property + ") " +
+						"for generation of '" + getGenerationTypeName(generationType) + "'!\n" +
+						"Use -p help to see the available properties.");
+			}
+		}
+		else if (!Statics::Contain(Constants::getBaseProperties(), property))
+		{
+			reportError("Unsupported property: " + property + "!\n" +
+					"Use -p help to see the available properties.");
 		}
 	}
 }
@@ -282,6 +321,20 @@ std::unique_ptr<ProgramOptions> parseArgs(const std::vector<std::string> args)
 	verifyOptions(*programOptions);
 
 	return programOptions;
+}
+
+std::string getGenerationTypeName(GenerationType generationType)
+{
+	switch (generationType)
+	{
+		case GenerationType::TALENT_TREE: return OPTION_ARG_TALENT_TREE;
+		case GenerationType::BRANCHES: return OPTION_ARG_BRANCHES;
+		case GenerationType::BRANCH_1: return OPTION_ARG_BRANCH_1;
+		case GenerationType::BRANCH_4: return OPTION_ARG_BRANCH_4;
+		case GenerationType::BRANCH_7: return OPTION_ARG_BRANCH_7;
+		default:
+			throw std::invalid_argument("Unsupported generation type!");
+	}
 }
 }
 
