@@ -23,22 +23,22 @@
 #include <string>
 #include <vector>
 
-const int TALENT_LEVEL1_INDEX = 0;
-const int TALENT_LEVEL2_INDEX = 1;
-const int TALENT_LEVEL3_INDEX = 2;
-const int TALENT_LEVEL4_INDEX = 3;
-const int TALENT_LEVEL5_INDEX = 4;
-const int TALENT_LEVEL6_INDEX = 5;
-const int TALENT_LEVEL7_INDEX = 6;
-const int TALENT_LEVEL8_INDEX = 7;
-const int TALENT_LEVEL9_INDEX = 8;
+const int TALENT_LEVEL_1_INDEX = 0;
+const int TALENT_LEVEL_2_INDEX = 1;
+const int TALENT_LEVEL_3_INDEX = 2;
+const int TALENT_LEVEL_4_INDEX = 3;
+const int TALENT_LEVEL_5_INDEX = 4;
+const int TALENT_LEVEL_6_INDEX = 5;
+const int TALENT_LEVEL_7_INDEX = 6;
+const int TALENT_LEVEL_8_INDEX = 7;
+const int TALENT_LEVEL_9_INDEX = 8;
 
-const int BRANCH_LEVEL1_INDEX = 0;
-const int BRANCH_LEVEL2_INDEX = 1;
-const int BRANCH_LEVEL4_INDEX = 2;
-const int BRANCH_LEVEL5_INDEX = 3;
-const int BRANCH_LEVEL7_INDEX = 4;
-const int BRANCH_LEVEL9_INDEX = 5;
+const int BRANCH_LEVEL_1_INDEX = 0;
+const int BRANCH_LEVEL_2_INDEX = 1;
+const int BRANCH_LEVEL_4_INDEX = 2;
+const int BRANCH_LEVEL_5_INDEX = 3;
+const int BRANCH_LEVEL_7_INDEX = 4;
+const int BRANCH_LEVEL_9_INDEX = 5;
 
 std::vector<std::unique_ptr<TalentDictionary>> createTalentDictionaries();
 std::vector<std::unique_ptr<BranchGenerator>> createBranchGenerators(
@@ -48,7 +48,16 @@ std::vector<T*> mapToRawPointers(const std::vector<std::unique_ptr<T>>& dictiona
 
 void generateArtifact(const ProgramOptions& programOptions);
 void generateTalentTree(const unsigned int iterations);
-void generateBranches(const unsigned int iterations);
+void generateBranches(const GenerationType generationType, const unsigned int iterations);
+void generateBranch1(const std::vector<std::string> propertyNames,
+		const BranchGenerator& branchGenerator,
+		const unsigned int iterations);
+void generateBranch4(const std::vector<std::string> propertyNames,
+		const BranchGenerator& branchGenerator,
+		const unsigned int iterations);
+void generateBranch7(const std::vector<std::string> propertyNames,
+		const BranchGenerator& branchGenerator,
+		const unsigned int iterations);
 void generateBranch(const std::vector<std::string>& propertyNames,
 		const BranchGenerator& branchGenerator,
 		const int numLesserTalents,
@@ -101,39 +110,39 @@ std::vector<std::unique_ptr<BranchGenerator>> createBranchGenerators(const std::
 
 	std::unique_ptr<BranchGenerator> branchGenerator1 = std::make_unique<BranchGenerator>(
 			propertyRep.level1Properties,
-			dictionaries[TALENT_LEVEL1_INDEX],
+			dictionaries[TALENT_LEVEL_1_INDEX],
 			propertyRep.level3Properties,
-			dictionaries[TALENT_LEVEL3_INDEX]);
+			dictionaries[TALENT_LEVEL_3_INDEX]);
 
 	std::unique_ptr<BranchGenerator> branchGenerator2 = std::make_unique<BranchGenerator>(
 			propertyRep.level2Properties,
-			dictionaries[TALENT_LEVEL2_INDEX],
+			dictionaries[TALENT_LEVEL_2_INDEX],
 			propertyRep.level2Properties,
-			dictionaries[TALENT_LEVEL2_INDEX]);
+			dictionaries[TALENT_LEVEL_2_INDEX]);
 
 	std::unique_ptr<BranchGenerator> branchGenerator4 = std::make_unique<BranchGenerator>(
 			propertyRep.level4Properties,
-			dictionaries[TALENT_LEVEL4_INDEX],
+			dictionaries[TALENT_LEVEL_4_INDEX],
 			propertyRep.level6Properties,
-			dictionaries[TALENT_LEVEL6_INDEX]);
+			dictionaries[TALENT_LEVEL_6_INDEX]);
 
 	std::unique_ptr<BranchGenerator> branchGenerator5 = std::make_unique<BranchGenerator>(
 			propertyRep.level5Properties,
-			dictionaries[TALENT_LEVEL5_INDEX],
+			dictionaries[TALENT_LEVEL_5_INDEX],
 			propertyRep.level5Properties,
-			dictionaries[TALENT_LEVEL5_INDEX]);
+			dictionaries[TALENT_LEVEL_5_INDEX]);
 
 	std::unique_ptr<BranchGenerator> branchGenerator7 = std::make_unique<BranchGenerator>(
 			propertyRep.level7Properties,
-			dictionaries[TALENT_LEVEL7_INDEX],
+			dictionaries[TALENT_LEVEL_7_INDEX],
 			propertyRep.level8Properties,
-			dictionaries[TALENT_LEVEL8_INDEX]);
+			dictionaries[TALENT_LEVEL_8_INDEX]);
 
 	std::unique_ptr<BranchGenerator> branchGenerator9 = std::make_unique<BranchGenerator>(
 			propertyRep.level9Properties,
-			dictionaries[TALENT_LEVEL9_INDEX],
+			dictionaries[TALENT_LEVEL_9_INDEX],
 			propertyRep.level9Properties,
-			dictionaries[TALENT_LEVEL9_INDEX]);
+			dictionaries[TALENT_LEVEL_9_INDEX]);
 
 	std::vector<std::unique_ptr<BranchGenerator>> branchGenerators;
 	branchGenerators.push_back(std::move(branchGenerator1));
@@ -156,19 +165,22 @@ std::vector<T*> mapToRawPointers(const std::vector<std::unique_ptr<T>>& dictiona
 
 void generateArtifact(const ProgramOptions& programOptions)
 {
-	if (programOptions.getGenerationType() == GenerationType::TALENT_TREE)
+	const GenerationType generationType = programOptions.getGenerationType();
+	const unsigned int iterations = programOptions.getIterations();
+	std::cout << "---------- Generating " << Options::getGenerationTypeName(generationType) <<
+			" ----------" << std::endl <<
+			"---------- Number of iterations: " << iterations <<
+			" ----------" << std::endl;
+	if (generationType == GenerationType::TALENT_TREE)
 	{
-		std::cout << "---------- Generating talent tree ----------" << std::endl <<
-				"---------- Number of iterations: " << programOptions.getIterations() <<
-				" ----------" << std::endl;
-		generateTalentTree(programOptions.getIterations());
+		generateTalentTree(iterations);
 	}
-	else if (programOptions.getGenerationType() == GenerationType::BRANCHES)
+	else if (generationType == GenerationType::BRANCHES ||
+			generationType == GenerationType::BRANCH_1 ||
+			generationType == GenerationType::BRANCH_4 ||
+			generationType == GenerationType::BRANCH_7)
 	{
-		std::cout << "---------- Generating branches ----------" << std::endl <<
-				"---------- Number of iterations: " << programOptions.getIterations() <<
-				" ----------" << std::endl;
-		generateBranches(programOptions.getIterations());
+		generateBranches(generationType, iterations);
 	}
 	else
 	{
@@ -207,7 +219,7 @@ void generateTalentTree(const unsigned int iterations)
 	}
 }
 
-void generateBranches(const unsigned int iterations)
+void generateBranches(const GenerationType generationType, const unsigned int iterations)
 {
 	std::cout << "---------- Initializing generator ----------" << std::endl << std::endl;
 
@@ -224,16 +236,50 @@ void generateBranches(const unsigned int iterations)
 	std::vector<std::string> level7PropertyNames(level4PropertyNames);
 	std::copy(propertyRep.weaponTypes.begin(), propertyRep.weaponTypes.end(), std::back_inserter(level7PropertyNames));
 
-	std::cout << "------- Biased level 1 branches -------" << std::endl << std::endl;
-	generateBranch(level1PropertyNames, *branchGenerators[BRANCH_LEVEL1_INDEX], 4, 1, iterations);
-	std::cout << std::endl;
+	if (generationType == GenerationType::BRANCHES)
+	{
+		generateBranch1(level1PropertyNames, *branchGenerators[BRANCH_LEVEL_1_INDEX], iterations);
+		generateBranch4(level4PropertyNames, *branchGenerators[BRANCH_LEVEL_4_INDEX], iterations);
+		generateBranch7(level7PropertyNames, *branchGenerators[BRANCH_LEVEL_7_INDEX], iterations);
+	}
+	else if (generationType == GenerationType::BRANCH_1)
+	{
+		generateBranch1(level1PropertyNames, *branchGenerators[BRANCH_LEVEL_1_INDEX], iterations);
+	}
+	else if (generationType == GenerationType::BRANCH_4)
+	{
+		generateBranch4(level4PropertyNames, *branchGenerators[BRANCH_LEVEL_4_INDEX], iterations);
+	}
+	else if (generationType == GenerationType::BRANCH_7)
+	{
+		generateBranch7(level7PropertyNames, *branchGenerators[BRANCH_LEVEL_7_INDEX], iterations);
+	}
+}
 
-	std::cout << "------- Biased level 4 branches -------" << std::endl << std::endl;
-	generateBranch(level4PropertyNames, *branchGenerators[BRANCH_LEVEL4_INDEX], 4, 1, iterations);
+void generateBranch1(const std::vector<std::string> propertyNames,
+		const BranchGenerator& branchGenerator,
+		const unsigned int iterations)
+{
+	std::cout << "---------- Biased level 1 branches ----------" << std::endl << std::endl;
+	generateBranch(propertyNames, branchGenerator, 4, 1, iterations);
 	std::cout << std::endl;
+}
 
-	std::cout << "------- Biased level 7 branches -------" << std::endl << std::endl;
-	generateBranch(level7PropertyNames, *branchGenerators[BRANCH_LEVEL7_INDEX], 7, 2, iterations);
+void generateBranch4(const std::vector<std::string> propertyNames,
+		const BranchGenerator& branchGenerator,
+		const unsigned int iterations)
+{
+	std::cout << "---------- Biased level 4 branches ----------" << std::endl << std::endl;
+	generateBranch(propertyNames, branchGenerator, 4, 1, iterations);
+	std::cout << std::endl;
+}
+
+void generateBranch7(const std::vector<std::string> propertyNames,
+		const BranchGenerator& branchGenerator,
+		const unsigned int iterations)
+{
+	std::cout << "---------- Biased level 7 branches ----------" << std::endl << std::endl;
+	generateBranch(propertyNames, branchGenerator, 7, 2, iterations);
 	std::cout << std::endl;
 }
 
