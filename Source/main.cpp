@@ -48,21 +48,23 @@ std::vector<T*> mapToRawPointers(const std::vector<std::unique_ptr<T>>& dictiona
 
 void generateArtifact(const ProgramOptions& programOptions);
 void generateTalentTree(const unsigned int iterations);
-void generateBranches(const GenerationType generationType, const unsigned int iterations);
-void generateBranch1(const std::vector<std::string> propertyNames,
-		const BranchGenerator& branchGenerator,
-		const unsigned int iterations);
-void generateBranch4(const std::vector<std::string> propertyNames,
-		const BranchGenerator& branchGenerator,
-		const unsigned int iterations);
-void generateBranch7(const std::vector<std::string> propertyNames,
-		const BranchGenerator& branchGenerator,
-		const unsigned int iterations);
-void generateBranch(const std::vector<std::string>& propertyNames,
+void generateBranches(const ProgramOptions& programOptions);
+void generateBranch1(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames,
+		const BranchGenerator& branchGenerator);
+void generateBranch4(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames,
+		const BranchGenerator& branchGenerator);
+void generateBranch7(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames,
+		const BranchGenerator& branchGenerator);
+void generateBranch(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames,
 		const BranchGenerator& branchGenerator,
 		const int numLesserTalents,
-		const int numGreaterTalents,
-		const unsigned int iterations);
+		const int numGreaterTalents);
+std::string getBias(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames);
 
 int main(int argc, char **argv)
 {
@@ -180,7 +182,7 @@ void generateArtifact(const ProgramOptions& programOptions)
 			generationType == GenerationType::BRANCH_4 ||
 			generationType == GenerationType::BRANCH_7)
 	{
-		generateBranches(generationType, iterations);
+		generateBranches(programOptions);
 	}
 	else
 	{
@@ -219,9 +221,11 @@ void generateTalentTree(const unsigned int iterations)
 	}
 }
 
-void generateBranches(const GenerationType generationType, const unsigned int iterations)
+void generateBranches(const ProgramOptions& programOptions)
 {
 	std::cout << "---------- Initializing generator ----------" << std::endl << std::endl;
+
+	const GenerationType generationType = programOptions.getGenerationType();
 
 	const std::vector<std::unique_ptr<TalentDictionary>> dictionaries = createTalentDictionaries();
 	const std::vector<TalentDictionary*> dictionariesRaw = mapToRawPointers(dictionaries);
@@ -238,67 +242,66 @@ void generateBranches(const GenerationType generationType, const unsigned int it
 
 	if (generationType == GenerationType::BRANCHES)
 	{
-		generateBranch1(level1PropertyNames, *branchGenerators[BRANCH_LEVEL_1_INDEX], iterations);
-		generateBranch4(level4PropertyNames, *branchGenerators[BRANCH_LEVEL_4_INDEX], iterations);
-		generateBranch7(level7PropertyNames, *branchGenerators[BRANCH_LEVEL_7_INDEX], iterations);
+		generateBranch1(programOptions, level1PropertyNames, *branchGenerators[BRANCH_LEVEL_1_INDEX]);
+		generateBranch4(programOptions, level4PropertyNames, *branchGenerators[BRANCH_LEVEL_4_INDEX]);
+		generateBranch7(programOptions, level7PropertyNames, *branchGenerators[BRANCH_LEVEL_7_INDEX]);
 	}
 	else if (generationType == GenerationType::BRANCH_1)
 	{
-		generateBranch1(level1PropertyNames, *branchGenerators[BRANCH_LEVEL_1_INDEX], iterations);
+		generateBranch1(programOptions, level1PropertyNames, *branchGenerators[BRANCH_LEVEL_1_INDEX]);
 	}
 	else if (generationType == GenerationType::BRANCH_4)
 	{
-		generateBranch4(level4PropertyNames, *branchGenerators[BRANCH_LEVEL_4_INDEX], iterations);
+		generateBranch4(programOptions, level4PropertyNames, *branchGenerators[BRANCH_LEVEL_4_INDEX]);
 	}
 	else if (generationType == GenerationType::BRANCH_7)
 	{
-		generateBranch7(level7PropertyNames, *branchGenerators[BRANCH_LEVEL_7_INDEX], iterations);
+		generateBranch7(programOptions, level7PropertyNames, *branchGenerators[BRANCH_LEVEL_7_INDEX]);
 	}
 }
 
-void generateBranch1(const std::vector<std::string> propertyNames,
-		const BranchGenerator& branchGenerator,
-		const unsigned int iterations)
+void generateBranch1(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames,
+		const BranchGenerator& branchGenerator)
 {
 	std::cout << "---------- Biased level 1 branches ----------" << std::endl << std::endl;
-	generateBranch(propertyNames, branchGenerator, 4, 1, iterations);
+	generateBranch(programOptions, propertyNames, branchGenerator, 4, 1);
 	std::cout << std::endl;
 }
 
-void generateBranch4(const std::vector<std::string> propertyNames,
-		const BranchGenerator& branchGenerator,
-		const unsigned int iterations)
+void generateBranch4(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames,
+		const BranchGenerator& branchGenerator)
 {
 	std::cout << "---------- Biased level 4 branches ----------" << std::endl << std::endl;
-	generateBranch(propertyNames, branchGenerator, 4, 1, iterations);
+	generateBranch(programOptions, propertyNames, branchGenerator, 4, 1);
 	std::cout << std::endl;
 }
 
-void generateBranch7(const std::vector<std::string> propertyNames,
-		const BranchGenerator& branchGenerator,
-		const unsigned int iterations)
+void generateBranch7(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames,
+		const BranchGenerator& branchGenerator)
 {
 	std::cout << "---------- Biased level 7 branches ----------" << std::endl << std::endl;
-	generateBranch(propertyNames, branchGenerator, 7, 2, iterations);
+	generateBranch(programOptions, propertyNames, branchGenerator, 7, 2);
 	std::cout << std::endl;
 }
 
-void generateBranch(const std::vector<std::string>& propertyNames,
+void generateBranch(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames,
 		const BranchGenerator& branchGenerator,
 		const int numLesserTalents,
-		const int numGreaterTalents,
-		const unsigned int iterations)
+		const int numGreaterTalents)
 {
-	Random& random = Random::GetInstance();
+	const unsigned int iterations = programOptions.getIterations();
 
 	for (unsigned int i = 0; i < iterations; i++)
 	{
 		std::cout << "---------- Iteration: " << i << " ----------" << std::endl << std::endl;
 
-		const int randomInt = random.GetRandomInt(0, (int) propertyNames.size() - 1);
-		std::string randomBias = propertyNames[randomInt];
-		std::cout << "Bias: " << randomBias << std::endl;
-		auto talentBranch = branchGenerator.GenerateBranchWithTraits({ randomBias },
+		const std::string bias = getBias(programOptions, propertyNames);
+		std::cout << "Bias: " << bias << std::endl;
+		auto talentBranch = branchGenerator.GenerateBranchWithTraits({ bias },
 				numLesserTalents,
 				numGreaterTalents);
 		for (auto& talent : talentBranch)
@@ -307,5 +310,17 @@ void generateBranch(const std::vector<std::string>& propertyNames,
 		}
 		std::cout << std::endl;
 	}
+}
+
+std::string getBias(const ProgramOptions& programOptions,
+		const std::vector<std::string>& propertyNames)
+{
+	if (programOptions.getUseRandomProperty())
+	{
+		Random& random = Random::GetInstance();
+		const int randomInt = random.GetRandomInt(0, (int) propertyNames.size() - 1);
+		return propertyNames[randomInt];
+	}
+	return programOptions.getProperty();
 }
 
