@@ -1,4 +1,4 @@
-﻿#include "Generators/BranchGenerator.h"
+#include "Generators/BranchGenerator.h"
 #include "Generators/PropertyDistance.h"
 #include "Generators/PropertyRepository.h"
 #include "Generators/TalentTreeGenerator.h"
@@ -39,6 +39,13 @@ const int BRANCH_LEVEL_4_INDEX = 2;
 const int BRANCH_LEVEL_5_INDEX = 3;
 const int BRANCH_LEVEL_7_INDEX = 4;
 const int BRANCH_LEVEL_9_INDEX = 5;
+
+const int LEVEL_1_LESSER_TALENTS = 4;
+const int LEVEL_1_GREATER_TALENTS = 1;
+const int LEVEL_4_LESSER_TALENTS = 4;
+const int LEVEL_4_GREATER_TALENTS = 1;
+const int LEVEL_7_LESSER_TALENTS = 7;
+const int LEVEL_7_GREATER_TALENTS = 2;
 
 std::vector<std::unique_ptr<TalentDictionary>> createTalentDictionaries();
 std::vector<std::unique_ptr<BranchGenerator>> createBranchGenerators(
@@ -265,7 +272,11 @@ void generateBranch1(const ProgramOptions& programOptions,
 		const BranchGenerator& branchGenerator)
 {
 	std::cout << "---------- Biased level 1 branches ----------" << std::endl << std::endl;
-	generateBranch(programOptions, propertyNames, branchGenerator, 4, 1);
+	generateBranch(programOptions,
+			propertyNames,
+			branchGenerator,
+			LEVEL_1_LESSER_TALENTS,
+			LEVEL_1_GREATER_TALENTS);
 	std::cout << std::endl;
 }
 
@@ -274,7 +285,11 @@ void generateBranch4(const ProgramOptions& programOptions,
 		const BranchGenerator& branchGenerator)
 {
 	std::cout << "---------- Biased level 4 branches ----------" << std::endl << std::endl;
-	generateBranch(programOptions, propertyNames, branchGenerator, 4, 1);
+	generateBranch(programOptions,
+			propertyNames,
+			branchGenerator,
+			LEVEL_4_LESSER_TALENTS,
+			LEVEL_4_GREATER_TALENTS);
 	std::cout << std::endl;
 }
 
@@ -283,7 +298,11 @@ void generateBranch7(const ProgramOptions& programOptions,
 		const BranchGenerator& branchGenerator)
 {
 	std::cout << "---------- Biased level 7 branches ----------" << std::endl << std::endl;
-	generateBranch(programOptions, propertyNames, branchGenerator, 7, 2);
+	generateBranch(programOptions,
+			propertyNames,
+			branchGenerator,
+			LEVEL_7_LESSER_TALENTS,
+			LEVEL_7_GREATER_TALENTS);
 	std::cout << std::endl;
 }
 
