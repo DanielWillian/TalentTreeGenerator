@@ -16,6 +16,7 @@ public:
 	ProgramOptions& withSeed(const unsigned int seed);
 	ProgramOptions& withGenerationType(const GenerationType generationType);
 	ProgramOptions& withProperty(const std::string& property);
+	ProgramOptions& withMeasureTime(const bool measureTime);
 
 	bool getHasSeed() const;
 	unsigned int getIterations() const;
@@ -23,6 +24,7 @@ public:
 	GenerationType getGenerationType() const;
 	bool getUseRandomProperty() const;
 	std::string getProperty() const;
+	bool getMeasureTime() const;
 
 private:
 	bool hasSeed;
@@ -31,5 +33,6 @@ private:
 	GenerationType generationType;
 	bool useRandomProperty;
 	std::string property;
+	bool measureTime;
 };
 

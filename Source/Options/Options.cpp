@@ -66,7 +66,7 @@ unsigned int getUnsignedInt(const std::string& s)
 
 enum class Option
 {
-	NONE, HELP, SEED, RANDOM, GENERATION, ITERATIONS, PROPERTY
+	NONE, HELP, SEED, RANDOM, GENERATION, ITERATIONS, PROPERTY, TIME
 };
 
 bool needsArgumentOption(const Option option)
@@ -78,6 +78,7 @@ bool needsArgumentOption(const Option option)
 		case Option::GENERATION: return true;
 		case Option::ITERATIONS: return true;
 		case Option::PROPERTY: return true;
+		case Option::TIME: return false;
 		case Option::HELP: return false;
 		default: return false;
 	}
@@ -143,6 +144,9 @@ void processOption(const Option option,
 		case Option::PROPERTY:
 			processPropertyOption(programOptions, args[currentArg + 1]);
 			return;
+		case Option::TIME:
+			programOptions.withMeasureTime(true);
+			return;
 		case Option::HELP:
 			showHelp();
 			exit(0);
@@ -159,6 +163,7 @@ Option parseShortOption(const char arg)
 	if ('g' == arg) return Option::GENERATION;
 	if ('i' == arg) return Option::ITERATIONS;
 	if ('p' == arg) return Option::PROPERTY;
+	if ('t' == arg) return Option::TIME;
 	return Option::NONE;
 }
 
@@ -205,6 +210,7 @@ Option parseLongOption(const std::string& arg)
 	if ("generation" == arg) return Option::GENERATION;
 	if ("iterations" == arg) return Option::ITERATIONS;
 	if ("property" == arg) return Option::PROPERTY;
+	if ("time" == arg) return Option::TIME;
 	return Option::NONE;
 }
 

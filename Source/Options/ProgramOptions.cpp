@@ -6,7 +6,8 @@ ProgramOptions::ProgramOptions() :
 	generationType(GenerationType::NONE),
 	iterations(0),
 	useRandomProperty(true),
-	property("") {}
+	property(""),
+	measureTime(false) {}
 
 ProgramOptions& ProgramOptions::withIterations(const unsigned int iterations)
 {
@@ -31,6 +32,12 @@ ProgramOptions& ProgramOptions::withProperty(const std::string& property)
 {
 	this->property = property;
 	this->useRandomProperty = false;
+	return *this;
+}
+
+ProgramOptions& ProgramOptions::withMeasureTime(const bool measureTime)
+{
+	this->measureTime = measureTime;
 	return *this;
 }
 
@@ -62,5 +69,10 @@ bool ProgramOptions::getUseRandomProperty() const
 std::string ProgramOptions::getProperty() const
 {
 	return property;
+}
+
+bool ProgramOptions::getMeasureTime() const
+{
+	return measureTime;
 }
 

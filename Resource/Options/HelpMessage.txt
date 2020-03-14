@@ -1,7 +1,7 @@
 SYNOPSIS
-    ttg -g talent-tree [-r|-s <gen_seed>] [-i <iter>]
+    ttg -g talent-tree [-r|-s <gen_seed>] [-i <iter>] [-t]
     ttg -g (branches|branch1|branch4|branch7) [-p <bias>]
-            [-r|-s <gen_seed>] [-i <iter>]
+            [-r|-s <gen_seed>] [-i <iter>] [-t]
     ttg -h
 
 OPTIONS
@@ -18,6 +18,9 @@ OPTIONS
     -i <iter>, --iterations <iter>
             Number of generations to do.
             1 is the default.
+    -t, --time
+            Measure how long the initialization and
+            generation steps take.
     -h, --help
             Show this help.
 
