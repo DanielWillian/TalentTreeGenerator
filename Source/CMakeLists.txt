@@ -1,5 +1,6 @@
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Utils)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Models)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Time)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Dictionaries)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Generators)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Options)
@@ -10,6 +11,7 @@ target_link_libraries(TalentTreeGenerator
     PRIVATE
         Utils
         Models
+        Time
         Dictionaries
         Generators
         Options
