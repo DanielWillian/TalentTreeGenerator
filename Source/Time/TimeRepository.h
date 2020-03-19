@@ -5,7 +5,7 @@
 
 class TimeRepository {
 public:
-	static TimeRepository& GetInstance()
+	static TimeRepository& getInstance()
 	{
 		static TimeRepository instance;
 		return instance;
