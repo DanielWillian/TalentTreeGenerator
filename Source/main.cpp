@@ -75,7 +75,9 @@ void generateBranch(const ProgramOptions& programOptions,
 std::string getBias(const ProgramOptions& programOptions,
 		const std::vector<std::string>& propertyNames);
 void generateTimeReport(const ProgramOptions& programOptions);
-void printArtifactTimes(const std::vector<std::chrono::milliseconds>& artifactTimes);
+template <typename Duration, typename Rep = typename Duration::rep>
+void printArtifactTimes(const std::vector<Duration>& artifactTimes);
+void printTalentTreeTimes(const std::vector<std::chrono::microseconds>& artifactTimes);
 
 int main(int argc, char **argv)
 {
@@ -225,7 +227,7 @@ void generateTalentTree(const ProgramOptions& programOptions)
 	if (measureTime)
 	{
 		endInitialization = std::chrono::steady_clock::now();
-		const auto initializationTime = std::chrono::duration_cast<std::chrono::milliseconds>(
+		const auto initializationTime = std::chrono::duration_cast<std::chrono::microseconds>(
 				endInitialization - startInitialization);
 		timeRepository.setInitializationTime(initializationTime);
 	}
@@ -242,7 +244,7 @@ void generateTalentTree(const ProgramOptions& programOptions)
 		if (measureTime)
 		{
 			endGeneration = std::chrono::steady_clock::now();
-			const auto talentTreeTime = std::chrono::duration_cast<std::chrono::milliseconds>(
+			const auto talentTreeTime = std::chrono::duration_cast<std::chrono::microseconds>(
 					endGeneration - startGeneration);
 			timeRepository.addTalentTreeTime(talentTreeTime);
 		}
@@ -262,7 +264,11 @@ void generateBranches(const ProgramOptions& programOptions)
 {
 	std::cout << "---------- Initializing generator ----------" << std::endl << std::endl;
 
-	const GenerationType generationType = programOptions.getGenerationType();
+	const bool measureTime = programOptions.getMeasureTime();
+
+	TimeRepository& timeRepository = TimeRepository::getInstance();
+	std::chrono::time_point<std::chrono::steady_clock> startInitialization, endInitialization;
+	if (measureTime) startInitialization = std::chrono::steady_clock::now();
 
 	const std::vector<std::unique_ptr<TalentDictionary>> dictionaries = createTalentDictionaries();
 	const std::vector<TalentDictionary*> dictionariesRaw = mapToRawPointers(dictionaries);
@@ -276,6 +282,16 @@ void generateBranches(const ProgramOptions& programOptions)
 	std::copy(propertyRep.damageTypes.begin(), propertyRep.damageTypes.end(), std::back_inserter(level4PropertyNames));
 	std::vector<std::string> level7PropertyNames(level4PropertyNames);
 	std::copy(propertyRep.weaponTypes.begin(), propertyRep.weaponTypes.end(), std::back_inserter(level7PropertyNames));
+
+	if (measureTime)
+	{
+		endInitialization = std::chrono::steady_clock::now();
+		const auto initializationTime = std::chrono::duration_cast<std::chrono::microseconds>(
+				endInitialization - startInitialization);
+		timeRepository.setInitializationTime(initializationTime);
+	}
+
+	const GenerationType generationType = programOptions.getGenerationType();
 
 	if (generationType == GenerationType::BRANCHES)
 	{
@@ -307,6 +323,13 @@ void generateBranch1(const ProgramOptions& programOptions,
 			branchGenerator,
 			LEVEL_1_LESSER_TALENTS,
 			LEVEL_1_GREATER_TALENTS);
+
+	if (programOptions.getMeasureTime())
+	{
+		TimeRepository& timeRepository = TimeRepository::getInstance();
+		timeRepository.setBranch1Times(timeRepository.getBranchTimes());
+		timeRepository.setBranchTimes({});
+	}
 	std::cout << std::endl;
 }
 
@@ -320,6 +343,13 @@ void generateBranch4(const ProgramOptions& programOptions,
 			branchGenerator,
 			LEVEL_4_LESSER_TALENTS,
 			LEVEL_4_GREATER_TALENTS);
+
+	if (programOptions.getMeasureTime())
+	{
+		TimeRepository& timeRepository = TimeRepository::getInstance();
+		timeRepository.setBranch4Times(timeRepository.getBranchTimes());
+		timeRepository.setBranchTimes({});
+	}
 	std::cout << std::endl;
 }
 
@@ -333,6 +363,13 @@ void generateBranch7(const ProgramOptions& programOptions,
 			branchGenerator,
 			LEVEL_7_LESSER_TALENTS,
 			LEVEL_7_GREATER_TALENTS);
+
+	if (programOptions.getMeasureTime())
+	{
+		TimeRepository& timeRepository = TimeRepository::getInstance();
+		timeRepository.setBranch7Times(timeRepository.getBranchTimes());
+		timeRepository.setBranchTimes({});
+	}
 	std::cout << std::endl;
 }
 
@@ -344,19 +381,36 @@ void generateBranch(const ProgramOptions& programOptions,
 {
 	const unsigned int iterations = programOptions.getIterations();
 
+	const bool measureTime = programOptions.getMeasureTime();
+	TimeRepository& timeRepository = TimeRepository::getInstance();
+
 	for (unsigned int i = 0; i < iterations; i++)
 	{
 		std::cout << "---------- Iteration: " << i << " ----------" << std::endl << std::endl;
 
+		std::chrono::time_point<std::chrono::steady_clock> startGeneration, endGeneration;
+		if (measureTime) startGeneration = std::chrono::steady_clock::now();
+
 		const std::string bias = getBias(programOptions, propertyNames);
-		std::cout << "Bias: " << bias << std::endl;
 		auto talentBranch = branchGenerator.GenerateBranchWithTraits({ bias },
 				numLesserTalents,
 				numGreaterTalents);
+
+		if (measureTime)
+		{
+			endGeneration = std::chrono::steady_clock::now();
+			const auto generationTime = std::chrono::duration_cast<std::chrono::microseconds>(
+					endGeneration - startGeneration);
+			timeRepository.addBranchTime(generationTime);
+		}
+
+		std::cout << "Bias: " << bias << std::endl;
+
 		for (auto& talent : talentBranch)
 		{
 			std::cout << talent->toString() << std::endl;
 		}
+
 		std::cout << std::endl;
 	}
 }
@@ -380,30 +434,62 @@ void generateTimeReport(const ProgramOptions& programOptions)
 
 	std::cout << "---------- Time report ----------" << std::endl << std::endl;
 
-	std::chrono::milliseconds initializationTime = timeRepository.getInitializationTime();
-	std::cout << "---------- Time to initialize: " << initializationTime.count() <<
-			" ms ----------" << std::endl;
-
+	std::chrono::microseconds initializationTime = timeRepository.getInitializationTime();
+	std::cout << "---------- Initialization: " << initializationTime.count() <<
+			" (µs) ----------" << std::endl;
 
 	if (generationType == GenerationType::TALENT_TREE)
 	{
-		std::cout << "---------- Talent tree generation ----------" << std::endl;
-		printArtifactTimes(timeRepository.getTalentTreeTimes());
+		std::cout << "---------- Talent tree generation (ms) ----------" << std::endl;
+		printTalentTreeTimes(timeRepository.getTalentTreeTimes());
+	}
+	else if (generationType == GenerationType::BRANCHES)
+	{
+		std::cout << "---------- Branch1 generation (µs) ----------" << std::endl;
+		printArtifactTimes(timeRepository.getBranch1Times());
+		std::cout << "---------- Branch4 generation (µs) ----------" << std::endl;
+		printArtifactTimes(timeRepository.getBranch4Times());
+		std::cout << "---------- Branch7 generation (µs) ----------" << std::endl;
+		printArtifactTimes(timeRepository.getBranch7Times());
+	}
+	else if (generationType == GenerationType::BRANCH_1)
+	{
+		std::cout << "---------- Branch1 generation (µs) ----------" << std::endl;
+		printArtifactTimes(timeRepository.getBranch1Times());
+	}
+	else if (generationType == GenerationType::BRANCH_4)
+	{
+		std::cout << "---------- Branch4 generation (µs) ----------" << std::endl;
+		printArtifactTimes(timeRepository.getBranch4Times());
+	}
+	else if (generationType == GenerationType::BRANCH_7)
+	{
+		std::cout << "---------- Branch7 generation (µs) ----------" << std::endl;
+		printArtifactTimes(timeRepository.getBranch7Times());
 	}
 }
 
-void printArtifactTimes(const std::vector<std::chrono::milliseconds>& artifactTimes)
+template <typename Duration, typename Rep>
+void printArtifactTimes(const std::vector<Duration>& artifactTimes)
 {
-	std::chrono::milliseconds::rep totalTime = 0;
+	Rep totalTime = 0;
 	for (size_t i = 0; i < artifactTimes.size(); i++)
 	{
 		const auto artifactTimeCount = artifactTimes[i].count();
 		totalTime += artifactTimeCount;
 		std::cout << "---------- Iteration " << i << ": " <<
-				artifactTimeCount << " ms ----------" << std::endl;
+				artifactTimeCount << " ----------" << std::endl;
 	}
-	std::cout << "---------- Total time: " << totalTime << " ms ----------" << std::endl;
+	std::cout << "---------- Total time: " << totalTime << " ----------" << std::endl;
 	std::cout << "---------- Average time: " << totalTime / artifactTimes.size() <<
-			" ms ----------" << std::endl;
+			" ----------" << std::endl;
+}
+
+void printTalentTreeTimes(const std::vector<std::chrono::microseconds>& artifactTimes)
+{
+	std::vector<std::chrono::milliseconds> milliTimes;
+	std::transform(artifactTimes.begin(), artifactTimes.end(), std::back_inserter(milliTimes),
+			[](auto t) { return std::chrono::duration_cast<std::chrono::milliseconds>(t); });
+	printArtifactTimes(milliTimes);
 }
 
