@@ -1,4 +1,5 @@
 SYNOPSIS
+    ttg [-r|-s <gen_seed>] [-i <iter>] [-t]
     ttg -g talent-tree [-r|-s <gen_seed>] [-i <iter>] [-t]
     ttg -g (branches|branch1|branch4|branch7) [-p <bias>]
             [-r|-s <gen_seed>] [-i <iter>] [-t]

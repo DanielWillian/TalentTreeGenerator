@@ -39,7 +39,6 @@ void showGenerationTypeHelp()
 void reportError(const std::string& error)
 {
 	std::cerr << error << std::endl << std::endl;
-	showHelp();
 	exit(1);
 }
 
@@ -259,6 +258,14 @@ std::vector<std::string> getDamageTypesOnly()
 	return std::move(damageTypes);
 }
 
+std::vector<std::string> getBasePropertiesWithNoType()
+{
+	auto baseProperties = Constants::getBaseProperties();
+	baseProperties.push_back(NO_DAMAGE_TYPE);
+	baseProperties.push_back(NO_WEAPON_TYPE);
+	return std::move(baseProperties);
+}
+
 void verifyOptions(const ProgramOptions& programOptions)
 {
 	if (!programOptions.getUseRandomProperty())
@@ -292,7 +299,7 @@ void verifyOptions(const ProgramOptions& programOptions)
 						"Use -p help to see the available properties.");
 			}
 		}
-		else if (!Statics::Contain(Constants::getBaseProperties(), property))
+		else if (!Statics::Contain(getBasePropertiesWithNoType(), property))
 		{
 			reportError("Unsupported property: " + property + "!\n" +
 					"Use -p help to see the available properties.");
