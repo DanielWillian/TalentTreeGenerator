@@ -29,12 +29,12 @@ public:
 	virtual std::vector<std::unique_ptr<Talent>> GenerateBranch(
 			int numLesser,
 			int numGreater,
-			std::vector<Property*>* startingProperties = nullptr);
+			std::vector<Property*>* startingProperties = nullptr) const;
 
 	virtual std::vector<std::unique_ptr<Talent>> GenerateBranchWithTraits(
 			const std::vector<std::string>& desiredTraits,
 			int numLesser,
-			int numGreater);
+			int numGreater) const;
 
 	virtual std::unique_ptr<Talent> GenerateTalent(const std::vector<std::string>& desiredTraits,
 			const bool bLesser) const;
@@ -75,7 +75,7 @@ protected:
 			int numGreater,
 			std::vector<Property*> inLesserPossibleProperties,
 			std::vector<Property*> inGreaterPossibleProperties,
-			std::vector<Property*>* startingProperties = nullptr);
+			std::vector<Property*>* startingProperties = nullptr) const;
 
 public:
 	std::vector<Property*> lesserProperties;

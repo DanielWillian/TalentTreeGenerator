@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 extern const std::string HEALTH;
 extern const std::string MANA;
@@ -52,4 +53,11 @@ extern const std::string STAFF;
 extern const std::string SWORD;
 extern const std::string THROWN;
 extern const std::string WAND;
+
+namespace Constants
+{
+std::vector<std::string> getBaseProperties();
+std::vector<std::string> getDamageTypes();
+std::vector<std::string> getWeaponTypes();
+}
 

@@ -1,0 +1,33 @@
+SYNOPSIS
+    ttg [-r|-s <gen_seed>] [-i <iter>] [-t]
+    ttg -g talent-tree [-r|-s <gen_seed>] [-i <iter>] [-t]
+    ttg -g (branches|branch1|branch4|branch7) [-p <bias>]
+            [-r|-s <gen_seed>] [-i <iter>] [-t]
+    ttg -h
+
+OPTIONS
+    -s <gen_seed>, --seed <gen_seed>
+            Set the seed to use for the generation.
+    -r, --random
+            Set a random seed to use for the generation.
+            This is the default.
+    -g <gen_type>, --generation <gen_type>
+            Which <gen_type> to generate.
+            talent-tree is the default.
+    -p <bias>, --property <bias>
+            Bias used when generating branches.
+    -i <iter>, --iterations <iter>
+            Number of generations to do.
+            1 is the default.
+    -t, --time
+            Measure how long the initialization and
+            generation steps take.
+    -h, --help
+            Show this help.
+
+ARGUMENTS
+    <gen_type>
+talent-tree, branches, branch1, branch4, branch7
+Use '-g help' for a description of these arguments.
+    <bias>
+Use '-p help' for a list of <bias>.

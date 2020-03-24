@@ -1,0 +1,19 @@
+Valid arguments for -p:
+    For branches and branch1:
+Health, Mana, HealthRegen, ManaRegen,
+AttackSpeed, CastSpeed,
+DodgeChance, Resistance,
+HitChance, CriticalChance, CriticalAmp,
+SingleTargetDamage, AreaOfEffectSize, AreaOfEffectDamage,
+DirectDamage, DamageOverTime, DurationOfDot
+NoDamageType, NoWeaponType
+
+    For branch4 it is all of the previous ones and the following:
+Physical, Magical,
+Acid, Bludgeoning, Cold, Fire, Force, Lightning, Necrotic,
+Piercing, Poison, Psychic, Radiant, Slashing, Thunder
+
+    For branch7 it is all of the previous ones and the following:
+OneHanded, TwoHanded,
+Axe, Bow, Crossbow, Dagger, FistWeapon, Gun,
+Mace, Polearm, Staff, Sword, Thrown, Wand

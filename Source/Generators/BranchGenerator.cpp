@@ -32,7 +32,7 @@ std::vector<Property*> BranchGenerator::GetAllRelatedProperties(
 std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranch(
 		int numLesser,
 		int numGreater,
-		std::vector<Property*>* startingProperties)
+		std::vector<Property*>* startingProperties) const
 {
 	std::vector<Property*> lesserPossibleProperties = lesserProperties;
 	std::vector<Property*> greaterPossibleProperties = greaterProperties;
@@ -46,7 +46,7 @@ std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranch(
 std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranchWithTraits(
 		const std::vector<std::string>& desiredTraits,
 		int numLesser,
-		int numGreater)
+		int numGreater) const
 {
 	auto desiredProperties = PropertyRepository::GetInstance().GetPropertiesWithIds(lesserProperties, desiredTraits);
 	if (!desiredProperties.empty())
@@ -64,7 +64,7 @@ std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranchInternal(
 		int numGreater,
 		std::vector<Property*> inLesserPossibleProperties,
 		std::vector<Property*> inGreaterPossibleProperties,
-		std::vector<Property*>* startingProperties)
+		std::vector<Property*>* startingProperties) const
 {
 	if (numLesser < 1 && numGreater <= 0)
 	{
