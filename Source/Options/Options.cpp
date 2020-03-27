@@ -4,6 +4,7 @@
 #include "Utils/Constants.h"
 #include "Utils/Statics.h"
 #include <iostream>
+#include <limits>
 #include <memory>
 #include <random>
 #include <stdexcept>
@@ -40,6 +41,15 @@ void reportError(const std::string& error)
 {
 	std::cerr << error << std::endl << std::endl;
 	exit(1);
+}
+
+int toInt(const std::size_t& size)
+{
+	if (size > std::numeric_limits<int>::max())
+	{
+		throw std::out_of_range("Too big to be transformed in int!");
+	}
+	return (int) size;
 }
 
 unsigned int stoui(const std::string& s)
@@ -87,7 +97,7 @@ bool hasNecessaryArguments(const Option option,
 		const std::vector<std::string>& args,
 		const int currentArg)
 {
-	return !needsArgumentOption(option) || (currentArg + 1 < args.size());
+	return !needsArgumentOption(option) || (currentArg + 1 < toInt(args.size()));
 }
 
 void addRandomSeed(ProgramOptions& programOptions)
@@ -173,7 +183,7 @@ int parseShortOptions(const std::vector<std::string>& args, const int currentArg
 		reportError("Found empty option: -");
 	}
 	bool foundArgumentOption = false;
-	for (int j = 1; j < args[currentArg].length(); j++)
+	for (int j = 1; j < toInt(args[currentArg].length()); j++)
 	{
 		const Option option = parseShortOption(args[currentArg][j]);
 		if (option == Option::NONE)
@@ -312,7 +322,7 @@ std::unique_ptr<ProgramOptions> parseArgs(const std::vector<std::string> args)
 {
 	std::unique_ptr<ProgramOptions> programOptions = std::make_unique<ProgramOptions>();
 
-	for (int i = 0; i < args.size();)
+	for (int i = 0; i < toInt(args.size());)
 	{
 		if (args[i].compare(0, 2, "--") == 0)
 		{

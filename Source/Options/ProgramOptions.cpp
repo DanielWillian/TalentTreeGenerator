@@ -2,9 +2,9 @@
 
 ProgramOptions::ProgramOptions() :
 	hasSeed(false),
+	iterations(0),
 	seed(0),
 	generationType(GenerationType::NONE),
-	iterations(0),
 	useRandomProperty(true),
 	property(""),
 	measureTime(false) {}
