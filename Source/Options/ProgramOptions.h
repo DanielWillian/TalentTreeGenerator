@@ -12,11 +12,11 @@ class ProgramOptions
 public:
 	ProgramOptions();
 
-	ProgramOptions& withIterations(const unsigned int iterations);
-	ProgramOptions& withSeed(const unsigned int seed);
-	ProgramOptions& withGenerationType(const GenerationType generationType);
-	ProgramOptions& withProperty(const std::string& property);
-	ProgramOptions& withMeasureTime(const bool measureTime);
+	ProgramOptions& withIterations(const unsigned int newIterations);
+	ProgramOptions& withSeed(const unsigned int newSeed);
+	ProgramOptions& withGenerationType(const GenerationType newGenerationType);
+	ProgramOptions& withProperty(const std::string& newProperty);
+	ProgramOptions& withMeasureTime(const bool newMeasureTime);
 
 	bool getHasSeed() const;
 	unsigned int getIterations() const;

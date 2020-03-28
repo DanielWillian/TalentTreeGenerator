@@ -49,7 +49,7 @@ const int LEVEL_7_GREATER_TALENTS = 2;
 const std::string HEADER = "-----";
 
 std::stringstream Stream();
-void printlnWithHeader(std::ostream& message, unsigned int lines);
+void printlnWithHeader(const std::ostream& message, unsigned int lines);
 
 std::vector<std::unique_ptr<TalentDictionary>> createTalentDictionaries();
 std::vector<std::unique_ptr<BranchGenerator>> createBranchGenerators(
@@ -113,7 +113,7 @@ std::stringstream Stream()
 	return std::stringstream();
 }
 
-void printlnWithHeader(std::ostream& message, unsigned int lines)
+void printlnWithHeader(const std::ostream& message, unsigned int lines)
 {
 	std::cout << HEADER << " " << message.rdbuf() << " " << HEADER;
 	for (unsigned int i = 0; i < lines; i++) std::cout << std::endl;

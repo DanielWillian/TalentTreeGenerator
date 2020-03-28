@@ -9,35 +9,35 @@ ProgramOptions::ProgramOptions() :
 	property(""),
 	measureTime(false) {}
 
-ProgramOptions& ProgramOptions::withIterations(const unsigned int iterations)
+ProgramOptions& ProgramOptions::withIterations(const unsigned int newIterations)
 {
-	this->iterations = iterations;
+	this->iterations = newIterations;
 	return *this;
 }
 
-ProgramOptions& ProgramOptions::withSeed(const unsigned int seed)
+ProgramOptions& ProgramOptions::withSeed(const unsigned int newSeed)
 {
-	this->seed = seed;
+	this->seed = newSeed;
 	this->hasSeed = true;
 	return *this;
 }
 
-ProgramOptions& ProgramOptions::withGenerationType(const GenerationType generationType)
+ProgramOptions& ProgramOptions::withGenerationType(const GenerationType newGenerationType)
 {
-	this->generationType = generationType;
+	this->generationType = newGenerationType;
 	return *this;
 }
 
-ProgramOptions& ProgramOptions::withProperty(const std::string& property)
+ProgramOptions& ProgramOptions::withProperty(const std::string& newProperty)
 {
-	this->property = property;
+	this->property = newProperty;
 	this->useRandomProperty = false;
 	return *this;
 }
 
-ProgramOptions& ProgramOptions::withMeasureTime(const bool measureTime)
+ProgramOptions& ProgramOptions::withMeasureTime(const bool newMeasureTime)
 {
-	this->measureTime = measureTime;
+	this->measureTime = newMeasureTime;
 	return *this;
 }
 

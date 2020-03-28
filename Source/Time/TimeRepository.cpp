@@ -35,44 +35,44 @@ std::vector<std::chrono::microseconds> TimeRepository::getBranch7Times() const
 }
 
 TimeRepository& TimeRepository::setInitializationTime(
-		const std::chrono::microseconds& initializationTime)
+		const std::chrono::microseconds& newInitializationTime)
 {
-	this->initializationTime = initializationTime;
+	this->initializationTime = newInitializationTime;
 	return *this;
 }
 
 TimeRepository& TimeRepository::setTalentTreeTimes(
-		const std::vector<std::chrono::microseconds>& talentTreeTimes)
+		const std::vector<std::chrono::microseconds>& newTalentTreeTimes)
 {
-	this->talentTreeTimes = talentTreeTimes;
+	this->talentTreeTimes = newTalentTreeTimes;
 	return *this;
 }
 
 TimeRepository& TimeRepository::setBranchTimes(
-		const std::vector<std::chrono::microseconds>& branchTimes)
+		const std::vector<std::chrono::microseconds>& newBranchTimes)
 {
-	this->branchTimes = branchTimes;
+	this->branchTimes = newBranchTimes;
 	return *this;
 }
 
 TimeRepository& TimeRepository::setBranch1Times(
-		const std::vector<std::chrono::microseconds>& branch1Times)
+		const std::vector<std::chrono::microseconds>& newBranch1Times)
 {
-	this->branch1Times = branch1Times;
+	this->branch1Times = newBranch1Times;
 	return *this;
 }
 
 TimeRepository& TimeRepository::setBranch4Times(
-		const std::vector<std::chrono::microseconds>& branch4Times)
+		const std::vector<std::chrono::microseconds>& newBranch4Times)
 {
-	this->branch4Times = branch4Times;
+	this->branch4Times = newBranch4Times;
 	return *this;
 }
 
 TimeRepository& TimeRepository::setBranch7Times(
-		const std::vector<std::chrono::microseconds>& branch7Times)
+		const std::vector<std::chrono::microseconds>& newBranch7Times)
 {
-	this->branch7Times = branch7Times;
+	this->branch7Times = newBranch7Times;
 	return *this;
 }
 
@@ -82,9 +82,9 @@ TimeRepository& TimeRepository::addTalentTreeTime(const std::chrono::microsecond
 	return *this;
 }
 
-TimeRepository& TimeRepository::addBranchTime(const std::chrono::microseconds& talentTreeTime)
+TimeRepository& TimeRepository::addBranchTime(const std::chrono::microseconds& branchTime)
 {
-	this->branchTimes.push_back(talentTreeTime);
+	this->branchTimes.push_back(branchTime);
 	return *this;
 }
 

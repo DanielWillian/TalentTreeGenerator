@@ -21,15 +21,15 @@ public:
 	std::vector<std::chrono::microseconds> getBranch4Times() const;
 	std::vector<std::chrono::microseconds> getBranch7Times() const;
 
-	TimeRepository& setInitializationTime(const std::chrono::microseconds& initializationTime);
-	TimeRepository& setTalentTreeTimes(const std::vector<std::chrono::microseconds>& talentTreeTimes);
-	TimeRepository& setBranchTimes(const std::vector<std::chrono::microseconds>& branchTimes);
-	TimeRepository& setBranch1Times(const std::vector<std::chrono::microseconds>& branch1Times);
-	TimeRepository& setBranch4Times(const std::vector<std::chrono::microseconds>& branch4Times);
-	TimeRepository& setBranch7Times(const std::vector<std::chrono::microseconds>& branch7Times);
+	TimeRepository& setInitializationTime(const std::chrono::microseconds& newInitializationTime);
+	TimeRepository& setTalentTreeTimes(const std::vector<std::chrono::microseconds>& newTalentTreeTimes);
+	TimeRepository& setBranchTimes(const std::vector<std::chrono::microseconds>& newBranchTimes);
+	TimeRepository& setBranch1Times(const std::vector<std::chrono::microseconds>& newBranch1Times);
+	TimeRepository& setBranch4Times(const std::vector<std::chrono::microseconds>& newBranch4Times);
+	TimeRepository& setBranch7Times(const std::vector<std::chrono::microseconds>& newBranch7Times);
 
 	TimeRepository& addTalentTreeTime(const std::chrono::microseconds& talentTreeTime);
-	TimeRepository& addBranchTime(const std::chrono::microseconds& talentTreeTime);
+	TimeRepository& addBranchTime(const std::chrono::microseconds& branchTime);
 
 private:
 	TimeRepository();
