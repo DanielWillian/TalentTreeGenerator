@@ -36,11 +36,8 @@ const int TALENT_LEVEL_8_INDEX = 7;
 const int TALENT_LEVEL_9_INDEX = 8;
 
 const int BRANCH_LEVEL_1_INDEX = 0;
-const int BRANCH_LEVEL_2_INDEX = 1;
 const int BRANCH_LEVEL_4_INDEX = 2;
-const int BRANCH_LEVEL_5_INDEX = 3;
 const int BRANCH_LEVEL_7_INDEX = 4;
-const int BRANCH_LEVEL_9_INDEX = 5;
 
 const int LEVEL_1_LESSER_TALENTS = 4;
 const int LEVEL_1_GREATER_TALENTS = 1;
@@ -113,7 +110,7 @@ int main(int argc, char **argv)
 
 std::stringstream Stream()
 {
-	return std::move(std::stringstream());
+	return std::stringstream();
 }
 
 void printlnWithHeader(std::ostream& message, unsigned int lines)
@@ -134,7 +131,7 @@ std::vector<std::unique_ptr<TalentDictionary>> createTalentDictionaries()
 	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel7>());
 	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel8>());
 	dictionaries.emplace_back(std::make_unique<TalentDictionaryLevel9>());
-	return std::move(dictionaries);
+	return dictionaries;
 }
 
 std::vector<std::unique_ptr<BranchGenerator>> createBranchGenerators(const std::vector<TalentDictionary*>& dictionaries)
@@ -185,7 +182,7 @@ std::vector<std::unique_ptr<BranchGenerator>> createBranchGenerators(const std::
 	branchGenerators.push_back(std::move(branchGenerator7));
 	branchGenerators.push_back(std::move(branchGenerator9));
 
-	return std::move(branchGenerators);
+	return branchGenerators;
 }
 
 template <typename T>

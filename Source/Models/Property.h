@@ -17,7 +17,7 @@ public:
 
 	bool operator<(const Property& other) const;
 
-	virtual std::string toString() const;
+	std::string toString() const;
 
 public:
 	int index;

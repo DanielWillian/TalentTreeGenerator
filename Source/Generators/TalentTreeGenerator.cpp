@@ -36,7 +36,7 @@ std::unique_ptr<TalentTree> TalentTreeGenerator::GenerateTalentTree()
 			talentNames[talentName.first] = std::move(talentName.second);
 		}
 	}
-	return std::move(std::unique_ptr<TalentTree>(new TalentTree(talentNames)));
+	return std::unique_ptr<TalentTree>(new TalentTree(talentNames));
 }
 
 std::unordered_map<std::string, std::unique_ptr<Talent>> TalentTreeGenerator::GenerateBranch(const std::string& pathName)

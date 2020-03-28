@@ -11,7 +11,7 @@ public:
 	{
 	}
 
-	virtual std::string toString() const;
+	std::string toString() const;
 
 public:
 	std::vector<TalentEntry> talentEntries;

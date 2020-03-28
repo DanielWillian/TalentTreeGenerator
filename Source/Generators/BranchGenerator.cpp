@@ -55,7 +55,7 @@ std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranchWithTraits(
 	}
 
 	std::vector<std::unique_ptr<Talent>> result;
-	result.push_back(std::move(std::unique_ptr<Talent>(nullptr)));
+	result.push_back(std::unique_ptr<Talent>(nullptr));
 	return result;
 }
 
@@ -104,7 +104,7 @@ std::vector<std::unique_ptr<Talent>> BranchGenerator::GenerateBranchInternal(
 		result.push_back(std::move(talent));
 	}
 
-	return std::move(result);
+	return result;
 }
 
 void BranchGenerator::IntersectionOfProperties(
@@ -159,7 +159,7 @@ std::unique_ptr<Talent> BranchGenerator::GenerateTalent(const std::vector<std::s
 		return GenerateRandomTalent(relatedProperties, dictionary, desiredProperty);
 	}
 
-	return std::move(std::unique_ptr<Talent>(nullptr));
+	return std::unique_ptr<Talent>(nullptr);
 }
 
 std::unique_ptr<Talent> BranchGenerator::GenerateRandomTalent(
@@ -184,7 +184,7 @@ std::unique_ptr<Talent> BranchGenerator::GenerateRandomTalent(
 		GenerateRandomTalentTuple(inProperties, dictionary, numberOfProperties, tupleList, property);
 	}
 
-	return std::move(std::unique_ptr<Talent>(new Talent(tupleList)));
+	return std::unique_ptr<Talent>(new Talent(tupleList));
 }
 
 void BranchGenerator::GenerateRandomTalentTuple(

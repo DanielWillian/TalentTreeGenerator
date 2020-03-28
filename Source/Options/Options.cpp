@@ -258,14 +258,14 @@ std::vector<std::string> getWeaponTypesOnly()
 {
 	auto weaponTypes = Constants::getWeaponTypes();
 	static_cast<void>(std::remove(weaponTypes.begin(), weaponTypes.end(), NO_WEAPON_TYPE));
-	return std::move(weaponTypes);
+	return weaponTypes;
 }
 
 std::vector<std::string> getDamageTypesOnly()
 {
 	auto damageTypes = Constants::getDamageTypes();
 	static_cast<void>(std::remove(damageTypes.begin(), damageTypes.end(), NO_DAMAGE_TYPE));
-	return std::move(damageTypes);
+	return damageTypes;
 }
 
 std::vector<std::string> getBasePropertiesWithNoType()
@@ -273,7 +273,7 @@ std::vector<std::string> getBasePropertiesWithNoType()
 	auto baseProperties = Constants::getBaseProperties();
 	baseProperties.push_back(NO_DAMAGE_TYPE);
 	baseProperties.push_back(NO_WEAPON_TYPE);
-	return std::move(baseProperties);
+	return baseProperties;
 }
 
 void verifyOptions(const ProgramOptions& programOptions)

@@ -10,7 +10,7 @@ public:
 	{
 	}
 
-	virtual std::string toString() const;
+	std::string toString() const;
 
 public:
 	Property* property;

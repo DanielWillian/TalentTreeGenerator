@@ -20,6 +20,8 @@ public:
 	{
 	}
 
+	virtual ~BranchGenerator() = default;
+
 	Property* GetRandomProperty(std::vector<Property*> properties) const;
 
 	std::vector<Property*> GetAllRelatedProperties(const Property* property,

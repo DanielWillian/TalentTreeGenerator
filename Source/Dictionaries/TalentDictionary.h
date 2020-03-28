@@ -27,6 +27,8 @@ public:
 class TalentDictionary
 {
 public:
+	virtual ~TalentDictionary() = default;
+
 	virtual const TalentDictEntry& GetDictEntry(const std::string& key) const
 	{
 		return **std::find_if(entries.begin(), entries.end(), [&key](const auto& e) { return e->key == key; });
