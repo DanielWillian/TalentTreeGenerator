@@ -21,6 +21,12 @@ create_resources(${PROJECT_SOURCE_DIR}/Resource/Options ${PROJECT_BINARY_DIR}/Re
 
 add_library(Options ${OPTIONS_SRCS})
 
+target_compile_options(Options
+    PRIVATE
+        $<$<CXX_COMPILER_ID:MSVC>:${WARNING_FLAGS_MSVC}>
+        $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:${WARNING_FLAGS_NON_MSVC}>
+)
+
 target_include_directories(Options
     PRIVATE
         $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/Source>

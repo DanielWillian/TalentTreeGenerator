@@ -17,6 +17,12 @@ target_link_libraries(TalentTreeGenerator
         Options
 )
 
+target_compile_options(TalentTreeGenerator
+    PRIVATE
+        $<$<CXX_COMPILER_ID:MSVC>:${WARNING_FLAGS_MSVC}>
+        $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:${WARNING_FLAGS_NON_MSVC}>
+)
+
 target_include_directories(TalentTreeGenerator
     PRIVATE
         $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/Source>
@@ -24,3 +30,4 @@ target_include_directories(TalentTreeGenerator
 
 set_target_properties(TalentTreeGenerator PROPERTIES
     OUTPUT_NAME "ttg")
+

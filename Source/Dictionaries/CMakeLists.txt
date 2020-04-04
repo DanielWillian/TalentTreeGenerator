@@ -15,6 +15,12 @@ set(DICT_SRCS
 
 add_library(Dictionaries ${DICT_SRCS})
 
+target_compile_options(Dictionaries
+    PRIVATE
+        $<$<CXX_COMPILER_ID:MSVC>:${WARNING_FLAGS_MSVC}>
+        $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:${WARNING_FLAGS_NON_MSVC}>
+)
+
 target_link_libraries(Dictionaries
     PUBLIC
         Utils
